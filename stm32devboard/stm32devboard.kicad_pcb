@@ -7,6 +7,12 @@
 		(legacy_teardrops no)
 	)
 	(paper "A4")
+	(title_block
+		(title "STM32F042C6T Dev Board")
+		(date "2024-03-11")
+		(rev "v1.0")
+		(company "PSAS / Benjamin Crall")
+	)
 	(layers
 		(0 "F.Cu" signal)
 		(1 "In1.Cu" signal)
@@ -122,9 +128,9 @@
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "pcb")
 		)
 	)
 	(net 0 "")
@@ -204,6 +210,7 @@
 		(property "Reference" "J4"
 			(at 0 2.7 -90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ca9b711a-1df2-4e71-b305-65bff5e59770")
 			(effects
 				(font
@@ -12552,6 +12559,30 @@
 		)
 		(layer "Edge.Cuts")
 		(uuid "ff3bbd9b-da0a-4315-99dc-632faf8fcd3d")
+	)
+	(gr_text "STM32F042C6T\nDev board ${REVISION}\n${ISSUE_DATE}\nBenjamin Crall\n"
+		(at 148 77.77 0)
+		(layer "B.SilkS")
+		(uuid "96d9f13c-13c2-47b7-941e-0d37c36904d0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify bottom mirror)
+		)
+	)
+	(gr_text "https://github.com\n/psas/mints-\nscada-hardware"
+		(at 148.08 128.4 0)
+		(layer "B.SilkS")
+		(uuid "bc49733f-dbcd-4935-8fd8-8428d5aad7fc")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify bottom mirror)
+		)
 	)
 	(gr_text "PB9-TX"
 		(at 140.6144 113.0808 0)
