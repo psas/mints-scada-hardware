@@ -12909,7 +12909,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d2f7bc20-052f-4e55-9047-9d2073011a48")
+			(uuid "d2f7bc20-052f-4e55-9047-9d2073011a49")
 		)
 		(instances
 			(project "stm32devboard"
@@ -13928,7 +13928,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d2f7bc20-052f-4e55-9047-9d2073011a48")
+			(uuid "d2f7bc20-052f-4e55-9047-9d2073011a4a")
 		)
 		(instances
 			(project "stm32devboard"
