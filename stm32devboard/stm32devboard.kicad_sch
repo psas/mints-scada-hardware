@@ -6,12 +6,132 @@
 	(paper "USLedger")
 	(title_block
 		(title "minTS Microcontroller Devboad")
-		(date "2024-02-25")
-		(rev "V1.1")
+		(date "2024-05-02")
+		(rev "V1.2")
 		(company "PSAS")
 		(comment 1 "Benjamin Crall")
 	)
 	(lib_symbols
+		(symbol "+3V3_1"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+3V3_1_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3V3_1_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Connector:Conn_ARM_SWD_TagConnect_TC2030-NL"
 			(exclude_from_sim no)
 			(in_bom no)
@@ -5386,12 +5506,6 @@
 		(uuid "2bcb1e67-746a-4aa5-bbc0-d66c12071cf2")
 	)
 	(junction
-		(at 154.94 138.43)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "309b118f-5744-476c-b877-1571d978c107")
-	)
-	(junction
 		(at 142.24 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5410,12 +5524,6 @@
 		(uuid "3ccd4601-f570-4848-bf0d-786703ea8d44")
 	)
 	(junction
-		(at 154.94 149.86)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3f60dc58-8018-4b92-9271-e5e1021381ec")
-	)
-	(junction
 		(at 81.28 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5426,6 +5534,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4abea335-95db-449b-960c-0b74e222df13")
+	)
+	(junction
+		(at 152.4 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5c1bf0bc-32db-4aea-898d-664c6c0913bc")
 	)
 	(junction
 		(at 33.02 167.64)
@@ -5907,7 +6021,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 128.27) (xy 154.94 138.43)
+			(xy 152.4 128.27) (xy 152.4 138.43)
 		)
 		(stroke
 			(width 0)
@@ -5954,6 +6068,16 @@
 			(type default)
 		)
 		(uuid "40933d6f-f40a-4d82-a4ac-fd163894ad5b")
+	)
+	(wire
+		(pts
+			(xy 156.21 148.59) (xy 156.21 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40b85439-287a-42b2-b313-ea587ba5ee6a")
 	)
 	(wire
 		(pts
@@ -6025,16 +6149,6 @@
 			(type default)
 		)
 		(uuid "4d9ae6d1-6e36-43f7-b0d2-be4a1bf13926")
-	)
-	(wire
-		(pts
-			(xy 154.94 152.4) (xy 154.94 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "512fd80a-bd2d-4e3c-8a06-e5c3d9c97154")
 	)
 	(wire
 		(pts
@@ -6242,7 +6356,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 138.43) (xy 154.94 149.86)
+			(xy 152.4 138.43) (xy 152.4 152.4)
 		)
 		(stroke
 			(width 0)
@@ -6320,16 +6434,6 @@
 			(color 192 0 0 1)
 		)
 		(uuid "74e331a3-6525-4861-9453-4120093edfa4")
-	)
-	(wire
-		(pts
-			(xy 154.94 149.86) (xy 157.48 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7863178e-d7cd-4a93-81de-9492479a3bd4")
 	)
 	(wire
 		(pts
@@ -6696,7 +6800,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 128.27) (xy 154.94 128.27)
+			(xy 158.75 128.27) (xy 152.4 128.27)
 		)
 		(stroke
 			(width 0)
@@ -6733,6 +6837,16 @@
 			(type default)
 		)
 		(uuid "ae871f81-c0b8-41a1-b6db-be574a5f6dbe")
+	)
+	(wire
+		(pts
+			(xy 157.48 149.86) (xy 156.21 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af553f50-d237-41ff-b7d1-d0e4b2bd2641")
 	)
 	(wire
 		(pts
@@ -7177,6 +7291,16 @@
 	)
 	(wire
 		(pts
+			(xy 152.4 138.43) (xy 158.75 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efec5d16-f33d-4b68-a21e-c3b0fddbacd6")
+	)
+	(wire
+		(pts
 			(xy 198.12 80.01) (xy 203.2 80.01)
 		)
 		(stroke
@@ -7184,16 +7308,6 @@
 			(type default)
 		)
 		(uuid "f36313ab-5789-449b-9ca4-989c484bb1fe")
-	)
-	(wire
-		(pts
-			(xy 154.94 138.43) (xy 158.75 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f4794c5f-43df-4ccd-a7e4-3aee8d2d11d9")
 	)
 	(polyline
 		(pts
@@ -14007,7 +14121,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 154.94 152.4 0)
+		(at 152.4 152.4 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14016,7 +14130,7 @@
 		(fields_autoplaced yes)
 		(uuid "8fc5aa59-a511-4a6f-a10e-2272f8f4b141")
 		(property "Reference" "#PWR040"
-			(at 154.94 158.75 0)
+			(at 152.4 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14025,7 +14139,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 154.94 157.48 0)
+			(at 152.4 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14033,7 +14147,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 154.94 152.4 0)
+			(at 152.4 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14042,7 +14156,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 154.94 152.4 0)
+			(at 152.4 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14051,7 +14165,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 154.94 152.4 0)
+			(at 152.4 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15130,6 +15244,73 @@
 			(project "stm32devboard"
 				(path "/96be6751-0ff1-459c-b196-8024d4959d86"
 					(reference "#SYM11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "+3V3_1")
+		(lib_id "power:+3V3")
+		(at 156.21 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bd65b883-1f08-42d5-8691-3ad8ee5ca15e")
+		(property "Reference" "#PWR046"
+			(at 156.21 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 156.21 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 156.21 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 156.21 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 156.21 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cec3bb01-06b2-4d70-b380-0265c5b714b2")
+		)
+		(instances
+			(project "stm32devboard"
+				(path "/96be6751-0ff1-459c-b196-8024d4959d86"
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
