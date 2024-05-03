@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "adcmod")(type "KiCad")(uri "${KIPRJMOD}/adcmod.kicad_sym")(options "")(descr ""))
+  (lib (name "MCP3464")(type "KiCad")(uri "${KIPRJMOD}/MCP3464.kicad_sym")(options "")(descr ""))
+)
