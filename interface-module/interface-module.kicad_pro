@@ -429,11 +429,12 @@
     "pinned_footprint_libs": [],
     "pinned_symbol_libs": [
       "adcmod",
-      "MCP3464"
+      "MCP3464",
+      "interface_module"
     ]
   },
   "meta": {
-    "filename": "adc-module.kicad_pro",
+    "filename": "interface-module.kicad_pro",
     "version": 1
   },
   "net_settings": {

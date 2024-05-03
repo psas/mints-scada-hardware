@@ -4054,7 +4054,7 @@
 			(uuid "e013c0e0-169c-46ee-9056-2424296bcd00")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN2")
 					(unit 2)
@@ -4120,7 +4120,7 @@
 			(uuid "a5c84f26-8a81-4aaa-b4d7-f55735f0054b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR018")
 					(unit 1)
@@ -4214,7 +4214,7 @@
 			(uuid "5299eb56-4ef0-4987-89a1-c898e2f31231")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "U6")
 					(unit 1)
@@ -4280,7 +4280,7 @@
 			(uuid "d614ea65-86d7-4fed-b66b-c04995c12b2d")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR04")
 					(unit 1)
@@ -4384,7 +4384,7 @@
 			(uuid "e013c0e0-169c-46ee-9056-2424296bcd01")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN2")
 					(unit 3)
@@ -4450,7 +4450,7 @@
 			(uuid "b20ec94a-3179-4e54-bcf9-4d37aa14b038")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR09")
 					(unit 1)
@@ -4554,7 +4554,7 @@
 			(uuid "c6adb1f8-2848-4382-82f3-283836d16699")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN3")
 					(unit 3)
@@ -4658,7 +4658,7 @@
 			(uuid "c6adb1f8-2848-4382-82f3-283836d1669a")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN3")
 					(unit 1)
@@ -4762,7 +4762,7 @@
 			(uuid "c6adb1f8-2848-4382-82f3-283836d1669b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN4")
 					(unit 2)
@@ -4866,7 +4866,7 @@
 			(uuid "c6adb1f8-2848-4382-82f3-283836d1669c")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN4")
 					(unit 1)
@@ -4957,7 +4957,7 @@
 			(uuid "1a86ec73-6b04-4339-82e3-a28551140e45")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q16")
 					(unit 1)
@@ -5023,7 +5023,7 @@
 			(uuid "8ca2abee-b331-4451-8433-37164de1eca9")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR014")
 					(unit 1)
@@ -5114,7 +5114,7 @@
 			(uuid "761aee5b-c7e4-4583-935e-b2111e5f31e3")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q12")
 					(unit 1)
@@ -5218,7 +5218,7 @@
 			(uuid "c6adb1f8-2848-4382-82f3-283836d1669d")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN3")
 					(unit 2)
@@ -5309,7 +5309,7 @@
 			(uuid "232a8d63-2bb2-4235-b21a-5bad7d9fed56")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q15")
 					(unit 1)
@@ -5400,7 +5400,7 @@
 			(uuid "8be508a3-6489-4c05-8430-ac7ab544dbc8")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q4")
 					(unit 1)
@@ -5494,7 +5494,7 @@
 			(uuid "0501cbde-abce-400a-b52b-4330ac644024")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "U3")
 					(unit 1)
@@ -5598,7 +5598,7 @@
 			(uuid "c6adb1f8-2848-4382-82f3-283836d1669e")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN3")
 					(unit 4)
@@ -5689,7 +5689,7 @@
 			(uuid "a235b82a-b513-4587-b260-ce5d38271ea8")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q5")
 					(unit 1)
@@ -5755,7 +5755,7 @@
 			(uuid "d6732e74-797b-4498-ab3a-be1fcd389d8b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR021")
 					(unit 1)
@@ -5821,7 +5821,7 @@
 			(uuid "33a25447-80c5-4773-b63f-be8bc98d8abc")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR022")
 					(unit 1)
@@ -5887,7 +5887,7 @@
 			(uuid "19df61a3-d717-41c6-a719-168ef95a4bb6")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR015")
 					(unit 1)
@@ -5981,7 +5981,7 @@
 			(uuid "d03fefdc-2ecd-4089-8f37-70d50337b405")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "U2")
 					(unit 1)
@@ -6047,7 +6047,7 @@
 			(uuid "5d0ce274-9ade-488f-8be3-c13b6fb0aec0")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR025")
 					(unit 1)
@@ -6151,7 +6151,7 @@
 			(uuid "e013c0e0-169c-46ee-9056-2424296bcd02")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN2")
 					(unit 4)
@@ -6217,7 +6217,7 @@
 			(uuid "b1fe0e6e-3fec-4252-b70c-fb96db647f6e")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR08")
 					(unit 1)
@@ -6321,7 +6321,7 @@
 			(uuid "e013c0e0-169c-46ee-9056-2424296bcd03")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN2")
 					(unit 1)
@@ -6412,7 +6412,7 @@
 			(uuid "289062cf-d415-4c4c-bf2d-d49fd848e512")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q3")
 					(unit 1)
@@ -6478,7 +6478,7 @@
 			(uuid "f90ad807-08e8-4830-a53d-002d2eb835d1")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR017")
 					(unit 1)
@@ -6572,7 +6572,7 @@
 			(uuid "49430ca7-0a3c-4aa6-a1e9-3c4d6bc7a39f")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "U8")
 					(unit 1)
@@ -6676,7 +6676,7 @@
 			(uuid "c6adb1f8-2848-4382-82f3-283836d1669f")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN4")
 					(unit 4)
@@ -6767,7 +6767,7 @@
 			(uuid "daa4f3ba-a3c7-473e-af28-2df86784c05a")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q2")
 					(unit 1)
@@ -6833,7 +6833,7 @@
 			(uuid "5944d61c-7da5-476a-b362-daca7ca3ad2a")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR016")
 					(unit 1)
@@ -6899,7 +6899,7 @@
 			(uuid "a5d33df6-b697-42bc-aa12-7c70c6759bd5")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR012")
 					(unit 1)
@@ -6990,7 +6990,7 @@
 			(uuid "c6123fca-ec04-4e03-91ca-f60ffd1ef006")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q8")
 					(unit 1)
@@ -7056,7 +7056,7 @@
 			(uuid "e5c9524f-38df-4df9-a1b6-483ca4d89876")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR023")
 					(unit 1)
@@ -7122,7 +7122,7 @@
 			(uuid "ab8481bf-3af1-48b1-88ca-e72ffd93c10b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR020")
 					(unit 1)
@@ -7226,7 +7226,7 @@
 			(uuid "e013c0e0-169c-46ee-9056-2424296bcd04")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN1")
 					(unit 2)
@@ -7317,7 +7317,7 @@
 			(uuid "5b493771-a698-4e76-9410-f0b86ba535a0")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q13")
 					(unit 1)
@@ -7421,7 +7421,7 @@
 			(uuid "c6adb1f8-2848-4382-82f3-283836d166a0")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN4")
 					(unit 3)
@@ -7487,7 +7487,7 @@
 			(uuid "6d648d37-cd1c-4249-b630-2865f5d31951")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR013")
 					(unit 1)
@@ -7578,7 +7578,7 @@
 			(uuid "c4a5fbab-86ce-425f-8efe-702b5b1b0fff")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q10")
 					(unit 1)
@@ -7669,7 +7669,7 @@
 			(uuid "a95eda8b-888e-4156-973f-ea5a73b59727")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q11")
 					(unit 1)
@@ -7735,7 +7735,7 @@
 			(uuid "acd7f1b0-3f7c-45c3-95d8-b1f24d29865f")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR019")
 					(unit 1)
@@ -7829,7 +7829,7 @@
 			(uuid "3ea4fabc-6796-4a73-8a7c-0d47d2805737")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "U4")
 					(unit 1)
@@ -7920,7 +7920,7 @@
 			(uuid "c4d8adac-e33c-4ee8-87a8-e719e68d98de")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q6")
 					(unit 1)
@@ -8011,7 +8011,7 @@
 			(uuid "35d242ac-260a-421c-9dc5-927b0fc74a3b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q1")
 					(unit 1)
@@ -8077,7 +8077,7 @@
 			(uuid "ff239177-7048-4183-a636-e66d1d8c9023")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR02")
 					(unit 1)
@@ -8168,7 +8168,7 @@
 			(uuid "a6fd98e8-5469-4d67-a62d-9db392d8ec18")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q7")
 					(unit 1)
@@ -8272,7 +8272,7 @@
 			(uuid "e013c0e0-169c-46ee-9056-2424296bcd05")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN1")
 					(unit 3)
@@ -8366,7 +8366,7 @@
 			(uuid "2a95e1ea-5f93-46a7-9974-1ac2cb7395b0")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "U9")
 					(unit 1)
@@ -8470,7 +8470,7 @@
 			(uuid "e013c0e0-169c-46ee-9056-2424296bcd06")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN1")
 					(unit 4)
@@ -8564,7 +8564,7 @@
 			(uuid "08def177-6666-4571-b5cd-50598cf4c8ce")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "U7")
 					(unit 1)
@@ -8668,7 +8668,7 @@
 			(uuid "e013c0e0-169c-46ee-9056-2424296bcd07")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN1")
 					(unit 1)
@@ -8759,7 +8759,7 @@
 			(uuid "22afa38f-51ab-4bfc-8c73-c41a77c71551")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q14")
 					(unit 1)
@@ -8850,7 +8850,7 @@
 			(uuid "30b11431-d3b0-4cbf-bee6-c851c5c63efa")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "Q9")
 					(unit 1)
@@ -8944,7 +8944,7 @@
 			(uuid "3c8a7d83-5ef5-492c-aba2-d265ad329b37")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "U5")
 					(unit 1)
@@ -9010,7 +9010,7 @@
 			(uuid "b93b16ab-396b-430b-bdc4-fc0f52e42e6d")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR024")
 					(unit 1)

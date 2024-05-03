@@ -2778,12 +2778,12 @@
 				)
 			)
 		)
-		(symbol "adcmod:stm32dev"
+		(symbol "interface_module:stm32dev"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "U"
-				(at 8.382 31.75 0)
+				(at 6.604 34.798 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2799,7 +2799,7 @@
 				)
 			)
 			(property "Footprint" "footprints:stm32dev"
-				(at 15.1069 18.9059 0)
+				(at 24.13 37.846 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2837,45 +2837,9 @@
 						(type background)
 					)
 				)
-				(pin power_out line
-					(at 0 33.02 270)
-					(length 2.54)
-					(name "3v3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 -33.02 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin input line
 					(at -2.54 -33.02 90)
-					(length 2.54) hide
+					(length 2.54)
 					(name "GND"
 						(effects
 							(font
@@ -2965,7 +2929,7 @@
 				)
 				(pin input line
 					(at 0 33.02 270)
-					(length 2.54) hide
+					(length 2.54)
 					(name "3v3"
 						(effects
 							(font
@@ -8914,7 +8878,7 @@
 			(uuid "92d3386a-0581-4371-8fbe-a09910ab64b4")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR049")
 					(unit 1)
@@ -8948,7 +8912,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 279.4 84.328 90)
 			(effects
 				(font
@@ -8975,6 +8939,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "RMCF0603FT1R00CT-ND"
+			(at 279.4 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603FT1R00"
+			(at 279.4 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b79592c1-b4e6-4664-a76e-5519c0000255")
 		)
@@ -8982,7 +8964,7 @@
 			(uuid "db14aca5-14e4-4010-aae8-4980cb3197a1")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R9")
 					(unit 1)
@@ -9047,7 +9029,7 @@
 			(uuid "783c9d4b-c120-4a04-ba76-9217dc6bca05")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR050")
 					(unit 1)
@@ -9113,7 +9095,7 @@
 			(uuid "fbc914e9-c4bd-4d82-a362-47c37f0fb6ad")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR038")
 					(unit 1)
@@ -9180,7 +9162,7 @@
 			(uuid "99a648d1-aa5f-4fb3-b52b-3c4eaa3ad586")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR031")
 					(unit 1)
@@ -9216,7 +9198,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 32.512 41.91 90)
 			(effects
 				(font
@@ -9243,6 +9225,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "RMCF0603FT10K0CT-ND "
+			(at 34.29 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603FT10K0 "
+			(at 34.29 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c7551c93-d132-4eb5-a941-2ab78d0f8dff")
 		)
@@ -9250,7 +9250,7 @@
 			(uuid "59f96215-73ad-48d7-8615-c9425e007a3c")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R1")
 					(unit 1)
@@ -9284,7 +9284,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 172.72 47.498 90)
 			(effects
 				(font
@@ -9318,7 +9318,7 @@
 			(uuid "b4a733cb-b9aa-4bf0-953e-2598a992a586")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R14")
 					(unit 1)
@@ -9354,7 +9354,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 299.4152 165.1 0)
 			(effects
 				(font
@@ -9381,6 +9381,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "1276-1938-1-ND "
+			(at 298.45 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL10B104KO8NFNC "
+			(at 298.45 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a3f25626-eff1-4add-b4ad-0cdd47f1d6ba")
 		)
@@ -9388,7 +9406,7 @@
 			(uuid "17fdd157-423d-418a-a37e-6106433c606b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "C7")
 					(unit 1)
@@ -9454,7 +9472,7 @@
 			(uuid "6c295bad-6343-415c-a68f-85e8369f8e70")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR039")
 					(unit 1)
@@ -9521,7 +9539,7 @@
 			(uuid "7b31d2c9-227c-42e9-aca9-71ef95a918eb")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR034")
 					(unit 1)
@@ -9587,7 +9605,7 @@
 			(uuid "01f9a3d0-3068-473b-88e9-d242aa5de338")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR026")
 					(unit 1)
@@ -9652,7 +9670,7 @@
 			(uuid "f13859e5-a446-4462-a5a0-7b0c7dd1ad57")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR044")
 					(unit 1)
@@ -9719,7 +9737,7 @@
 			(uuid "48cdd836-e126-4301-9c68-b74c7671de49")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR010")
 					(unit 1)
@@ -9755,7 +9773,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 165.608 170.18 90)
 			(effects
 				(font
@@ -9789,7 +9807,7 @@
 			(uuid "ea548374-f804-4d71-8c1b-e10230f429b1")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R25")
 					(unit 1)
@@ -9855,7 +9873,7 @@
 			(uuid "6416cb94-87d0-4d3e-8c5d-fe310053e20e")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR07")
 					(unit 1)
@@ -9947,7 +9965,7 @@
 			(uuid "52079f77-955e-49b5-9197-859222ae7968")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "D7")
 					(unit 1)
@@ -10012,7 +10030,7 @@
 			(uuid "2e173d77-5af6-4846-bf2f-c6110c6f164c")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR029")
 					(unit 1)
@@ -10046,7 +10064,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:Nidec_Copal_SH-7010C"
 			(at 44.45 92.71 0)
 			(effects
 				(font
@@ -10074,6 +10092,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "CT3068-ND"
+			(at 52.07 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "220ADA16"
+			(at 52.07 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "C"
 			(uuid "ab24d1db-fcbe-43ab-b46f-156afbb7dcef")
 		)
@@ -10090,7 +10126,7 @@
 			(uuid "064dd764-4d51-46bf-adce-2dc5e3a708c4")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "SW1")
 					(unit 1)
@@ -10157,7 +10193,7 @@
 			(uuid "45bfd055-4440-481e-b064-e12ba8f83a29")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR01")
 					(unit 1)
@@ -10222,7 +10258,7 @@
 			(uuid "d82c0cc7-97f2-4261-9e9b-c9705e04c234")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR051")
 					(unit 1)
@@ -10258,7 +10294,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 42.672 54.61 90)
 			(effects
 				(font
@@ -10292,7 +10328,7 @@
 			(uuid "59f96215-73ad-48d7-8615-c9425e007a3d")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R4")
 					(unit 1)
@@ -10325,7 +10361,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 332.74 99.568 90)
 			(effects
 				(font
@@ -10352,6 +10388,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "RMCF0603ZT0R00CT-ND"
+			(at 332.74 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603ZT0R00"
+			(at 332.74 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5880755b-ebf9-4d7e-b9c7-9fbdacb0c016")
 		)
@@ -10359,7 +10413,7 @@
 			(uuid "ccaca49d-8349-4686-8de1-c5730853e9dc")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R5")
 					(unit 1)
@@ -10394,7 +10448,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 260.0452 93.98 0)
 			(effects
 				(font
@@ -10421,6 +10475,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "1276-1861-1-ND "
+			(at 259.08 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL10A105KL8NNNC "
+			(at 259.08 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "cb0e45cf-c299-4254-91ec-01f83d5d759d")
 		)
@@ -10428,7 +10500,7 @@
 			(uuid "c1c4f763-ef5d-4512-827b-3e0ccdb3dd71")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "C4")
 					(unit 1)
@@ -10520,7 +10592,7 @@
 			(uuid "98757d28-f38b-4941-be4c-4104f40f8344")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "D6")
 					(unit 1)
@@ -10555,7 +10627,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 286.7152 93.98 0)
 			(effects
 				(font
@@ -10582,6 +10654,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "1276-1861-1-ND "
+			(at 285.75 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL10A105KL8NNNC "
+			(at 285.75 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "51b414f4-5660-46c8-a63e-63c7458b0456")
 		)
@@ -10589,7 +10679,7 @@
 			(uuid "35418b13-9821-4cd3-b137-475d0a80b6f5")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "C5")
 					(unit 1)
@@ -10656,7 +10746,7 @@
 			(uuid "bfb616b8-37f0-4a68-90b2-1db827650c41")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR043")
 					(unit 1)
@@ -10723,7 +10813,7 @@
 			(uuid "4d2001bc-f89b-41cc-9db7-39e0e9f0474c")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR036")
 					(unit 1)
@@ -10759,7 +10849,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 32.512 54.61 90)
 			(effects
 				(font
@@ -10793,7 +10883,7 @@
 			(uuid "59f96215-73ad-48d7-8615-c9425e007a3e")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R2")
 					(unit 1)
@@ -10885,7 +10975,7 @@
 			(uuid "96187bc7-967d-48ea-a8ca-fad09c8b3334")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "D8")
 					(unit 1)
@@ -10921,7 +11011,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 276.352 161.29 90)
 			(effects
 				(font
@@ -10948,6 +11038,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "RMCF0603ZT0R00CT-ND"
+			(at 278.13 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603ZT0R00"
+			(at 278.13 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "292c375c-9988-4432-bb72-a7642f0da782")
 		)
@@ -10955,7 +11063,7 @@
 			(uuid "8edb3a0d-a0ce-491e-835d-0c761e0cc22a")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R10")
 					(unit 1)
@@ -10991,7 +11099,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 166.878 130.81 90)
 			(effects
 				(font
@@ -11025,7 +11133,7 @@
 			(uuid "88db186f-31f6-4910-bfb1-d1b8fb8218bc")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R21")
 					(unit 1)
@@ -11090,7 +11198,7 @@
 			(uuid "8e0be1b7-c303-4476-b624-eba3a3c9e048")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR058")
 					(unit 1)
@@ -11126,7 +11234,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 166.878 78.74 90)
 			(effects
 				(font
@@ -11160,7 +11268,7 @@
 			(uuid "738363aa-30f1-4acb-959e-386e2bad9620")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R15")
 					(unit 1)
@@ -11252,7 +11360,7 @@
 			(uuid "4bc3c5e5-ae04-4875-be68-f6b1e7560a48")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "D2")
 					(unit 1)
@@ -11317,7 +11425,7 @@
 			(uuid "48d57a2c-f50b-4ab9-986e-6b4dbb5f347f")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR059")
 					(unit 1)
@@ -11353,7 +11461,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 299.4152 93.98 0)
 			(effects
 				(font
@@ -11380,6 +11488,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "1276-1861-1-ND "
+			(at 298.45 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL10A105KL8NNNC "
+			(at 298.45 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8b37f38f-9268-442c-82b0-1942a039bb36")
 		)
@@ -11387,7 +11513,7 @@
 			(uuid "fa001ab3-b090-4d1f-8830-7e459ad9bf74")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "C2")
 					(unit 1)
@@ -11421,7 +11547,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 172.72 126.238 90)
 			(effects
 				(font
@@ -11455,7 +11581,7 @@
 			(uuid "ccb1f461-58b9-4ac1-a9cf-7c6788c4cc61")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R20")
 					(unit 1)
@@ -11488,7 +11614,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 332.74 104.648 90)
 			(effects
 				(font
@@ -11515,14 +11641,32 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "RMCF0603ZT0R00CT-ND"
+			(at 332.74 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603ZT0R00"
+			(at 332.74 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
-			(uuid "5880755b-ebf9-4d7e-b9c7-9fbdacb0c016")
+			(uuid "5880755b-ebf9-4d7e-b9c7-9fbdacb0c017")
 		)
 		(pin "1"
-			(uuid "ccaca49d-8349-4686-8de1-c5730853e9dc")
+			(uuid "ccaca49d-8349-4686-8de1-c5730853e9dd")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R7")
 					(unit 1)
@@ -11555,7 +11699,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 332.74 102.108 90)
 			(effects
 				(font
@@ -11582,14 +11726,32 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "RMCF0603ZT0R00CT-ND"
+			(at 332.74 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603ZT0R00"
+			(at 332.74 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
-			(uuid "5880755b-ebf9-4d7e-b9c7-9fbdacb0c016")
+			(uuid "5880755b-ebf9-4d7e-b9c7-9fbdacb0c018")
 		)
 		(pin "1"
-			(uuid "ccaca49d-8349-4686-8de1-c5730853e9dc")
+			(uuid "ccaca49d-8349-4686-8de1-c5730853e9de")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R6")
 					(unit 1)
@@ -11623,7 +11785,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 171.45 165.608 90)
 			(effects
 				(font
@@ -11657,7 +11819,7 @@
 			(uuid "411c98ee-c89b-4632-83aa-99a5c580d665")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R24")
 					(unit 1)
@@ -11722,7 +11884,7 @@
 			(uuid "79ac26e5-52d0-48c0-9f74-68265edce25b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR055")
 					(unit 1)
@@ -11825,7 +11987,7 @@
 			(uuid "50f26a6c-a725-4a2e-9415-d498124dec82")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "J6")
 					(unit 1)
@@ -11891,7 +12053,7 @@
 			(uuid "cf8d3580-274c-4356-b6e6-621e172d8f2b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR011")
 					(unit 1)
@@ -11957,7 +12119,7 @@
 			(uuid "2652e23a-7129-490c-b4ad-59b19d46837e")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR030")
 					(unit 1)
@@ -12024,7 +12186,7 @@
 			(uuid "5b929b18-ab17-4109-a8f2-111bd7f94349")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR035")
 					(unit 1)
@@ -12060,7 +12222,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 166.878 118.11 90)
 			(effects
 				(font
@@ -12094,7 +12256,7 @@
 			(uuid "516da524-63f3-4545-aa61-d6676ec79c38")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R19")
 					(unit 1)
@@ -12161,7 +12323,7 @@
 			(uuid "1db4d657-fbcf-4d82-a93f-dfcf96d492c4")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR037")
 					(unit 1)
@@ -12253,7 +12415,7 @@
 			(uuid "e83be795-12c8-4dbd-ad89-3b3657db741b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "D3")
 					(unit 1)
@@ -12289,7 +12451,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 166.878 91.44 90)
 			(effects
 				(font
@@ -12323,7 +12485,7 @@
 			(uuid "14c5bbbc-d5d5-4575-aeb6-90769a310c96")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R17")
 					(unit 1)
@@ -12388,7 +12550,7 @@
 			(uuid "0f3ef5b2-a6f1-4611-b407-c0e9437c3246")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR028")
 					(unit 1)
@@ -12455,7 +12617,7 @@
 			(uuid "d1a99f31-78af-41f8-9bfd-dfa8056e877f")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR032")
 					(unit 1)
@@ -12547,7 +12709,7 @@
 			(uuid "3b723fff-6d30-4a50-9f18-2d03a69ab536")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "D5")
 					(unit 1)
@@ -12612,7 +12774,7 @@
 			(uuid "fa8d7d31-6f85-4dee-9430-0ab6b8c80e3d")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR057")
 					(unit 1)
@@ -12648,7 +12810,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 166.878 39.37 90)
 			(effects
 				(font
@@ -12682,7 +12844,7 @@
 			(uuid "d247f2e8-0e75-43b1-a566-177d3822097d")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R11")
 					(unit 1)
@@ -12747,7 +12909,7 @@
 			(uuid "1a91da3a-855d-4206-8e42-e65538d4f8c1")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR027")
 					(unit 1)
@@ -12813,7 +12975,7 @@
 			(uuid "9d9c8877-78a3-49d6-8723-82722ce494bb")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR042")
 					(unit 1)
@@ -12878,7 +13040,7 @@
 			(uuid "fea6f46b-96b6-4299-9b1f-2778f1395780")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR046")
 					(unit 1)
@@ -12943,7 +13105,7 @@
 			(uuid "8a958a55-930f-437d-96d1-ce007cb381de")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR045")
 					(unit 1)
@@ -12976,7 +13138,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 279.4 99.568 90)
 			(effects
 				(font
@@ -13003,6 +13165,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "RMCF0603ZT0R00CT-ND"
+			(at 279.4 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603ZT0R00"
+			(at 279.4 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9613b085-4d26-47cf-b472-685d66c19aa6")
 		)
@@ -13010,7 +13190,7 @@
 			(uuid "cc58dfb9-37a4-4318-a7cb-4ca1f73b4124")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R8")
 					(unit 1)
@@ -13077,7 +13257,7 @@
 			(uuid "b891dace-bb0c-430b-a806-1f84c62f830e")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR033")
 					(unit 1)
@@ -13111,7 +13291,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 172.72 60.198 90)
 			(effects
 				(font
@@ -13145,7 +13325,7 @@
 			(uuid "20c779be-c8ce-412d-93aa-97f9097454bd")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R13")
 					(unit 1)
@@ -13211,7 +13391,7 @@
 			(uuid "a7036288-3a10-407e-9154-d883b127ca9e")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR041")
 					(unit 1)
@@ -13277,7 +13457,7 @@
 			(uuid "a0613a52-67c8-4f09-a348-0eb2f37d8d21")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR05")
 					(unit 1)
@@ -13286,7 +13466,7 @@
 		)
 	)
 	(symbol
-		(lib_id "adcmod:stm32dev")
+		(lib_id "interface_module:stm32dev")
 		(at 92.71 73.66 0)
 		(mirror y)
 		(unit 1)
@@ -13297,25 +13477,25 @@
 		(fields_autoplaced yes)
 		(uuid "a9edff2f-e621-4c42-928e-e4178e60f34c")
 		(property "Reference" "U1"
-			(at 87.9759 106.68 0)
+			(at 98.2665 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "~"
-			(at 87.9759 107.95 0)
+			(at 98.2665 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "footprints:stm32dev"
-			(at 77.6031 54.7541 0)
+			(at 68.58 35.814 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13370,9 +13550,6 @@
 		)
 		(pin "19"
 			(uuid "9e8c40ff-01f8-4950-b2be-9e7d39168d89")
-		)
-		(pin ""
-			(uuid "8a9f914a-ff14-4663-b3f0-881040865039")
 		)
 		(pin "36"
 			(uuid "f0b64e54-8fd9-40d8-a621-612b421361d8")
@@ -13506,11 +13683,8 @@
 		(pin "12"
 			(uuid "193af29b-e9dc-4071-9483-1ba87df61c40")
 		)
-		(pin ""
-			(uuid "1ce59916-26f9-4a74-b010-afe3c40f014f")
-		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "U1")
 					(unit 1)
@@ -13613,7 +13787,7 @@
 			(uuid "ce34ab2b-a28e-4274-acef-439e6c72725b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "J4")
 					(unit 1)
@@ -13705,7 +13879,7 @@
 			(uuid "e9ccedac-10d0-48eb-90f4-d93c1ab47c9d")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "D4")
 					(unit 1)
@@ -13741,7 +13915,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 393.3952 93.98 0)
 			(effects
 				(font
@@ -13768,6 +13942,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "1276-1861-1-ND "
+			(at 392.43 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL10A105KL8NNNC "
+			(at 392.43 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ee6cc52f-14cf-4a81-8591-680b038272b6")
 		)
@@ -13775,7 +13967,7 @@
 			(uuid "d1052741-1b96-4ed4-948b-5ed39044cae2")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "C1")
 					(unit 1)
@@ -13809,7 +14001,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 171.45 178.308 90)
 			(effects
 				(font
@@ -13843,7 +14035,7 @@
 			(uuid "e471689e-9079-4d0f-8a18-14f377bb624e")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R26")
 					(unit 1)
@@ -13908,7 +14100,7 @@
 			(uuid "7c442710-94c9-45a2-b8a3-a4bde55d5bf8")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR053")
 					(unit 1)
@@ -14000,7 +14192,7 @@
 			(uuid "009f489c-aee6-4d5f-a9da-3008064a6da1")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "D1")
 					(unit 1)
@@ -14034,7 +14226,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 172.72 99.568 90)
 			(effects
 				(font
@@ -14068,7 +14260,7 @@
 			(uuid "9f87c7ea-844b-49c2-aa4e-fbc283bd1223")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R18")
 					(unit 1)
@@ -14133,7 +14325,7 @@
 			(uuid "9fd0b777-b91a-4518-889d-676d6b403c16")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR056")
 					(unit 1)
@@ -14290,7 +14482,7 @@
 			(uuid "3ac7ba26-44eb-41be-bde0-c28ed1cb053b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "U10")
 					(unit 1)
@@ -14326,7 +14518,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 165.608 157.48 90)
 			(effects
 				(font
@@ -14360,7 +14552,7 @@
 			(uuid "f5647957-6581-4bbd-b369-b432c2273e84")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R23")
 					(unit 1)
@@ -14395,7 +14587,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 271.4752 93.98 0)
 			(effects
 				(font
@@ -14422,6 +14614,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "478-0603DD106MAT2ACT-ND "
+			(at 270.51 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603DD106MAT2A "
+			(at 270.51 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e4fe5654-2af3-4539-af96-2591e88f5a37")
 		)
@@ -14429,7 +14639,7 @@
 			(uuid "4e191a0f-13c2-4c8d-b59c-3095647f09c6")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "C3")
 					(unit 1)
@@ -14494,7 +14704,7 @@
 			(uuid "4d097d5c-04af-4655-a687-15572df1ea94")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR052")
 					(unit 1)
@@ -14559,7 +14769,7 @@
 			(uuid "599810c5-b061-4d66-939d-0ff8410fb514")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR048")
 					(unit 1)
@@ -14624,7 +14834,7 @@
 			(uuid "35054d95-6b45-47f7-8b2d-01e9478a5134")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR054")
 					(unit 1)
@@ -14658,7 +14868,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 172.72 138.938 90)
 			(effects
 				(font
@@ -14692,7 +14902,7 @@
 			(uuid "39df640f-9c4c-4c7c-b790-62b8fb1249f4")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R22")
 					(unit 1)
@@ -14759,7 +14969,7 @@
 			(uuid "5c5c2ccb-2b2d-4e08-9e99-15595540f66b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR040")
 					(unit 1)
@@ -14826,7 +15036,7 @@
 			(uuid "6746ae20-7613-47b7-adf3-0e07ce714f88")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR06")
 					(unit 1)
@@ -14971,7 +15181,7 @@
 			(uuid "1cc2556a-ead7-45e9-bc89-e5c78b03cf4b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "U11")
 					(unit 1)
@@ -15037,7 +15247,7 @@
 			(uuid "15f94c1f-ff3b-4ec1-838b-9de6f7ed73fd")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR03")
 					(unit 1)
@@ -15102,7 +15312,7 @@
 			(uuid "6f764854-0991-49da-8dd0-88df6327e01e")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "#PWR047")
 					(unit 1)
@@ -15138,7 +15348,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 42.672 41.91 90)
 			(effects
 				(font
@@ -15165,6 +15375,24 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "RMCF0603FT10K0CT-ND "
+			(at 44.45 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603FT10K0 "
+			(at 44.45 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c7551c93-d132-4eb5-a941-2ab78d0f8e02")
 		)
@@ -15172,7 +15400,7 @@
 			(uuid "59f96215-73ad-48d7-8615-c9425e007a3f")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R3")
 					(unit 1)
@@ -15208,7 +15436,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 289.2552 165.1 0)
 			(effects
 				(font
@@ -15235,14 +15463,32 @@
 				(hide yes)
 			)
 		)
+		(property "DPN" "478-0603DD106MAT2ACT-ND "
+			(at 288.29 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603DD106MAT2A "
+			(at 288.29 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
-			(uuid "a3f25626-eff1-4add-b4ad-0cdd47f1d6ba")
+			(uuid "a3f25626-eff1-4add-b4ad-0cdd47f1d6bb")
 		)
 		(pin "2"
-			(uuid "17fdd157-423d-418a-a37e-6106433c606b")
+			(uuid "17fdd157-423d-418a-a37e-6106433c606c")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "C6")
 					(unit 1)
@@ -15278,7 +15524,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 166.878 52.07 90)
 			(effects
 				(font
@@ -15306,13 +15552,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "3faff891-cb11-42ef-817f-faa4056cf7ea")
+			(uuid "3faff891-cb11-42ef-817f-faa4056cf7eb")
 		)
 		(pin "2"
-			(uuid "d247f2e8-0e75-43b1-a566-177d3822097d")
+			(uuid "d247f2e8-0e75-43b1-a566-177d3822097e")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R12")
 					(unit 1)
@@ -15346,7 +15592,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 172.72 86.868 90)
 			(effects
 				(font
@@ -15380,7 +15626,7 @@
 			(uuid "a38e6b8e-720c-471a-a624-2d2f1f2f425b")
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(reference "R16")
 					(unit 1)
@@ -15419,7 +15665,7 @@
 			)
 		)
 		(instances
-			(project "adc-module"
+			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
 					(page "2")
 				)
