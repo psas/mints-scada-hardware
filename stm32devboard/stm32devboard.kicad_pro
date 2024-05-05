@@ -58,11 +58,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "lib_footprint_mismatch|139203807|100563000|aa7fcc84-6ad9-4910-80c9-ff9c2f2da5c4|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|148093807|73528000|4e652475-8c8f-4355-9d99-c1ee23255b89|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|156983807|100563000|baf01057-649d-4233-af08-91d0f9509afe|00000000-0000-0000-0000-000000000000"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -506,7 +502,7 @@
       "plot": "pcb",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "stm32devboard.step",
       "svg": "",
       "vrml": ""
     },

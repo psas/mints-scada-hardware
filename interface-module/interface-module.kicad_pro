@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.0
+          "min_clearance": 0.2
         }
       },
       "diff_pair_dimensions": [
@@ -58,7 +58,20 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "courtyards_overlap|145779999|48250001|67da96c0-0101-46dd-a18f-6e495a94a0e3|caa3b8fc-cc65-4836-b1d6-a4cc4e4e4b7a",
+        "courtyards_overlap|145779999|58450001|3287108d-d33e-41c4-8826-35419daafa2f|7865228f-33c1-48d2-8882-c73b0f89c4b7",
+        "courtyards_overlap|145829999|68652501|23c7b3fc-a057-475f-a9fe-db1eb27ebb52|422198f9-653d-40bc-a51d-f9968c886815",
+        "courtyards_overlap|145829999|78802501|d4596ed3-3cfb-48a7-947c-0162ef2be015|e478df96-5561-4a90-9760-19facc35f9a7",
+        "courtyards_overlap|186120001|62520001|a5287fab-32a8-4fe1-adbb-fb92dee04332|e520c577-5e09-4f73-b806-1aa22ce92bed",
+        "courtyards_overlap|194634715|30542706|c8897db5-1888-4085-9668-7f2cf37128f4|e520c577-5e09-4f73-b806-1aa22ce92bed",
+        "courtyards_overlap|194634715|85542706|2c970c8a-c88b-4c5d-87d0-1c678e2acb77|e520c577-5e09-4f73-b806-1aa22ce92bed",
+        "courtyards_overlap|196770001|72595001|e1798dfb-66a9-429d-ab3d-50192661efeb|e520c577-5e09-4f73-b806-1aa22ce92bed",
+        "courtyards_overlap|196770001|76845001|13ae6d11-3f34-4607-8cb4-49c720cba593|e520c577-5e09-4f73-b806-1aa22ce92bed",
+        "courtyards_overlap|198420001|76845001|7803132a-670c-433a-b629-674c7c16d33c|e520c577-5e09-4f73-b806-1aa22ce92bed",
+        "courtyards_overlap|198592857|72595001|288c374d-cf60-450a-a686-b221bc7c5fbc|e520c577-5e09-4f73-b806-1aa22ce92bed",
+        "lib_footprint_mismatch|195008000|33975000|c8897db5-1888-4085-9668-7f2cf37128f4|00000000-0000-0000-0000-000000000000"
+      ],
       "meta": {
         "version": 2
       },
@@ -124,7 +137,7 @@
         "min_microvia_drill": 0.1,
         "min_resolved_spokes": 2,
         "min_silk_clearance": 0.0,
-        "min_text_height": 0.8,
+        "min_text_height": 0.5,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.254,
         "min_track_width": 0.1524,
