@@ -5519,7 +5519,8 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x08")
-		(at 58.42 143.51 0)
+		(at 58.42 146.05 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5527,7 +5528,7 @@
 		(dnp no)
 		(uuid "7441ede3-713d-454a-af2a-547960450d5d")
 		(property "Reference" "J6"
-			(at 58.166 132.588 0)
+			(at 58.166 156.972 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5535,7 +5536,7 @@
 			)
 		)
 		(property "Value" "Conn_01x08"
-			(at 58.42 130.302 0)
+			(at 58.42 159.258 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5543,8 +5544,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TerminalBlock:TerminalBlock_bornier-8_P5.08mm"
-			(at 58.42 143.51 0)
+		(property "Footprint" "footprints:TerminalBlock_CUI-8_P5.08mm"
+			(at 58.42 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5553,7 +5554,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.cuidevices.com/product/resource/tb007-508.pdf"
-			(at 58.42 143.51 0)
+			(at 58.42 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5562,7 +5563,7 @@
 			)
 		)
 		(property "Description" "8 Position Wire to Board Terminal Block Horizontal with Board 0.200\" (5.08mm) Through Hole"
-			(at 58.42 143.51 0)
+			(at 58.42 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5571,7 +5572,7 @@
 			)
 		)
 		(property "DPN" "102-6209-ND"
-			(at 58.42 143.51 0)
+			(at 58.42 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5580,7 +5581,7 @@
 			)
 		)
 		(property "MPN" "TB007-508-08BE"
-			(at 58.42 143.51 0)
+			(at 58.42 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6291,7 +6292,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TerminalBlock:TerminalBlock_bornier-8_P5.08mm"
+		(property "Footprint" "footprints:TerminalBlock_CUI-8_P5.08mm"
 			(at 125.73 135.89 0)
 			(effects
 				(font

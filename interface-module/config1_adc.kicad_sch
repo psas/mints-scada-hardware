@@ -245,6 +245,108 @@
 				)
 			)
 		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.762) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:C"
 			(pin_numbers hide)
 			(pin_names
@@ -1877,10 +1979,6 @@
 	(no_connect
 		(at 217.17 182.88)
 		(uuid "329a44fd-6ce7-4f9a-b9b2-14f5d1b13b66")
-	)
-	(no_connect
-		(at 217.17 185.42)
-		(uuid "785f0794-c90a-40ab-86ce-1247d0fccb1a")
 	)
 	(wire
 		(pts
@@ -4085,7 +4183,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf"
+		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf?did=3384&prodName=1SS396"
 			(at 184.15 171.45 0)
 			(effects
 				(font
@@ -4400,7 +4498,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf"
+		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf?did=3384&prodName=1SS396"
 			(at 184.15 132.08 0)
 			(effects
 				(font
@@ -4972,7 +5070,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf"
+		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf?did=3384&prodName=1SS396"
 			(at 198.12 158.75 0)
 			(effects
 				(font
@@ -5699,6 +5797,71 @@
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/a6bf226d-205a-46a5-bb3b-288643662dd6"
 					(reference "R113")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 217.17 185.42 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "621eff11-bb4b-4f14-a4e3-d39e52113bda")
+		(property "Reference" "TP201"
+			(at 214.122 187.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 213.868 183.0648 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 217.17 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 217.17 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 217.17 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fd766583-46aa-4894-ae1a-e786048f9357")
+		)
+		(instances
+			(project "interface-module"
+				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/a6bf226d-205a-46a5-bb3b-288643662dd6"
+					(reference "TP201")
 					(unit 1)
 				)
 			)
@@ -6458,7 +6621,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf"
+		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf?did=3384&prodName=1SS396"
 			(at 196.85 198.12 0)
 			(effects
 				(font
@@ -6550,7 +6713,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf"
+		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf?did=3384&prodName=1SS396"
 			(at 198.12 119.38 0)
 			(effects
 				(font
@@ -6796,7 +6959,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf"
+		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf?did=3384&prodName=1SS396"
 			(at 184.15 92.71 0)
 			(effects
 				(font
@@ -8219,7 +8382,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf"
+		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf?did=3384&prodName=1SS396"
 			(at 182.88 210.82 0)
 			(effects
 				(font
@@ -8311,7 +8474,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf"
+		(property "Datasheet" "https://toshiba.semicon-storage.com/info/1SS396_datasheet_en_20230615.pdf?did=3384&prodName=1SS396"
 			(at 198.12 80.01 0)
 			(effects
 				(font
