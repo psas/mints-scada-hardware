@@ -552,7 +552,7 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "gnd",
-        "pcb_color": "rgb(194, 194, 194)",
+        "pcb_color": "rgb(70, 70, 70)",
         "schematic_color": "rgb(194, 194, 194)",
         "track_width": 0.2,
         "via_diameter": 0.6,
@@ -662,12 +662,21 @@
       "IN3+": "analog",
       "IN3-": "analog",
       "Net-(J1-Pin_1)": "iso_power",
+      "Net-(J201-Pin_1)": "iso_power",
       "Net-(J6-Pin_1)": "power",
       "Net-(J6-Pin_3)": "power",
       "Net-(RN1A-R1.1)": "data",
       "Net-(RN1B-R2.1)": "data",
       "Net-(RN1C-R3.1)": "data",
       "Net-(RN1D-R4.1)": "data",
+      "Net-(RN201A-R1.1)": "data",
+      "Net-(RN201B-R2.1)": "data",
+      "Net-(RN201C-R3.1)": "data",
+      "Net-(RN201D-R4.1)": "data",
+      "Net-(RN202A-R1.1)": "data",
+      "Net-(RN202B-R2.1)": "data",
+      "Net-(RN202C-R3.1)": "data",
+      "Net-(RN202D-R4.1)": "data",
       "Net-(RN2A-R1.1)": "data",
       "Net-(RN2B-R2.1)": "data",
       "Net-(RN2C-R3.1)": "data",
@@ -682,8 +691,13 @@
       "Net-(U10-A0)": "config",
       "Net-(U10-A1)": "config",
       "Net-(U10-A2)": "config",
+      "Net-(U101-REFIN+)": "analog",
+      "Net-(U101-REFIN-)": "analog",
       "Net-(U11-REFIN+)": "analog",
       "Net-(U11-REFIN-)": "analog",
+      "Net-(U301-A0)": "config",
+      "Net-(U301-A1)": "config",
+      "Net-(U301-A2)": "config",
       "OUT0{slash}IN0+": "output",
       "OUT1{slash}IN0-": "output",
       "OUT2{slash}IN1+": "output",
@@ -723,7 +737,7 @@
     "page_layout_descr_file": ""
   },
   "schematic": {
-    "annotate_start_num": 0,
+    "annotate_start_num": 200,
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -850,8 +864,16 @@
       "Root"
     ],
     [
+      "a6bf226d-205a-46a5-bb3b-288643662dd6",
+      "adc"
+    ],
+    [
       "8963f727-a2fb-4295-80c1-7740212329e3",
       "outputs"
+    ],
+    [
+      "20ea9e51-cdae-4006-831f-d6e4fa6165cb",
+      "I2C"
     ]
   ],
   "text_variables": {}
