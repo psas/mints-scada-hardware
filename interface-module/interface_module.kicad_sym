@@ -7,7 +7,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(property "Reference" "U"
-			(at 6.604 34.798 0)
+			(at 7.874 34.798 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -62,7 +62,7 @@
 				)
 			)
 			(pin input line
-				(at -2.54 -33.02 90)
+				(at -5.08 -33.02 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -170,8 +170,8 @@
 				)
 			)
 			(pin input line
-				(at -2.54 -33.02 90)
-				(length 2.54) hide
+				(at 0 -33.02 90)
+				(length 2.54)
 				(name "GND"
 					(effects
 						(font
@@ -263,7 +263,7 @@
 			)
 			(pin input line
 				(at -2.54 -33.02 90)
-				(length 2.54) hide
+				(length 2.54)
 				(name "GND"
 					(effects
 						(font
@@ -352,8 +352,8 @@
 				)
 			)
 			(pin input line
-				(at 0 33.02 270)
-				(length 2.54) hide
+				(at 2.54 33.02 270)
+				(length 2.54)
 				(name "3v3"
 					(effects
 						(font
@@ -424,7 +424,7 @@
 				)
 			)
 			(pin power_out line
-				(at 2.54 -33.02 90)
+				(at 10.16 -33.02 90)
 				(length 2.54)
 				(name "GNDA"
 					(effects
@@ -605,7 +605,7 @@
 				)
 			)
 			(pin power_out line
-				(at 2.54 33.02 270)
+				(at 10.16 33.02 270)
 				(length 2.54)
 				(name "3v3A"
 					(effects
@@ -659,8 +659,8 @@
 				)
 			)
 			(pin input line
-				(at 0 33.02 270)
-				(length 2.54) hide
+				(at -5.08 33.02 270)
+				(length 2.54)
 				(name "3v3"
 					(effects
 						(font
@@ -695,8 +695,8 @@
 				)
 			)
 			(pin input line
-				(at -2.54 -33.02 90)
-				(length 2.54) hide
+				(at 2.54 -33.02 90)
+				(length 2.54)
 				(name "GND"
 					(effects
 						(font
@@ -749,8 +749,8 @@
 				)
 			)
 			(pin input line
-				(at 0 33.02 270)
-				(length 2.54) hide
+				(at 5.08 33.02 270)
+				(length 2.54)
 				(name "3v3"
 					(effects
 						(font
@@ -803,8 +803,8 @@
 				)
 			)
 			(pin input line
-				(at -2.54 -33.02 90)
-				(length 2.54) hide
+				(at 5.08 -33.02 90)
+				(length 2.54)
 				(name "GND"
 					(effects
 						(font
@@ -821,7 +821,7 @@
 				)
 			)
 			(pin power_in line
-				(at -2.54 33.02 270)
+				(at -10.16 33.02 270)
 				(length 2.54)
 				(name "VBUS"
 					(effects
@@ -839,8 +839,8 @@
 				)
 			)
 			(pin input line
-				(at 0 33.02 270)
-				(length 2.54) hide
+				(at -2.54 33.02 270)
+				(length 2.54)
 				(name "3v3"
 					(effects
 						(font
