@@ -1769,7 +1769,7 @@
 					)
 				)
 				(pin input line
-					(at 15.3094 20.5547 180)
+					(at 15.24 20.32 180)
 					(length 2.54)
 					(name "PWR_EN"
 						(effects
@@ -2374,12 +2374,12 @@
 		(uuid "0525b23b-577e-403e-8124-239bae3fd64c")
 	)
 	(no_connect
-		(at 77.47 66.04)
-		(uuid "2f540cc7-5ee7-44a6-9c5a-e70cffbd78e5")
+		(at 77.47 83.82)
+		(uuid "284ba83f-2975-48df-8dfa-3c9e65e169f7")
 	)
 	(no_connect
-		(at 77.47 53.34)
-		(uuid "5ca3a4e3-fddb-4d10-8efa-b3699250e72f")
+		(at 77.47 66.04)
+		(uuid "2f540cc7-5ee7-44a6-9c5a-e70cffbd78e5")
 	)
 	(no_connect
 		(at 90.17 40.64)
@@ -2398,6 +2398,14 @@
 		(uuid "84643968-ab15-4346-ba41-6117fc6f3781")
 	)
 	(no_connect
+		(at 77.47 53.34)
+		(uuid "9b362464-d369-4275-b450-91c67a7a3345")
+	)
+	(no_connect
+		(at 77.47 86.36)
+		(uuid "a416b352-7ba1-4720-89c8-4d520306c4ac")
+	)
+	(no_connect
 		(at 77.47 55.88)
 		(uuid "c064449d-fd38-4995-b607-ab9f6af768a4")
 	)
@@ -2406,8 +2414,16 @@
 		(uuid "d4261201-0aa5-40d1-904a-388e9cd5cba1")
 	)
 	(no_connect
+		(at 77.47 68.58)
+		(uuid "da75b59f-33f8-4493-904c-3e328e0c87fc")
+	)
+	(no_connect
 		(at 107.95 78.74)
 		(uuid "dd65c34b-1ea7-40b5-8250-d60e8326c4d5")
+	)
+	(no_connect
+		(at 77.47 81.28)
+		(uuid "e373038b-5457-4b05-adac-cf66259e564b")
 	)
 	(no_connect
 		(at 77.47 96.52)
