@@ -503,7 +503,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "pcb",
+      "plot": "build",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "stm32devboard.step",
