@@ -4033,7 +4033,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "CL10A105KL8NNNC "
+		(property "MPN" "CL10A105KL8NNNC"
 			(at 223.52 133.35 0)
 			(effects
 				(font
@@ -5141,7 +5141,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "CL10A105KL8NNNC "
+		(property "MPN" "CL10A105KL8NNNC"
 			(at 250.19 133.35 0)
 			(effects
 				(font
@@ -6145,7 +6145,7 @@
 		(at 217.17 185.42 90)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "621eff11-bb4b-4f14-a4e3-d39e52113bda")
@@ -6269,7 +6269,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "CL10B104KO8NFNC "
+		(property "MPN" "CL10B104KO8NFNC"
 			(at 264.16 204.47 0)
 			(effects
 				(font
@@ -6897,7 +6897,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "0603DD106MAT2A "
+		(property "MPN" "0603DD106MAT2A"
 			(at 234.95 133.35 0)
 			(effects
 				(font
@@ -7239,7 +7239,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "CL10A105KL8NNNC "
+		(property "MPN" "CL10A105KL8NNNC"
 			(at 262.89 133.35 0)
 			(effects
 				(font
@@ -8728,7 +8728,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "0603DD106MAT2A "
+		(property "MPN" "0603DD106MAT2A"
 			(at 254 204.47 0)
 			(effects
 				(font

@@ -651,6 +651,8 @@
       "+3V3": "power",
       "/CONFIG0": "config",
       "/CONFIG1": "config",
+      "AUX_POW+": "iso_power",
+      "AUX_POW-": "iso_power",
       "CAN+": "can",
       "CAN-": "can",
       "CTL_OUT_0": "data",
@@ -676,6 +678,7 @@
       "IN3+": "analog",
       "IN3-": "analog",
       "Net-(J1-Pin_1)": "iso_power",
+      "Net-(J1-Pin_5)": "power",
       "Net-(J201-Pin_1)": "iso_power",
       "Net-(J6-Pin_1)": "power",
       "Net-(J6-Pin_3)": "power",
@@ -784,13 +787,13 @@
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
           "label": "Footprint",
           "name": "Footprint",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,

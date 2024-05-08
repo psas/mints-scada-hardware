@@ -4997,7 +4997,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RMCF0603FT10K0 "
+		(property "MPN" "RMCF0603FT10K0"
 			(at 36.83 41.91 0)
 			(effects
 				(font
@@ -5912,7 +5912,7 @@
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -6455,7 +6455,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RMCF0603FT10K0 "
+		(property "MPN" "RMCF0603FT10K0"
 			(at 46.99 41.91 0)
 			(effects
 				(font
