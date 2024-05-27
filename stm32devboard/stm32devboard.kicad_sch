@@ -12716,7 +12716,7 @@
 				(hide yes)
 			)
 		)
-		(property "DPN" "USB4105-GF-A"
+		(property "DPN" "664-12402012E212ACT-ND"
 			(at 48.26 82.55 0)
 			(effects
 				(font
@@ -12725,7 +12725,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "2073-USB4105-GF-ACT-ND"
+		(property "MPN" "12402012E212A"
 			(at 48.26 82.55 0)
 			(effects
 				(font
