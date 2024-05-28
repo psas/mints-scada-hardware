@@ -43,21 +43,6 @@ Command line firmware flashing instructions are provided for Ubuntu 24.04. Other
 ### Visual
 [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) can be used to flash device firmware. Setup will be platform-dependent, and thusly not covered here.
 
-# Firmware modifications (depricated)
-Firmware modification instructions are provided for Ubuntu 24.04. Other debian-based Linux distros should follow a similar procedure. Flashing from Mac or Windows should be possible, but is not covered here.
-
-You will need several tools to flash the firmware
-
-1. Install the required software
-    * Python3 virtual environments `sudo apt install python3-venv`
-    * dfu-util `sudo apt install dfu-util`
-    * [Visual Studio Code](https://code.visualstudio.com/)
-    * [PlatformIO Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide)
-2. Set up udev rules as described in the `Firmware Flashing` section
-3. Open the firmware source folder in Visual Studio Code
-4. Open PlatformIO Home
-5. Install the `ststm32` platform
-
 To build and upload:
 1. Open the PlatformIO tab in the left toolbar
 2. Under `PROJECT TASKS` > `Build` > `General` execute the `Build` procedure by clicking on it
@@ -105,3 +90,9 @@ to the end of `Makefile`. Optionally, add `cp $(BUILD_DIR)/$(TARGET).bin $(TARGE
 6. Use the above procedure to flash the `blink-fast.bin` firmware. Confirm that the LED blinks at about 10Hz.
 7. Use the above procedure to flash the `blink-slow.bin` firmware. Confirm that the LED blinks at about 1Hz. This confirms that you are able to flash new firmware to the device.
 8. Install the THT components as described in the assembly section.
+
+`blink-fast.bin` and `blink-slow.bin` should already be built in the `firmware/bin` directory. If they are not, they can be rebuilt with the blink project. To rebuild them, run the following in `firmware/blink`
+```
+make clean && make DELAY=500 && cp blink.bin ../bin/blink-slow.bin
+make clean && make DELAY=50 && cp blink.bin ../bin/blink-fast.bin
+```

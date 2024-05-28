@@ -33,6 +33,11 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
+// Set default value for delay if not specified
+#ifndef DELAY
+#define DELAY 500
+#endif
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -108,7 +113,7 @@ int main(void)
     while (1)
     {
       HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-      HAL_Delay(500);
+      HAL_Delay(DELAY);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -13,7 +13,7 @@
 ######################################
 # target
 ######################################
-TARGET = module_io
+TARGET = blink
 
 
 ######################################
@@ -23,7 +23,9 @@ TARGET = module_io
 DEBUG = 1
 # optimization
 OPT = -Og
-
+# Blink delay
+DELAY ?= 500
+CFLAGS += -D DELAY=${DELAY}
 
 #######################################
 # paths
