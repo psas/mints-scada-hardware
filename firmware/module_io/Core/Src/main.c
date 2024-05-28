@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "loop.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -63,7 +63,9 @@ static void MX_SPI2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+int _write(int file, char *ptr, int len) {
+    CDC_Transmit_FS((uint8_t*) ptr, len); return len;
+}
 /* USER CODE END 0 */
 
 /**
@@ -107,8 +109,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
     while (1)
     {
-      HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-      HAL_Delay(500);
+      loop();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
