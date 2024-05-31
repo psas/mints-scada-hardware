@@ -1,6 +1,6 @@
 /* USER CODE BEGIN Header */
 /**
-    ******************************************************************************
+    ***********doesn*******************************************************************
     * @file           : main.c
     * @brief          : Main program body
     ******************************************************************************
@@ -19,10 +19,12 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "usb_device.h"
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "loop.h"
+#include "uprintf.h"
+#include "usb_device.h"
+#include "usbd_cdc_if.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,13 +50,10 @@ I2C_HandleTypeDef hi2c1;
 SPI_HandleTypeDef hspi2;
 
 CAN_HandleTypeDef hcan1;
-CAN_TxHeaderTypeDef pHeader; //declare a specific header for message transmittions
-CAN_RxHeaderTypeDef pRxHeader; //declare header for message reception
-uint32_t TxMailbox;
-uint8_t a,r; //declare byte to be transmitted //declare a receive byte
-CAN_FilterTypeDef sFilterConfig; //declare CAN filter structure
-
 /* USER CODE BEGIN PV */
+
+// This can't go inside the function. Doesn't work if it does. Don't do it.
+CAN_FilterTypeDef sFilterConfig; //declare CAN filter structure
 
 /* USER CODE END PV */
 
@@ -69,10 +68,7 @@ static void MX_SPI2_Init(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-// int _write(int file, char *ptr, int len) {
-//     CDC_Transmit_FS((uint8_t*) ptr, len); return len;
-// }
+
 /* USER CODE END 0 */
 
 /**
@@ -110,8 +106,34 @@ int main(void)
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
 
+    // Wait 2 seconds for serial monitor to connect
+    HAL_Delay(2000);
+    CDC_Transmit_FS((uint8_t*) "HELLO\r\n", 7);
 
-  setup();
+    // Set up the CAN filters
+    // Set up a filter. Hopefully it just grabs everything
+    sFilterConfig.FilterFIFOAssignment=CAN_FILTER_FIFO0; //set fifo assignment
+    sFilterConfig.FilterIdHigh=0x245<<5; //the ID that the filter looks for (switch this for the other microcontroller)
+    sFilterConfig.FilterIdLow=0;
+    sFilterConfig.FilterMaskIdHigh=0;
+    sFilterConfig.FilterMaskIdLow=0;
+    sFilterConfig.FilterScale=CAN_FILTERSCALE_32BIT; //set filter scale
+    sFilterConfig.FilterActivation=ENABLE;
+
+    HAL_StatusTypeDef canSetupStatus = HAL_CAN_ConfigFilter(&hcan, &sFilterConfig);
+    if(canSetupStatus != HAL_OK) {
+      uprintf("CAN filter init Error %d\n", canSetupStatus);
+    } else {
+      uprintf("CAN filter initalized\n", canSetupStatus);
+    }
+
+    // Start CAN and alert if it failed
+    canSetupStatus = HAL_CAN_Start(&hcan);
+    if(canSetupStatus != HAL_OK) {
+        uprintf("CAN start error %d\n", canSetupStatus);
+    } else {
+        uprintf("CAN started\n");
+    }
 
   /* USER CODE END 2 */
 
