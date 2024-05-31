@@ -3,6 +3,7 @@
 
 #include "main.h"
 
+void setup(void);
 void loop(void);
 
 extern CAN_HandleTypeDef hcan;

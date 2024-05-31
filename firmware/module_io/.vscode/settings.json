@@ -9,5 +9,8 @@
             "binaryPath": "/home/benjamin/school/psas/mints/mints-scada-hardware/firmware/module_io/build/module_io.elf",
             "binaryArgs": []
         }
+    ],
+    "cSpell.words": [
+        "uprintf"
     ]
 }
