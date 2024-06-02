@@ -1191,8 +1191,6 @@ uint32_t HAL_CAN_IsSleepActive(const CAN_HandleTypeDef *hcan)
   return status;
 }
 
-// TODO remove this later
-#include "uprintf.h"
 /**
   * @brief  Add a message to the first free Tx mailbox and activate the
   *         corresponding transmission request.

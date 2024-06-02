@@ -48,4 +48,20 @@ typedef struct DataPacket_t {
 #define DATAPACKET_ERROR_BIT 9
 #define DATAPACKET_REPLY_BIT 10
 
+/* Prints a datapacket to USB serial */
+void printDataPacket(DataPacket* pkt);
+
+#define DATAPACKET_READ_SUCCESS 0
+#define DATAPACKET_READ_NOTHING 1
+#define DATAPACKET_READ_ERROR 2
+#define DATAPACKET_READ_TOOSMALL 3
+/* Get a DataPacket from CAN if one is ready */
+int readDataPacketFromCan(DataPacket* dest);
+
+#define DATAPACKET_WRITE_SUCCESS 0
+#define DATAPACKET_WRITE_ERROR 2
+/* Send a DataPacket over CAN */
+int writeDatapacketToCan(DataPacket* pkt);
+
+
 #endif

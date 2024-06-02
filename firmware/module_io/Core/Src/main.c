@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "usb_device.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "loop.h"
@@ -49,7 +50,6 @@ I2C_HandleTypeDef hi2c1;
 
 SPI_HandleTypeDef hspi2;
 
-CAN_HandleTypeDef hcan1;
 /* USER CODE BEGIN PV */
 
 // This can't go inside the function. Doesn't work if it does. Don't do it.
@@ -68,6 +68,19 @@ static void MX_SPI2_Init(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+void initHardware(void) {
+    HAL_Init();
+    // Set up clocks
+    SystemClock_Config();
+
+    // Set up all GPIO pins
+    MX_GPIO_Init();
+    MX_CAN_Init();
+    MX_I2C1_Init();
+    MX_SPI2_Init();
+    MX_USB_DEVICE_Init();
+}
 
 /* USER CODE END 0 */
 
@@ -75,79 +88,6 @@ static void MX_SPI2_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
-int main(void)
-{
-
-  /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
-
-  /* MCU Configuration--------------------------------------------------------*/
-
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
-
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
-  SystemClock_Config();
-
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  MX_CAN_Init();
-  MX_I2C1_Init();
-  MX_SPI2_Init();
-  MX_USB_DEVICE_Init();
-  /* USER CODE BEGIN 2 */
-
-    // Wait 2 seconds for serial monitor to connect
-    HAL_Delay(2000);
-    CDC_Transmit_FS((uint8_t*) "HELLO\r\n", 7);
-
-    // Set up the CAN filters
-    // Set up a filter. Hopefully it just grabs everything
-    sFilterConfig.FilterFIFOAssignment=CAN_FILTER_FIFO0; //set fifo assignment
-    sFilterConfig.FilterIdHigh=0x245<<5; //the ID that the filter looks for (switch this for the other microcontroller)
-    sFilterConfig.FilterIdLow=0;
-    sFilterConfig.FilterMaskIdHigh=0;
-    sFilterConfig.FilterMaskIdLow=0;
-    sFilterConfig.FilterScale=CAN_FILTERSCALE_32BIT; //set filter scale
-    sFilterConfig.FilterActivation=ENABLE;
-
-    HAL_StatusTypeDef canSetupStatus = HAL_CAN_ConfigFilter(&hcan, &sFilterConfig);
-    if(canSetupStatus != HAL_OK) {
-      uprintf("CAN filter init Error %d\n", canSetupStatus);
-    } else {
-      uprintf("CAN filter initalized\n", canSetupStatus);
-    }
-
-    // Start CAN and alert if it failed
-    canSetupStatus = HAL_CAN_Start(&hcan);
-    if(canSetupStatus != HAL_OK) {
-        uprintf("CAN start error %d\n", canSetupStatus);
-    } else {
-        uprintf("CAN started\n");
-    }
-
-  /* USER CODE END 2 */
-
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-    while (1)
-    {
-      loop();
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-    }
-  /* USER CODE END 3 */
-}
 
 /**
   * @brief System Clock Configuration
@@ -211,8 +151,11 @@ static void MX_CAN_Init(void)
   /* USER CODE END CAN_Init 1 */
   hcan.Instance = CAN;
   hcan.Init.Prescaler = 8;
+#ifdef LOOPBACK
   hcan.Init.Mode = CAN_MODE_LOOPBACK;
-  // hcan.Init.Mode = CAN_MODE_NORMAL;
+#else
+  hcan.Init.Mode = CAN_MODE_NORMAL;
+#endif
   hcan.Init.SyncJumpWidth = CAN_SJW_1TQ;
   hcan.Init.TimeSeg1 = CAN_BS1_2TQ;
   hcan.Init.TimeSeg2 = CAN_BS2_3TQ;
@@ -222,9 +165,10 @@ static void MX_CAN_Init(void)
   hcan.Init.AutoRetransmission = ENABLE;
   hcan.Init.ReceiveFifoLocked = DISABLE;
   hcan.Init.TransmitFifoPriority = DISABLE;
-
-  HAL_CAN_Init(&hcan);
-
+  if (HAL_CAN_Init(&hcan) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE BEGIN CAN_Init 2 */
 
   /* USER CODE END CAN_Init 2 */
@@ -357,11 +301,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  GPIO_InitStruct.Pin = GPIO_PIN_8;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
   /*Configure GPIO pins : OUT0_Pin OUT1_Pin OUT2_Pin CTRL_Pin
                            OUT3_Pin OUT4_Pin OUT5_Pin OUT6_Pin
                            OUT7_Pin */
@@ -396,6 +335,8 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
     /* User can add his own implementation to report the HAL error return state */
+    uprintf("\nAn error has occurred!\nThe program will halt now.\n");
+    HAL_Delay(15);
     __disable_irq();
     while (1)
     {

@@ -22,6 +22,8 @@
 #ifndef __MAIN_H
 #define __MAIN_H
 
+#define LOOPBACK
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -41,7 +43,7 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+// CAN_FilterTypeDef sFilterConfig;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
@@ -53,7 +55,7 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+void initHardware(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
