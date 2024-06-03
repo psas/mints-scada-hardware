@@ -1,8 +1,6 @@
-extern "C" {
-    #include "main.h"
-    #include "stm32f0xx_hal.h"
-    #include "uprintf.h"
-}
+#include "main.h"
+#include "stm32f0xx_hal.h"
+#include "uprintf.h"
 #include "datapacket.h"
 // USB printf
 // Get stuff from main, mostly CAN stuff

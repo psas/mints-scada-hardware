@@ -22,8 +22,6 @@
 #ifndef __MAIN_H
 #define __MAIN_H
 
-#define LOOPBACK
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -34,6 +32,7 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdint.h>
+#include "configuration.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -63,6 +62,8 @@ void initHardware(void);
 #define CONFIG0_GPIO_Port GPIOA
 #define CONFIG1_Pin GPIO_PIN_1
 #define CONFIG1_GPIO_Port GPIOA
+#define ADC_RAND_Pin GPIO_PIN_2
+#define ADC_RAND_GPIO_Port GPIOA
 #define ADDR4_Pin GPIO_PIN_4
 #define ADDR4_GPIO_Port GPIOA
 #define ADDR1_Pin GPIO_PIN_5

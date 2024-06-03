@@ -1,0 +1,338 @@
+// Hardware setup functions config
+// USB setup functions
+// #include "usb_device.h"
+// DataPackets
+#include "interface_module.h"
+
+#include "stm32f042x6.h"
+#include "stm32f0xx_hal.h"
+#include "stm32f0xx_hal_can.h"
+#include "stm32f0xx_hal_adc.h"
+#include "main.h"
+#include "uprintf.h"
+#include "buscommands.h"
+#include "configuration.h"
+
+#include "datapacket.h"
+
+// #include "loop.h"
+
+static int count = 0;
+extern CAN_FilterTypeDef sFilterConfig;
+uint8_t baseAddress = 0;
+
+// Represents if a fatal error has occurred
+int fatal = 0;
+
+void onFatalError(void) {
+    fatal = 1;
+    // Do things here to set things to a safe state.
+    // For outputs, this means all off.
+    // For inputs, this means nothing.
+}
+
+/**
+ * Copies several bytes of UID to somewhere
+ * Copies 0 < bytes <= 12 bytes to dest
+ * Starts at 0 <= offset < 12 bytes into the UID
+ * If bytes of offset would give illegal locations, they are modified to not.
+*/
+void copyUID(uint8_t* dest, uint8_t bytes, uint8_t offset) {
+    if(offset > 11) {
+        offset = 11;
+    }
+    if(bytes + offset > 12) {
+        bytes = 12 - offset;
+    }
+    if(bytes < 1) {
+        bytes = 1;
+    }
+
+    // UID_BASE
+    uint8_t* rdp = (uint8_t*) (UID_BASE + offset);
+    for(int i = 0; i < bytes; i++) {
+        *dest++ = *rdp++;
+    }
+}
+
+/**
+ * Writes a compressed version of the UID to a given memory location.
+ * Always writes 6 bytes
+*/
+void compressUID(uint8_t* dest) {
+    uint8_t* uid = (uint8_t*) UID_BASE;
+
+    for(int i = 0; i < 6; i++) {
+        dest[i] = (uid[i] + uid[i+6]) & 0xFF;
+    }
+}
+
+int processPacket(DataPacket* pk) {
+    uint8_t subid = pk->id & 0xF;
+    uprintf("#%d ", subid);
+
+    // If the packet was an error, check if it's one we care about
+    if(pk->err) {
+        uprintf("That was an error message!");
+        // If soneone else said they have my ID, that's bad and we need to stop.
+        if(pk->data.cmd == BUSCMD_CLAIM_ID) {
+            uint8_t tempid[6];
+            compressUID(tempid);
+            int f = 0;
+            for(int i = 0; i < 6; i++) {
+                f &= tempid[i] != pk->data.args[i]; 
+            }
+            if(f) {
+                onFatalError();
+                uprintf("\n[FATAL] Someone else already had my ID %02x\n", baseAddress);
+            }
+        }
+        return 1;
+    }
+    // If the packet was a reply, then someone else is using my ID.
+    // This is not allowed, so send an error reply
+
+    // If the packet is a reply, it was probably just sent by us, so ignore it.
+    if(pk->reply) {
+        // onFatalError();
+        // uprintf("[FATAL] Someone else with my ID sent a reply");
+        // pk->err = 0; // Don't set the error bit 
+        // pk->reply = 1;
+        // writeDatapacketToCan(pk);
+        // return 2;
+        uprintf("That was a reply.");
+        return 0;
+    }
+    if(pk->datasize < 2) {
+        uprintf("Command too short!");
+        return 3;
+    }
+    uprintf(" Exec time! ");
+    switch(pk->data.cmd) {
+    case BUSCMD_CLAIM_ID: {
+        uprintf("Id claim commnd!");
+        uint8_t tempid[6];
+        compressUID(tempid);
+        int f = 0;
+        for(int i = 0; i < 6; i++) {
+            f &= tempid[i] != pk->data.args[i]; 
+        }
+        if(f) {
+            pk->err = 1;
+            pk->reply = 1;
+            writeDatapacketToCan(pk);
+        } else {
+            uprintf("It was me");
+        }
+    } break;
+    case BUSCMD_READ_ID_LOW: {
+        uprintf("UID low read");
+        pk->reply = 1;
+        pk->datasize = 8;
+        copyUID(pk->data.args, 6, 0);
+    } break;
+    case BUSCMD_READ_ID_HIGH: {
+        uprintf("UID low high");
+        pk->reply = 1;
+        pk->datasize = 8;
+        copyUID(pk->data.args, 6, 6);
+        writeDatapacketToCan(pk);
+    } break;
+#ifdef CONFIG_OUTPUTS
+    case BUSCMD_READ_VALUE: {
+        uprintf("Read value command");
+        uint32_t val = HAL_GPIO_ReadPin(LED_GPIO_Port, LED_Pin);
+        pk->datasize = 8;
+        BigLittleData* bld = (BigLittleData*) pk->data.args;
+        // pk->data.bld.big = val;
+        bld->big = val;
+        pk->reply = 1;
+        writeDatapacketToCan(pk);
+        printDataPacket(pk);
+    } break;
+    case BUSCMD_WRITE_VALUE: {
+        uprintf("Write value command");
+        BigLittleData* bld = (BigLittleData*) pk->data.args;
+        uprintf(" %08x %08x %08x %08x", bld, &(bld->little), &(pk->data.args[4]), pk->data.args);
+        uint32_t value2 = 758;
+        uprintf(" %08x %08x", &bld, &value2);
+        uprintf(" L:%x ", bld->little);
+        uprintf(" B:%x ", bld->big);
+        uint32_t value = (uint32_t) pk->data.args[0];
+        // uint32_t value = 1;
+        uprintf("I should set %d to %d", subid, value);
+        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, value);
+    } break;
+#endif
+    default: {
+        uprintf("Unknown command");
+    }
+    }
+    return 0;
+}
+
+void getCanMessages(void) {
+    while(!fatal && HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0)) {
+        uprintf(" Got message! ");
+        DataPacket pk;
+        pk.id = 0;
+        pk.err = 0;
+        pk.reply = 0;
+        pk.data.seq = 0;
+        pk.data.cmd = 0;
+        for(int i = 0; i < 6; i++) {
+            pk.data.args[i] = 0;
+        }
+        pk.datasize = 0;
+        int rs = readDataPacketFromCan(&pk);
+        if(rs != DATAPACKET_READ_SUCCESS) {
+            uprintf("Packet read fail! %d\n", rs);
+            return;
+        }
+        printDataPacket(&pk);
+        uprintf(" FIFO:%d", HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0));
+
+        uint8_t bid = pk.id & 0xF0;
+        uprintf(" BID:%2x", bid);
+
+        if(bid == baseAddress) {
+            uprintf(" 4Me!");
+
+            processPacket(&pk);
+        }
+
+        uprintf("\n");
+    }
+}
+
+uint32_t random(int bits) {
+    uint32_t rsp = 0;
+    for(int i = 0; i < bits; i++) {
+        HAL_ADC_Start(&hadc);
+        while(HAL_ADC_PollForConversion(&hadc, 1000)) {
+            // do a little waiting
+        }
+        rsp <<= 1;
+        rsp |= (HAL_ADC_GetValue(&hadc) & 1);
+    }
+    return rsp;
+}
+
+/* Does everything. Is wrapped by main so that the program will halt if this ever returns. */
+void doEverything(void) {
+    
+    // Initialize libraries
+    initHardware();
+
+    // Wait a moment for USB to connect
+    // Might disable for production
+    HAL_Delay(2000);
+    uprintf("Hello\n");
+
+    // Wait a random amount of time to ensure that if two devices try to start with the same ID,
+    // one will have a change to get started and reply to the other alerting them of the issue.
+    HAL_Delay(random(6));
+
+    // Read base ID
+    // Disabled for testing
+    // baseAddress |= HAL_GPIO_ReadPin(ADDR1_GPIO_Port, ADDR1_Pin) << 4;
+    // baseAddress |= HAL_GPIO_ReadPin(ADDR2_GPIO_Port, ADDR2_Pin) << 5;
+    // baseAddress |= HAL_GPIO_ReadPin(ADDR4_GPIO_Port, ADDR4_Pin) << 6;
+    // baseAddress |= HAL_GPIO_ReadPin(ADDR8_GPIO_Port, ADDR8_Pin) << 7;
+
+    baseAddress = 0x70;
+    uprintf("My address is 0x%02x\n", baseAddress);
+
+    // Set up the CAN filters
+    // Set up a filter. Hopefully it just grabs everything
+    sFilterConfig.FilterFIFOAssignment=CAN_FILTER_FIFO0; //set fifo assignment
+    sFilterConfig.FilterIdHigh=baseAddress<<5; //the ID that the filter looks for (switch this for the other microcontroller)
+    sFilterConfig.FilterIdLow=0;
+    sFilterConfig.FilterMaskIdHigh=0xF0<<5;
+    sFilterConfig.FilterMaskIdLow=0;
+    sFilterConfig.FilterScale=CAN_FILTERSCALE_32BIT; //set filter scale
+    sFilterConfig.FilterMode = CAN_FILTERMODE_IDMASK;
+    sFilterConfig.FilterActivation=ENABLE;
+
+    HAL_StatusTypeDef canSetupStatus = HAL_CAN_ConfigFilter(&hcan, &sFilterConfig);
+    if(canSetupStatus != HAL_OK) {
+      uprintf("CAN filter init Error %d\n", canSetupStatus);
+      onFatalError();
+      return;
+    } else {
+      uprintf("CAN filter initalized\n");
+    }
+    // Start CAN and alert if it failed
+    canSetupStatus = HAL_CAN_Start(&hcan);
+    if(canSetupStatus != HAL_OK) {
+        uprintf("CAN start error %d\n", canSetupStatus);
+        onFatalError();
+        return;
+    } else {
+        uprintf("CAN started\n");
+    }
+
+    // Setup ID claim command
+    DataPacket iddp;
+    iddp.id = baseAddress;
+    iddp.err = 0; // Not an error packet
+    iddp.reserved = 0;
+    iddp.reply = 0; // Not a reply
+    iddp.data.seq = 0; // Don't care what it is
+    iddp.data.cmd = BUSCMD_CLAIM_ID; // Sets the ID to claim
+    compressUID(iddp.data.args);
+    iddp.datasize = 8; // Include the sequence number and command in this count
+    // Send ID claim command
+    int freeTX = HAL_CAN_GetTxMailboxesFreeLevel(&hcan);
+    int ts = writeDatapacketToCan(&iddp);
+    if(ts != HAL_OK) {
+        uprintf("\n[FATAL] Could not send CAN address claim packet.");
+        onFatalError();
+        return;
+    }
+    uprintf("Sent ID query ");
+    printDataPacket(&iddp);
+    uprintf("\n");
+    // Wait for ID claim command to be sent
+    while(HAL_CAN_GetTxMailboxesFreeLevel(&hcan) < freeTX);
+
+    while(1) {
+        getCanMessages();
+#ifdef LOOPBACK
+        DataPacket dp;
+        // dp.id = 0x75;
+        // dp.id = count & 0xFF;
+        dp.id = baseAddress | 0x5;
+        dp.err = 0; // Not an error packet
+        dp.reserved = 0; // Set to 0 for easier debugging
+        dp.reply = 0; // Not a reply
+        dp.data.seq = count & 0xFF; // Increment sequence number each time
+        dp.data.cmd = BUSCMD_READ_ID_HIGH; // Sets the ID to claim
+        dp.data.args[0] = 0x00;
+        dp.data.args[1] = 0x01;
+        dp.data.args[2] = 0x02;
+        dp.data.args[3] = 0x03;
+        dp.datasize = 6; // Include the sequence number and command in this count
+
+        uint32_t endtime = HAL_GetTick() + 500;
+        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+        uprintf("0x%x Test TX %4d", random(4), count++);
+        int ts = writeDatapacketToCan(&dp);
+        uprintf("[%d]: ", ts);
+        printDataPacket(&dp);
+        uprintf("\n");
+        HAL_Delay(50);
+        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+        while(endtime > HAL_GetTick()) {
+            // HAL_Delay(1);
+        }
+#endif
+        
+    }
+
+}
+
+int main(void) {
+    doEverything();
+    while(1); // Halt if main ever exits
+}

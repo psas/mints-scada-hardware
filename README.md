@@ -30,7 +30,7 @@ Command line firmware flashing instructions are provided for Ubuntu 24.04. Other
     # STM32
     ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", TAG+="uaccess"
     ```
-    2. Either reboot or run `sudo udevadm control --reload-rules && udevadm trigger` to reload the udev rules
+    2. Either reboot or run `sudo udevadm control --reload-rules && sudo udevadm trigger` to reload the udev rules
 
 #### Flashing:
 1. Remove the devboard from the module if it was installed.

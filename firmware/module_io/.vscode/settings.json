@@ -3,7 +3,9 @@
         "stdint.h": "c",
         "stdarg.h": "c",
         "uprintf.h": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "stm32f0xx_hal_def.h": "c",
+        "stm32f0xx.h": "c"
     },
     "makefile.launchConfigurations": [
         {

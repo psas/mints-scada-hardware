@@ -152,7 +152,7 @@ void CEC_CAN_IRQHandler(void)
   /* USER CODE END CEC_CAN_IRQn 0 */
   HAL_CAN_IRQHandler(&hcan);
   /* USER CODE BEGIN CEC_CAN_IRQn 1 */
-  onCanMessage();
+  getCanMessages();
   /* USER CODE END CEC_CAN_IRQn 1 */
 }
 
