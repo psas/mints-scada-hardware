@@ -649,6 +649,10 @@
     "netclass_assignments": {
       "+3.3VA": "power",
       "+3V3": "power",
+      "/ADDR_1": "config",
+      "/ADDR_2": "config",
+      "/ADDR_4": "config",
+      "/ADDR_8": "config",
       "/CONFIG0": "config",
       "/CONFIG1": "config",
       "AUX_POW+": "iso_power",
