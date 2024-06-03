@@ -9,7 +9,7 @@ extern CAN_HandleTypeDef hcan;
 void printDataPacket(DataPacket* pkt) {
     uprintf("%c%d %c%02X #%02x !%02x", (pkt->err)?'E':'.', pkt->reserved&1, (pkt->reply)?'<':'>', pkt->id, pkt->data.seq, pkt->data.cmd);
     for(int i = 0; i < pkt->datasize-2; i++) {
-        uprintf(" %02X", pkt->data.args[i]);
+        uprintf(" %02X", pkt->data.bytes[i]);
     }
     // print(f"{'E' if self.err == 1 else '.'}{self.rsvd:01b} {'<' if self.reply else '>'}{self.id:02X} #{self.seq:02X} !{self.cmd:02x}: {' '.join([f'{b:02X}' for b in self.data])}")
 

@@ -22,7 +22,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "loop.h"
 #include "uprintf.h"
 #include "usb_device.h"
 #include "usbd_cdc_if.h"

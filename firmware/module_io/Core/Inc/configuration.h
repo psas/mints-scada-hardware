@@ -12,3 +12,13 @@
     || (defined(CONFIG_ADC) && defined(CONFIG_I2C))
     #error("You must specify exactly 1 of CONFIG_OUTPUTS, CONFIG_ADC, or CONFIG_I2C")
 #endif
+
+#ifdef CONFIG_OUTPUTS
+#define BASE_ADDR_OFFSET 0
+#endif
+#ifdef CONFIG_ADC
+#define BASE_ADDR_OFFSET 8
+#endif
+#ifdef CONFIG_I2C
+#define BASE_ADDR_OFFSET 12
+#endif

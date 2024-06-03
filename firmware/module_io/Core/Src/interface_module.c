@@ -24,6 +24,11 @@ uint8_t baseAddress = 0;
 // Represents if a fatal error has occurred
 int fatal = 0;
 
+#ifdef CONFIG_OUTPUTS
+GPIO_TypeDef* outputPorts[] = {LED_GPIO_Port, OUT1_GPIO_Port, OUT2_GPIO_Port, OUT3_GPIO_Port, OUT4_GPIO_Port, OUT5_GPIO_Port, OUT6_GPIO_Port, OUT7_GPIO_Port};
+uint16_t outputPins[] = {LED_Pin, OUT1_Pin, OUT2_Pin, OUT3_Pin, OUT4_Pin, OUT5_Pin, OUT6_Pin, OUT7_Pin};
+#endif
+
 void onFatalError(void) {
     fatal = 1;
     // Do things here to set things to a safe state.
@@ -68,7 +73,7 @@ void compressUID(uint8_t* dest) {
 }
 
 int processPacket(DataPacket* pk) {
-    uint8_t subid = pk->id & 0xF;
+    uint8_t subid = (pk->id & 0xF) - BASE_ADDR_OFFSET;
     uprintf("#%d ", subid);
 
     // If the packet was an error, check if it's one we care about
@@ -80,7 +85,7 @@ int processPacket(DataPacket* pk) {
             compressUID(tempid);
             int f = 0;
             for(int i = 0; i < 6; i++) {
-                f &= tempid[i] != pk->data.args[i]; 
+                f &= tempid[i] != pk->data.bytes[i]; 
             }
             if(f) {
                 onFatalError();
@@ -107,7 +112,7 @@ int processPacket(DataPacket* pk) {
         uprintf("Command too short!");
         return 3;
     }
-    uprintf(" Exec time! ");
+    uprintf("Exec time! ");
     switch(pk->data.cmd) {
     case BUSCMD_CLAIM_ID: {
         uprintf("Id claim commnd!");
@@ -115,7 +120,7 @@ int processPacket(DataPacket* pk) {
         compressUID(tempid);
         int f = 0;
         for(int i = 0; i < 6; i++) {
-            f &= tempid[i] != pk->data.args[i]; 
+            f &= tempid[i] != pk->data.bytes[i]; 
         }
         if(f) {
             pk->err = 1;
@@ -129,39 +134,31 @@ int processPacket(DataPacket* pk) {
         uprintf("UID low read");
         pk->reply = 1;
         pk->datasize = 8;
-        copyUID(pk->data.args, 6, 0);
+        copyUID(pk->data.bytes, 6, 0);
     } break;
     case BUSCMD_READ_ID_HIGH: {
         uprintf("UID low high");
         pk->reply = 1;
         pk->datasize = 8;
-        copyUID(pk->data.args, 6, 6);
+        copyUID(pk->data.bytes, 6, 6);
         writeDatapacketToCan(pk);
     } break;
 #ifdef CONFIG_OUTPUTS
     case BUSCMD_READ_VALUE: {
         uprintf("Read value command");
-        uint32_t val = HAL_GPIO_ReadPin(LED_GPIO_Port, LED_Pin);
+        uint32_t val = HAL_GPIO_ReadPin(outputPorts[subid], outputPins[subid]);
         pk->datasize = 8;
-        BigLittleData* bld = (BigLittleData*) pk->data.args;
-        // pk->data.bld.big = val;
-        bld->big = val;
+        // BigLittleData* bld = BIGLITTLEDATA(pk);
+        BIGLITTLEDATA(pk)->big = val;
+        // bld->big = val;
         pk->reply = 1;
-        writeDatapacketToCan(pk);
+        uprintf("\nSending reply ");
         printDataPacket(pk);
+        writeDatapacketToCan(pk);
     } break;
     case BUSCMD_WRITE_VALUE: {
         uprintf("Write value command");
-        BigLittleData* bld = (BigLittleData*) pk->data.args;
-        uprintf(" %08x %08x %08x %08x", bld, &(bld->little), &(pk->data.args[4]), pk->data.args);
-        uint32_t value2 = 758;
-        uprintf(" %08x %08x", &bld, &value2);
-        uprintf(" L:%x ", bld->little);
-        uprintf(" B:%x ", bld->big);
-        uint32_t value = (uint32_t) pk->data.args[0];
-        // uint32_t value = 1;
-        uprintf("I should set %d to %d", subid, value);
-        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, value);
+        HAL_GPIO_WritePin(outputPorts[subid], outputPins[subid], BIGLITTLEDATA(pk)->big);
     } break;
 #endif
     default: {
@@ -173,7 +170,7 @@ int processPacket(DataPacket* pk) {
 
 void getCanMessages(void) {
     while(!fatal && HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0)) {
-        uprintf(" Got message! ");
+        uprintf("Got message! ");
         DataPacket pk;
         pk.id = 0;
         pk.err = 0;
@@ -181,7 +178,7 @@ void getCanMessages(void) {
         pk.data.seq = 0;
         pk.data.cmd = 0;
         for(int i = 0; i < 6; i++) {
-            pk.data.args[i] = 0;
+            pk.data.bytes[i] = 0;
         }
         pk.datasize = 0;
         int rs = readDataPacketFromCan(&pk);
@@ -190,7 +187,6 @@ void getCanMessages(void) {
             return;
         }
         printDataPacket(&pk);
-        uprintf(" FIFO:%d", HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0));
 
         uint8_t bid = pk.id & 0xF0;
         uprintf(" BID:%2x", bid);
@@ -280,7 +276,7 @@ void doEverything(void) {
     iddp.reply = 0; // Not a reply
     iddp.data.seq = 0; // Don't care what it is
     iddp.data.cmd = BUSCMD_CLAIM_ID; // Sets the ID to claim
-    compressUID(iddp.data.args);
+    compressUID(iddp.data.bytes);
     iddp.datasize = 8; // Include the sequence number and command in this count
     // Send ID claim command
     int freeTX = HAL_CAN_GetTxMailboxesFreeLevel(&hcan);

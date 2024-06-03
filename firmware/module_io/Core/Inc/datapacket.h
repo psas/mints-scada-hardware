@@ -19,6 +19,7 @@ self.cmd   is the command
 self.data  is the array of 6 bytes of data 
 */
 
+#define BIGLITTLEDATA(pk) ((BigLittleData*) pk->data.bytes)
 typedef struct BigLittleData_t {
     uint32_t big;
     uint16_t little;
@@ -30,10 +31,7 @@ typedef struct CanData_t {
     // The command the packet is about
     uint8_t cmd;
     // Arguments or data for the packet
-        uint8_t args[6];
-    // union {
-    //     BigLittleData bld;
-    // };
+    uint8_t bytes[6];
 } CanData;
 
 typedef struct DataPacket_t {
@@ -48,10 +46,9 @@ typedef struct DataPacket_t {
     // The size of the packet. This includes the SEQ and CMD bytes. Max 8.
     uint16_t datasize;
     // Note: data must be aligned with the middle of a word, otherwise BigLittleData access will fail.
-    
+
     // The data of the packet.
     CanData data;
-
 } DataPacket;
 
 #define DATAPACKET_RESVD_BIT 8
