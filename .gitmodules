@@ -1,0 +1,3 @@
+[submodule "firmware-rebuild/stm32libs/stm32f0xx-hal-driver"]
+	path = firmware-rebuild/stm32libs/stm32f0xx-hal-driver
+	url = git@github.com:STMicroelectronics/stm32f0xx-hal-driver.git
