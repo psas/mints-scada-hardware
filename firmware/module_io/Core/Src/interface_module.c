@@ -17,16 +17,29 @@
 
 // #include "loop.h"
 
-static int count = 0;
+/** TODO
+ * Add checkbox to software in order to quickly remove sensors from the autopoller
+ * Add message queue to firmware so that long tasks don't block future messages.
+ */
+
 extern CAN_FilterTypeDef sFilterConfig;
 uint8_t baseAddress = 0;
 
 // Represents if a fatal error has occurred
 int fatal = 0;
 
+#ifdef LOOPBACK
+static int count = 0;
+#endif
+
 #ifdef CONFIG_OUTPUTS
 GPIO_TypeDef* outputPorts[] = {LED_GPIO_Port, OUT1_GPIO_Port, OUT2_GPIO_Port, OUT3_GPIO_Port, OUT4_GPIO_Port, OUT5_GPIO_Port, OUT6_GPIO_Port, OUT7_GPIO_Port};
 uint16_t outputPins[] = {LED_Pin, OUT1_Pin, OUT2_Pin, OUT3_Pin, OUT4_Pin, OUT5_Pin, OUT6_Pin, OUT7_Pin};
+#endif
+
+#ifdef CONFIG_ADC
+#include "mcp346x.h"
+MCP346x extadc;
 #endif
 
 void onFatalError(void) {
@@ -161,6 +174,21 @@ int processPacket(DataPacket* pk) {
         HAL_GPIO_WritePin(outputPorts[subid], outputPins[subid], BIGLITTLEDATA(pk)->big);
     } break;
 #endif
+#ifdef CONFIG_ADC
+    case BUSCMD_READ_VALUE: {
+        uprintf("Read value command. %d %d", subid << 1, (subid << 1) + 1);
+        // uint32_t val = MCP346x_analogRead(&extadc, MUX_AVDD, MUX_AGND, GAIN_1);
+        uint32_t val = MCP346x_analogRead(&extadc, subid << 1, subid << 1 + 1, GAIN_1);
+        pk->datasize = 8;
+        // BigLittleData* bld = BIGLITTLEDATA(pk);
+        BIGLITTLEDATA(pk)->big = val;
+        // bld->big = val;
+        pk->reply = 1;
+        uprintf("\nSending reply ");
+        printDataPacket(pk);
+        writeDatapacketToCan(pk);
+    } break;
+#endif
     default: {
         uprintf("Unknown command");
     }
@@ -170,6 +198,7 @@ int processPacket(DataPacket* pk) {
 
 void getCanMessages(void) {
     while(!fatal && HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0)) {
+        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
         uprintf("Got message! ");
         DataPacket pk;
         pk.id = 0;
@@ -191,13 +220,14 @@ void getCanMessages(void) {
         uint8_t bid = pk.id & 0xF0;
         uprintf(" BID:%2x", bid);
 
-        if(bid == baseAddress) {
+        if((pk.id & (0xF0 | SUB_ADDR_MASK)) == baseAddress) {
             uprintf(" 4Me!");
 
             processPacket(&pk);
         }
 
         uprintf("\n");
+        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
     }
 }
 
@@ -217,27 +247,31 @@ uint32_t random(int bits) {
 /* Does everything. Is wrapped by main so that the program will halt if this ever returns. */
 void doEverything(void) {
     
-    // Initialize libraries
-    initHardware();
+    // Initialize peripherial libraries
+    initPeripherials();
 
     // Wait a moment for USB to connect
     // Might disable for production
     HAL_Delay(2000);
     uprintf("Hello\n");
 
+    // Initialize ADC
+#ifdef CONFIG_ADC
+    extadc = MCP346x_Init(&hspi2, CTRL_GPIO_Port, CTRL_Pin, 0, 0);
+#endif
+
     // Wait a random amount of time to ensure that if two devices try to start with the same ID,
     // one will have a change to get started and reply to the other alerting them of the issue.
     HAL_Delay(random(6));
 
     // Read base ID
-    // Disabled for testing
-    // baseAddress |= HAL_GPIO_ReadPin(ADDR1_GPIO_Port, ADDR1_Pin) << 4;
-    // baseAddress |= HAL_GPIO_ReadPin(ADDR2_GPIO_Port, ADDR2_Pin) << 5;
-    // baseAddress |= HAL_GPIO_ReadPin(ADDR4_GPIO_Port, ADDR4_Pin) << 6;
-    // baseAddress |= HAL_GPIO_ReadPin(ADDR8_GPIO_Port, ADDR8_Pin) << 7;
+    baseAddress |= HAL_GPIO_ReadPin(ADDR1_GPIO_Port, ADDR1_Pin) << 4;
+    baseAddress |= HAL_GPIO_ReadPin(ADDR2_GPIO_Port, ADDR2_Pin) << 5;
+    baseAddress |= HAL_GPIO_ReadPin(ADDR4_GPIO_Port, ADDR4_Pin) << 6;
+    baseAddress |= HAL_GPIO_ReadPin(ADDR8_GPIO_Port, ADDR8_Pin) << 7;
+    baseAddress += BASE_ADDR_OFFSET;
 
-    baseAddress = 0x70;
-    uprintf("My address is 0x%02x\n", baseAddress);
+    uprintf("My base address is 0x%02x\n", baseAddress);
 
     // Set up the CAN filters
     // Set up a filter. Hopefully it just grabs everything

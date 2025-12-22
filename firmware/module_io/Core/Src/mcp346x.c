@@ -17,7 +17,7 @@ MCP346x MCP346x_Init(SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_
     adc.en_pin = en_pin;
     adc.ref = 7.354736328125e-05; // 3.4 / (15900 * 3)
 
-    uint8_t firststatus = MCP346x_sendCmd(&adc, CMD_FAST_RESET);
+    // uint8_t firststatus = MCP346x_sendCmd(&adc, CMD_FAST_RESET);
     // uprintf("%02x\n", firststatus);
 
     uint8_t cmds[] = {
@@ -34,6 +34,7 @@ MCP346x MCP346x_Init(SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_
         /* OFST */ 0x00, 0x00, 0x3E,
         /* GAIN */ 0x7D, 0xEE, 0x80
     };
+    HAL_Delay(1);
     MCP346x_writeRegs(&adc, REG_CONFIG0, cmds, 18);
 
     cmds[3] = 4;
@@ -69,10 +70,7 @@ uint8_t MCP346x_sendCmd(const MCP346x* adc, const uint8_t fastcmd) {
     enable(adc);
 
     // Send the read command
-    HAL_GPIO_WritePin(GP1_GPIO_Port, GP1_Pin, GPIO_PIN_SET);
-    // HAL_SPI_TransmitReceive(&hspi1, &cmd, &status, 1, 100);
-    SPI_TransmitReceive(&hspi1, &cmd, &status, 1, 100);
-    HAL_GPIO_WritePin(GP1_GPIO_Port, GP1_Pin, GPIO_PIN_RESET);
+    SPI_TransmitReceive(&hspi2, &cmd, &status, 1, 100);
 
     // Unselect the chip to end the transaction
     disable(adc);
@@ -86,25 +84,14 @@ uint8_t MCP346x_readRegs(const MCP346x* adc, const uint8_t reg, uint8_t* result,
     // Select the chip to begin the transaction
     enable(adc);
 
-
-    // 19.73 to start
-
-    // Send the read command
-    HAL_GPIO_WritePin(GP3_GPIO_Port, GP3_Pin, GPIO_PIN_SET);
-    // uint8_t cmd = 0b01 << 6 | reg << 2 | CMD_TYPE_READY_MANY;
-    // uint8_t status;
-    // SPI_TransmitReceive(&hspi1, &cmd, &status, 1, 100);
-    // HAL_SPI_Receive(&hspi1, result, count, 1000);
-
+    // Read the desired number of result bytes
     uint8_t tosend[count+1];
     tosend[0] = PACK_COMMAND(reg, CMD_TYPE_READY_MANY);
     uint8_t reply[count+1];
-    HAL_SPI_TransmitReceive(&hspi1, tosend, reply, count+1, 100);
+    HAL_SPI_TransmitReceive(&hspi2, tosend, reply, count+1, 100);
     for (int i = 0; i < count; i++) {
         result[i] = reply[i+1];
     }
-    // Read the desired number of result bytes
-    HAL_GPIO_WritePin(GP3_GPIO_Port, GP3_Pin, GPIO_PIN_RESET);
 
     // Unselect the chip to end the transaction
     disable(adc);
@@ -138,8 +125,15 @@ uint8_t MCP346x_writeRegs(MCP346x* adc, const uint8_t reg, const uint8_t* values
     // Select the chip to begin the transaction
     enable(adc);
 
+    uprintf("Let's go! %d\n", count);
+    HAL_Delay(1);
+
     // Send the command and values
-    SPI_TransmitReceive(&hspi1, tosend, reply, count+1, 100);
+    SPI_TransmitReceive(&hspi2, tosend, reply, count+1, 100);
+
+    uprintf("doot doot! %d\n", count);
+    HAL_Delay(1);
+
 
     // Unselect the chip to end the transaction
     disable(adc);
@@ -149,28 +143,38 @@ uint8_t MCP346x_writeRegs(MCP346x* adc, const uint8_t reg, const uint8_t* values
 }
 
 uint8_t MCP346x_writeReg(MCP346x* adc, const uint8_t reg, uint8_t value) {
-    // 17.2 us to begin, 440 total
-    // 11.65 us switching to optomized SPI, 391 total
-    // 10 us optomized, 377 total
-    HAL_GPIO_WritePin(GP2_GPIO_Port, GP2_Pin, GPIO_PIN_SET);
     // uint8_t vals[] = {value};
     uint8_t vals[] = {PACK_COMMAND(reg, CMD_TYPE_WRITE_MANY), value};
     uint8_t reply[2];
     enable(adc);
-    SPI_TransmitReceive(&hspi1, vals, reply, 2, 100);
+    SPI_TransmitReceive(&hspi2, vals, reply, 2, 100);
     disable(adc);
-    // uint8_t reply = MCP346x_writeRegs(adc, reg, vals, 1);
-    HAL_GPIO_WritePin(GP2_GPIO_Port, GP2_Pin, GPIO_PIN_RESET);
-    // return reply;
     return reply[0];
 }
 
-void MCP346x_startADC(MCP346x* adc, const uint8_t vp, const uint8_t vs, const uint8_t gain) {
+/**
+ * Sets up the ADC and starts a reading.
+ * You can find the channel IDs in mcp346x.h
+ *
+ * @param adc  the ADC to read from
+ * @param vp   the 4bit ID of the positive channel
+ * @param vn   the 4bit ID of the negative channel
+ * @param gain the 3bit ID of the gain
+ */
+void MCP346x_startADC(MCP346x* adc, const uint8_t vp, const uint8_t vn, const uint8_t gain) {
     MCP346x_setValue(adc, REG_CONFIG2, gain<<3, GAIN_MASK);
-    MCP346x_writeReg(adc, REG_MUX, vp << 4 | vs);
+    MCP346x_writeReg(adc, REG_MUX, vp << 4 | vn);
     MCP346x_sendCmd(adc, CMD_FAST_GO);
 }
 
+/**
+ * Gets the last reading started by MCP346x_startADC.
+ * May crash your program if you haven't started a reading since there is no timeout
+ * Also may not work if you've already read the value
+ *
+ * @param adc the ADC to read from
+ * @return The raw read value
+ */
 int16_t MCP346x_readADC(const MCP346x* adc) {
     uint8_t buff[2];
     uint8_t status = 0xFF;
@@ -180,8 +184,18 @@ int16_t MCP346x_readADC(const MCP346x* adc) {
     return (int16_t)((buff[0] << 8) | buff[1]);
 }
 
-int16_t MCP346x_analogRead(MCP346x* adc, const uint8_t vp, const uint8_t vs, const uint8_t gain) {
-    MCP346x_startADC(adc, vp, vs, gain<<3);
+/**
+ * Sets up the ADC, starts a reading, and gets the result.
+ * You can find the channel IDs in mcp346x.h
+ *
+ * @param adc  the ADC to read from
+ * @param vp   the 4bit ID of the positive channel
+ * @param vn   the 4bit ID of the negative channel
+ * @param gain the 3bit ID of the gain
+ * @return the raw ADC reading
+ */
+int16_t MCP346x_analogRead(MCP346x* adc, const uint8_t vp, const uint8_t vn, const uint8_t gain) {
+    MCP346x_startADC(adc, vp, vn, gain<<3);
     return MCP346x_readADC(adc);
 }
 
@@ -338,6 +352,8 @@ int SPI_TransmitReceive(SPI_HandleTypeDef* hspi, uint8_t* pTxData, uint8_t* pRxD
         }
     }
     while ((hspi->TxXferCount > 0U) || (hspi->RxXferCount > 0U)) {
+        // uprintf("im loopy\n");
+        HAL_Delay(1); // TODO figure out why it dies without this here since it probably makes this *very* slow
         /* Check TXE flag */
         if ((__HAL_SPI_GET_FLAG(hspi, SPI_FLAG_TXE)) && (hspi->TxXferCount > 0U) && (txallowed == 1U)) {
             if (hspi->TxXferCount > 1U) {
@@ -372,6 +388,8 @@ int SPI_TransmitReceive(SPI_HandleTypeDef* hspi, uint8_t* pTxData, uint8_t* pRxD
             txallowed = 1U;
         }
     }
+    // uprintf("i not god but i try\n");
+    // HAL_Delay(1);
 
     hspi->State = HAL_SPI_STATE_READY;
     // __HAL_UNLOCK(hspi);

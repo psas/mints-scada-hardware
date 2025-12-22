@@ -48,7 +48,16 @@ void uprintf(const char *format, ...) {
         }
     }
     // Print the message
-    CDC_Transmit_FS(txbuff, txl);
+    uprint(txbuff, txl+1);
     // I don't know why this delay is need, but things broke without it, so here it is.
+    // Turns out it was to give the USB peripheral a moment to send the message before the program crashed
     HAL_Delay(1);
+}
+
+void uprint(uint8_t* str, const int length) {
+    uint8_t status = USBD_BUSY;
+    while (status != USBD_OK) {
+        // Not sure why this is length-1, but it prevents random chars from appearing at the start of the sent message
+        status = CDC_Transmit_FS(str, length-1);
+    }
 }
