@@ -1,65 +1,86 @@
-typedef enum {
-  ADC,
-  I2C,
-  ValveCtl,
-} Build;
+#include "init.h"
+#include "stm32f0xx_hal.h"
+#include "board_cfg.h"
+#include "main.h"
 
-// initGen will init everything will need to be initialized no matter the build
+uint8_t baseAddress = 0;
+
+// #TODO: Better error handling
+// #TODO Use #ifdef or make scripts to distinguish between configs
 int initGen(){
-  //TODO: initSPI
-  //TODO: initGPIO
-  
-  detectBuild();
+  SystemClock_Config();
+  HAL_Init();
+  #ifdef CONFIG_ADC
+  if (detectBuild() == ADC_conf) {
+    initSPI(); 
+  }else{
+    return (0);
+  }
+  #endif
+  #ifdef CONFIG_I2C
+  if (detectBuild() == I2C_conf &&) {
+    initI2C(); 
+  }else{
+    return (0);
+  }
+  #endif
+  #ifdef CONFIG_ValveCtl
+  if (detectBuild() == ValveCtl_conf &&) {
+    initValveCtl();  
+  }else{
+    return (0);
+  }
+  #endif
 }
 
-GPIO_PinState addr1 = HAL_GPIO_ReadPin(*ADDR1_GPIO_Port, ADDR1_Pin);
-GPIO_PinState addr2 = HAL_GPIO_ReadPin(*ADDR2_GPIO_Port, ADDR2_Pin);
-GPIO_PinState addr4 = HAL_GPIO_ReadPin(*ADDR4_GPIO_Port, ADDR4_Pin); 
-GPIO_PinState addr8 = HAL_GPIO_ReadPin(*ADDR8_GPIO_Port, ADDR8_Pin); 
+int initADDR_GPIO(){
+  __HAL_RCC_GPIOA_CLK_ENABLE();
 
-int initCAN(){
-  if (good){
-    return 1;
-  }
-  if (notgood){
-    return 0
-  }
+  GPIO_InitTypeDef GPIO_Init = {0};
+  GPIO_Init.Pin = ADDR4_Pin|ADDR1_Pin|ADDR8_Pin|ADDR2_Pin;
+  GPIO_Init.Mode = GPIO_MODE_INPUT;
+  GPIO_Init.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(GPIOA, &GPIO_Init);
 }
-int initI2C(){
-  if (good){
-    return 1;
-  }
-  if (notgood){
-    return 0
-  }
-}
-int initADC(){
- if (good){
-    return 1;
-  }
-  if (notgood){
-    return 0
-  }
-}
-int initValveCtl(){
- if (good){
-    return 1;
-  }
-  if (notgood){
-    return 0
-  }
-}
+// int initCAN(){
+// }
+// int initSPI(){
+// }
+// int initI2C(){
+// }
+// int initValveCtl(){
+//  if (good){
+//     return 1;
+//   }
+//   if (notgood){
+//     return 0
+//   }
+// }
+
 
 Build detectBuild(){
-// TODO: Error detection for multiple high pins
-  if (addr1 = GPIO_PIN_SET){
-    return (ADC);
+
+  // detect upper hex number
+  // read (0x0 or 0x1) left shift, OR with baseAddress
+  baseAddress |= HAL_GPIO_ReadPin(GPIOA, ADDR4_Pin) << 4;
+  baseAddress |= HAL_GPIO_ReadPin(GPIOA, ADDR1_Pin) << 5;
+  baseAddress |= HAL_GPIO_ReadPin(GPIOA, ADDR8_Pin) << 6;
+  baseAddress |= HAL_GPIO_ReadPin(GPIOA, ADDR2_Pin) << 7;
+  baseAddress += BASE_ADDR_OFFSET; // am not 100% on the offset here
+
+  uprintf("My base address is 0x%02x\n", baseAddress);
+
+  if (baseAddress < 0x20 && baseAddress > 0x0F){
+     return (ADC_conf);
+  } 
+  if (baseAddress < 0x30 && baseAddress > 0x1F){
+     return (I2C_conf);
   }
-  if (addr2 = GPIO_PIN_SET){
-    return (I2C);
+  if (baseAddress < 0x50 && baseAddress > 0x3F){
+     return (ValveCtl_conf);
   }
-  if (addr4 = GPIO_PIN_SET){
-    return (ValveCtl);
+  else{
+     return (Error_conf);
   }
-  return Build;
 }
+
