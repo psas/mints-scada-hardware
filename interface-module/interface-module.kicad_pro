@@ -58,21 +58,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "courtyards_overlap|120325999|107886002|3287108d-d33e-41c4-8826-35419daafa2f|7865228f-33c1-48d2-8882-c73b0f89c4b7",
-        "courtyards_overlap|120325999|97686002|67da96c0-0101-46dd-a18f-6e495a94a0e3|caa3b8fc-cc65-4836-b1d6-a4cc4e4e4b7a",
-        "courtyards_overlap|120375999|118088502|23c7b3fc-a057-475f-a9fe-db1eb27ebb52|422198f9-653d-40bc-a51d-f9968c886815",
-        "courtyards_overlap|120375999|128238502|d4596ed3-3cfb-48a7-947c-0162ef2be015|e478df96-5561-4a90-9760-19facc35f9a7",
-        "courtyards_overlap|135247477|87620001|fd52c026-647d-45a7-a8fc-b586059da260|5e65db5f-f802-4f6d-be10-de00fcb5af43",
-        "courtyards_overlap|137195999|85146002|53156fb8-fb55-4095-8608-e9178ff424b2|5e65db5f-f802-4f6d-be10-de00fcb5af43",
-        "courtyards_overlap|160666001|111956002|a5287fab-32a8-4fe1-adbb-fb92dee04332|e520c577-5e09-4f73-b806-1aa22ce92bed",
-        "courtyards_overlap|169180715|135567706|2c970c8a-c88b-4c5d-87d0-1c678e2acb77|e520c577-5e09-4f73-b806-1aa22ce92bed",
-        "courtyards_overlap|169180715|80567706|c8897db5-1888-4085-9668-7f2cf37128f4|e520c577-5e09-4f73-b806-1aa22ce92bed",
-        "courtyards_overlap|171316001|122031002|e1798dfb-66a9-429d-ab3d-50192661efeb|e520c577-5e09-4f73-b806-1aa22ce92bed",
-        "courtyards_overlap|171316001|126281002|13ae6d11-3f34-4607-8cb4-49c720cba593|e520c577-5e09-4f73-b806-1aa22ce92bed",
-        "courtyards_overlap|172966001|126281002|7803132a-670c-433a-b629-674c7c16d33c|e520c577-5e09-4f73-b806-1aa22ce92bed",
-        "courtyards_overlap|173138857|122031002|288c374d-cf60-450a-a686-b221bc7c5fbc|e520c577-5e09-4f73-b806-1aa22ce92bed"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -83,16 +69,20 @@
         "copper_edge_clearance": "error",
         "copper_sliver": "warning",
         "courtyards_overlap": "error",
+        "creepage": "error",
         "diff_pair_gap_out_of_range": "error",
         "diff_pair_uncoupled_length_too_long": "error",
         "drill_out_of_range": "error",
         "duplicate_footprints": "warning",
         "extra_footprint": "warning",
         "footprint": "error",
+        "footprint_filters_mismatch": "ignore",
         "footprint_symbol_mismatch": "warning",
         "footprint_type_mismatch": "ignore",
         "hole_clearance": "error",
         "hole_near_hole": "error",
+        "hole_to_hole": "error",
+        "holes_co_located": "warning",
         "invalid_outline": "error",
         "isolated_copper": "warning",
         "item_on_disabled_layer": "error",
@@ -102,9 +92,11 @@
         "lib_footprint_mismatch": "warning",
         "malformed_courtyard": "error",
         "microvia_drill_out_of_range": "error",
+        "mirrored_text_on_front_layer": "warning",
         "missing_courtyard": "ignore",
         "missing_footprint": "warning",
         "net_conflict": "warning",
+        "nonmirrored_text_on_back_layer": "warning",
         "npth_inside_courtyard": "ignore",
         "padstack": "warning",
         "pth_inside_courtyard": "ignore",
@@ -116,10 +108,13 @@
         "solder_mask_bridge": "error",
         "starved_thermal": "ignore",
         "text_height": "warning",
+        "text_on_edge_cuts": "error",
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
+        "track_angle": "error",
         "track_dangling": "warning",
+        "track_segment_length": "error",
         "track_width": "error",
         "tracks_crossing": "error",
         "unconnected_items": "error",
@@ -132,6 +127,7 @@
         "min_clearance": 0.1524,
         "min_connection": 0.1524,
         "min_copper_edge_clearance": 0.5,
+        "min_groove_width": 0.0,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.127,
         "min_microvia_diameter": 0.2,
@@ -149,10 +145,11 @@
       },
       "teardrop_options": [
         {
-          "td_onpadsmd": true,
+          "td_onpthpad": true,
           "td_onroundshapesonly": false,
+          "td_onsmdpad": true,
           "td_ontrackend": false,
-          "td_onviapad": true
+          "td_onvia": true
         }
       ],
       "teardrop_parameters": [
@@ -239,6 +236,7 @@
       "mfg": "",
       "mpn": ""
     },
+    "layer_pairs": [],
     "layer_presets": [],
     "viewports": []
   },
@@ -433,10 +431,15 @@
       "duplicate_sheet_names": "error",
       "endpoint_off_grid": "warning",
       "extra_units": "error",
+      "footprint_filter": "ignore",
+      "footprint_link_issues": "warning",
+      "four_way_junction": "ignore",
       "global_label_dangling": "warning",
       "hier_label_mismatch": "error",
       "label_dangling": "error",
+      "label_multiple_wires": "warning",
       "lib_symbol_issues": "warning",
+      "lib_symbol_mismatch": "warning",
       "missing_bidi_pin": "warning",
       "missing_input_pin": "warning",
       "missing_power_pin": "error",
@@ -449,9 +452,15 @@
       "pin_not_driven": "error",
       "pin_to_pin": "warning",
       "power_pin_not_driven": "error",
+      "same_local_global_label": "warning",
+      "similar_label_and_power": "warning",
       "similar_labels": "warning",
+      "similar_power": "warning",
       "simulation_model_issue": "ignore",
+      "single_global_label": "ignore",
       "unannotated": "error",
+      "unconnected_wire_endpoint": "warning",
+      "undefined_netclass": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
@@ -467,7 +476,7 @@
   },
   "meta": {
     "filename": "interface-module.kicad_pro",
-    "version": 1
+    "version": 3
   },
   "net_settings": {
     "classes": [
@@ -482,6 +491,7 @@
         "microvia_drill": 0.1,
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
         "via_diameter": 0.6,
@@ -499,6 +509,7 @@
         "microvia_drill": 0.1,
         "name": "analog",
         "pcb_color": "rgb(255, 171, 0)",
+        "priority": 0,
         "schematic_color": "rgb(255, 171, 0)",
         "track_width": 0.2,
         "via_diameter": 0.6,
@@ -516,6 +527,7 @@
         "microvia_drill": 0.1,
         "name": "can",
         "pcb_color": "rgb(5, 121, 255)",
+        "priority": 1,
         "schematic_color": "rgb(5, 121, 255)",
         "track_width": 0.2,
         "via_diameter": 0.6,
@@ -533,6 +545,7 @@
         "microvia_drill": 0.1,
         "name": "config",
         "pcb_color": "rgb(2, 255, 83)",
+        "priority": 2,
         "schematic_color": "rgb(2, 255, 83)",
         "track_width": 0.2,
         "via_diameter": 0.6,
@@ -550,6 +563,7 @@
         "microvia_drill": 0.1,
         "name": "data",
         "pcb_color": "rgb(164, 255, 0)",
+        "priority": 3,
         "schematic_color": "rgb(164, 255, 0)",
         "track_width": 0.2,
         "via_diameter": 0.6,
@@ -567,6 +581,7 @@
         "microvia_drill": 0.1,
         "name": "gnd",
         "pcb_color": "rgb(70, 70, 70)",
+        "priority": 4,
         "schematic_color": "rgb(194, 194, 194)",
         "track_width": 0.2,
         "via_diameter": 0.6,
@@ -584,6 +599,7 @@
         "microvia_drill": 0.1,
         "name": "iso_data",
         "pcb_color": "rgb(3, 177, 162)",
+        "priority": 5,
         "schematic_color": "rgb(3, 177, 162)",
         "track_width": 0.2,
         "via_diameter": 0.6,
@@ -601,6 +617,7 @@
         "microvia_drill": 0.1,
         "name": "iso_power",
         "pcb_color": "rgb(187, 0, 152)",
+        "priority": 6,
         "schematic_color": "rgb(187, 0, 152)",
         "track_width": 1.0,
         "via_diameter": 0.6,
@@ -618,6 +635,7 @@
         "microvia_drill": 0.1,
         "name": "output",
         "pcb_color": "rgb(35, 255, 238)",
+        "priority": 7,
         "schematic_color": "rgb(35, 255, 238)",
         "track_width": 0.2,
         "via_diameter": 0.6,
@@ -635,6 +653,7 @@
         "microvia_drill": 0.1,
         "name": "power",
         "pcb_color": "rgb(255, 16, 43)",
+        "priority": 8,
         "schematic_color": "rgb(255, 16, 43)",
         "track_width": 0.5,
         "via_diameter": 0.6,
@@ -643,100 +662,281 @@
       }
     ],
     "meta": {
-      "version": 3
+      "version": 4
     },
     "net_colors": null,
     "netclass_assignments": {
-      "+3.3VA": "power",
-      "+3V3": "power",
-      "/ADDR_1": "config",
-      "/ADDR_2": "config",
-      "/ADDR_4": "config",
-      "/ADDR_8": "config",
-      "/CONFIG0": "config",
-      "/CONFIG1": "config",
-      "AUX_POW+": "iso_power",
-      "AUX_POW-": "iso_power",
-      "CAN+": "can",
-      "CAN-": "can",
-      "CTL_OUT_0": "data",
-      "CTL_OUT_1": "data",
-      "CTL_OUT_2": "data",
-      "CTL_OUT_3": "data",
-      "CTL_OUT_4": "data",
-      "CTL_OUT_5": "data",
-      "CTL_OUT_6": "data",
-      "CTL_OUT_7": "data",
-      "CTRL": "data",
-      "GND": "gnd",
-      "GNDA": "gnd",
-      "GNDP": "iso_power",
-      "I2C_SCL": "data",
-      "I2C_SDA": "data",
-      "IN0+": "analog",
-      "IN0-": "analog",
-      "IN1+": "analog",
-      "IN1-": "analog",
-      "IN2+": "analog",
-      "IN2-": "analog",
-      "IN3+": "analog",
-      "IN3-": "analog",
-      "Net-(J1-Pin_1)": "iso_power",
-      "Net-(J1-Pin_5)": "power",
-      "Net-(J201-Pin_1)": "iso_power",
-      "Net-(J6-Pin_1)": "power",
-      "Net-(J6-Pin_3)": "power",
-      "Net-(J6-Pin_6)": "power",
-      "Net-(J6-Pin_8)": "power",
-      "Net-(RN1A-R1.1)": "data",
-      "Net-(RN1B-R2.1)": "data",
-      "Net-(RN1C-R3.1)": "data",
-      "Net-(RN1D-R4.1)": "data",
-      "Net-(RN201A-R1.1)": "data",
-      "Net-(RN201B-R2.1)": "data",
-      "Net-(RN201C-R3.1)": "data",
-      "Net-(RN201D-R4.1)": "data",
-      "Net-(RN202A-R1.1)": "data",
-      "Net-(RN202B-R2.1)": "data",
-      "Net-(RN202C-R3.1)": "data",
-      "Net-(RN202D-R4.1)": "data",
-      "Net-(RN2A-R1.1)": "data",
-      "Net-(RN2B-R2.1)": "data",
-      "Net-(RN2C-R3.1)": "data",
-      "Net-(RN2D-R4.1)": "data",
-      "Net-(U1-PA10)": "config",
-      "Net-(U1-PA4)": "config",
-      "Net-(U1-PA5)": "config",
-      "Net-(U1-PA6)": "config",
-      "Net-(U1-PA7)": "config",
-      "Net-(U1-PA8)": "config",
-      "Net-(U1-PA9)": "config",
-      "Net-(U10-A0)": "config",
-      "Net-(U10-A1)": "config",
-      "Net-(U10-A2)": "config",
-      "Net-(U101-REFIN+)": "analog",
-      "Net-(U101-REFIN-)": "analog",
-      "Net-(U11-REFIN+)": "analog",
-      "Net-(U11-REFIN-)": "analog",
-      "Net-(U301-A0)": "config",
-      "Net-(U301-A1)": "config",
-      "Net-(U301-A2)": "config",
-      "OUT0{slash}IN0+": "output",
-      "OUT1{slash}IN0-": "output",
-      "OUT2{slash}IN1+": "output",
-      "OUT3{slash}IN1-": "output",
-      "OUT4{slash}IN2+": "output",
-      "OUT5{slash}IN2-": "output",
-      "OUT6{slash}IN3+": "output",
-      "OUT7{slash}IN3-": "output",
-      "SPI_MISO": "data",
-      "SPI_MOSI": "data",
-      "SPI_SCK": "data",
-      "VBUS": "power",
-      "VPOW": "iso_power",
-      "unconnected-(U1-PB13-Pad21)": "data",
-      "unconnected-(U1-PB14-Pad22)": "data",
-      "unconnected-(U1-PB15-Pad23)": "data"
+      "+3.3VA": [
+        "power"
+      ],
+      "+3V3": [
+        "power"
+      ],
+      "/ADDR_1": [
+        "config"
+      ],
+      "/ADDR_2": [
+        "config"
+      ],
+      "/ADDR_4": [
+        "config"
+      ],
+      "/ADDR_8": [
+        "config"
+      ],
+      "/CONFIG0": [
+        "config"
+      ],
+      "/CONFIG1": [
+        "config"
+      ],
+      "AUX_POW+": [
+        "iso_power",
+        "power"
+      ],
+      "AUX_POW-": [
+        "iso_power"
+      ],
+      "CAN+": [
+        "can"
+      ],
+      "CAN-": [
+        "can"
+      ],
+      "CTL_OUT_0": [
+        "data"
+      ],
+      "CTL_OUT_1": [
+        "data"
+      ],
+      "CTL_OUT_2": [
+        "data"
+      ],
+      "CTL_OUT_3": [
+        "data"
+      ],
+      "CTL_OUT_4": [
+        "data"
+      ],
+      "CTL_OUT_5": [
+        "data"
+      ],
+      "CTL_OUT_6": [
+        "data"
+      ],
+      "CTL_OUT_7": [
+        "data"
+      ],
+      "CTRL": [
+        "data"
+      ],
+      "GND": [
+        "gnd"
+      ],
+      "GNDA": [
+        "gnd"
+      ],
+      "GNDP": [
+        "iso_power"
+      ],
+      "I2C_SCL": [
+        "data"
+      ],
+      "I2C_SDA": [
+        "data"
+      ],
+      "IN0+": [
+        "analog"
+      ],
+      "IN0-": [
+        "analog"
+      ],
+      "IN1+": [
+        "analog"
+      ],
+      "IN1-": [
+        "analog"
+      ],
+      "IN2+": [
+        "analog"
+      ],
+      "IN2-": [
+        "analog"
+      ],
+      "IN3+": [
+        "analog"
+      ],
+      "IN3-": [
+        "analog"
+      ],
+      "Net-(J1-Pin_1)": [
+        "iso_power"
+      ],
+      "Net-(J1-Pin_5)": [
+        "power"
+      ],
+      "Net-(J201-Pin_1)": [
+        "iso_power"
+      ],
+      "Net-(J6-Pin_1)": [
+        "power"
+      ],
+      "Net-(J6-Pin_3)": [
+        "power"
+      ],
+      "Net-(J6-Pin_6)": [
+        "power"
+      ],
+      "Net-(J6-Pin_8)": [
+        "power"
+      ],
+      "Net-(RN1A-R1.1)": [
+        "data"
+      ],
+      "Net-(RN1B-R2.1)": [
+        "data"
+      ],
+      "Net-(RN1C-R3.1)": [
+        "data"
+      ],
+      "Net-(RN1D-R4.1)": [
+        "data"
+      ],
+      "Net-(RN201A-R1.1)": [
+        "data"
+      ],
+      "Net-(RN201B-R2.1)": [
+        "data"
+      ],
+      "Net-(RN201C-R3.1)": [
+        "data"
+      ],
+      "Net-(RN201D-R4.1)": [
+        "data"
+      ],
+      "Net-(RN202A-R1.1)": [
+        "data"
+      ],
+      "Net-(RN202B-R2.1)": [
+        "data"
+      ],
+      "Net-(RN202C-R3.1)": [
+        "data"
+      ],
+      "Net-(RN202D-R4.1)": [
+        "data"
+      ],
+      "Net-(RN2A-R1.1)": [
+        "data"
+      ],
+      "Net-(RN2B-R2.1)": [
+        "data"
+      ],
+      "Net-(RN2C-R3.1)": [
+        "data"
+      ],
+      "Net-(RN2D-R4.1)": [
+        "data"
+      ],
+      "Net-(U1-PA10)": [
+        "config"
+      ],
+      "Net-(U1-PA4)": [
+        "config"
+      ],
+      "Net-(U1-PA5)": [
+        "config"
+      ],
+      "Net-(U1-PA6)": [
+        "config"
+      ],
+      "Net-(U1-PA7)": [
+        "config"
+      ],
+      "Net-(U1-PA8)": [
+        "config"
+      ],
+      "Net-(U1-PA9)": [
+        "config"
+      ],
+      "Net-(U10-A0)": [
+        "config"
+      ],
+      "Net-(U10-A1)": [
+        "config"
+      ],
+      "Net-(U10-A2)": [
+        "config"
+      ],
+      "Net-(U101-REFIN+)": [
+        "analog"
+      ],
+      "Net-(U101-REFIN-)": [
+        "analog"
+      ],
+      "Net-(U11-REFIN+)": [
+        "analog"
+      ],
+      "Net-(U11-REFIN-)": [
+        "analog"
+      ],
+      "Net-(U301-A0)": [
+        "config"
+      ],
+      "Net-(U301-A1)": [
+        "config"
+      ],
+      "Net-(U301-A2)": [
+        "config"
+      ],
+      "OUT0{slash}IN0+": [
+        "output"
+      ],
+      "OUT1{slash}IN0-": [
+        "output"
+      ],
+      "OUT2{slash}IN1+": [
+        "output"
+      ],
+      "OUT3{slash}IN1-": [
+        "output"
+      ],
+      "OUT4{slash}IN2+": [
+        "output"
+      ],
+      "OUT5{slash}IN2-": [
+        "output"
+      ],
+      "OUT6{slash}IN3+": [
+        "output"
+      ],
+      "OUT7{slash}IN3-": [
+        "output"
+      ],
+      "SPI_MISO": [
+        "data"
+      ],
+      "SPI_MOSI": [
+        "data"
+      ],
+      "SPI_SCK": [
+        "data"
+      ],
+      "VBUS": [
+        "power"
+      ],
+      "VPOW": [
+        "iso_power"
+      ],
+      "unconnected-(U1-PB13-Pad21)": [
+        "data"
+      ],
+      "unconnected-(U1-PB14-Pad22)": [
+        "data"
+      ],
+      "unconnected-(U1-PB15-Pad23)": [
+        "data"
+      ]
     },
     "netclass_patterns": [
       {
@@ -761,6 +961,7 @@
   },
   "schematic": {
     "annotate_start_num": 200,
+    "bom_export_filename": "${PROJECTNAME}.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -797,7 +998,7 @@
           "group_by": false,
           "label": "Footprint",
           "name": "Footprint",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -838,6 +1039,7 @@
       ],
       "filter_string": "",
       "group_symbols": true,
+      "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
@@ -872,6 +1074,7 @@
     "net_format_name": "",
     "page_layout_descr_file": "",
     "plot_directory": "",
+    "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,

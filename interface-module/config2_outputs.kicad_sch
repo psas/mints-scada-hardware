@@ -1,175 +1,14 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "a8a6e26d-0427-483c-bc78-1d9065608de8")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Device:D_Schottky_Dual_CommonAnode_KKA_Split"
-			(pin_names
-				(offset 0.762) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "D_Schottky_Dual_CommonAnode_KKA_Split"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -2.54 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at -2.54 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Dual Schottky diode, common anode on pin 1"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "D_Schottky_Dual_CommonAnode_KKA_Split_0_1"
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy 1.27 0) (xy -1.27 -1.27) (xy -1.27 1.27) (xy -1.27 1.27) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.778 1.016) (xy 1.778 1.27) (xy 1.27 1.27) (xy 1.27 -1.27) (xy 0.762 -1.27) (xy 0.762 -1.016)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "D_Schottky_Dual_CommonAnode_KKA_Split_1_1"
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "D_Schottky_Dual_CommonAnode_KKA_Split_2_1"
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Device:Fuse"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -300,11 +139,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:LED"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -372,10 +216,22 @@
 			(symbol "LED_0_1"
 				(polyline
 					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27)
+						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
 					)
 					(stroke
-						(width 0.254)
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+					)
+					(stroke
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -396,7 +252,7 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+						(xy -1.27 -1.27) (xy -1.27 1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -408,22 +264,10 @@
 				)
 				(polyline
 					(pts
-						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
 					)
 					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
-					)
-					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -469,577 +313,12 @@
 					)
 				)
 			)
-		)
-		(symbol "Device:Q_NMOS_GSD"
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "Q_NMOS_GSD"
-				(at 5.08 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "N-MOSFET transistor, gate/source/drain"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Q_NMOS_GSD_0_1"
-				(polyline
-					(pts
-						(xy 0.254 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 1.905) (xy 0.254 -1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "Q_NMOS_GSD_1_1"
-				(pin input line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "Device:Q_PMOS_GSD"
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "Q_PMOS_GSD"
-				(at 5.08 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "P-MOSFET transistor, gate/source/drain"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "transistor PMOS P-MOS P-MOSFET"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Q_PMOS_GSD_0_1"
-				(polyline
-					(pts
-						(xy 0.254 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 1.905) (xy 0.254 -1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.794 -0.508) (xy 2.921 -0.381) (xy 3.683 -0.381) (xy 3.81 -0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "Q_PMOS_GSD_1_1"
-				(pin input line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:R"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -1158,10 +437,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:R_Pack04_Split"
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1241,24 +523,6 @@
 			)
 			(symbol "R_Pack04_Split_1_1"
 				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "R1.1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
 					(name "R1.2"
@@ -1276,19 +540,17 @@
 						)
 					)
 				)
-			)
-			(symbol "R_Pack04_Split_2_1"
 				(pin passive line
 					(at 0 -3.81 90)
 					(length 1.27)
-					(name "R2.1"
+					(name "R1.1"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "2"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1296,6 +558,8 @@
 						)
 					)
 				)
+			)
+			(symbol "R_Pack04_Split_2_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
@@ -1314,19 +578,17 @@
 						)
 					)
 				)
-			)
-			(symbol "R_Pack04_Split_3_1"
 				(pin passive line
 					(at 0 -3.81 90)
 					(length 1.27)
-					(name "R3.1"
+					(name "R2.1"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "3"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1334,6 +596,8 @@
 						)
 					)
 				)
+			)
+			(symbol "R_Pack04_Split_3_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
@@ -1352,19 +616,17 @@
 						)
 					)
 				)
-			)
-			(symbol "R_Pack04_Split_4_1"
 				(pin passive line
 					(at 0 -3.81 90)
 					(length 1.27)
-					(name "R4.1"
+					(name "R3.1"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "4"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1372,6 +634,8 @@
 						)
 					)
 				)
+			)
+			(symbol "R_Pack04_Split_4_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
@@ -1390,13 +654,36 @@
 						)
 					)
 				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "R4.1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "GND_1"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1487,6 +774,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Isolator:LTV-356T"
 			(pin_names
@@ -1575,6 +863,18 @@
 				)
 				(polyline
 					(pts
+						(xy -5.08 2.54) (xy -2.54 2.54) (xy -2.54 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
 						(xy -3.175 -0.635) (xy -1.905 -0.635)
 					)
 					(stroke
@@ -1587,7 +887,91 @@
 				)
 				(polyline
 					(pts
+						(xy -2.54 -0.635) (xy -2.54 -2.54) (xy -5.08 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -0.635) (xy -3.175 0.635) (xy -1.905 0.635) (xy -2.54 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 0.508) (xy 0.762 0.508) (xy 0.381 0.381) (xy 0.381 0.635) (xy 0.762 0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 -0.508) (xy 0.762 -0.508) (xy 0.381 -0.635) (xy 0.381 -0.381) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.905) (xy 2.54 -1.905) (xy 2.54 -1.905)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
 						(xy 2.54 0.635) (xy 4.445 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.048 -1.651) (xy 3.556 -1.143) (xy 4.064 -2.159) (xy 3.048 -1.651) (xy 3.048 -1.651)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 2.54) (xy 5.08 2.54)
 					)
 					(stroke
 						(width 0)
@@ -1619,102 +1003,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.445 2.54) (xy 5.08 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -5.08 2.54) (xy -2.54 2.54) (xy -2.54 -0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -0.635) (xy -2.54 -2.54) (xy -5.08 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 1.905) (xy 2.54 -1.905) (xy 2.54 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -0.635) (xy -3.175 0.635) (xy -1.905 0.635) (xy -2.54 -0.635)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.508 -0.508) (xy 0.762 -0.508) (xy 0.381 -0.635) (xy 0.381 -0.381) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.508 0.508) (xy 0.762 0.508) (xy 0.381 0.381) (xy 0.381 0.635) (xy 0.762 0.508)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.048 -1.651) (xy 3.556 -1.143) (xy 4.064 -2.159) (xy 3.048 -1.651) (xy 3.048 -1.651)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
 					)
 				)
 			)
@@ -1756,24 +1044,6 @@
 					)
 				)
 				(pin passive line
-					(at 7.62 -2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
 					(at 7.62 2.54 180)
 					(length 2.54)
 					(name "~"
@@ -1791,7 +1061,631 @@
 						)
 					)
 				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
+		)
+		(symbol "PCM_Diode_TVS_AKL:SMBJ5.0A"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SMBJ5.0A"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.tme.eu/Document/0b6222bec7e12d83185b51d73cb6a54d/SMBJ_ser.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode unidirectional TVS SMBJ-A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SMBJ5.0A_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27) (xy 1.27 0) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SMBJ5.0A_0_2"
+				(polyline
+					(pts
+						(xy -2.54 -2.54) (xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.889 -0.889) (xy -1.778 0) (xy 0.889 0.889) (xy 0 -1.778) (xy -0.889 -0.889)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.778) (xy -0.381 1.397)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.778) (xy 1.778 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SMBJ5.0A_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "SMBJ5.0A_1_2"
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 0)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 2.54 180)
+					(length 0)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "oresat-transistors:DMP3050LVT-7"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q?"
+				(at 6.35 1.2701 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "DMP3050LVT-7"
+				(at 6.35 -1.2699 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3050LVT.pdf"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "P-Channel MOSFET"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Diodes*PowerDI3333*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "DMP3050LVT-7_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 -0.508) (xy 2.921 -0.381) (xy 3.683 -0.381) (xy 3.81 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "DMP3050LVT-7_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
@@ -1871,7 +1765,8 @@
 			(symbol "GND_1_1"
 				(pin power_in line
 					(at 0 0 270)
-					(length 0) hide
+					(length 0)
+					(hide yes)
 					(name "GND"
 						(effects
 							(font
@@ -1888,6 +1783,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:VBUS"
 			(power)
@@ -1965,7 +1861,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -1977,7 +1873,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -1991,7 +1887,8 @@
 			(symbol "VBUS_1_1"
 				(pin power_in line
 					(at 0 0 90)
-					(length 0) hide
+					(length 0)
+					(hide yes)
 					(name "VBUS"
 						(effects
 							(font
@@ -2008,7 +1905,40 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(text "3-24V"
+		(exclude_from_sim no)
+		(at 246.888 43.688 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "1a1da8c4-f59b-477d-b7cb-e03de71bd087")
+	)
+	(text "External Power"
+		(exclude_from_sim no)
+		(at 246.634 52.832 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ae8987ba-c407-434a-b320-6224bc68a8dd")
+	)
+	(junction
+		(at 110.49 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "003e6ee0-0273-4980-af91-84acaecca1bc")
+	)
+	(junction
+		(at 153.67 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "024fc1a6-f6b5-47ef-8000-9739efddeee8")
 	)
 	(junction
 		(at 49.53 99.06)
@@ -2017,46 +1947,16 @@
 		(uuid "065393d8-cd4d-493b-ab32-be4857dba025")
 	)
 	(junction
-		(at 128.27 129.54)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0c2328e7-2f39-415c-b409-363a2414078b")
-	)
-	(junction
-		(at 153.67 52.07)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "13adf5e5-3b8e-4f45-a83b-48e3657df825")
-	)
-	(junction
-		(at 153.67 177.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "17558d24-a54f-40f4-9820-b8e83f6a817b")
-	)
-	(junction
 		(at 71.12 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "181acdd1-674e-44a1-ace8-b21163c198fa")
 	)
 	(junction
-		(at 97.79 44.45)
+		(at 97.79 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "1911990b-fce4-4ddd-834f-6c6880e3f5bb")
-	)
-	(junction
-		(at 110.49 157.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "202e19e2-d2e4-4e43-9e35-b004d7f874cf")
-	)
-	(junction
-		(at 128.27 87.63)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "21b69155-ef1e-4aaf-966e-a20d676e2b35")
+		(uuid "1f605ac7-6be6-451e-b121-225477e672f6")
 	)
 	(junction
 		(at 49.53 120.65)
@@ -2065,16 +1965,10 @@
 		(uuid "2637a184-cc77-4f29-9924-cca97e163a85")
 	)
 	(junction
-		(at 85.09 109.22)
+		(at 97.79 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "30c34e1f-e113-45bc-a68f-2c8e563b833c")
-	)
-	(junction
-		(at 97.79 157.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "37299bbb-8c0f-4fe8-9f93-6a823389dcee")
+		(uuid "33fdf80e-3aa3-48ac-845a-f152a63187e4")
 	)
 	(junction
 		(at 128.27 93.98)
@@ -2089,6 +1983,12 @@
 		(uuid "39ffbaa1-0be3-43c7-b31e-04333d222f5f")
 	)
 	(junction
+		(at 140.97 186.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3d891999-f228-4a6c-ab4c-932c3ebae7c6")
+	)
+	(junction
 		(at 71.12 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2101,28 +2001,16 @@
 		(uuid "3f2c8126-56eb-46c6-ba92-d8b13b5e8d5b")
 	)
 	(junction
-		(at 110.49 115.57)
+		(at 128.27 88.9)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "420aae27-8dcf-4aa9-a566-5d3aecfda9f1")
+		(uuid "3f835ee4-148e-4fb6-b3fc-cca94de84f3c")
 	)
 	(junction
-		(at 140.97 52.07)
+		(at 85.09 26.67)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "42f51daa-7f7c-4b37-81bf-66b330c7af2b")
-	)
-	(junction
-		(at 140.97 148.59)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4a14d080-ef34-498b-b0be-42236a74eb73")
-	)
-	(junction
-		(at 128.27 171.45)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4a4a5709-7416-463c-b0c6-02bea5ec1224")
+		(uuid "4cd7813c-ae9e-4887-a6f6-434ae8b9c593")
 	)
 	(junction
 		(at 85.09 73.66)
@@ -2131,10 +2019,28 @@
 		(uuid "548e4b93-f3b2-4a7d-89c2-aa5559c0b4da")
 	)
 	(junction
+		(at 128.27 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "54f43235-f5f9-409f-a5fb-02ce0bbbc88d")
+	)
+	(junction
 		(at 236.22 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "550edaee-0254-4313-917b-709c2d440807")
+	)
+	(junction
+		(at 153.67 177.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "56d39818-fa23-40d1-934f-b37982fb81dc")
+	)
+	(junction
+		(at 140.97 102.87)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "574decf6-e701-4063-9593-cb82f8028af6")
 	)
 	(junction
 		(at 236.22 102.87)
@@ -2143,10 +2049,10 @@
 		(uuid "59c74dde-114d-45b7-8bc0-52bcccfae2b3")
 	)
 	(junction
-		(at 97.79 115.57)
+		(at 153.67 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5a734091-97d4-48d4-a878-9a530ae49dea")
+		(uuid "5bbd639b-1b32-4631-af03-7d52ffc4fc3d")
 	)
 	(junction
 		(at 49.53 57.15)
@@ -2155,64 +2061,52 @@
 		(uuid "5cf28f9e-f454-4ff9-a940-0ac362fc5812")
 	)
 	(junction
-		(at 153.67 93.98)
+		(at 153.67 52.07)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "603c7eec-1d83-4818-ab73-281740ec5299")
+		(uuid "63126a02-38a1-4918-a665-d1b92a888a2f")
 	)
 	(junction
-		(at 97.79 60.96)
+		(at 140.97 144.78)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "63c08d0b-018c-4e8b-b863-54c946c81fd4")
+		(uuid "657d33a6-cc8f-4c7e-aa97-0d8671b8cb63")
 	)
 	(junction
-		(at 97.79 19.05)
+		(at 99.06 19.05)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "69b0f528-4eed-4778-943c-6a6f9d390d97")
 	)
 	(junction
-		(at 97.79 31.75)
+		(at 85.09 152.4)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6d4f8cf0-e90e-4b7d-8213-f0e10fe2cb15")
+		(uuid "73aa9d37-9075-4534-a7a9-dba6149641db")
 	)
 	(junction
-		(at 140.97 190.5)
+		(at 97.79 124.46)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "72d87ec6-dae0-409f-a3da-d983b74192d3")
+		(uuid "77fdb2e4-d10e-4d88-be06-919b9fb6503d")
 	)
 	(junction
-		(at 153.67 135.89)
+		(at 97.79 166.37)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7610f9ab-d680-4e56-8dcf-afe69c8a41f4")
+		(uuid "7a71bc3b-2126-4623-b3ee-03eb90d5b4c0")
 	)
 	(junction
-		(at 97.79 73.66)
+		(at 140.97 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8040aa20-d2a2-4ac7-a688-20c40b531b01")
+		(uuid "7fb0c8ec-6d86-40f2-abc6-d6dda9e2ed51")
 	)
 	(junction
-		(at 110.49 31.75)
+		(at 140.97 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "810d0462-7360-46a5-bd0a-5aae72d98e26")
-	)
-	(junction
-		(at 97.79 170.18)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8a00afb5-be84-425f-a5c0-fbe38008f0fe")
-	)
-	(junction
-		(at 140.97 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8a60f9af-fc1c-4164-bb7b-6bfe0790f436")
+		(uuid "8ab22cdb-77ca-4208-b51a-67897da3a980")
 	)
 	(junction
 		(at 85.09 31.75)
@@ -2227,52 +2121,40 @@
 		(uuid "969c86b5-60e3-4267-8d56-548e54c3a0c0")
 	)
 	(junction
-		(at 97.79 128.27)
+		(at 110.49 157.48)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9b08e11d-61b4-480f-8d4b-baebdd4756a3")
+		(uuid "9d4b2798-ee35-43b9-be4a-380c085609f8")
 	)
 	(junction
-		(at 110.49 73.66)
+		(at 128.27 172.72)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9d0f344c-662e-4f57-9d59-c9dd6ee99e54")
+		(uuid "a88ee0ae-7564-4605-855f-73a4b3d827be")
 	)
 	(junction
-		(at 85.09 25.4)
+		(at 110.49 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a6ed735a-2da1-47c1-bce0-0fdc49610341")
+		(uuid "abbdae06-f0de-43fd-a9db-59506fe2769e")
 	)
 	(junction
-		(at 140.97 64.77)
+		(at 85.09 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "af3b17d1-4f6e-4218-93c2-0059eb7a07b4")
+		(uuid "ac0bf03a-b795-4aba-8603-56737ef0bcbd")
 	)
 	(junction
-		(at 140.97 135.89)
+		(at 140.97 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "af788080-576b-4236-ad26-aa8e91b875ed")
+		(uuid "acb3fedd-2854-4783-916b-28f15ff163b9")
 	)
 	(junction
 		(at 49.53 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b0696908-34c0-4976-a2c0-8b6272baa8fa")
-	)
-	(junction
-		(at 97.79 102.87)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b0b784d2-4efa-4a4e-8f8b-d17e4b262b7e")
-	)
-	(junction
-		(at 140.97 123.19)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b40ef724-8239-4a7a-8752-d2b428544dd6")
 	)
 	(junction
 		(at 236.22 97.79)
@@ -2287,28 +2169,28 @@
 		(uuid "b9c02b58-baa7-43f2-a666-701bf6fd0d2e")
 	)
 	(junction
-		(at 97.79 144.78)
+		(at 95.25 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ba2bae86-98af-4f87-9b5a-e2049862b2cd")
+		(uuid "b9ef49da-d9e9-43d5-a8f7-da83a2096a43")
 	)
 	(junction
-		(at 128.27 45.72)
+		(at 128.27 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c5c731fd-446a-48c9-9ca9-9875b1b009a4")
+		(uuid "ba0eff28-37a6-4b31-9c01-149cd386419a")
 	)
 	(junction
-		(at 97.79 86.36)
+		(at 107.95 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c812a536-dc0d-4888-8f1e-02c29f4b9495")
+		(uuid "be90fd0f-dd00-4513-b151-eb2dc70db890")
 	)
 	(junction
-		(at 140.97 177.8)
+		(at 85.09 110.49)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c960f036-5352-46c5-915b-79b11205f740")
+		(uuid "c31b8a92-04bf-40c5-9890-4e7fe3b3c3c8")
 	)
 	(junction
 		(at 49.53 182.88)
@@ -2323,28 +2205,28 @@
 		(uuid "d7415acb-fab5-4332-84f8-ca61eca4e659")
 	)
 	(junction
-		(at 85.09 67.31)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d8669bc3-da35-4fcd-9a3a-1b2b0daa2c7f")
-	)
-	(junction
 		(at 49.53 140.97)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "de6bc8f8-03d5-44e4-a056-caa3fabcc4f5")
 	)
 	(junction
-		(at 140.97 106.68)
+		(at 97.79 144.78)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e0487a96-aa67-49cf-aea7-27dc48cc445b")
+		(uuid "e1c021b3-9a8e-4f4d-925b-b8b90c37c0a9")
 	)
 	(junction
 		(at 128.27 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e31e412a-5d05-4983-9ca6-4b32e662c4c1")
+	)
+	(junction
+		(at 140.97 165.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e4a5fc01-4bca-4819-a727-03bf36a573c6")
 	)
 	(junction
 		(at 71.12 120.65)
@@ -2365,6 +2247,12 @@
 		(uuid "eeeee35a-4c4c-4086-9d64-6a91c2e4bbfa")
 	)
 	(junction
+		(at 97.79 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f1e611c2-8fcd-4cf1-8885-7715ff77b85f")
+	)
+	(junction
 		(at 71.12 162.56)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2375,12 +2263,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f6840cab-47a6-4e1c-935c-20350bcd7995")
-	)
-	(junction
-		(at 140.97 165.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f737f744-a9eb-432c-8bb5-946e67d45195")
 	)
 	(junction
 		(at 85.09 115.57)
@@ -2407,18 +2289,6 @@
 		(uuid "f97e7a59-c248-4fc4-bd5e-da070a4bfa67")
 	)
 	(junction
-		(at 140.97 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fcc7e61e-c739-4228-8780-7476ea178f59")
-	)
-	(junction
-		(at 85.09 151.13)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fdc1d145-0bff-4a5b-b07e-0124c9ed1396")
-	)
-	(junction
 		(at 128.27 177.8)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2426,7 +2296,27 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 144.78) (xy 85.09 151.13)
+			(xy 140.97 186.69) (xy 140.97 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0077410d-6507-4d4b-9007-a16578126ca7")
+	)
+	(wire
+		(pts
+			(xy 85.09 152.4) (xy 85.09 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00b5735e-f331-4166-8386-d95588ce1612")
+	)
+	(wire
+		(pts
+			(xy 85.09 144.78) (xy 85.09 152.4)
 		)
 		(stroke
 			(width 0)
@@ -2436,13 +2326,13 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 64.77) (xy 153.67 64.77)
+			(xy 85.09 26.67) (xy 91.44 26.67)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "01bf925e-6ef9-4aa6-9435-e8c69fceb7ba")
+		(uuid "0250b576-bbad-4f4c-9807-876f1f15d04e")
 	)
 	(wire
 		(pts
@@ -2466,7 +2356,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 129.54) (xy 128.27 135.89)
+			(xy 128.27 123.19) (xy 128.27 130.81)
 		)
 		(stroke
 			(width 0)
@@ -2476,13 +2366,33 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 151.13) (xy 85.09 157.48)
+			(xy 85.09 152.4) (xy 90.17 152.4)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "07233944-3c18-40cb-8f3d-9f01aecb841f")
+		(uuid "07558fc7-7007-4d12-9927-a6c68a31fc4c")
+	)
+	(wire
+		(pts
+			(xy 128.27 46.99) (xy 128.27 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07803488-8eb4-4973-8cce-78252ae558b7")
+	)
+	(wire
+		(pts
+			(xy 140.97 144.78) (xy 140.97 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07dcd7ed-93a5-49a2-b07a-5f87a868f5c9")
 	)
 	(wire
 		(pts
@@ -2506,6 +2416,16 @@
 	)
 	(wire
 		(pts
+			(xy 97.79 102.87) (xy 97.79 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a4a21b7-8396-4227-aece-d8286b706222")
+	)
+	(wire
+		(pts
 			(xy 232.41 102.87) (xy 236.22 102.87)
 		)
 		(stroke
@@ -2516,7 +2436,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 142.24) (xy 133.35 142.24)
+			(xy 128.27 144.78) (xy 140.97 144.78)
 		)
 		(stroke
 			(width 0)
@@ -2526,7 +2446,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 39.37) (xy 140.97 40.64)
+			(xy 140.97 39.37) (xy 140.97 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2536,13 +2456,13 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 127) (xy 97.79 128.27)
+			(xy 153.67 177.8) (xy 153.67 186.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0bd649f5-8593-4c7e-aa2b-0f21d01d7807")
+		(uuid "0c76cb9d-d80f-4d41-a114-51ca15db66ff")
 	)
 	(wire
 		(pts
@@ -2566,23 +2486,13 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 85.09) (xy 97.79 86.36)
+			(xy 110.49 166.37) (xy 110.49 157.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "123301e7-aa7a-4bcb-9052-b1511c8977cb")
-	)
-	(wire
-		(pts
-			(xy 110.49 157.48) (xy 97.79 157.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "13b9ad9a-69cc-43b1-9be4-75f7af62c766")
+		(uuid "12eabe16-84c6-4e37-b000-d2c8a17754ae")
 	)
 	(wire
 		(pts
@@ -2603,26 +2513,6 @@
 			(type default)
 		)
 		(uuid "1456418e-3481-4ec0-a69b-c919e1ad5758")
-	)
-	(wire
-		(pts
-			(xy 153.67 146.05) (xy 153.67 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1484f969-b717-4cb0-9912-e346e4d43ac4")
-	)
-	(wire
-		(pts
-			(xy 85.09 60.96) (xy 85.09 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "15e1f9a3-aa26-4f93-9c6a-119cc3d50bc0")
 	)
 	(wire
 		(pts
@@ -2666,7 +2556,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 135.89) (xy 128.27 142.24)
+			(xy 128.27 135.89) (xy 128.27 144.78)
 		)
 		(stroke
 			(width 0)
@@ -2676,13 +2566,33 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 31.75) (xy 97.79 33.02)
+			(xy 97.79 82.55) (xy 97.79 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1abc146e-222c-45b4-903a-440436903bac")
+		(uuid "1aa9bd36-24d3-485a-8e56-524edfe713ae")
+	)
+	(wire
+		(pts
+			(xy 105.41 124.46) (xy 110.49 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b088e7b-c5f1-4250-b464-2e0c69f75c18")
+	)
+	(wire
+		(pts
+			(xy 140.97 123.19) (xy 140.97 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b3400d0-a9ed-49ce-81ef-fb0d218c19ea")
 	)
 	(wire
 		(pts
@@ -2706,6 +2616,16 @@
 	)
 	(wire
 		(pts
+			(xy 85.09 19.05) (xy 87.63 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e726a5d-b81d-49e7-b2af-e1d792687e75")
+	)
+	(wire
+		(pts
 			(xy 71.12 57.15) (xy 71.12 78.74)
 		)
 		(stroke
@@ -2713,16 +2633,6 @@
 			(type default)
 		)
 		(uuid "1f086c46-6578-4f23-bd43-7197955463db")
-	)
-	(wire
-		(pts
-			(xy 97.79 144.78) (xy 97.79 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f0a022f-fb79-4e8f-9ccf-279de60506c5")
 	)
 	(wire
 		(pts
@@ -2736,43 +2646,13 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 39.37) (xy 128.27 45.72)
+			(xy 128.27 39.37) (xy 128.27 46.99)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2026277e-23b4-4999-8d41-570a7c43c15c")
-	)
-	(wire
-		(pts
-			(xy 97.79 156.21) (xy 97.79 157.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "20380176-816c-41e3-ab76-13ca1c901f9e")
-	)
-	(wire
-		(pts
-			(xy 85.09 109.22) (xy 90.17 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2060eb2f-bbcd-4d43-b5a0-b277e997724c")
-	)
-	(wire
-		(pts
-			(xy 140.97 92.71) (xy 140.97 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "216075ae-992f-4d9d-803b-1d2fb7ccc6e5")
 	)
 	(wire
 		(pts
@@ -2796,23 +2676,13 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 38.1) (xy 90.17 38.1)
+			(xy 85.09 40.64) (xy 95.25 40.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2560fa80-3577-4b52-b841-5a06f18ac557")
-	)
-	(wire
-		(pts
-			(xy 110.49 157.48) (xy 110.49 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "28b9e3af-dc56-4aa2-8aaf-b1eaedc32a17")
 	)
 	(wire
 		(pts
@@ -2826,23 +2696,33 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 62.23) (xy 153.67 64.77)
+			(xy 140.97 177.8) (xy 153.67 177.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2d51a37d-1bea-40d2-8ed4-33f657917418")
+		(uuid "2b435be6-2f38-4912-9e59-4e5fa939e57a")
 	)
 	(wire
 		(pts
-			(xy 97.79 43.18) (xy 97.79 44.45)
+			(xy 140.97 165.1) (xy 140.97 167.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2e01ed11-14ad-4ac3-b8d9-f2330badbbda")
+		(uuid "2d5b94cc-c10c-4749-8390-e09ecf5cc3b4")
+	)
+	(wire
+		(pts
+			(xy 85.09 110.49) (xy 85.09 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e626b7a-897b-4f1f-a2d5-51f2dadadbb2")
 	)
 	(wire
 		(pts
@@ -2856,6 +2736,16 @@
 	)
 	(wire
 		(pts
+			(xy 85.09 110.49) (xy 90.17 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ec338d5-7280-42fc-bee1-adaae9fbcbd9")
+	)
+	(wire
+		(pts
 			(xy 113.03 157.48) (xy 110.49 157.48)
 		)
 		(stroke
@@ -2866,17 +2756,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 19.05) (xy 86.36 19.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2f92c88f-793a-40ce-ab2c-9fa5e43de270")
-	)
-	(wire
-		(pts
-			(xy 128.27 52.07) (xy 128.27 58.42)
+			(xy 128.27 52.07) (xy 128.27 60.96)
 		)
 		(stroke
 			(width 0)
@@ -2906,23 +2786,33 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 189.23) (xy 140.97 190.5)
+			(xy 97.79 60.96) (xy 97.79 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "37318d47-78be-4a59-9e88-9b774194a7dc")
+		(uuid "33aa607a-0c4f-4ada-b4ac-ed6214c89e04")
 	)
 	(wire
 		(pts
-			(xy 128.27 58.42) (xy 133.35 58.42)
+			(xy 128.27 60.96) (xy 140.97 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "39731468-8d48-4e8d-a3f5-1079692cd482")
+	)
+	(wire
+		(pts
+			(xy 153.67 186.69) (xy 148.59 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39e038df-ad45-4ed4-9165-607241f2fa4b")
 	)
 	(wire
 		(pts
@@ -2996,17 +2886,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 176.53) (xy 140.97 177.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "41d0437d-d08d-42c1-823b-31f7408b0e89")
-	)
-	(wire
-		(pts
-			(xy 85.09 31.75) (xy 85.09 38.1)
+			(xy 85.09 31.75) (xy 85.09 40.64)
 		)
 		(stroke
 			(width 0)
@@ -3036,6 +2916,26 @@
 	)
 	(wire
 		(pts
+			(xy 102.87 40.64) (xy 107.95 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44cd07ee-ca92-42f6-9a6c-31e3512301e6")
+	)
+	(wire
+		(pts
+			(xy 153.67 102.87) (xy 153.67 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45c99b42-7a8c-4bee-8aa2-ac925cb4adc2")
+	)
+	(wire
+		(pts
 			(xy 49.53 99.06) (xy 49.53 120.65)
 		)
 		(stroke
@@ -3056,13 +2956,13 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 177.8) (xy 153.67 180.34)
+			(xy 128.27 88.9) (xy 133.35 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "475dde0c-09be-4133-b5da-e767011bbce3")
+		(uuid "476620a4-2a33-4d13-a1b0-acd9eca1f837")
 	)
 	(wire
 		(pts
@@ -3086,16 +2986,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 50.8) (xy 140.97 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "49da79ba-aae9-42f5-97a0-f98524aa6ee6")
-	)
-	(wire
-		(pts
 			(xy 215.9 92.71) (xy 224.79 92.71)
 		)
 		(stroke
@@ -3106,13 +2996,13 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 52.07) (xy 140.97 53.34)
+			(xy 97.79 115.57) (xy 110.49 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4c62e640-9e7e-4201-a86a-d641ec7cec00")
+		(uuid "4c916776-8caf-45cd-8a53-7cc42b1f1272")
 	)
 	(wire
 		(pts
@@ -3136,7 +3026,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 163.83) (xy 90.17 163.83)
+			(xy 85.09 166.37) (xy 97.79 166.37)
 		)
 		(stroke
 			(width 0)
@@ -3156,37 +3046,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 93.98) (xy 140.97 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4dd6d370-a396-4f65-b703-6f201349ca7c")
-	)
-	(wire
-		(pts
-			(xy 153.67 104.14) (xy 153.67 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f159c4a-6b1f-4d7a-b631-c480060a6d8f")
-	)
-	(wire
-		(pts
-			(xy 128.27 129.54) (xy 133.35 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f2c6cf7-8f15-404e-a787-361839b0a79d")
-	)
-	(wire
-		(pts
-			(xy 128.27 177.8) (xy 128.27 184.15)
+			(xy 128.27 177.8) (xy 128.27 186.69)
 		)
 		(stroke
 			(width 0)
@@ -3196,17 +3056,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 157.48) (xy 97.79 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5166f2f8-48c5-4b16-b4ca-740260dc7857")
-	)
-	(wire
-		(pts
-			(xy 85.09 157.48) (xy 85.09 163.83)
+			(xy 85.09 157.48) (xy 85.09 166.37)
 		)
 		(stroke
 			(width 0)
@@ -3216,7 +3066,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 109.22) (xy 85.09 115.57)
+			(xy 85.09 102.87) (xy 85.09 110.49)
 		)
 		(stroke
 			(width 0)
@@ -3226,7 +3076,27 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 17.78) (xy 97.79 19.05)
+			(xy 107.95 31.75) (xy 113.03 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5667ffbe-2fda-46a5-bbf3-52e692714a22")
+	)
+	(wire
+		(pts
+			(xy 85.09 68.58) (xy 85.09 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56815d20-afe7-42f4-86fb-561c4d02874a")
+	)
+	(wire
+		(pts
+			(xy 99.06 17.78) (xy 99.06 19.05)
 		)
 		(stroke
 			(width 0)
@@ -3246,6 +3116,16 @@
 	)
 	(wire
 		(pts
+			(xy 97.79 124.46) (xy 97.79 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a3ed4ec-ddb0-42d1-ae9f-ac96accca83e")
+	)
+	(wire
+		(pts
 			(xy 113.03 115.57) (xy 110.49 115.57)
 		)
 		(stroke
@@ -3256,16 +3136,6 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 171.45) (xy 128.27 177.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b11ac5a-a025-4227-ad51-0c2c7e40491b")
-	)
-	(wire
-		(pts
 			(xy 236.22 87.63) (xy 236.22 92.71)
 		)
 		(stroke
@@ -3273,6 +3143,26 @@
 			(type default)
 		)
 		(uuid "5c1c3f5a-b8f5-47d9-8e93-51cc9f03b6c8")
+	)
+	(wire
+		(pts
+			(xy 97.79 166.37) (xy 97.79 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c3a31fc-78a8-4da0-9514-07c01fca7ed5")
+	)
+	(wire
+		(pts
+			(xy 110.49 115.57) (xy 110.49 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c53e801-3337-4d6d-89ca-0b3cea2fdab1")
 	)
 	(wire
 		(pts
@@ -3296,26 +3186,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 102.87) (xy 85.09 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "62034915-6e25-4950-b3d8-870843bead64")
-	)
-	(wire
-		(pts
-			(xy 128.27 171.45) (xy 133.35 171.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "621db619-88e5-4805-8f94-cde58459a886")
-	)
-	(wire
-		(pts
 			(xy 29.21 73.66) (xy 31.75 73.66)
 		)
 		(stroke
@@ -3326,13 +3196,13 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 165.1) (xy 140.97 166.37)
+			(xy 140.97 93.98) (xy 153.67 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "65f7839e-f522-4d83-b50c-f483e58b1685")
+		(uuid "6561408c-6e02-46ba-8fd1-07e803e2bab3")
 	)
 	(wire
 		(pts
@@ -3346,7 +3216,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 100.33) (xy 133.35 100.33)
+			(xy 128.27 102.87) (xy 140.97 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3356,13 +3226,23 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 80.01) (xy 90.17 80.01)
+			(xy 85.09 82.55) (xy 97.79 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "697bdcce-1791-4d8b-bf65-4361f7d7b00d")
+	)
+	(wire
+		(pts
+			(xy 140.97 60.96) (xy 140.97 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a7119f2-8178-4deb-a9bb-cedfd8093eec")
 	)
 	(wire
 		(pts
@@ -3396,6 +3276,16 @@
 	)
 	(wire
 		(pts
+			(xy 128.27 130.81) (xy 128.27 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c23812a-7c25-4139-b895-e131cf7b6388")
+	)
+	(wire
+		(pts
 			(xy 71.12 120.65) (xy 71.12 140.97)
 		)
 		(stroke
@@ -3403,16 +3293,6 @@
 			(type default)
 		)
 		(uuid "6cedea83-4e14-4b14-a51e-1ae7d5e11e0d")
-	)
-	(wire
-		(pts
-			(xy 140.97 134.62) (xy 140.97 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6e8cb113-dd5c-476e-a9bc-53c34fa02448")
 	)
 	(wire
 		(pts
@@ -3436,13 +3316,13 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 115.57) (xy 97.79 115.57)
+			(xy 148.59 102.87) (xy 153.67 102.87)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "71a9c295-e432-47f6-982f-8e56f693cd4b")
+		(uuid "706c2df1-a160-4605-91f3-4f349d4dae84")
 	)
 	(wire
 		(pts
@@ -3476,6 +3356,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 166.37) (xy 110.49 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76bf2039-028f-4f12-ac07-13d2a51c05db")
+	)
+	(wire
+		(pts
 			(xy 71.12 78.74) (xy 71.12 99.06)
 		)
 		(stroke
@@ -3483,16 +3373,6 @@
 			(type default)
 		)
 		(uuid "794e9450-c5a3-4672-b2f4-eb1f31e64b7d")
-	)
-	(wire
-		(pts
-			(xy 140.97 63.5) (xy 140.97 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7a870b5a-cc35-4d8f-b006-fdc0336a377d")
 	)
 	(wire
 		(pts
@@ -3506,16 +3386,6 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 52.07) (xy 140.97 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c6e22ee-0a91-4604-b1ed-97c3d16ca481")
-	)
-	(wire
-		(pts
 			(xy 156.21 135.89) (xy 153.67 135.89)
 		)
 		(stroke
@@ -3526,7 +3396,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 165.1) (xy 128.27 171.45)
+			(xy 128.27 165.1) (xy 128.27 172.72)
 		)
 		(stroke
 			(width 0)
@@ -3546,16 +3416,6 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 128.27) (xy 97.79 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7f7deeb2-1466-4e51-a05f-d0aee98cdb8d")
-	)
-	(wire
-		(pts
 			(xy 53.34 182.88) (xy 49.53 182.88)
 		)
 		(stroke
@@ -3566,23 +3426,13 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 60.96) (xy 97.79 62.23)
+			(xy 97.79 157.48) (xy 110.49 157.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "800625f6-00f5-4849-8c3e-da4a9fee8aa1")
-	)
-	(wire
-		(pts
-			(xy 153.67 135.89) (xy 140.97 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "802bf7d8-3b95-4a53-8b5e-6e3dead8bd72")
+		(uuid "827824c7-8d60-468e-9b47-06fbd25d4f94")
 	)
 	(wire
 		(pts
@@ -3596,16 +3446,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 147.32) (xy 140.97 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "865fd65c-e5c6-4d22-9670-ac54a8058f60")
-	)
-	(wire
-		(pts
 			(xy 232.41 82.55) (xy 236.22 82.55)
 		)
 		(stroke
@@ -3613,26 +3453,6 @@
 			(type default)
 		)
 		(uuid "87e0b741-4e30-480b-b45e-100269ecd884")
-	)
-	(wire
-		(pts
-			(xy 97.79 30.48) (xy 97.79 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "89e79301-e793-4973-87d6-93615e6adf36")
-	)
-	(wire
-		(pts
-			(xy 97.79 114.3) (xy 97.79 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8a186ea1-4948-4e2c-b722-14f07650e8b9")
 	)
 	(wire
 		(pts
@@ -3646,6 +3466,16 @@
 	)
 	(wire
 		(pts
+			(xy 128.27 130.81) (xy 133.35 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c4fba1f-4686-48ea-b364-6eaacdfac672")
+	)
+	(wire
+		(pts
 			(xy 137.16 165.1) (xy 140.97 165.1)
 		)
 		(stroke
@@ -3656,43 +3486,13 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 72.39) (xy 97.79 73.66)
+			(xy 97.79 73.66) (xy 110.49 73.66)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8e70221f-a06f-4a83-b91b-b20ae2c8f407")
-	)
-	(wire
-		(pts
-			(xy 140.97 177.8) (xy 140.97 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f0f8445-8b7e-44b0-8740-79410ec7a924")
-	)
-	(wire
-		(pts
-			(xy 153.67 148.59) (xy 140.97 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8fcfc031-3466-4197-b34d-0cd73fe62be9")
-	)
-	(wire
-		(pts
-			(xy 140.97 123.19) (xy 140.97 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9122ee91-1e4a-4098-93a9-1eb83c1e5939")
+		(uuid "904ece70-e1fd-42fe-afe9-f7ade59b00a0")
 	)
 	(wire
 		(pts
@@ -3726,53 +3526,13 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 93.98) (xy 140.97 95.25)
+			(xy 97.79 144.78) (xy 97.79 147.32)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "97454a7a-41e1-4b10-bcbe-010e43eae232")
-	)
-	(wire
-		(pts
-			(xy 85.09 25.4) (xy 90.17 25.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "97534842-1567-4957-8116-1ad0f66d7f70")
-	)
-	(wire
-		(pts
-			(xy 128.27 87.63) (xy 128.27 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "98d91037-e09f-4a06-8458-a26e2381c138")
-	)
-	(wire
-		(pts
-			(xy 153.67 187.96) (xy 153.67 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9a8381d7-224e-4584-aade-d098cb16b579")
-	)
-	(wire
-		(pts
-			(xy 97.79 73.66) (xy 97.79 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9b0c51f8-5cff-487f-a9ca-9b98b842a82f")
+		(uuid "996de5bb-6357-481c-bfdc-ee117591f0b2")
 	)
 	(wire
 		(pts
@@ -3786,26 +3546,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 67.31) (xy 90.17 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9d76dc0e-6930-4767-b74f-0915ea1fc8cb")
-	)
-	(wire
-		(pts
-			(xy 97.79 168.91) (xy 97.79 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9fddbaec-6743-49a4-aa15-d0b04ee14626")
-	)
-	(wire
-		(pts
 			(xy 71.12 182.88) (xy 71.12 186.69)
 		)
 		(stroke
@@ -3813,26 +3553,6 @@
 			(type default)
 		)
 		(uuid "a004fb15-0abf-4be3-aedd-90018331b882")
-	)
-	(wire
-		(pts
-			(xy 140.97 105.41) (xy 140.97 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a05ebbc0-91bb-4b71-bf03-fe4cf865733b")
-	)
-	(wire
-		(pts
-			(xy 97.79 170.18) (xy 110.49 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a1c0c42c-6971-4984-b41d-420e9a94bcf1")
 	)
 	(wire
 		(pts
@@ -3856,23 +3576,53 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 44.45) (xy 97.79 44.45)
+			(xy 110.49 82.55) (xy 105.41 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a6ff0880-3659-472a-9aab-bde97a554867")
+		(uuid "a389338d-297a-4daa-9491-05be87b354f6")
 	)
 	(wire
 		(pts
-			(xy 85.09 25.4) (xy 85.09 31.75)
+			(xy 85.09 26.67) (xy 85.09 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3b2a02f-42d1-4fa8-b148-273515ca69f7")
+	)
+	(wire
+		(pts
+			(xy 85.09 19.05) (xy 85.09 26.67)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "a7337ede-7147-4d33-814d-8034782bfe74")
+	)
+	(wire
+		(pts
+			(xy 107.95 40.64) (xy 107.95 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a772df47-c2c4-4dd4-9a02-b9bd2890b26e")
+	)
+	(wire
+		(pts
+			(xy 140.97 81.28) (xy 140.97 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a80c1621-4361-47ab-ad27-cb2aeeb618b1")
 	)
 	(wire
 		(pts
@@ -3886,33 +3636,13 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 115.57) (xy 85.09 121.92)
+			(xy 85.09 115.57) (xy 85.09 124.46)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "aa6e11ee-ae6f-4e32-9e5a-894d1f18928f")
-	)
-	(wire
-		(pts
-			(xy 153.67 177.8) (xy 140.97 177.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ab06c1bf-8968-4354-bcc9-766a4291280c")
-	)
-	(wire
-		(pts
-			(xy 110.49 31.75) (xy 97.79 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ab12f7fa-950a-4352-94c8-e6b28866cd4e")
 	)
 	(wire
 		(pts
@@ -3946,23 +3676,23 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 52.07) (xy 153.67 54.61)
+			(xy 128.27 172.72) (xy 128.27 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae902cde-7952-48f1-a7d7-69a9974ad335")
+	)
+	(wire
+		(pts
+			(xy 153.67 52.07) (xy 153.67 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "b0df4ad6-bddb-4565-ade1-9752386717a0")
-	)
-	(wire
-		(pts
-			(xy 128.27 87.63) (xy 133.35 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b1551c32-440b-4058-9161-562018429739")
 	)
 	(wire
 		(pts
@@ -3973,16 +3703,6 @@
 			(type default)
 		)
 		(uuid "b1712d55-1ec5-4c60-8c7c-418a29d92483")
-	)
-	(wire
-		(pts
-			(xy 113.03 31.75) (xy 110.49 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b17fc08f-f99d-4c4f-acc2-f15cb6392ec1")
 	)
 	(wire
 		(pts
@@ -4026,23 +3746,13 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 121.92) (xy 90.17 121.92)
+			(xy 85.09 124.46) (xy 97.79 124.46)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "b6466159-5904-465e-bde8-2d005b5c3dbc")
-	)
-	(wire
-		(pts
-			(xy 153.67 190.5) (xy 140.97 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b70c24bc-f627-44dc-8c61-a9375715e71b")
 	)
 	(wire
 		(pts
@@ -4076,7 +3786,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 67.31) (xy 85.09 73.66)
+			(xy 85.09 60.96) (xy 85.09 68.58)
 		)
 		(stroke
 			(width 0)
@@ -4116,23 +3826,13 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 115.57) (xy 110.49 118.11)
+			(xy 95.25 40.64) (xy 95.25 43.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c3ed0fb5-ad47-4979-bbdb-a404eacefcae")
-	)
-	(wire
-		(pts
-			(xy 153.67 106.68) (xy 140.97 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c4b34461-3aef-4fb7-8fad-f003949f4aa1")
+		(uuid "c591811f-46b6-4699-8d6c-3a85d5137f70")
 	)
 	(wire
 		(pts
@@ -4143,16 +3843,6 @@
 			(type default)
 		)
 		(uuid "c64b58c1-2986-46ed-a40b-42ca4b7527aa")
-	)
-	(wire
-		(pts
-			(xy 110.49 31.75) (xy 110.49 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c76f6535-6352-4410-a345-46018a3a763f")
 	)
 	(wire
 		(pts
@@ -4186,26 +3876,6 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 83.82) (xy 110.49 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ca590167-5003-4f56-afb0-81b846f80f02")
-	)
-	(wire
-		(pts
-			(xy 140.97 81.28) (xy 140.97 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "caacd9f4-0c96-41c5-89ea-01f634ae3519")
-	)
-	(wire
-		(pts
 			(xy 29.21 157.48) (xy 31.75 157.48)
 		)
 		(stroke
@@ -4223,16 +3893,6 @@
 			(type default)
 		)
 		(uuid "cb44d11e-6c8b-45b2-9b4f-f8e3497434a5")
-	)
-	(wire
-		(pts
-			(xy 85.09 151.13) (xy 90.17 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cd9864ac-15a2-4c11-9831-6b422ece2929")
 	)
 	(wire
 		(pts
@@ -4266,17 +3926,17 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 125.73) (xy 110.49 128.27)
+			(xy 140.97 135.89) (xy 153.67 135.89)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d12b130d-6a81-44d0-9344-60ddf8ca8a17")
+		(uuid "d1aca600-3aa0-491f-a626-55490f84c4a7")
 	)
 	(wire
 		(pts
-			(xy 153.67 135.89) (xy 153.67 138.43)
+			(xy 153.67 135.89) (xy 153.67 144.78)
 		)
 		(stroke
 			(width 0)
@@ -4296,7 +3956,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 81.28) (xy 128.27 87.63)
+			(xy 128.27 81.28) (xy 128.27 88.9)
 		)
 		(stroke
 			(width 0)
@@ -4316,13 +3976,23 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 184.15) (xy 133.35 184.15)
+			(xy 128.27 186.69) (xy 140.97 186.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "d66c5aa1-95ae-4d6c-aed1-6b7f6ae72cdd")
+	)
+	(wire
+		(pts
+			(xy 140.97 52.07) (xy 153.67 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6755bff-6bd9-4871-b436-d494706aa39a")
 	)
 	(wire
 		(pts
@@ -4333,26 +4003,6 @@
 			(type default)
 		)
 		(uuid "d6b75c80-ed3a-4712-abe9-f86910c915a9")
-	)
-	(wire
-		(pts
-			(xy 85.09 19.05) (xy 85.09 25.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d73bfce3-d9ea-49f8-a7bb-52a95abe3b02")
-	)
-	(wire
-		(pts
-			(xy 110.49 86.36) (xy 97.79 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d8154114-d46a-4f54-94dd-75ed2435df37")
 	)
 	(wire
 		(pts
@@ -4376,13 +4026,13 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 115.57) (xy 97.79 116.84)
+			(xy 99.06 31.75) (xy 107.95 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "da07f8fe-0276-46f2-87ee-518c3481cc6e")
+		(uuid "da29d4c7-672b-4017-a68c-94c23f48b0a4")
 	)
 	(wire
 		(pts
@@ -4406,13 +4056,23 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 73.66) (xy 110.49 76.2)
+			(xy 110.49 73.66) (xy 110.49 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "dc84fc70-cab5-4004-b874-781947bec3df")
+	)
+	(wire
+		(pts
+			(xy 85.09 68.58) (xy 90.17 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd581fea-f08e-4a6e-83d3-b0c141e2377d")
 	)
 	(wire
 		(pts
@@ -4436,13 +4096,13 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 45.72) (xy 128.27 52.07)
+			(xy 128.27 88.9) (xy 128.27 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e024437a-f949-4095-bc63-f679d773bd4c")
+		(uuid "e005ebb1-6b1c-42af-9fdd-b0555ea5de9f")
 	)
 	(wire
 		(pts
@@ -4463,16 +4123,6 @@
 			(type default)
 		)
 		(uuid "e2b88307-689f-408c-9081-b62228525781")
-	)
-	(wire
-		(pts
-			(xy 128.27 123.19) (xy 128.27 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e2ef2e64-2c0b-49a1-a8c5-a2361db86a5a")
 	)
 	(wire
 		(pts
@@ -4516,23 +4166,13 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 19.05) (xy 97.79 20.32)
+			(xy 99.06 19.05) (xy 99.06 21.59)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "e62d4e23-b66d-4f11-a055-64490c634dee")
-	)
-	(wire
-		(pts
-			(xy 110.49 168.91) (xy 110.49 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e75cec49-4b8a-4817-b523-cceccbae0e14")
 	)
 	(wire
 		(pts
@@ -4556,36 +4196,6 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 45.72) (xy 133.35 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eae3e121-90ba-439e-9387-8d3b78e3d71c")
-	)
-	(wire
-		(pts
-			(xy 110.49 41.91) (xy 110.49 44.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ee00c53a-fc44-4402-b9a8-1bf0f30ea325")
-	)
-	(wire
-		(pts
-			(xy 140.97 135.89) (xy 140.97 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ef1c9e84-f6ec-437b-833e-0d8d29040ddd")
-	)
-	(wire
-		(pts
 			(xy 71.12 140.97) (xy 68.58 140.97)
 		)
 		(stroke
@@ -4593,6 +4203,16 @@
 			(type default)
 		)
 		(uuid "ef2edb12-6265-4502-bd3c-3501bcbaef0a")
+	)
+	(wire
+		(pts
+			(xy 128.27 46.99) (xy 133.35 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f07adcc1-5c1b-480f-9bb8-e1b58e2edd2a")
 	)
 	(wire
 		(pts
@@ -4606,6 +4226,16 @@
 	)
 	(wire
 		(pts
+			(xy 128.27 172.72) (xy 133.35 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f17cd8d9-2870-4d8b-ac44-38401c9379a2")
+	)
+	(wire
+		(pts
 			(xy 71.12 57.15) (xy 68.58 57.15)
 		)
 		(stroke
@@ -4616,7 +4246,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 93.98) (xy 128.27 100.33)
+			(xy 128.27 93.98) (xy 128.27 102.87)
 		)
 		(stroke
 			(width 0)
@@ -4636,7 +4266,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 73.66) (xy 85.09 80.01)
+			(xy 85.09 73.66) (xy 85.09 82.55)
 		)
 		(stroke
 			(width 0)
@@ -4656,23 +4286,23 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 102.87) (xy 97.79 104.14)
+			(xy 140.97 102.87) (xy 140.97 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fa7a32fd-3387-4105-abbd-cd3a2a96823f")
+		(uuid "f78ef8c1-57b6-4904-9d0a-6d23e8e7b02e")
 	)
 	(wire
 		(pts
-			(xy 110.49 73.66) (xy 97.79 73.66)
+			(xy 95.25 19.05) (xy 99.06 19.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fbcb9dfb-9caa-456e-804e-da659fc82f43")
+		(uuid "f7b3e0f1-05b1-41f6-b04c-e21671cf886a")
 	)
 	(wire
 		(pts
@@ -4686,13 +4316,13 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 19.05) (xy 97.79 19.05)
+			(xy 148.59 60.96) (xy 153.67 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fd57bfdb-35e5-4daf-ba1d-359291f66f58")
+		(uuid "fc09373f-dc76-429f-adb0-32e92052ec99")
 	)
 	(wire
 		(pts
@@ -4706,37 +4336,16 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 93.98) (xy 153.67 96.52)
+			(xy 153.67 144.78) (xy 148.59 144.78)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ff257ba0-c886-4d3c-b94a-f339c12da81c")
-	)
-	(text "3-24V"
-		(exclude_from_sim no)
-		(at 246.888 43.688 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "1a1da8c4-f59b-477d-b7cb-e03de71bd087")
-	)
-	(text "External Power"
-		(exclude_from_sim no)
-		(at 246.634 52.832 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "ae8987ba-c407-434a-b320-6224bc68a8dd")
+		(uuid "fe5618c2-52cd-4373-a2c5-2a0173ca0182")
 	)
 	(label "~{ISO_OUT_5}"
 		(at 72.39 135.89 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4747,7 +4356,6 @@
 	)
 	(label "~{ISO_OUT_1}"
 		(at 72.39 52.07 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4758,7 +4366,6 @@
 	)
 	(label "~{ISO_OUT_7}"
 		(at 72.39 177.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4769,7 +4376,6 @@
 	)
 	(label "~{ISO_OUT_2}"
 		(at 72.39 73.66 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4780,7 +4386,6 @@
 	)
 	(label "~{ISO_OUT_6}"
 		(at 72.39 157.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4791,7 +4396,6 @@
 	)
 	(label "~{ISO_OUT_0}"
 		(at 72.39 31.75 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4802,7 +4406,6 @@
 	)
 	(label "~{ISO_OUT_4}"
 		(at 72.39 115.57 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4813,7 +4416,6 @@
 	)
 	(label "~{ISO_OUT_3}"
 		(at 72.39 93.98 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6101,97 +5703,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky_Dual_CommonAnode_KKA_Split")
-		(at 110.49 80.01 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "118624d0-be5b-46fe-923a-95810e76fd44")
-		(property "Reference" "D202"
-			(at 112.522 78.5438 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "MMBD717LT1G"
-			(at 112.522 80.9681 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
-			(at 113.03 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mmbd717lt1-d.pdf"
-			(at 113.03 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual Schottky diode, common anode on pin 1"
-			(at 110.49 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "MMBD717LT1GOSCT-ND"
-			(at 110.49 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MMBD717LT1G"
-			(at 110.49 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ad1fc8ff-42c3-4621-8d06-7a0e9b4e18bb")
-		)
-		(pin "2"
-			(uuid "c46fd2a8-8ebb-4863-b33b-3278a27e3575")
-		)
-		(pin "3"
-			(uuid "a5d8558c-3356-4f76-8a19-5c7802acc079")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "D202")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
 		(at 49.53 186.69 0)
@@ -6516,97 +6027,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky_Dual_CommonAnode_KKA_Split")
-		(at 153.67 100.33 90)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "206d8e3a-4569-48d3-997a-62be949a3370")
-		(property "Reference" "D202"
-			(at 155.702 98.8638 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "MMBD717LT1G"
-			(at 155.702 101.2881 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
-			(at 156.21 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mmbd717lt1-d.pdf"
-			(at 156.21 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual Schottky diode, common anode on pin 1"
-			(at 153.67 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "MMBD717LT1GOSCT-ND"
-			(at 153.67 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MMBD717LT1G"
-			(at 153.67 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1ee3bf5d-cab0-4c1e-ad68-36db58b1c61a")
-		)
-		(pin "2"
-			(uuid "4b900f52-0f2a-46a7-9875-73809e03b3a3")
-		)
-		(pin "3"
-			(uuid "a0c4678f-b78f-4716-ae09-a138778957f2")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "D202")
-					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Pack04_Split")
 		(at 133.35 81.28 90)
 		(unit 1)
@@ -6919,17 +6339,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_NMOS_GSD")
-		(at 138.43 184.15 0)
+		(lib_id "oresat-transistors:DMP3050LVT-7")
+		(at 138.43 46.99 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "2db6cacc-e77c-4edf-aefd-bb2a9c516c9e")
-		(property "Reference" "Q216"
-			(at 144.78 182.8799 0)
+		(uuid "279c8af6-9d95-4f4d-9cd3-7a83d1d0260a")
+		(property "Reference" "Q205"
+			(at 144.78 45.7199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6937,8 +6357,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "NMOS"
-			(at 144.78 185.4199 0)
+		(property "Value" "DMP3050LVT-7"
+			(at 144.78 48.2599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6946,64 +6366,58 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 143.51 181.61 0)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
+			(at 143.51 48.895 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3050LVT.pdf"
+			(at 138.43 46.99 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
+			(at 138.43 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMN2053UQ.pdf"
-			(at 138.43 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 138.43 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "31-DMN2053UQ-13CT-ND"
-			(at 138.43 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "DMN2053UQ-13"
-			(at 138.43 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "eddafb70-e95f-439a-ba2d-af50e714a951")
 		)
 		(pin "3"
-			(uuid "4c1b2aad-836f-430f-8d6f-9df4871c8866")
+			(uuid "07f012a7-af15-4004-a7d2-8b31a6d68ccb")
 		)
 		(pin "2"
-			(uuid "1a86ec73-6b04-4339-82e3-a28551140e45")
+			(uuid "c010cf32-4820-4fd2-a17f-ac2509d55afd")
+		)
+		(pin "4"
+			(uuid "b4b33f0a-df09-4b90-8bde-64acb5c3c8f1")
+		)
+		(pin "6"
+			(uuid "06c9f494-e0d1-4151-b082-e12f0f7a3942")
+		)
+		(pin "5"
+			(uuid "0d0bf96d-6963-4b0a-a2f8-be36dfe7d2ba")
+		)
+		(pin "1"
+			(uuid "10a09472-b711-401b-afff-b2e82b0c811a")
 		)
 		(instances
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q216")
+					(reference "Q205")
 					(unit 1)
 				)
 			)
@@ -7070,6 +6484,159 @@
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "oresat-transistors:DMP3050LVT-7")
+		(at 138.43 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3396e380-bdb1-4808-8547-985764096674")
+		(property "Reference" "Q206"
+			(at 144.78 87.6299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3050LVT-7"
+			(at 144.78 90.1699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
+			(at 143.51 90.805 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3050LVT.pdf"
+			(at 138.43 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
+			(at 138.43 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "6b0cb927-d9d1-4046-bce6-dfad63b50cb1")
+		)
+		(pin "2"
+			(uuid "d6cf2f9b-c068-4bdd-a70d-197fe85d1f33")
+		)
+		(pin "4"
+			(uuid "49a89b72-4dac-4086-aee7-c111a36a6200")
+		)
+		(pin "6"
+			(uuid "d5813e0e-6c46-4125-893d-8afccf2d771d")
+		)
+		(pin "5"
+			(uuid "92acc34a-6a42-4d2c-865f-68b32652f520")
+		)
+		(pin "1"
+			(uuid "312ee614-e934-40a7-9a64-4e8b82f143b9")
+		)
+		(instances
+			(project "interface-module"
+				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
+					(reference "Q206")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
+		(at 101.6 166.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33e58132-9647-43a5-8ff6-cf8a17990592")
+		(property "Reference" "D204"
+			(at 101.6 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMBJ5.0A"
+			(at 101.6 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
+			(at 101.6 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
+			(at 101.6 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
+			(at 101.6 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a0c2f9d8-dc58-4b97-b09f-ba369d3859c9")
+		)
+		(pin "2"
+			(uuid "f7af5334-60a2-41cd-9ccc-aa5efd3aedf4")
+		)
+		(instances
+			(project "interface-module"
+				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
+					(reference "D204")
 					(unit 1)
 				)
 			)
@@ -7155,188 +6722,6 @@
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "D207")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Q_NMOS_GSD")
-		(at 138.43 142.24 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3654853b-8729-4bbd-b5e0-38a43aafb1e9")
-		(property "Reference" "Q212"
-			(at 144.78 140.9699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NMOS"
-			(at 144.78 143.5099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 143.51 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMN2053UQ.pdf"
-			(at 138.43 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 138.43 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "31-DMN2053UQ-13CT-ND"
-			(at 138.43 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "DMN2053UQ-13"
-			(at 138.43 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f15f0528-5192-4030-8de4-68afd83273bc")
-		)
-		(pin "3"
-			(uuid "c1bdb61b-4d79-4ac8-bd11-ea83fc61950a")
-		)
-		(pin "2"
-			(uuid "761aee5b-c7e4-4583-935e-b2111e5f31e3")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q212")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky_Dual_CommonAnode_KKA_Split")
-		(at 110.49 121.92 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3827b78e-e31d-4d89-b684-2bf16a7127a6")
-		(property "Reference" "D203"
-			(at 112.522 120.4538 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "MMBD717LT1G"
-			(at 112.522 122.8781 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
-			(at 113.03 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mmbd717lt1-d.pdf"
-			(at 113.03 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual Schottky diode, common anode on pin 1"
-			(at 110.49 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "MMBD717LT1GOSCT-ND"
-			(at 110.49 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MMBD717LT1G"
-			(at 110.49 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "066aa265-e9dd-46ce-b27c-af6cae283313")
-		)
-		(pin "2"
-			(uuid "3b8c93e9-a03a-4d79-b99f-794ba782b308")
-		)
-		(pin "3"
-			(uuid "a5d8558c-3356-4f76-8a19-5c7802acc07a")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "D203")
 					(unit 1)
 				)
 			)
@@ -7705,17 +7090,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_PMOS_GSD")
-		(at 138.43 171.45 0)
+		(lib_id "oresat-transistors:DMP3050LVT-7")
+		(at 95.25 110.49 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "4f2672ac-0b7b-43dd-b516-73294b4c51cd")
-		(property "Reference" "Q215"
-			(at 144.78 170.1799 0)
+		(uuid "4c3fdd52-0a7e-419c-a9f2-acc5268b90f8")
+		(property "Reference" "Q202"
+			(at 101.6 109.2199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7723,8 +7108,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "PMOS"
-			(at 144.78 172.7199 0)
+		(property "Value" "DMP3050LVT-7"
+			(at 101.6 111.7599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7732,155 +7117,58 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 143.51 168.91 0)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
+			(at 100.33 112.395 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3050LVT.pdf"
+			(at 95.25 110.49 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
+			(at 95.25 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/datasheet_en_20220119.pdf?did=59205"
-			(at 138.43 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "P-MOSFET transistor, gate/source/drain"
-			(at 138.43 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "SSM3J378RLFCT-ND"
-			(at 138.43 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "SSM3J378R,LF"
-			(at 138.43 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "09f31e45-6b03-4863-95ef-53aba59277df")
-		)
-		(pin "1"
-			(uuid "73f47434-4bc0-49a5-b98d-f29448740362")
 		)
 		(pin "3"
-			(uuid "232a8d63-2bb2-4235-b21a-5bad7d9fed56")
+			(uuid "3cad2eb9-2300-440c-b178-bf986e3dc1a6")
+		)
+		(pin "2"
+			(uuid "251ff2c0-21a0-4905-a18b-5c6d538cc61a")
+		)
+		(pin "4"
+			(uuid "9e52a43d-6905-4e46-b371-e16afff52160")
+		)
+		(pin "6"
+			(uuid "dfee6fa9-20b4-4e66-ad1c-180e2803ece5")
+		)
+		(pin "5"
+			(uuid "4b72b2f4-b1e9-4389-85af-66a6d4a8cd2f")
+		)
+		(pin "1"
+			(uuid "86f167db-4c23-48ba-b85f-f4606b0e4ad2")
 		)
 		(instances
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q215")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Q_NMOS_GSD")
-		(at 138.43 58.42 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5aa21fcf-cdf0-483c-9282-4cb328de9b64")
-		(property "Reference" "Q204"
-			(at 144.78 57.1499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NMOS"
-			(at 144.78 59.6899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 143.51 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMN2053UQ.pdf"
-			(at 138.43 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 138.43 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "31-DMN2053UQ-13CT-ND"
-			(at 138.43 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "DMN2053UQ-13"
-			(at 138.43 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "035ff738-4803-4c58-b466-71b01070023e")
-		)
-		(pin "3"
-			(uuid "35a0070d-3b1d-4e76-be34-e292e47de3d9")
-		)
-		(pin "2"
-			(uuid "8be508a3-6489-4c05-8430-ac7ab544dbc8")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q204")
+					(reference "Q202")
 					(unit 1)
 				)
 			)
@@ -8326,7 +7614,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Pack04_Split")
-		(at 90.17 19.05 90)
+		(at 91.44 19.05 90)
 		(unit 4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8335,7 +7623,7 @@
 		(fields_autoplaced yes)
 		(uuid "65065d3e-a2b3-496d-9d81-ed43abd42119")
 		(property "Reference" "RN203"
-			(at 90.17 13.8895 90)
+			(at 91.44 13.8895 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8343,7 +7631,7 @@
 			)
 		)
 		(property "Value" "5k1"
-			(at 90.17 16.3138 90)
+			(at 91.44 16.3138 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8351,7 +7639,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 90.17 21.082 90)
+			(at 91.44 21.082 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8360,7 +7648,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.vishay.com/docs/31509/csc.pdf"
-			(at 90.17 19.05 0)
+			(at 91.44 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8369,7 +7657,7 @@
 			)
 		)
 		(property "Description" "4 resistor network, parallel topology, SIP package, split"
-			(at 90.17 19.05 0)
+			(at 91.44 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8378,7 +7666,7 @@
 			)
 		)
 		(property "DPN" "CAY16-512J4LFCT-ND"
-			(at 90.17 19.05 0)
+			(at 91.44 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8387,7 +7675,7 @@
 			)
 		)
 		(property "MPN" "CAY16-512J4LF"
-			(at 90.17 19.05 0)
+			(at 91.44 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8424,188 +7712,6 @@
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN203")
 					(unit 4)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky_Dual_CommonAnode_KKA_Split")
-		(at 153.67 184.15 90)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6635161d-3395-422d-b2ed-07642319a28b")
-		(property "Reference" "D204"
-			(at 155.702 182.6838 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "MMBD717LT1G"
-			(at 155.702 185.1081 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
-			(at 156.21 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mmbd717lt1-d.pdf"
-			(at 156.21 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual Schottky diode, common anode on pin 1"
-			(at 153.67 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "MMBD717LT1GOSCT-ND"
-			(at 153.67 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MMBD717LT1G"
-			(at 153.67 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f3aa0410-4bf4-4c14-b7b0-febfe9714825")
-		)
-		(pin "2"
-			(uuid "4b900f52-0f2a-46a7-9875-73809e03b3a4")
-		)
-		(pin "3"
-			(uuid "bbe68dd8-e471-4a6c-b37e-6346e3d5fe25")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "D204")
-					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Q_PMOS_GSD")
-		(at 95.25 67.31 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "67dc8c2a-7492-4e7f-9436-8e6510714d42")
-		(property "Reference" "Q205"
-			(at 101.6 66.0399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PMOS"
-			(at 101.6 68.5799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 100.33 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/datasheet_en_20220119.pdf?did=59205"
-			(at 95.25 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "P-MOSFET transistor, gate/source/drain"
-			(at 95.25 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "SSM3J378RLFCT-ND"
-			(at 95.25 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "SSM3J378R,LF"
-			(at 95.25 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "1c528588-12ef-4379-a518-9a5b39b322b0")
-		)
-		(pin "1"
-			(uuid "990ec180-4652-42fc-9294-39d74add48cf")
-		)
-		(pin "3"
-			(uuid "a235b82a-b513-4587-b260-ce5d38271ea8")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q205")
-					(unit 1)
 				)
 			)
 		)
@@ -8692,6 +7798,91 @@
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "R202")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "oresat-transistors:DMP3050LVT-7")
+		(at 95.25 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6b0b8905-cf3a-4a2b-b59f-7aac0debbf17")
+		(property "Reference" "Q201"
+			(at 101.6 67.3099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3050LVT-7"
+			(at 101.6 69.8499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
+			(at 100.33 70.485 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3050LVT.pdf"
+			(at 95.25 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
+			(at 95.25 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "6c4c6d3d-7adb-47e9-80a2-6bab219ca63a")
+		)
+		(pin "2"
+			(uuid "1353b7fc-361c-4115-983b-849e35bf6acb")
+		)
+		(pin "4"
+			(uuid "2454e3d7-bfbd-422b-9964-65864c3bb77f")
+		)
+		(pin "6"
+			(uuid "c01578dc-7d95-4316-8bcc-cc7769c6b201")
+		)
+		(pin "5"
+			(uuid "cc72c57d-6a81-4dcb-a8c4-3bc40b8573d9")
+		)
+		(pin "1"
+			(uuid "9b2ce8d2-af9d-467f-be90-aa11de0e81be")
+		)
+		(instances
+			(project "interface-module"
+				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
+					(reference "Q201")
 					(unit 1)
 				)
 			)
@@ -8896,6 +8087,142 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
+		(at 101.6 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7171998b-2fe5-4810-95fc-337c14567ab8")
+		(property "Reference" "D203"
+			(at 101.6 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMBJ5.0A"
+			(at 101.6 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
+			(at 101.6 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
+			(at 101.6 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
+			(at 101.6 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "52a6c177-d4ce-447c-9f7c-8a8394292283")
+		)
+		(pin "2"
+			(uuid "a353e63e-031a-4264-84ca-98d321a1d231")
+		)
+		(instances
+			(project "interface-module"
+				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
+					(reference "D203")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
+		(at 101.6 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "71a82c4e-4a9b-4be0-b474-a99dccf317e2")
+		(property "Reference" "D202"
+			(at 101.6 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMBJ5.0A"
+			(at 101.6 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
+			(at 101.6 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
+			(at 101.6 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
+			(at 101.6 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fb9593c3-0838-4528-9c61-774ad37ee81c")
+		)
+		(pin "2"
+			(uuid "2f2ed275-c865-4707-9d71-ef6d9858da16")
+		)
+		(instances
+			(project "interface-module"
+				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
+					(reference "D202")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Isolator:LTV-356T")
 		(at 60.96 34.29 0)
 		(unit 1)
@@ -9050,6 +8377,91 @@
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "oresat-transistors:DMP3050LVT-7")
+		(at 138.43 172.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7583ecfb-11f9-40be-ad48-67e8479b2d8c")
+		(property "Reference" "Q208"
+			(at 144.78 171.4499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3050LVT-7"
+			(at 144.78 173.9899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
+			(at 143.51 174.625 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3050LVT.pdf"
+			(at 138.43 172.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
+			(at 138.43 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "a29889be-9898-4b59-a17c-334cec85454d")
+		)
+		(pin "2"
+			(uuid "c06c0a80-6742-49ff-8646-ae21aaad0a93")
+		)
+		(pin "4"
+			(uuid "96b01e84-e153-4451-bec1-8a6224ee36d5")
+		)
+		(pin "6"
+			(uuid "4b28ea11-f5a8-471b-a5e5-f649b6a2b2d6")
+		)
+		(pin "5"
+			(uuid "e8e42c92-b275-4495-8422-cdcaa506322d")
+		)
+		(pin "1"
+			(uuid "fddf51b4-34dd-494b-95fe-d41fc5c13849")
+		)
+		(instances
+			(project "interface-module"
+				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
+					(reference "Q208")
 					(unit 1)
 				)
 			)
@@ -9227,7 +8639,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 97.79 44.45 0)
+		(at 95.25 43.18 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9236,7 +8648,7 @@
 		(dnp no)
 		(uuid "8147b0bd-a040-4be2-aeec-39ddbac7a6ea")
 		(property "Reference" "#PWR08"
-			(at 97.79 50.8 0)
+			(at 95.25 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9245,7 +8657,7 @@
 			)
 		)
 		(property "Value" "GNDP"
-			(at 97.79 48.514 0)
+			(at 95.25 47.244 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9253,7 +8665,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 97.79 44.45 0)
+			(at 95.25 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9262,7 +8674,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 97.79 44.45 0)
+			(at 95.25 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9271,7 +8683,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 97.79 44.45 0)
+			(at 95.25 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9390,97 +8802,6 @@
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN202")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Q_PMOS_GSD")
-		(at 138.43 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "829f8aaf-bcd6-412e-a631-d6e6badd1866")
-		(property "Reference" "Q203"
-			(at 144.78 44.4499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PMOS"
-			(at 144.78 46.9899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 143.51 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/datasheet_en_20220119.pdf?did=59205"
-			(at 138.43 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "P-MOSFET transistor, gate/source/drain"
-			(at 138.43 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "SSM3J378RLFCT-ND"
-			(at 138.43 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "SSM3J378R,LF"
-			(at 138.43 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "7164e6e0-d62b-496f-8f36-842439ca887d")
-		)
-		(pin "1"
-			(uuid "9f064410-d164-4781-b9fd-cf5af583e080")
-		)
-		(pin "3"
-			(uuid "289062cf-d415-4c4c-bf2d-d49fd848e512")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q203")
 					(unit 1)
 				)
 			)
@@ -9751,97 +9072,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_NMOS_GSD")
-		(at 95.25 38.1 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "97f8fdb6-ef3a-45f4-a085-9f3a6efd376c")
-		(property "Reference" "Q202"
-			(at 101.6 36.8299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NMOS"
-			(at 101.6 39.3699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 100.33 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMN2053UQ.pdf"
-			(at 95.25 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 95.25 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "31-DMN2053UQ-13CT-ND"
-			(at 95.25 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "DMN2053UQ-13"
-			(at 95.25 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ea93d7f7-0420-46a0-bb87-5f8f840c33c7")
-		)
-		(pin "3"
-			(uuid "2f1c2905-6288-4914-a8a2-1fc97faf3cd8")
-		)
-		(pin "2"
-			(uuid "daa4f3ba-a3c7-473e-af28-2df86784c05a")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q202")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 71.12 186.69 0)
 		(mirror y)
@@ -9995,6 +9225,91 @@
 		)
 	)
 	(symbol
+		(lib_id "oresat-transistors:DMP3050LVT-7")
+		(at 138.43 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9eb4805d-8739-4130-a574-52487cfb2a50")
+		(property "Reference" "Q207"
+			(at 144.78 129.5399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3050LVT-7"
+			(at 144.78 132.0799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
+			(at 143.51 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3050LVT.pdf"
+			(at 138.43 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
+			(at 138.43 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "2cd718a8-1a35-4b1a-892e-586c7655a2d4")
+		)
+		(pin "2"
+			(uuid "383877eb-3210-4180-8ca0-8cd552cc7e1c")
+		)
+		(pin "4"
+			(uuid "5829c09d-859b-4055-84bd-634230e2e129")
+		)
+		(pin "6"
+			(uuid "5f00e412-711a-44e4-876c-95dc681ef963")
+		)
+		(pin "5"
+			(uuid "ce9d3ebc-34c7-447c-ba26-228234eb1306")
+		)
+		(pin "1"
+			(uuid "6a95db71-b711-4163-9279-320a3e006539")
+		)
+		(instances
+			(project "interface-module"
+				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
+					(reference "Q207")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 236.22 118.11 0)
 		(mirror y)
@@ -10127,97 +9442,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_NMOS_GSD")
-		(at 138.43 100.33 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a30f29c0-cf3b-4571-9fa4-2eb82cd48ef1")
-		(property "Reference" "Q208"
-			(at 144.78 99.0599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NMOS"
-			(at 144.78 101.5999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 143.51 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMN2053UQ.pdf"
-			(at 138.43 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 138.43 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "31-DMN2053UQ-13CT-ND"
-			(at 138.43 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "DMN2053UQ-13"
-			(at 138.43 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "67f1af93-ed75-4400-8f03-1103fb01b0bf")
-		)
-		(pin "3"
-			(uuid "2644bfc3-a0f0-4ee5-90cc-7d892dc084a6")
-		)
-		(pin "2"
-			(uuid "c6123fca-ec04-4e03-91ca-f60ffd1ef006")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q208")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:VBUS")
 		(at 140.97 163.83 0)
 		(mirror y)
@@ -10279,188 +9503,6 @@
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR023")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky_Dual_CommonAnode_KKA_Split")
-		(at 110.49 165.1 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a6c2c73d-2bf9-4d5b-ada2-a4770e1f1766")
-		(property "Reference" "D204"
-			(at 112.522 163.6338 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "MMBD717LT1G"
-			(at 112.522 166.0581 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
-			(at 113.03 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mmbd717lt1-d.pdf"
-			(at 113.03 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual Schottky diode, common anode on pin 1"
-			(at 110.49 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "MMBD717LT1GOSCT-ND"
-			(at 110.49 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MMBD717LT1G"
-			(at 110.49 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "87684661-117a-4ce7-bc37-f47ca3975f96")
-		)
-		(pin "2"
-			(uuid "b0da0643-72fd-486f-8143-2f49732e2901")
-		)
-		(pin "3"
-			(uuid "a5d8558c-3356-4f76-8a19-5c7802acc07b")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "D204")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky_Dual_CommonAnode_KKA_Split")
-		(at 153.67 142.24 90)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a87183e9-8028-4edc-b09c-ec7f926c96e1")
-		(property "Reference" "D203"
-			(at 155.702 140.7738 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "MMBD717LT1G"
-			(at 155.702 143.1981 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
-			(at 156.21 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mmbd717lt1-d.pdf"
-			(at 156.21 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual Schottky diode, common anode on pin 1"
-			(at 153.67 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "MMBD717LT1GOSCT-ND"
-			(at 153.67 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MMBD717LT1G"
-			(at 153.67 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "baede677-d3a3-4040-8a4c-91a2a0b3eaf1")
-		)
-		(pin "2"
-			(uuid "4b900f52-0f2a-46a7-9875-73809e03b3a5")
-		)
-		(pin "3"
-			(uuid "95f2c849-d2f6-465c-a2cb-d59f7dbc257a")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "D203")
-					(unit 2)
 				)
 			)
 		)
@@ -10893,17 +9935,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_PMOS_GSD")
-		(at 95.25 151.13 0)
+		(lib_id "oresat-transistors:DMP3050LVT-7")
+		(at 95.25 152.4 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "b8bd920e-7c61-4e79-87a2-b16a2028527d")
-		(property "Reference" "Q213"
-			(at 101.6 149.8599 0)
+		(uuid "bba14a5d-59aa-4635-a5b2-7743c8e0feaf")
+		(property "Reference" "Q203"
+			(at 101.6 151.1299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10911,8 +9953,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "PMOS"
-			(at 101.6 152.3999 0)
+		(property "Value" "DMP3050LVT-7"
+			(at 101.6 153.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10920,156 +9962,59 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 100.33 148.59 0)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
+			(at 100.33 154.305 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3050LVT.pdf"
+			(at 95.25 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
+			(at 95.25 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/datasheet_en_20220119.pdf?did=59205"
-			(at 95.25 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "P-MOSFET transistor, gate/source/drain"
-			(at 95.25 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "SSM3J378RLFCT-ND"
-			(at 95.25 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "SSM3J378R,LF"
-			(at 95.25 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "22161388-1f34-4d43-a5c6-5859cd4fbec4")
-		)
-		(pin "1"
-			(uuid "ea225153-54cf-4f3b-b13a-30d87d9927b9")
 		)
 		(pin "3"
-			(uuid "5b493771-a698-4e76-9410-f0b86ba535a0")
+			(uuid "d87d8b83-21b0-4b86-8a76-4ff9855b0832")
+		)
+		(pin "2"
+			(uuid "f659535c-40d4-4fb9-88dd-9ed4cb0ed615")
+		)
+		(pin "4"
+			(uuid "3456339e-e026-418a-97a3-af337490b29a")
+		)
+		(pin "6"
+			(uuid "895b8b91-108c-461d-820f-d22aec2168f6")
+		)
+		(pin "5"
+			(uuid "42d27d39-02f1-4c77-b675-29acd3d7ec8d")
+		)
+		(pin "1"
+			(uuid "efe8a574-169b-4438-bd4b-58123d8d6ec7")
 		)
 		(instances
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q213")
+					(reference "Q203")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky_Dual_CommonAnode_KKA_Split")
-		(at 153.67 58.42 90)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c01ed18c-38b1-48ed-9c57-a026358869a6")
-		(property "Reference" "D201"
-			(at 155.702 56.9538 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "MMBD717LT1G"
-			(at 155.702 59.3781 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
-			(at 156.21 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mmbd717lt1-d.pdf"
-			(at 156.21 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual Schottky diode, common anode on pin 1"
-			(at 153.67 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "MMBD717LT1GOSCT-ND"
-			(at 153.67 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MMBD717LT1G"
-			(at 153.67 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c26d19a3-acd9-4062-b888-70a83d134d0a")
-		)
-		(pin "2"
-			(uuid "4b900f52-0f2a-46a7-9875-73809e03b3a6")
-		)
-		(pin "3"
-			(uuid "a5d8558c-3356-4f76-8a19-5c7802acc07c")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "D201")
-					(unit 2)
 				)
 			)
 		)
@@ -11245,44 +10190,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_NMOS_GSD")
-		(at 95.25 121.92 0)
+		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
+		(at 144.78 186.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c72d1d07-6f33-410f-b1c5-ca621235f78e")
-		(property "Reference" "Q210"
-			(at 101.6 120.6499 0)
+		(uuid "c7151da8-f6c2-4ff2-8a66-618ca9c74201")
+		(property "Reference" "D216"
+			(at 144.78 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "NMOS"
-			(at 101.6 123.1899 0)
+		(property "Value" "SMBJ5.0A"
+			(at 144.78 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 100.33 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMN2053UQ.pdf"
-			(at 95.25 121.92 0)
+		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
+			(at 144.78 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11290,8 +10224,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 95.25 121.92 0)
+		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
+			(at 144.78 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11299,17 +10233,8 @@
 				(hide yes)
 			)
 		)
-		(property "DPN" "31-DMN2053UQ-13CT-ND"
-			(at 95.25 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "DMN2053UQ-13"
-			(at 95.25 121.92 0)
+		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
+			(at 144.78 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11318,109 +10243,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "8ea96fc4-d384-4ef2-b07e-48fa0de5e0b1")
-		)
-		(pin "3"
-			(uuid "f586374e-2103-4851-ad7d-5749a8ecc525")
+			(uuid "3fa60a6f-81bb-436c-a060-64bc6c1ed5d1")
 		)
 		(pin "2"
-			(uuid "c4a5fbab-86ce-425f-8efe-702b5b1b0fff")
+			(uuid "37b9a14c-8e59-47cc-8608-7771158f0281")
 		)
 		(instances
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q210")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Q_PMOS_GSD")
-		(at 138.43 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c74415cf-5844-4ea6-84fc-d221a4d5d8a8")
-		(property "Reference" "Q211"
-			(at 144.78 128.2699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PMOS"
-			(at 144.78 130.8099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 143.51 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/datasheet_en_20220119.pdf?did=59205"
-			(at 138.43 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "P-MOSFET transistor, gate/source/drain"
-			(at 138.43 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "SSM3J378RLFCT-ND"
-			(at 138.43 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "SSM3J378R,LF"
-			(at 138.43 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "8f350b54-1547-45d3-aed0-c3aa560c66ce")
-		)
-		(pin "1"
-			(uuid "72bcf69a-f87a-419a-8938-2dcf70e5e20f")
-		)
-		(pin "3"
-			(uuid "a95eda8b-888e-4156-973f-ea5a73b59727")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q211")
+					(reference "D216")
 					(unit 1)
 				)
 			)
@@ -11493,44 +10324,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky_Dual_CommonAnode_KKA_Split")
-		(at 110.49 38.1 90)
+		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
+		(at 144.78 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c8f23d3a-5fcf-4aaa-808e-fa8a57444130")
-		(property "Reference" "D201"
-			(at 112.522 36.6338 90)
+		(uuid "c8e2a11d-4133-443d-96c7-637c8465e5ab")
+		(property "Reference" "D213"
+			(at 144.78 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Value" "MMBD717LT1G"
-			(at 112.522 39.0581 90)
+		(property "Value" "SMBJ5.0A"
+			(at 144.78 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
-			(at 113.03 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mmbd717lt1-d.pdf"
-			(at 113.03 40.64 0)
+		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
+			(at 144.78 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11538,8 +10358,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Schottky diode, common anode on pin 1"
-			(at 110.49 38.1 0)
+		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
+			(at 144.78 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11547,17 +10367,8 @@
 				(hide yes)
 			)
 		)
-		(property "DPN" "MMBD717LT1GOSCT-ND"
-			(at 110.49 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MMBD717LT1G"
-			(at 110.49 38.1 0)
+		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
+			(at 144.78 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11566,18 +10377,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "1ef56108-3102-4eda-9373-052895713f73")
+			(uuid "9c60f14b-e6ba-4c15-aeae-c2dda6a61261")
 		)
 		(pin "2"
-			(uuid "5a0c757e-6c0c-4b33-b1eb-3a35bfe9a333")
-		)
-		(pin "3"
-			(uuid "a5d8558c-3356-4f76-8a19-5c7802acc07d")
+			(uuid "d49ffa20-ae8e-4aee-8d6e-af0277b4b1c8")
 		)
 		(instances
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "D201")
+					(reference "D213")
 					(unit 1)
 				)
 			)
@@ -11678,17 +10486,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_NMOS_GSD")
-		(at 95.25 80.01 0)
+		(lib_id "oresat-transistors:DMP3050LVT-7")
+		(at 96.52 26.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "d63a31a3-6be4-40e7-99d1-c5bd08eb9506")
-		(property "Reference" "Q206"
-			(at 101.6 78.7399 0)
+		(uuid "cda6db96-c9f4-4406-b890-27755902583e")
+		(property "Reference" "Q204"
+			(at 102.87 25.3999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11696,8 +10504,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "NMOS"
-			(at 101.6 81.2799 0)
+		(property "Value" "DMP3050LVT-7"
+			(at 102.87 27.9399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11705,64 +10513,58 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 100.33 77.47 0)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
+			(at 101.6 28.575 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3050LVT.pdf"
+			(at 96.52 26.67 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
+			(at 96.52 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMN2053UQ.pdf"
-			(at 95.25 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 95.25 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "31-DMN2053UQ-13CT-ND"
-			(at 95.25 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "DMN2053UQ-13"
-			(at 95.25 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f5a32c5d-5b4f-48c2-a71a-1cfd25c34934")
 		)
 		(pin "3"
-			(uuid "d903c015-b1f1-4a10-8607-58a4ad533dc6")
+			(uuid "384b3316-9a72-4133-bf68-a70a9832b578")
 		)
 		(pin "2"
-			(uuid "c4d8adac-e33c-4ee8-87a8-e719e68d98de")
+			(uuid "abe46352-ff9f-4c3c-9bc0-b9080305be4b")
+		)
+		(pin "4"
+			(uuid "2ba22614-ba96-449f-ac8a-a5932c597234")
+		)
+		(pin "6"
+			(uuid "72b8580f-a23d-4b73-8aaf-6484846ab69e")
+		)
+		(pin "5"
+			(uuid "f6be839c-4f8a-4fbc-9911-0fd26f2e523c")
+		)
+		(pin "1"
+			(uuid "252cd57a-0370-4a6c-9ee4-f52d493e004b")
 		)
 		(instances
-			(project "interface-module"
+			(project ""
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q206")
+					(reference "Q204")
 					(unit 1)
 				)
 			)
@@ -11856,99 +10658,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_PMOS_GSD")
-		(at 95.25 25.4 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dea7897f-3ffa-472b-b61c-9054e607cb83")
-		(property "Reference" "Q201"
-			(at 101.6 24.1299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PMOS"
-			(at 101.6 26.6699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 100.33 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/datasheet_en_20220119.pdf?did=59205"
-			(at 95.25 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "P-MOSFET transistor, gate/source/drain"
-			(at 95.25 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "SSM3J378RLFCT-ND"
-			(at 95.25 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "SSM3J378R,LF"
-			(at 95.25 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "8e941b9f-5a39-4874-8def-86d000f91469")
-		)
-		(pin "1"
-			(uuid "98dca038-cce6-4108-9e0d-f265bf82a90b")
-		)
-		(pin "3"
-			(uuid "35d242ac-260a-421c-9dc5-927b0fc74a3b")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q201")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:VBUS")
-		(at 97.79 17.78 0)
+		(at 99.06 17.78 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11957,7 +10668,7 @@
 		(dnp no)
 		(uuid "defd8be2-70e8-4b85-881d-bdc0122e8b7e")
 		(property "Reference" "#PWR02"
-			(at 97.79 21.59 0)
+			(at 99.06 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11966,7 +10677,7 @@
 			)
 		)
 		(property "Value" "VPOW"
-			(at 97.79 13.97 0)
+			(at 99.06 13.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11974,7 +10685,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 97.79 17.78 0)
+			(at 99.06 17.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11983,7 +10694,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 97.79 17.78 0)
+			(at 99.06 17.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11992,7 +10703,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 97.79 17.78 0)
+			(at 99.06 17.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12007,97 +10718,6 @@
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Q_PMOS_GSD")
-		(at 138.43 87.63 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e510ef78-4f7a-42d2-ae4f-9ac7b05e24a1")
-		(property "Reference" "Q207"
-			(at 144.78 86.3599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PMOS"
-			(at 144.78 88.8999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 143.51 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/datasheet_en_20220119.pdf?did=59205"
-			(at 138.43 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "P-MOSFET transistor, gate/source/drain"
-			(at 138.43 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "SSM3J378RLFCT-ND"
-			(at 138.43 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "SSM3J378R,LF"
-			(at 138.43 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "bb4a4c4d-05c2-4fcc-b4cc-0fabc3da0d6d")
-		)
-		(pin "1"
-			(uuid "fd05e0ec-30c5-4bd9-a82f-562cbbff66d1")
-		)
-		(pin "3"
-			(uuid "a6fd98e8-5469-4d67-a62d-9db392d8ec18")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q207")
 					(unit 1)
 				)
 			)
@@ -12302,6 +10922,74 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
+		(at 144.78 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e6b07e21-6ddf-4170-9bc8-9146d6468bcb")
+		(property "Reference" "D214"
+			(at 144.78 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMBJ5.0A"
+			(at 144.78 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
+			(at 144.78 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
+			(at 144.78 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
+			(at 144.78 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "17046f87-bd5d-44ba-af9e-b2bd16e24242")
+		)
+		(pin "2"
+			(uuid "ea222745-589c-46be-bac3-c1e53ff5eab5")
+		)
+		(instances
+			(project "interface-module"
+				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
+					(reference "D214")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Pack04_Split")
 		(at 35.56 93.98 90)
 		(unit 4)
@@ -12401,6 +11089,74 @@
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
 					(reference "RN201")
 					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
+		(at 99.06 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e9442f15-c731-4c2b-93f6-00dbdf6fa8de")
+		(property "Reference" "D201"
+			(at 99.06 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMBJ5.0A"
+			(at 99.06 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
+			(at 99.06 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
+			(at 99.06 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
+			(at 99.06 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9a99c2be-c9a0-4c5a-8aea-e1ae49dcfb04")
+		)
+		(pin "2"
+			(uuid "7a60850a-4cf2-4b79-943f-e99fa77c256f")
+		)
+		(instances
+			(project ""
+				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
+					(reference "D201")
+					(unit 1)
 				)
 			)
 		)
@@ -12670,97 +11426,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_NMOS_GSD")
-		(at 95.25 163.83 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f362d27c-eb66-43ba-a6d6-359b61e9f01e")
-		(property "Reference" "Q214"
-			(at 101.6 162.5599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NMOS"
-			(at 101.6 165.0999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 100.33 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMN2053UQ.pdf"
-			(at 95.25 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 95.25 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DPN" "31-DMN2053UQ-13CT-ND"
-			(at 95.25 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "DMN2053UQ-13"
-			(at 95.25 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "06887c1e-2147-4b73-a80c-181c22afd8a0")
-		)
-		(pin "3"
-			(uuid "869974c8-7462-4a27-be71-157132b1553f")
-		)
-		(pin "2"
-			(uuid "22afa38f-51ab-4bfc-8c73-c41a77c71551")
-		)
-		(instances
-			(project "interface-module"
-				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q214")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:LED")
 		(at 228.6 113.03 180)
 		(unit 1)
@@ -12846,44 +11511,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_PMOS_GSD")
-		(at 95.25 109.22 0)
+		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
+		(at 144.78 144.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "fbfd3a62-df47-4f8a-b7ed-e244d2012976")
-		(property "Reference" "Q209"
-			(at 101.6 107.9499 0)
+		(uuid "fa1bf405-8df5-4a3d-9ac8-7b4cd1a0fb2c")
+		(property "Reference" "D215"
+			(at 144.78 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "PMOS"
-			(at 101.6 110.4899 0)
+		(property "Value" "SMBJ5.0A"
+			(at 144.78 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 100.33 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://toshiba.semicon-storage.com/info/datasheet_en_20220119.pdf?did=59205"
-			(at 95.25 109.22 0)
+		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
+			(at 144.78 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12891,8 +11545,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "P-MOSFET transistor, gate/source/drain"
-			(at 95.25 109.22 0)
+		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
+			(at 144.78 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12900,37 +11554,25 @@
 				(hide yes)
 			)
 		)
-		(property "DPN" "SSM3J378RLFCT-ND"
-			(at 95.25 109.22 0)
+		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
+			(at 144.78 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "MPN" "SSM3J378R,LF"
-			(at 95.25 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "0768bbbc-6d3f-4d71-9cc4-1ff8ec0b5bf8")
 		)
 		(pin "1"
-			(uuid "fd69ff81-a99d-4b0c-b4b7-fbfc50c62f64")
+			(uuid "b45a5479-c50e-481f-b22c-8d72ed648276")
 		)
-		(pin "3"
-			(uuid "30b11431-d3b0-4cbf-bee6-c851c5c63efa")
+		(pin "2"
+			(uuid "6814b5da-7a52-458d-9c2a-e71ce5fb391c")
 		)
 		(instances
 			(project "interface-module"
 				(path "/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3"
-					(reference "Q209")
+					(reference "D215")
 					(unit 1)
 				)
 			)
