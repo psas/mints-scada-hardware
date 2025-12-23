@@ -1929,22 +1929,16 @@
 		(uuid "ae8987ba-c407-434a-b320-6224bc68a8dd")
 	)
 	(junction
-		(at 110.49 73.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "003e6ee0-0273-4980-af91-84acaecca1bc")
-	)
-	(junction
-		(at 153.67 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "024fc1a6-f6b5-47ef-8000-9739efddeee8")
-	)
-	(junction
 		(at 49.53 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "065393d8-cd4d-493b-ab32-be4857dba025")
+	)
+	(junction
+		(at 97.79 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "08dd05a1-95ec-469f-9e1e-41fd328af0f2")
 	)
 	(junction
 		(at 71.12 99.06)
@@ -1953,10 +1947,10 @@
 		(uuid "181acdd1-674e-44a1-ace8-b21163c198fa")
 	)
 	(junction
-		(at 97.79 82.55)
+		(at 140.97 52.07)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "1f605ac7-6be6-451e-b121-225477e672f6")
+		(uuid "1a010bd3-7da2-43b5-adc5-2549be56ec81")
 	)
 	(junction
 		(at 49.53 120.65)
@@ -1965,16 +1959,16 @@
 		(uuid "2637a184-cc77-4f29-9924-cca97e163a85")
 	)
 	(junction
+		(at 97.79 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2ed98f84-62bc-45dd-9dd2-08256a3b7282")
+	)
+	(junction
 		(at 97.79 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "33fdf80e-3aa3-48ac-845a-f152a63187e4")
-	)
-	(junction
-		(at 128.27 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3840e7af-8a10-4086-9914-f5b8605afc45")
 	)
 	(junction
 		(at 236.22 92.71)
@@ -1983,22 +1977,10 @@
 		(uuid "39ffbaa1-0be3-43c7-b31e-04333d222f5f")
 	)
 	(junction
-		(at 140.97 186.69)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3d891999-f228-4a6c-ab4c-932c3ebae7c6")
-	)
-	(junction
 		(at 71.12 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3ede5380-1e07-4b6b-a3f8-065fbc4ce95f")
-	)
-	(junction
-		(at 85.09 157.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3f2c8126-56eb-46c6-ba92-d8b13b5e8d5b")
 	)
 	(junction
 		(at 128.27 88.9)
@@ -2013,12 +1995,6 @@
 		(uuid "4cd7813c-ae9e-4887-a6f6-434ae8b9c593")
 	)
 	(junction
-		(at 85.09 73.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "548e4b93-f3b2-4a7d-89c2-aa5559c0b4da")
-	)
-	(junction
 		(at 128.27 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2031,28 +2007,16 @@
 		(uuid "550edaee-0254-4313-917b-709c2d440807")
 	)
 	(junction
-		(at 153.67 177.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "56d39818-fa23-40d1-934f-b37982fb81dc")
-	)
-	(junction
-		(at 140.97 102.87)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "574decf6-e701-4063-9593-cb82f8028af6")
-	)
-	(junction
 		(at 236.22 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "59c74dde-114d-45b7-8bc0-52bcccfae2b3")
 	)
 	(junction
-		(at 153.67 135.89)
+		(at 140.97 93.98)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5bbd639b-1b32-4631-af03-7d52ffc4fc3d")
+		(uuid "5b829de8-5c0d-40b0-ade4-5b7e4511e98b")
 	)
 	(junction
 		(at 49.53 57.15)
@@ -2061,16 +2025,10 @@
 		(uuid "5cf28f9e-f454-4ff9-a940-0ac362fc5812")
 	)
 	(junction
-		(at 153.67 52.07)
+		(at 99.06 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "63126a02-38a1-4918-a665-d1b92a888a2f")
-	)
-	(junction
-		(at 140.97 144.78)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "657d33a6-cc8f-4c7e-aa97-0d8671b8cb63")
+		(uuid "64062dc6-c112-43cb-8f5b-8d1b9efef7d6")
 	)
 	(junction
 		(at 99.06 19.05)
@@ -2079,22 +2037,16 @@
 		(uuid "69b0f528-4eed-4778-943c-6a6f9d390d97")
 	)
 	(junction
+		(at 140.97 135.89)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "725d2bc8-efb2-4917-8707-ba1e51e48cc6")
+	)
+	(junction
 		(at 85.09 152.4)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "73aa9d37-9075-4534-a7a9-dba6149641db")
-	)
-	(junction
-		(at 97.79 124.46)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "77fdb2e4-d10e-4d88-be06-919b9fb6503d")
-	)
-	(junction
-		(at 97.79 166.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7a71bc3b-2126-4623-b3ee-03eb90d5b4c0")
 	)
 	(junction
 		(at 140.97 123.19)
@@ -2103,40 +2055,10 @@
 		(uuid "7fb0c8ec-6d86-40f2-abc6-d6dda9e2ed51")
 	)
 	(junction
-		(at 140.97 60.96)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8ab22cdb-77ca-4208-b51a-67897da3a980")
-	)
-	(junction
-		(at 85.09 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9679f90c-7153-4863-a1bc-65edc127827e")
-	)
-	(junction
-		(at 128.27 52.07)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "969c86b5-60e3-4267-8d56-548e54c3a0c0")
-	)
-	(junction
-		(at 110.49 157.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9d4b2798-ee35-43b9-be4a-380c085609f8")
-	)
-	(junction
 		(at 128.27 172.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a88ee0ae-7564-4605-855f-73a4b3d827be")
-	)
-	(junction
-		(at 110.49 115.57)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "abbdae06-f0de-43fd-a9db-59506fe2769e")
 	)
 	(junction
 		(at 85.09 68.58)
@@ -2149,6 +2071,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "acb3fedd-2854-4783-916b-28f15ff163b9")
+	)
+	(junction
+		(at 140.97 177.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aee361e9-30d3-4215-93fe-5551aea960cd")
 	)
 	(junction
 		(at 49.53 78.74)
@@ -2169,22 +2097,10 @@
 		(uuid "b9c02b58-baa7-43f2-a666-701bf6fd0d2e")
 	)
 	(junction
-		(at 95.25 40.64)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b9ef49da-d9e9-43d5-a8f7-da83a2096a43")
-	)
-	(junction
 		(at 128.27 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ba0eff28-37a6-4b31-9c01-149cd386419a")
-	)
-	(junction
-		(at 107.95 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "be90fd0f-dd00-4513-b151-eb2dc70db890")
 	)
 	(junction
 		(at 85.09 110.49)
@@ -2217,12 +2133,6 @@
 		(uuid "e1c021b3-9a8e-4f4d-925b-b8b90c37c0a9")
 	)
 	(junction
-		(at 128.27 135.89)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e31e412a-5d05-4983-9ca6-4b32e662c4c1")
-	)
-	(junction
 		(at 140.97 165.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2247,6 +2157,12 @@
 		(uuid "eeeee35a-4c4c-4086-9d64-6a91c2e4bbfa")
 	)
 	(junction
+		(at 97.79 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f1d16ca8-4ad8-48fa-b4bc-29d3906f0b39")
+	)
+	(junction
 		(at 97.79 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2265,12 +2181,6 @@
 		(uuid "f6840cab-47a6-4e1c-935c-20350bcd7995")
 	)
 	(junction
-		(at 85.09 115.57)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f7c66b15-f4a6-4011-9090-484ced378bff")
-	)
-	(junction
 		(at 71.12 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2287,22 +2197,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f97e7a59-c248-4fc4-bd5e-da070a4bfa67")
-	)
-	(junction
-		(at 128.27 177.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ff875dd5-9952-4573-b841-3cf3707e45ad")
-	)
-	(wire
-		(pts
-			(xy 140.97 186.69) (xy 140.97 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0077410d-6507-4d4b-9007-a16578126ca7")
 	)
 	(wire
 		(pts
@@ -2386,16 +2280,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 144.78) (xy 140.97 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "07dcd7ed-93a5-49a2-b07a-5f87a868f5c9")
-	)
-	(wire
-		(pts
 			(xy 29.21 135.89) (xy 31.75 135.89)
 		)
 		(stroke
@@ -2436,16 +2320,6 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 144.78) (xy 140.97 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0ba331ad-28fe-4f21-9922-03e46f4e7528")
-	)
-	(wire
-		(pts
 			(xy 140.97 39.37) (xy 140.97 41.91)
 		)
 		(stroke
@@ -2453,16 +2327,6 @@
 			(type default)
 		)
 		(uuid "0bbeb8fe-1e61-43fc-990b-0e5a79c020d7")
-	)
-	(wire
-		(pts
-			(xy 153.67 177.8) (xy 153.67 186.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0c76cb9d-d80f-4d41-a114-51ca15db66ff")
 	)
 	(wire
 		(pts
@@ -2486,13 +2350,13 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 166.37) (xy 110.49 157.48)
+			(xy 97.79 157.48) (xy 97.79 160.02)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "12eabe16-84c6-4e37-b000-d2c8a17754ae")
+		(uuid "1401494b-6b69-427f-8009-121af84bfaec")
 	)
 	(wire
 		(pts
@@ -2556,33 +2420,13 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 135.89) (xy 128.27 144.78)
+			(xy 97.79 83.82) (xy 97.79 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "19dc2e97-49ae-42bf-a788-4d305a7f241d")
-	)
-	(wire
-		(pts
-			(xy 97.79 82.55) (xy 97.79 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1aa9bd36-24d3-485a-8e56-524edfe713ae")
-	)
-	(wire
-		(pts
-			(xy 105.41 124.46) (xy 110.49 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1b088e7b-c5f1-4250-b464-2e0c69f75c18")
+		(uuid "1a1ebf06-97e8-41df-b7af-17a7ae2fb5f2")
 	)
 	(wire
 		(pts
@@ -2656,6 +2500,16 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 187.96) (xy 140.97 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21526344-9980-413e-875b-83a215d778a5")
+	)
+	(wire
+		(pts
 			(xy 232.41 87.63) (xy 236.22 87.63)
 		)
 		(stroke
@@ -2676,16 +2530,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 40.64) (xy 95.25 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2560fa80-3577-4b52-b841-5a06f18ac557")
-	)
-	(wire
-		(pts
 			(xy 68.58 73.66) (xy 85.09 73.66)
 		)
 		(stroke
@@ -2693,16 +2537,6 @@
 			(type default)
 		)
 		(uuid "296d0a9e-7495-4eab-ad87-2dcd6fc97e0c")
-	)
-	(wire
-		(pts
-			(xy 140.97 177.8) (xy 153.67 177.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2b435be6-2f38-4912-9e59-4e5fa939e57a")
 	)
 	(wire
 		(pts
@@ -2746,7 +2580,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 157.48) (xy 110.49 157.48)
+			(xy 97.79 157.48) (xy 113.03 157.48)
 		)
 		(stroke
 			(width 0)
@@ -2756,13 +2590,13 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 52.07) (xy 128.27 60.96)
+			(xy 140.97 52.07) (xy 140.97 54.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2ffe92a6-8e3b-4dfb-bb37-f9a3e1542661")
+		(uuid "326f5b48-2be2-4fd7-a109-4f078c1c92a7")
 	)
 	(wire
 		(pts
@@ -2773,6 +2607,16 @@
 			(type default)
 		)
 		(uuid "328f443b-f4c2-4855-b1d3-cd2f0a0373c7")
+	)
+	(wire
+		(pts
+			(xy 140.97 93.98) (xy 140.97 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "331fa929-44f3-40eb-aaa9-4f634d739d4a")
 	)
 	(wire
 		(pts
@@ -2796,23 +2640,13 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 60.96) (xy 140.97 60.96)
+			(xy 97.79 125.73) (xy 97.79 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "39731468-8d48-4e8d-a3f5-1079692cd482")
-	)
-	(wire
-		(pts
-			(xy 153.67 186.69) (xy 148.59 186.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "39e038df-ad45-4ed4-9165-607241f2fa4b")
+		(uuid "37128b2f-5ccd-4284-adbf-b98ccaeb7107")
 	)
 	(wire
 		(pts
@@ -2886,16 +2720,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 31.75) (xy 85.09 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "41fff158-69d6-4ecb-8477-6bde11b9cf2c")
-	)
-	(wire
-		(pts
 			(xy 236.22 92.71) (xy 236.22 97.79)
 		)
 		(stroke
@@ -2913,26 +2737,6 @@
 			(type default)
 		)
 		(uuid "43b7d0f5-9671-4e67-8c81-cb206d139469")
-	)
-	(wire
-		(pts
-			(xy 102.87 40.64) (xy 107.95 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44cd07ee-ca92-42f6-9a6c-31e3512301e6")
-	)
-	(wire
-		(pts
-			(xy 153.67 102.87) (xy 153.67 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "45c99b42-7a8c-4bee-8aa2-ac925cb4adc2")
 	)
 	(wire
 		(pts
@@ -2996,13 +2800,13 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 115.57) (xy 110.49 115.57)
+			(xy 140.97 62.23) (xy 140.97 64.77)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4c916776-8caf-45cd-8a53-7cc42b1f1272")
+		(uuid "4b104175-c27d-41d8-b6eb-6c686a6b734b")
 	)
 	(wire
 		(pts
@@ -3026,16 +2830,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 166.37) (xy 97.79 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4d48ad55-ff15-474a-b13c-1bf968b54aeb")
-	)
-	(wire
-		(pts
 			(xy 204.47 97.79) (xy 208.28 97.79)
 		)
 		(stroke
@@ -3046,23 +2840,13 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 177.8) (xy 128.27 186.69)
+			(xy 97.79 167.64) (xy 97.79 170.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4f54d62a-64d8-4a5d-81f4-6739f87af217")
-	)
-	(wire
-		(pts
-			(xy 85.09 157.48) (xy 85.09 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "533e26e6-c579-4cd4-be8c-4902610a39e0")
+		(uuid "4f65fc3b-483f-407c-b866-2dd002e38e05")
 	)
 	(wire
 		(pts
@@ -3073,16 +2857,6 @@
 			(type default)
 		)
 		(uuid "55297b6a-391d-4eb0-9340-7dcb9d82c849")
-	)
-	(wire
-		(pts
-			(xy 107.95 31.75) (xy 113.03 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5667ffbe-2fda-46a5-bbf3-52e692714a22")
 	)
 	(wire
 		(pts
@@ -3116,26 +2890,6 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 124.46) (xy 97.79 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5a3ed4ec-ddb0-42d1-ae9f-ac96accca83e")
-	)
-	(wire
-		(pts
-			(xy 113.03 115.57) (xy 110.49 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5a720422-4776-460b-9a62-d4b9608e3305")
-	)
-	(wire
-		(pts
 			(xy 236.22 87.63) (xy 236.22 92.71)
 		)
 		(stroke
@@ -3146,23 +2900,13 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 166.37) (xy 97.79 170.18)
+			(xy 140.97 135.89) (xy 140.97 138.43)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5c3a31fc-78a8-4da0-9514-07c01fca7ed5")
-	)
-	(wire
-		(pts
-			(xy 110.49 115.57) (xy 110.49 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c53e801-3337-4d6d-89ca-0b3cea2fdab1")
+		(uuid "5c24e675-fd7e-4c8a-87e0-a6b530b10d91")
 	)
 	(wire
 		(pts
@@ -3196,16 +2940,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 93.98) (xy 153.67 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6561408c-6e02-46ba-8fd1-07e803e2bab3")
-	)
-	(wire
-		(pts
 			(xy 71.12 99.06) (xy 68.58 99.06)
 		)
 		(stroke
@@ -3216,36 +2950,6 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 102.87) (xy 140.97 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "691582ac-8cef-43fc-ab55-155c219f4abb")
-	)
-	(wire
-		(pts
-			(xy 85.09 82.55) (xy 97.79 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "697bdcce-1791-4d8b-bf65-4361f7d7b00d")
-	)
-	(wire
-		(pts
-			(xy 140.97 60.96) (xy 140.97 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6a7119f2-8178-4deb-a9bb-cedfd8093eec")
-	)
-	(wire
-		(pts
 			(xy 215.9 97.79) (xy 224.79 97.79)
 		)
 		(stroke
@@ -3253,6 +2957,16 @@
 			(type default)
 		)
 		(uuid "6aed4594-9441-4700-a1ee-96bc1b9dbc6a")
+	)
+	(wire
+		(pts
+			(xy 97.79 115.57) (xy 113.03 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b233112-6bc6-46d9-bc35-3be2fee460d8")
 	)
 	(wire
 		(pts
@@ -3296,6 +3010,16 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 146.05) (xy 140.97 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6dc13494-678b-48a1-b691-b44100c7185e")
+	)
+	(wire
+		(pts
 			(xy 204.47 87.63) (xy 208.28 87.63)
 		)
 		(stroke
@@ -3313,16 +3037,6 @@
 			(type default)
 		)
 		(uuid "6f5c26aa-6063-4e08-ad8e-767040c15c82")
-	)
-	(wire
-		(pts
-			(xy 148.59 102.87) (xy 153.67 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "706c2df1-a160-4605-91f3-4f349d4dae84")
 	)
 	(wire
 		(pts
@@ -3356,16 +3070,6 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 166.37) (xy 110.49 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "76bf2039-028f-4f12-ac07-13d2a51c05db")
-	)
-	(wire
-		(pts
 			(xy 71.12 78.74) (xy 71.12 99.06)
 		)
 		(stroke
@@ -3386,7 +3090,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 135.89) (xy 153.67 135.89)
+			(xy 140.97 135.89) (xy 156.21 135.89)
 		)
 		(stroke
 			(width 0)
@@ -3426,13 +3130,13 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 157.48) (xy 110.49 157.48)
+			(xy 97.79 73.66) (xy 97.79 76.2)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "827824c7-8d60-468e-9b47-06fbd25d4f94")
+		(uuid "83ca6648-a8a0-4cde-bf89-b55e80824917")
 	)
 	(wire
 		(pts
@@ -3486,7 +3190,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 73.66) (xy 110.49 73.66)
+			(xy 97.79 73.66) (xy 113.03 73.66)
 		)
 		(stroke
 			(width 0)
@@ -3516,6 +3220,16 @@
 	)
 	(wire
 		(pts
+			(xy 97.79 115.57) (xy 97.79 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9459604c-8288-4dec-88d4-6f514595f718")
+	)
+	(wire
+		(pts
 			(xy 68.58 93.98) (xy 128.27 93.98)
 		)
 		(stroke
@@ -3533,6 +3247,26 @@
 			(type default)
 		)
 		(uuid "996de5bb-6357-481c-bfdc-ee117591f0b2")
+	)
+	(wire
+		(pts
+			(xy 140.97 104.14) (xy 140.97 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a4be6e6-046a-41c1-8d1f-9d4dde8823f1")
+	)
+	(wire
+		(pts
+			(xy 140.97 177.8) (xy 140.97 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c3c8051-9fe2-4f5b-aecf-59fced3553dc")
 	)
 	(wire
 		(pts
@@ -3576,16 +3310,6 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 82.55) (xy 105.41 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a389338d-297a-4daa-9491-05be87b354f6")
-	)
-	(wire
-		(pts
 			(xy 85.09 26.67) (xy 85.09 31.75)
 		)
 		(stroke
@@ -3606,16 +3330,6 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 40.64) (xy 107.95 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a772df47-c2c4-4dd4-9a02-b9bd2890b26e")
-	)
-	(wire
-		(pts
 			(xy 140.97 81.28) (xy 140.97 83.82)
 		)
 		(stroke
@@ -3633,26 +3347,6 @@
 			(type default)
 		)
 		(uuid "a96e7d5c-6043-4825-9e48-0ddaddb1e6ab")
-	)
-	(wire
-		(pts
-			(xy 85.09 115.57) (xy 85.09 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aa6e11ee-ae6f-4e32-9e5a-894d1f18928f")
-	)
-	(wire
-		(pts
-			(xy 113.03 73.66) (xy 110.49 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "abc7b026-a136-4600-b1d7-060c997e2069")
 	)
 	(wire
 		(pts
@@ -3683,16 +3377,6 @@
 			(type default)
 		)
 		(uuid "ae902cde-7952-48f1-a7d7-69a9974ad335")
-	)
-	(wire
-		(pts
-			(xy 153.67 52.07) (xy 153.67 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b0df4ad6-bddb-4565-ade1-9752386717a0")
 	)
 	(wire
 		(pts
@@ -3746,16 +3430,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 124.46) (xy 97.79 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b6466159-5904-465e-bde8-2d005b5c3dbc")
-	)
-	(wire
-		(pts
 			(xy 53.34 162.56) (xy 49.53 162.56)
 		)
 		(stroke
@@ -3783,6 +3457,16 @@
 			(type default)
 		)
 		(uuid "b9f7c22e-68a1-4e46-b245-c051003d291e")
+	)
+	(wire
+		(pts
+			(xy 99.06 34.29) (xy 99.06 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb15efd0-b317-435b-89f7-68eabcbb69c2")
 	)
 	(wire
 		(pts
@@ -3823,16 +3507,6 @@
 			(type default)
 		)
 		(uuid "c22bdc51-515a-4f72-9dda-8f48e988edeb")
-	)
-	(wire
-		(pts
-			(xy 95.25 40.64) (xy 95.25 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c591811f-46b6-4699-8d6c-3a85d5137f70")
 	)
 	(wire
 		(pts
@@ -3886,7 +3560,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 93.98) (xy 153.67 93.98)
+			(xy 140.97 93.98) (xy 156.21 93.98)
 		)
 		(stroke
 			(width 0)
@@ -3926,27 +3600,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 135.89) (xy 153.67 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d1aca600-3aa0-491f-a626-55490f84c4a7")
-	)
-	(wire
-		(pts
-			(xy 153.67 135.89) (xy 153.67 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d25d9437-ad12-4146-929f-c10289c022cd")
-	)
-	(wire
-		(pts
-			(xy 156.21 52.07) (xy 153.67 52.07)
+			(xy 140.97 52.07) (xy 156.21 52.07)
 		)
 		(stroke
 			(width 0)
@@ -3976,26 +3630,6 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 186.69) (xy 140.97 186.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d66c5aa1-95ae-4d6c-aed1-6b7f6ae72cdd")
-	)
-	(wire
-		(pts
-			(xy 140.97 52.07) (xy 153.67 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d6755bff-6bd9-4871-b436-d494706aa39a")
-	)
-	(wire
-		(pts
 			(xy 71.12 162.56) (xy 68.58 162.56)
 		)
 		(stroke
@@ -4016,7 +3650,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 177.8) (xy 153.67 177.8)
+			(xy 140.97 177.8) (xy 156.21 177.8)
 		)
 		(stroke
 			(width 0)
@@ -4026,7 +3660,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 31.75) (xy 107.95 31.75)
+			(xy 99.06 31.75) (xy 113.03 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4053,16 +3687,6 @@
 			(type default)
 		)
 		(uuid "dc7dc385-8999-4e84-bbcc-5784a1475054")
-	)
-	(wire
-		(pts
-			(xy 110.49 73.66) (xy 110.49 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dc84fc70-cab5-4004-b874-781947bec3df")
 	)
 	(wire
 		(pts
@@ -4246,16 +3870,6 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 93.98) (xy 128.27 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f266e121-9eb0-4118-a9bf-ded54d6c1e08")
-	)
-	(wire
-		(pts
 			(xy 215.9 77.47) (xy 224.79 77.47)
 		)
 		(stroke
@@ -4266,16 +3880,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 73.66) (xy 85.09 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f5f6942f-8913-4aaa-9f74-1dda88706428")
-	)
-	(wire
-		(pts
 			(xy 85.09 102.87) (xy 86.36 102.87)
 		)
 		(stroke
@@ -4283,16 +3887,6 @@
 			(type default)
 		)
 		(uuid "f7348b02-cc86-4eba-89df-34306906023e")
-	)
-	(wire
-		(pts
-			(xy 140.97 102.87) (xy 140.97 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f78ef8c1-57b6-4904-9d0a-6d23e8e7b02e")
 	)
 	(wire
 		(pts
@@ -4316,16 +3910,6 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 60.96) (xy 153.67 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc09373f-dc76-429f-adb0-32e92052ec99")
-	)
-	(wire
-		(pts
 			(xy 140.97 121.92) (xy 140.97 123.19)
 		)
 		(stroke
@@ -4333,16 +3917,6 @@
 			(type default)
 		)
 		(uuid "fe534ea3-6227-4e93-b998-8cdac446fbc6")
-	)
-	(wire
-		(pts
-			(xy 153.67 144.78) (xy 148.59 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fe5618c2-52cd-4373-a2c5-2a0173ca0182")
 	)
 	(label "~{ISO_OUT_5}"
 		(at 72.39 135.89 0)
@@ -6341,15 +5915,15 @@
 	(symbol
 		(lib_id "oresat-transistors:DMP3050LVT-7")
 		(at 138.43 46.99 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "279c8af6-9d95-4f4d-9cd3-7a83d1d0260a")
 		(property "Reference" "Q205"
-			(at 144.78 45.7199 0)
+			(at 144.78 48.2601 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6358,7 +5932,7 @@
 			)
 		)
 		(property "Value" "DMP3050LVT-7"
-			(at 144.78 48.2599 0)
+			(at 144.78 45.7201 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6367,7 +5941,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
-			(at 143.51 48.895 0)
+			(at 143.51 45.085 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6492,15 +6066,15 @@
 	(symbol
 		(lib_id "oresat-transistors:DMP3050LVT-7")
 		(at 138.43 88.9 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3396e380-bdb1-4808-8547-985764096674")
 		(property "Reference" "Q206"
-			(at 144.78 87.6299 0)
+			(at 144.78 90.1701 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6509,7 +6083,7 @@
 			)
 		)
 		(property "Value" "DMP3050LVT-7"
-			(at 144.78 90.1699 0)
+			(at 144.78 87.6301 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6518,7 +6092,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
-			(at 143.51 90.805 0)
+			(at 143.51 86.995 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6576,7 +6150,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
-		(at 101.6 166.37 0)
+		(at 97.79 163.83 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6585,23 +6159,25 @@
 		(fields_autoplaced yes)
 		(uuid "33e58132-9647-43a5-8ff6-cf8a17990592")
 		(property "Reference" "D204"
-			(at 101.6 160.02 0)
+			(at 100.33 162.5599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "SMBJ5.0A"
-			(at 101.6 162.56 0)
+			(at 100.33 165.0999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
-			(at 101.6 166.37 0)
+			(at 97.79 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6610,7 +6186,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
-			(at 101.6 166.37 0)
+			(at 97.79 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6619,7 +6195,7 @@
 			)
 		)
 		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
-			(at 101.6 166.37 0)
+			(at 97.79 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7092,15 +6668,15 @@
 	(symbol
 		(lib_id "oresat-transistors:DMP3050LVT-7")
 		(at 95.25 110.49 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "4c3fdd52-0a7e-419c-a9f2-acc5268b90f8")
 		(property "Reference" "Q202"
-			(at 101.6 109.2199 0)
+			(at 101.6 111.7601 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7109,7 +6685,7 @@
 			)
 		)
 		(property "Value" "DMP3050LVT-7"
-			(at 101.6 111.7599 0)
+			(at 101.6 109.2201 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7118,7 +6694,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
-			(at 100.33 112.395 0)
+			(at 100.33 108.585 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7806,15 +7382,15 @@
 	(symbol
 		(lib_id "oresat-transistors:DMP3050LVT-7")
 		(at 95.25 68.58 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "6b0b8905-cf3a-4a2b-b59f-7aac0debbf17")
 		(property "Reference" "Q201"
-			(at 101.6 67.3099 0)
+			(at 101.6 69.8501 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7823,7 +7399,7 @@
 			)
 		)
 		(property "Value" "DMP3050LVT-7"
-			(at 101.6 69.8499 0)
+			(at 101.6 67.3101 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7832,7 +7408,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
-			(at 100.33 70.485 0)
+			(at 100.33 66.675 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8088,7 +7664,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
-		(at 101.6 124.46 0)
+		(at 97.79 121.92 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8097,23 +7673,25 @@
 		(fields_autoplaced yes)
 		(uuid "7171998b-2fe5-4810-95fc-337c14567ab8")
 		(property "Reference" "D203"
-			(at 101.6 118.11 0)
+			(at 100.33 120.6499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "SMBJ5.0A"
-			(at 101.6 120.65 0)
+			(at 100.33 123.1899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
-			(at 101.6 124.46 0)
+			(at 97.79 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8122,7 +7700,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
-			(at 101.6 124.46 0)
+			(at 97.79 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8131,7 +7709,7 @@
 			)
 		)
 		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
-			(at 101.6 124.46 0)
+			(at 97.79 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8156,7 +7734,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
-		(at 101.6 82.55 0)
+		(at 97.79 80.01 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8165,23 +7743,25 @@
 		(fields_autoplaced yes)
 		(uuid "71a82c4e-4a9b-4be0-b474-a99dccf317e2")
 		(property "Reference" "D202"
-			(at 101.6 76.2 0)
+			(at 100.33 78.7399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "SMBJ5.0A"
-			(at 101.6 78.74 0)
+			(at 100.33 81.2799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
-			(at 101.6 82.55 0)
+			(at 97.79 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8190,7 +7770,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
-			(at 101.6 82.55 0)
+			(at 97.79 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8199,7 +7779,7 @@
 			)
 		)
 		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
-			(at 101.6 82.55 0)
+			(at 97.79 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8385,15 +7965,15 @@
 	(symbol
 		(lib_id "oresat-transistors:DMP3050LVT-7")
 		(at 138.43 172.72 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "7583ecfb-11f9-40be-ad48-67e8479b2d8c")
 		(property "Reference" "Q208"
-			(at 144.78 171.4499 0)
+			(at 144.78 173.9901 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8402,7 +7982,7 @@
 			)
 		)
 		(property "Value" "DMP3050LVT-7"
-			(at 144.78 173.9899 0)
+			(at 144.78 171.4501 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8411,7 +7991,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
-			(at 143.51 174.625 0)
+			(at 143.51 170.815 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8639,7 +8219,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 95.25 43.18 0)
+		(at 99.06 41.91 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8648,7 +8228,7 @@
 		(dnp no)
 		(uuid "8147b0bd-a040-4be2-aeec-39ddbac7a6ea")
 		(property "Reference" "#PWR08"
-			(at 95.25 49.53 0)
+			(at 99.06 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8657,7 +8237,7 @@
 			)
 		)
 		(property "Value" "GNDP"
-			(at 95.25 47.244 0)
+			(at 99.06 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8665,7 +8245,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 95.25 43.18 0)
+			(at 99.06 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8674,7 +8254,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 95.25 43.18 0)
+			(at 99.06 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8683,7 +8263,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 95.25 43.18 0)
+			(at 99.06 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9227,15 +8807,15 @@
 	(symbol
 		(lib_id "oresat-transistors:DMP3050LVT-7")
 		(at 138.43 130.81 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "9eb4805d-8739-4130-a574-52487cfb2a50")
 		(property "Reference" "Q207"
-			(at 144.78 129.5399 0)
+			(at 144.78 132.0801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9244,7 +8824,7 @@
 			)
 		)
 		(property "Value" "DMP3050LVT-7"
-			(at 144.78 132.0799 0)
+			(at 144.78 129.5401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9253,7 +8833,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
-			(at 143.51 132.715 0)
+			(at 143.51 128.905 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9937,15 +9517,15 @@
 	(symbol
 		(lib_id "oresat-transistors:DMP3050LVT-7")
 		(at 95.25 152.4 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "bba14a5d-59aa-4635-a5b2-7743c8e0feaf")
 		(property "Reference" "Q203"
-			(at 101.6 151.1299 0)
+			(at 101.6 153.6701 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9954,7 +9534,7 @@
 			)
 		)
 		(property "Value" "DMP3050LVT-7"
-			(at 101.6 153.6699 0)
+			(at 101.6 151.1301 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9963,7 +9543,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
-			(at 100.33 154.305 0)
+			(at 100.33 150.495 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10191,7 +9771,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
-		(at 144.78 186.69 0)
+		(at 140.97 184.15 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10200,23 +9780,25 @@
 		(fields_autoplaced yes)
 		(uuid "c7151da8-f6c2-4ff2-8a66-618ca9c74201")
 		(property "Reference" "D216"
-			(at 144.78 180.34 0)
+			(at 143.51 182.8799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "SMBJ5.0A"
-			(at 144.78 182.88 0)
+			(at 143.51 185.4199 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
-			(at 144.78 186.69 0)
+			(at 140.97 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10225,7 +9807,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
-			(at 144.78 186.69 0)
+			(at 140.97 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10234,7 +9816,7 @@
 			)
 		)
 		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
-			(at 144.78 186.69 0)
+			(at 140.97 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10325,7 +9907,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
-		(at 144.78 60.96 0)
+		(at 140.97 58.42 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10334,23 +9916,25 @@
 		(fields_autoplaced yes)
 		(uuid "c8e2a11d-4133-443d-96c7-637c8465e5ab")
 		(property "Reference" "D213"
-			(at 144.78 54.61 0)
+			(at 143.51 57.1499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "SMBJ5.0A"
-			(at 144.78 57.15 0)
+			(at 143.51 59.6899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
-			(at 144.78 60.96 0)
+			(at 140.97 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10359,7 +9943,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
-			(at 144.78 60.96 0)
+			(at 140.97 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10368,7 +9952,7 @@
 			)
 		)
 		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
-			(at 144.78 60.96 0)
+			(at 140.97 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10488,15 +10072,15 @@
 	(symbol
 		(lib_id "oresat-transistors:DMP3050LVT-7")
 		(at 96.52 26.67 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "cda6db96-c9f4-4406-b890-27755902583e")
 		(property "Reference" "Q204"
-			(at 102.87 25.3999 0)
+			(at 102.87 27.9401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10505,7 +10089,7 @@
 			)
 		)
 		(property "Value" "DMP3050LVT-7"
-			(at 102.87 27.9399 0)
+			(at 102.87 25.4001 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10514,7 +10098,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
-			(at 101.6 28.575 0)
+			(at 101.6 24.765 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10923,7 +10507,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
-		(at 144.78 102.87 0)
+		(at 140.97 100.33 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10932,23 +10516,25 @@
 		(fields_autoplaced yes)
 		(uuid "e6b07e21-6ddf-4170-9bc8-9146d6468bcb")
 		(property "Reference" "D214"
-			(at 144.78 96.52 0)
+			(at 143.51 99.0599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "SMBJ5.0A"
-			(at 144.78 99.06 0)
+			(at 143.51 101.5999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
-			(at 144.78 102.87 0)
+			(at 140.97 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10957,7 +10543,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
-			(at 144.78 102.87 0)
+			(at 140.97 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10966,7 +10552,7 @@
 			)
 		)
 		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
-			(at 144.78 102.87 0)
+			(at 140.97 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11095,7 +10681,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
-		(at 99.06 40.64 0)
+		(at 99.06 38.1 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11104,23 +10690,25 @@
 		(fields_autoplaced yes)
 		(uuid "e9442f15-c731-4c2b-93f6-00dbdf6fa8de")
 		(property "Reference" "D201"
-			(at 99.06 34.29 0)
+			(at 101.6 36.8299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "SMBJ5.0A"
-			(at 99.06 36.83 0)
+			(at 101.6 39.3699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
-			(at 99.06 40.64 0)
+			(at 99.06 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11129,7 +10717,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
-			(at 99.06 40.64 0)
+			(at 99.06 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11138,7 +10726,7 @@
 			)
 		)
 		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
-			(at 99.06 40.64 0)
+			(at 99.06 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11512,7 +11100,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Diode_TVS_AKL:SMBJ5.0A")
-		(at 144.78 144.78 0)
+		(at 140.97 142.24 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11521,23 +11109,25 @@
 		(fields_autoplaced yes)
 		(uuid "fa1bf405-8df5-4a3d-9ac8-7b4cd1a0fb2c")
 		(property "Reference" "D215"
-			(at 144.78 138.43 0)
+			(at 143.51 140.9699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "SMBJ5.0A"
-			(at 144.78 140.97 0)
+			(at 143.51 143.5099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMB"
-			(at 144.78 144.78 0)
+			(at 140.97 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11546,7 +11136,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mccsemi.com/pdf/Products/SMBJ5338B-SMBJ5388B(SMB).pdf"
-			(at 144.78 144.78 0)
+			(at 140.97 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11555,7 +11145,7 @@
 			)
 		)
 		(property "Description" "SMB Unidirectional TVS diode, 5V, 600W, Alternate KiCAD Library"
-			(at 144.78 144.78 0)
+			(at 140.97 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
