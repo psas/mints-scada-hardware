@@ -17,6 +17,7 @@
   ******************************************************************************
   */
 
+#include <stdint.h>
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __USBD_CDC_IF_TEMPLATE_H
 #define __USBD_CDC_IF_TEMPLATE_H

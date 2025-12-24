@@ -21,9 +21,8 @@
 // #endif
 // testing use
 
-#define BASE_ADDR_OFFSET 12
-void Error_Handler(void);
 void SystemClock_Config(void);
+#define BASE_ADDR_OFFSET 12
 
 // Pin definitions //
 

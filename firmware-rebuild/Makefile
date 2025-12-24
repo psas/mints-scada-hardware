@@ -9,6 +9,18 @@ CPU = -mcpu=cortex-m0 -mthumb
 BUILD_DIR := ./build
 SRC_DIR := ./src
 
+C_SOURCES = ./cfg/board_cfg.c\
+./cfg/usbd_cdc_if.c\
+./cfg/usbd_conf.c\
+./src/util.c\
+./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c\
+./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c\
+./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd.c\
+./stm32libs/syscalls.c\
+./stm32libs/sysmem.c\
+./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c\
+./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h\
+
 BOARD_CFG := ./cfg/
 STM_LIBS := ./stm32libs/ 
 HAL_INC := ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Inc/
@@ -35,8 +47,22 @@ INCLUDE_DIR = $(BOARD_CFG)\
 INCLUDE_FLAGS += $(addprefix -I,$(INCLUDE_DIR))
 WERROR_FLAGS = -Wimplicit-function-declaration
 CFLAGS = $(CPU) $(INCLUDE_FLAGS) $(WERROR_FLAGS)
+OBJECTS:= $(C_SOURCES:.c=.o)
+LINK_SCRIPT = ./stm32libs/STM32F042C6Tx_FLASH.ld
 
-main: 
+#TODO Add object files to build dir
+
+obj:
+	arm-none-eabi-gcc $(C_SOURCES) $(CFLAGS) -o $(BUILD_DIR)/$(OBJECTS)
+blinky:
+	arm-none-eabi-gcc $(SRC_DIR)/blinky.c $(CFLAGS) -c -o $(BUILD_DIR)/binky.o $(INCLUDE_FLAGS)
+
+link:
+	arm-none-eabi-gcc blinky.o $(OBJECTS) $(CFLAGS) -T $(LINK_SCRIPT) -o blinky.elf $(INCLUDE_FLAGS)
+
+gen_bin:
+	arm-none-eabi-objcopy -O binary blinky.elf blinky.bin
+main:
 	arm-none-eabi-gcc $(SRC_DIR)/main.c $(CFLAGS)
 
 
