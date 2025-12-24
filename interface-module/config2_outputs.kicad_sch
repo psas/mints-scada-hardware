@@ -3,7 +3,13 @@
 	(generator "eeschema")
 	(generator_version "9.0")
 	(uuid "a8a6e26d-0427-483c-bc78-1d9065608de8")
-	(paper "A4")
+	(paper "USLedger")
+	(title_block
+		(title "MinTS Interface Module")
+		(date "2025-12-23")
+		(rev "1.1")
+		(company "Portland State Aerosapce Society")
+	)
 	(lib_symbols
 		(symbol "Device:Fuse"
 			(pin_numbers
