@@ -27,8 +27,8 @@
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 #define USBD_VID                      0x0483
-#define USBD_PID                      0xDF11  /* Replace '0xaaaa' with your device product ID */
-#define USBD_LANGID_STRING            "US_EN?"  /* Replace '0xbbb' with your device language ID */
+#define USBD_PID                      0xdf11  /* Replace '0xaaaa' with your device product ID */
+#define USBD_LANGID_STRING            0xbbb  /* Replace '0xbbb' with your device language ID */
 #define USBD_MANUFACTURER_STRING      "STMicroelectronics" /* Add your manufacturer string */
 #define USBD_PRODUCT_HS_STRING        "STM32F042C6T6" /* Add your product High Speed string */
 #define USBD_PRODUCT_FS_STRING        "STM32F042C6T6" /* Add your product Full Speed string */

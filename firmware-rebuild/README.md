@@ -45,16 +45,3 @@ In `./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usb
 ```
 +#define UNUSED(X) (void)X      /* To avoid gcc/g++ warnings */
 ```
-
-In `./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h`
-```
--#define LOBYTE(x)  ((uint8_t)((x) & 0x00FFU))
--#define HIBYTE(x)  ((uint8_t)(((x) & 0xFF00U) >> 8U))
-+#define LOBYTE(x)  ((uint8_t)((x) && 0x00FFU))
-+#define HIBYTE(x)  ((uint8_t)(((x) && 0xFF00U) >> 8U))
- #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
- #define MAX(a, b)  (((a) > (b)) ? (a) : (b))
-```
-
-
-
