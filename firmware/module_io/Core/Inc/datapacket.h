@@ -19,13 +19,19 @@ self.cmd   is the command
 self.data  is the array of 6 bytes of data 
 */
 
+#define BIGLITTLEDATA(pk) ((BigLittleData*) pk->data.bytes)
+typedef struct BigLittleData_t {
+    uint32_t big;
+    uint16_t little;
+} BigLittleData;
+
 typedef struct CanData_t {
     // The sequence number of the packets
     uint8_t seq;
     // The command the packet is about
     uint8_t cmd;
     // Arguments or data for the packet
-    uint8_t args[6];
+    uint8_t bytes[6];
 } CanData;
 
 typedef struct DataPacket_t {
@@ -40,12 +46,27 @@ typedef struct DataPacket_t {
     // The data of the packet.
     CanData data;
     // The size of the packet. This includes the SEQ and CMD bytes.
-    uint8_t datasize;
+    uint16_t datasize;
 
 } DataPacket;
 
 #define DATAPACKET_RESVD_BIT 8
 #define DATAPACKET_ERROR_BIT 9
 #define DATAPACKET_REPLY_BIT 10
+
+/* Prints a datapacket to USB serial */
+void printDataPacket(DataPacket* pkt);
+
+#define DATAPACKET_READ_SUCCESS 0
+#define DATAPACKET_READ_NOTHING 1
+#define DATAPACKET_READ_ERROR 2
+#define DATAPACKET_READ_TOOSMALL 3
+/* Get a DataPacket from CAN if one is ready */
+int readDataPacketFromCan(DataPacket* dest);
+
+#define DATAPACKET_WRITE_SUCCESS 0
+#define DATAPACKET_WRITE_ERROR 2
+/* Send a DataPacket over CAN */
+int writeDatapacketToCan(DataPacket* pkt);
 
 #endif
