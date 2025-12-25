@@ -43,11 +43,7 @@ In `./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Sr
 
 In `./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h`
 ```
-#ifndef __USBD_CORE_H
- #define __USBD_CORE_H
- 
 +#define UNUSED(X) (void)X      /* To avoid gcc/g++ warnings */
- #ifdef __cplusplus
 ```
 
 In `./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h`
