@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "interface_module")(type "KiCad")(uri "${KIPRJMOD}/interface_module.kicad_sym")(options "")(descr ""))
   (lib (name "MCP3464")(type "KiCad")(uri "${KIPRJMOD}/MCP3464.kicad_sym")(options "")(descr ""))
+  (lib (name "oresat-transistors")(type "KiCad")(uri "${ORESAT_LIBRARIES}/oresat-symbols/oresat-transistors.kicad_sym")(options "")(descr ""))
 )

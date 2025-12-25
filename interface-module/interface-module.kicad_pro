@@ -60,11 +60,15 @@
       ],
       "drc_exclusions": [
         [
+          "courtyards_overlap|114181252|80272683|5d156bea-3bca-477d-ac90-aac6d4cb8063|f78a699e-6f03-4448-a1a8-39bac406e41f",
+          ""
+        ],
+        [
           "courtyards_overlap|135247539|87625000|5e65db5f-f802-4f6d-be10-de00fcb5af43|fd52c026-647d-45a7-a8fc-b586059da260",
           ""
         ],
         [
-          "courtyards_overlap|137191000|85151001|53156fb8-fb55-4095-8608-e9178ff424b2|5e65db5f-f802-4f6d-be10-de00fcb5af43",
+          "courtyards_overlap|137191000|85141001|53156fb8-fb55-4095-8608-e9178ff424b2|5e65db5f-f802-4f6d-be10-de00fcb5af43",
           ""
         ],
         [
@@ -85,6 +89,62 @@
         ],
         [
           "courtyards_overlap|173139104|122036001|288c374d-cf60-450a-a686-b221bc7c5fbc|e520c577-5e09-4f73-b806-1aa22ce92bed",
+          ""
+        ],
+        [
+          "silk_edge_clearance|137056000|63040000|cf0b75c2-69a3-49a0-b00f-c9cc6199fee4|494148ab-57b6-43d4-aa87-4e566591345b",
+          ""
+        ],
+        [
+          "silk_edge_clearance|179193158|63199999|154eebeb-9130-4f34-b0d9-e632a11b9987|bd434b17-00c9-4a52-921f-4d9bec466887",
+          ""
+        ],
+        [
+          "silk_over_copper|137075000|85616377|e8cbc6af-3338-4d0a-a29b-f711c539293c|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "silk_overlap|118000000|93880001|14240ee0-6c59-4fe1-aa07-d227bae0d1cd|c1c4c642-0ddc-4f34-8bd1-5ab8d6850ad6",
+          ""
+        ],
+        [
+          "silk_overlap|127236000|90996001|1060eeeb-339a-4a50-822e-90038c836512|6aa9f329-c4d3-44cb-bd87-0595f28d96be",
+          ""
+        ],
+        [
+          "silk_overlap|127236000|90996001|1f09e6a9-e156-43f2-be19-8d12498b2b3a|6aa9f329-c4d3-44cb-bd87-0595f28d96be",
+          ""
+        ],
+        [
+          "silk_overlap|137056000|68276001|494148ab-57b6-43d4-aa87-4e566591345b|e8cbc6af-3338-4d0a-a29b-f711c539293c",
+          ""
+        ],
+        [
+          "silk_overlap|137056000|68276001|494148ab-57b6-43d4-aa87-4e566591345b|f65ae5c6-08a0-4536-b1f4-13ba8a54e9b3",
+          ""
+        ],
+        [
+          "silk_overlap|137066000|87300000|6828b479-1792-4bdb-8077-80c5124113b5|e8cbc6af-3338-4d0a-a29b-f711c539293c",
+          ""
+        ],
+        [
+          "silk_overlap|137496000|133156001|32734a56-362d-461f-bc84-f2c5aa2a6636|d743197e-c10a-4a72-9110-0269af39503f",
+          ""
+        ],
+        [
+          "silk_overlap|158061000|129300000|04e58efc-5055-46c3-8cde-2d05d46825d0|4de26850-8712-4635-ae56-f44c71a5ad19",
+          ""
+        ],
+        [
+          "silk_overlap|158061000|138336001|04e58efc-5055-46c3-8cde-2d05d46825d0|5b4dcde2-b380-40d8-b278-7e9641a68ad1",
+          ""
+        ],
+        [
+          "silk_overlap|158061000|91756001|04e58efc-5055-46c3-8cde-2d05d46825d0|672e36f2-8b51-40a9-82be-b57447dc1aed",
+          ""
+        ],
+        [
+          "silk_overlap|158066000|138336001|5b4dcde2-b380-40d8-b278-7e9641a68ad1|796bee5a-07db-41ab-ac72-f424dfd6a0d1",
           ""
         ]
       ],
@@ -274,7 +334,36 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "power_pin_not_driven|1054100|406400|a0613a52-67c8-4f09-a348-0eb2f37d8d21|00000000-0000-0000-0000-000000000000|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1841500|2032000|0655ff30-4cc4-4069-b694-69b66915c0e4|00000000-0000-0000-0000-000000000000|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/a6bf226d-205a-46a5-bb3b-288643662dd6|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/a6bf226d-205a-46a5-bb3b-288643662dd6|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1841500|2184400|21a777ae-7136-409b-aa51-883654d5eb40|00000000-0000-0000-0000-000000000000|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/a6bf226d-205a-46a5-bb3b-288643662dd6|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/a6bf226d-205a-46a5-bb3b-288643662dd6|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|952500|317500|15f94c1f-ff3b-4ec1-838b-9de6f7ed73fd|00000000-0000-0000-0000-000000000000|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|977900|1066800|45bfd055-4440-481e-b064-e12ba8f83a29|00000000-0000-0000-0000-000000000000|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|990600|177800|ff239177-7048-4183-a636-e66d1d8c9023|00000000-0000-0000-0000-000000000000|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|990600|419100|b1fe0e6e-3fec-4252-b70c-fb96db647f6e|00000000-0000-0000-0000-000000000000|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3|/6dae10d9-cb48-4947-bafd-823fd9a3bf3a/8963f727-a2fb-4295-80c1-7740212329e3|",
+        ""
+      ]
+    ],
     "meta": {
       "version": 0
     },
@@ -1003,8 +1092,14 @@
     },
     "bom_presets": [],
     "bom_settings": {
-      "exclude_dnp": false,
+      "exclude_dnp": true,
       "fields_ordered": [
+        {
+          "group_by": false,
+          "label": "Qty",
+          "name": "${QUANTITY}",
+          "show": true
+        },
         {
           "group_by": true,
           "label": "Reference",
@@ -1019,38 +1114,14 @@
         },
         {
           "group_by": false,
-          "label": "Datasheet",
-          "name": "Datasheet",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Footprint",
           "name": "Footprint",
           "show": true
         },
         {
           "group_by": false,
-          "label": "Qty",
-          "name": "${QUANTITY}",
-          "show": true
-        },
-        {
-          "group_by": true,
-          "label": "DNP",
-          "name": "${DNP}",
-          "show": true
-        },
-        {
-          "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "DPN",
-          "name": "DPN",
+          "label": "MFR",
+          "name": "MFR",
           "show": true
         },
         {
@@ -1061,8 +1132,44 @@
         },
         {
           "group_by": false,
+          "label": "DIS",
+          "name": "DIS",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "DPN",
+          "name": "DPN",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "DNP",
+          "name": "${DNP}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
           "label": "Description",
           "name": "Description",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Datasheet",
+          "name": "Datasheet",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
           "show": false
         }
       ],
