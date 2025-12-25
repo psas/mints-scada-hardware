@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * @file    usbd_cdc_if_template.h
+  * @file    usbd_desc_template.h
   * @author  MCD Application Team
-  * @brief   Header for usbd_cdc_if_template.c file.
+  * @brief   Header for usbd_desc_template.c module
   ******************************************************************************
   * @attention
   *
@@ -17,33 +17,25 @@
   ******************************************************************************
   */
 
-#include <stdint.h>
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __USBD_CDC_IF_TEMPLATE_H
-#define __USBD_CDC_IF_TEMPLATE_H
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#define APP_RX_DATA_SIZE  256
-#define APP_TX_DATA_SIZE  256
+#ifndef __USBD_DESC_TEMPLATE_H
+#define __USBD_DESC_TEMPLATE_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "usbd_cdc.h"
+#include "usbd_def.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
+#define         DEVICE_ID1          (0x1FFF7A10)
+#define         DEVICE_ID2          (0x1FFF7A14)
+#define         DEVICE_ID3          (0x1FFF7A18)
 
+#define  USB_SIZ_STRING_SERIAL       0x1A
 
-extern USBD_CDC_ItfTypeDef USBD_CDC_fops_FS;
-uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len);
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
+extern USBD_DescriptorsTypeDef Class_Desc; /* Replace 'XXX_Desc' with your active USB device class, ex: HID_Desc */
 
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* __USBD_CDC_IF_TEMPLATE_H */
+#endif /* __USBD_DESC_TEMPLATE_H*/
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

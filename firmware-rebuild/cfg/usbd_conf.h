@@ -31,6 +31,8 @@ extern "C" {
 #include <stdlib.h>
 #include <string.h>
 
+#define DEVICE_FS 		0
+
 /** @addtogroup STM32_USB_DEVICE_LIBRARY
   * @{
   */

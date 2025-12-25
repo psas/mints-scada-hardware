@@ -1,12 +1,39 @@
-#include <stdio.h>
-#include <stdint.h>
-#include <stdarg.h>
 #include "init.h"
-// USB on STM32
-#include "usbd_def.h"
-#include "usbd_cdc_if.h"
-#include "usb.h"
+#include <stdarg.h>
+#include <stdint.h>
+#include <stdio.h>
 #include "stm32f0xx_hal.h"
+#include "usb.h"
+#include "usbd_cdc_if.h"
+#include "usbd_cdc.h"
+#include "usbd_def.h"
+#include "usbd_desc.h"
+#include "usbd_conf.h"
+
+void Error_Handler(void) {
+  uprintf("An error has occurred! The program will halt now.\n");
+  HAL_Delay(15);
+  __disable_irq();
+  while (1) {
+  }
+}
+
+USBD_HandleTypeDef hUsbDeviceFS;
+void initUsb() {
+  if (USBD_Init(&hUsbDeviceFS, &Class_Desc, DEVICE_FS) != USBD_OK) {
+    Error_Handler();
+  }
+  if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_CDC) != USBD_OK) {
+    Error_Handler();
+  }
+  if (USBD_CDC_RegisterInterface(&hUsbDeviceFS, &USBD_CDC_fops_FS) !=
+      USBD_OK) {
+    Error_Handler();
+  }
+  if (USBD_Start(&hUsbDeviceFS) != USBD_OK) {
+    Error_Handler();
+  }
+}
 
 uint8_t txbuff[MAX_USB_PRINT_LENGTH] = {0};
 // usb serial port printf

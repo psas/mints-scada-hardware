@@ -23,6 +23,7 @@
 #include "usbd_core.h"
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
+#define UNUSED(X) (void)X      /* To avoid gcc/g++ warnings */
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
@@ -198,4 +199,3 @@ void USBD_LL_Delay(uint32_t Delay)
 {
 }
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
-

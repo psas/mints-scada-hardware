@@ -2,6 +2,13 @@
 #include "board_cfg.h"
 #include "stm32f0xx_hal_gpio.h"
 
+void flashLED(){
+  while (1) {
+    HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+    HAL_Delay(300000);
+  }
+}
+
 int main(){
   SystemClock_Config();
   HAL_Init();
@@ -12,9 +19,6 @@ int main(){
   GPIO_Init.Mode = GPIO_MODE_INPUT;
   GPIO_Init.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOA, &GPIO_Init);
+  flashLED(); 
+}
 
-  while (1) {
-    HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-    HAL_Delay(300000);
-  }
- }

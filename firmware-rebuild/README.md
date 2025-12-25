@@ -22,3 +22,43 @@ Board Config Template for ./cfg/usbd_cdc_if.h comes from
 Board Config Template for ./cfg/usbd_cdc_if.c comes from
 ./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc_if_template.c
 
+Board Config Template for ./cfg/usbd_desc.c comes from
+./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_desc_template.c
+
+Board Config Template for ./cfg/usbd_desc.h comes from
+./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_desc_template.h
+
+>[IMPORTANT]
+> I changed some code in the following submodules libraries locally in order to fix some build errors.
+> The changes could be wrong as I am not 100% sure about them.
+> Generally seems like STM32 is not keeping up with their published code on
+> github.
+
+In `./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c`
+```
+ #include "usbd_cdc.h"
+ #include "usbd_ctlreq.h"
++#include "stm32f0xx_hal_pcd.h"
+```
+
+In `./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h`
+```
+#ifndef __USBD_CORE_H
+ #define __USBD_CORE_H
+ 
++#define UNUSED(X) (void)X      /* To avoid gcc/g++ warnings */
+ #ifdef __cplusplus
+```
+
+In `./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h`
+```
+-#define LOBYTE(x)  ((uint8_t)((x) & 0x00FFU))
+-#define HIBYTE(x)  ((uint8_t)(((x) & 0xFF00U) >> 8U))
++#define LOBYTE(x)  ((uint8_t)((x) && 0x00FFU))
++#define HIBYTE(x)  ((uint8_t)(((x) && 0xFF00U) >> 8U))
+ #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+ #define MAX(a, b)  (((a) > (b)) ? (a) : (b))
+```
+
+
+
