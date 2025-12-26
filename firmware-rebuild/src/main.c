@@ -13,6 +13,7 @@ void flashLED(){
 }
 
 int main(){
+  SystemClock_Config();
   HAL_Init();
    __HAL_RCC_GPIOA_CLK_ENABLE();
 

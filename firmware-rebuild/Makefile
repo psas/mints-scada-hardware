@@ -8,7 +8,7 @@ CC = $(PREFIX)gcc
 AS = $(PREFIX)gcc -x assembler-with-cpp
 SZ = $(PREFIX)size
 BUILD_DIR := ./build
-SRC_DIR := ./src
+SRC_DIR := ./src/
 
 C_SOURCES := ./cfg/board_cfg.c\
 ./cfg/usbd_cdc_if.c\
@@ -63,7 +63,7 @@ WERROR_FLAGS = -Wimplicit-function-declaration -Wall -Wextra #enable all the war
 # gc-sectionss here helps get rid region overflow errors in flash 
 # what does map do here?
 LDFLAGS = -T$(LINK_SCRIPT) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
-CFLAGS = -specs=nano.specs $(CPU) $(INCLUDE_FLAGS) $(WERROR_FLAGS) -g -gdwarf-2 -fdata-sections -ffunction-sections -MMD -MP -MF"$(@:%.o=%.d)"
+CFLAGS = $(CPU) $(INCLUDE_FLAGS) $(WERROR_FLAGS) -g -gdwarf-2 -fdata-sections -ffunction-sections -MMD -MP -MF"$(@:%.o=%.d)"
 OBJECTS += $(patsubst %.c,$(BUILD_DIR)/%.o,$(notdir $(C_SOURCES)))
 DEPS := $(OBJECTS:.o=.d)
 TARGET := main
@@ -95,7 +95,7 @@ clean:
 	rm -rf $(BUILD_DIR)
 
 -include $(wildcard $(BUILD_DIR)/*.d)
-#
+
 # $(TARGET): $(OBJECTS)
 # 	$(CC) $^ -o $@ -T$(LINK_SCRIPT) $(INCLUDE_FLAGS)
 
