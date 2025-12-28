@@ -19,14 +19,14 @@ void Error_Handler(void) {
 }
 
 USBD_HandleTypeDef hUsbDeviceFS;
-void initUsb() {
-  if (USBD_Init(&hUsbDeviceFS, &Class_Desc, DEVICE_FS) != USBD_OK) {
+void initUSB(void) {
+  if (USBD_Init(&hUsbDeviceFS, &FS_Desc, DEVICE_FS) != USBD_OK) {
     Error_Handler();
   }
   if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_CDC) != USBD_OK) {
     Error_Handler();
   }
-  if (USBD_CDC_RegisterInterface(&hUsbDeviceFS, &USBD_CDC_fops_FS) !=
+  if (USBD_CDC_RegisterInterface(&hUsbDeviceFS, &USBD_Interface_fops_FS) !=
       USBD_OK) {
     Error_Handler();
   }

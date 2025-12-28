@@ -59,11 +59,13 @@ INCLUDE_DIR := $(SRC_DIR)\
 			 $(CDC_USB_INC)\
 			 $(CDC_USB_DEVICE_LIBS)\
 
+CDEFS = -DUSE_HAL_DRIVER \
+-DSTM32F042x6
+
 INCLUDE_FLAGS += $(addprefix -I,$(INCLUDE_DIR))
-WERROR_FLAGS = -Wimplicit-function-declaration -Wall -Wextra -Wundef -Wstrict-prototypes #enable all the warnings+more
-# gc-sectionss here helps get rid region overflow errors in flash 
-LDFLAGS = -specs=nano.specs -T$(LINK_SCRIPT) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
-CFLAGS = $(CPU) $(INCLUDE_FLAGS) $(WERROR_FLAGS) -g -gdwarf-2 -fdata-sections -ffunction-sections -MMD -MP -MF"$(@:%.o=%.d)"
+WERROR_FLAGS = -Wimplicit-function-declaration -Wall -Wextra -Wundef -Wstrict-prototypes
+LDFLAGS = $(CPU) -lc -lm -lnosys -specs=nano.specs -T$(LINK_SCRIPT) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
+CFLAGS = $(CPU) $(CDEFS) $(INCLUDE_FLAGS) $(WERROR_FLAGS) -g -gdwarf-2 -fdata-sections -ffunction-sections -MMD -MP -MF"$(@:%.o=%.d)"
 OBJECTS += $(patsubst %.c,$(BUILD_DIR)/%.o,$(notdir $(C_SOURCES)))
 vpath %.c $(sort $(dir $(C_SOURCES)))
 OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(ASM_SOURCES:.s=.o)))
@@ -72,10 +74,11 @@ DEBUG += $(patsubst %.c,$(BUILD_DIR)/%.d,$(notdir $(C_SOURCES)))
 
 TARGET := main
 
-
-
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
 	cp $(BUILD_DIR)/$(TARGET).bin $(TARGET).bin
+
+$(BUILD_DIR)/%.o: %.c Makefile | $(BUILD_DIR) 
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
 
 $(BUILD_DIR)/%.o: %.c
 	@mkdir -p $(BUILD_DIR)
@@ -99,5 +102,10 @@ clean:
 
 -include $(wildcard $(BUILD_DIR)/*.d)
 
+flash: all
+	dfu-util --device 0483:df11 --alt 0 --dfuse-address 0x08000000:leave --download $(BUILD_DIR)/main.bin
+
+# Notes:
 # -MMD: build dependency list of header files as .d, 
 # -MP: Adds a dummy rule for each header file listed in the dependency file other wise it becomes stale
+# -gc-sectionss linker flag garbage collects all the sections :)

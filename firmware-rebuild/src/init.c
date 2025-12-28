@@ -2,12 +2,13 @@
 #include "stm32f0xx_hal.h"
 #include "board_cfg.h"
 #include "main.h"
+#include "usb.h"
 
 uint8_t baseAddress = 0;
 
 // #TODO: Better error handling
 // #TODO Use #ifdef or make scripts to distinguish between configs
-int initGen(){
+int initGen(void){
   SystemClock_Config();
   HAL_Init();
   #ifdef CONFIG_ADC
@@ -31,9 +32,10 @@ int initGen(){
     return (0);
   }
   #endif
+  return 0;
 }
 
-int initADDR_GPIO(){
+int initADDR_GPIO(void){
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   GPIO_InitTypeDef GPIO_Init = {0};
@@ -41,6 +43,7 @@ int initADDR_GPIO(){
   GPIO_Init.Mode = GPIO_MODE_INPUT;
   GPIO_Init.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOA, &GPIO_Init);
+  return 0;
 }
 // int initCAN(){
 // }
@@ -58,7 +61,7 @@ int initADDR_GPIO(){
 // }
 
 
-Build detectBuild(){
+Build detectBuild(void){
 
   // detect upper hex number
   // read (0x0 or 0x1) left shift, OR with baseAddress

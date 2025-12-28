@@ -34,20 +34,19 @@ void sendCAN_MSG(DataPacket* TxData){
   CAN_TxHeaderTypeDef TxHeader;
 }
 
-datapacket_read_status readCAN_MSG(DataPacket* RxData){
-  CAN_RxHeaderTypeDef RxHeader;
-  DataPacket datapkt = {0}; 
-  while(HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0) > 0){
-    while(HAL_CAN_GetRxMessage(&hcan, CAN_RX_FIFO0 ,&RxHeader, (uint8_t*) &RxData->data) == HAL_OK){
-      RxData->id = 
-      RxData->err = 
-      RxData->reply = 
-      RxData->reserved = 
-      RxData->datasize = 
-    }
-    return (DATAPACKET_READ_ERROR);
-  }
-}
+// datapacket_read_status readCAN_MSG(DataPacket* RxData){
+//   CAN_RxHeaderTypeDef RxHeader;
+//   DataPacket datapkt = {0}; 
+//   while(HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0) > 0){
+//     while(HAL_CAN_GetRxMessage(&hcan, CAN_RX_FIFO0 ,&RxHeader, (uint8_t*) &RxData->data) == HAL_OK){
+//       RxData->id = ;
+//       RxData->err = 
+//       RxData->reply = 
+//       RxData->reserved = 
+//       RxData->datasize = 
+//     }
+//   }
+// }
 
 // TODO: Figure out why Ben did these bitwise operations
         // dest->err = (RxHeader.StdId >> DATAPACKET_ERROR_BIT) & 1;

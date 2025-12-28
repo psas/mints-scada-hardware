@@ -7,5 +7,6 @@
 void Error_Handler(void);
 void uprintf(const char *format, ...);
 void uprint(uint8_t* str, int length);
+void initUSB(void);
 
 #endif
