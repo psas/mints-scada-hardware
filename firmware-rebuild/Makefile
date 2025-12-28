@@ -7,6 +7,7 @@ PREFIX = arm-none-eabi-
 CC = $(PREFIX)gcc
 AS = $(PREFIX)gcc -x assembler-with-cpp
 SZ = $(PREFIX)size
+CP = $(PREFIX)objcopy
 BUILD_DIR := ./build
 SRC_DIR := ./src/
 
@@ -59,17 +60,19 @@ INCLUDE_DIR := $(SRC_DIR)\
 			 $(CDC_USB_DEVICE_LIBS)\
 
 INCLUDE_FLAGS += $(addprefix -I,$(INCLUDE_DIR))
-WERROR_FLAGS = -Wimplicit-function-declaration -Wall -Wextra #enable all the warnings+more
+WERROR_FLAGS = -Wimplicit-function-declaration -Wall -Wextra -Wundef -Wstrict-prototypes #enable all the warnings+more
 # gc-sectionss here helps get rid region overflow errors in flash 
-# what does map do here?
-LDFLAGS = -T$(LINK_SCRIPT) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
+LDFLAGS = -specs=nano.specs -T$(LINK_SCRIPT) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
 CFLAGS = $(CPU) $(INCLUDE_FLAGS) $(WERROR_FLAGS) -g -gdwarf-2 -fdata-sections -ffunction-sections -MMD -MP -MF"$(@:%.o=%.d)"
 OBJECTS += $(patsubst %.c,$(BUILD_DIR)/%.o,$(notdir $(C_SOURCES)))
-DEPS := $(OBJECTS:.o=.d)
-TARGET := main
+vpath %.c $(sort $(dir $(C_SOURCES)))
 OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(ASM_SOURCES:.s=.o)))
 vpath %.s $(sort $(dir $(ASM_SOURCES)))
-VPATH := $(sort $(dir $(C_SOURCES)))
+DEBUG += $(patsubst %.c,$(BUILD_DIR)/%.d,$(notdir $(C_SOURCES)))
+
+TARGET := main
+
+
 
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
 	cp $(BUILD_DIR)/$(TARGET).bin $(TARGET).bin
@@ -86,18 +89,15 @@ $(BUILD_DIR)/$(TARGET).elf: $(OBJECTS) Makefile
 	$(SZ) $@
 
 $(BUILD_DIR)/%.hex: $(BUILD_DIR)/%.elf | $(BUILD_DIR)
-	$(HEX) $< $@
+	$(CP) -O ihex $< $@
 
 $(BUILD_DIR)/%.bin: $(BUILD_DIR)/%.elf | $(BUILD_DIR)
-	$(BIN) $< $@	
+	$(CP) -O binary -S $< $@	
 
 clean:
 	rm -rf $(BUILD_DIR)
 
 -include $(wildcard $(BUILD_DIR)/*.d)
-
-# $(TARGET): $(OBJECTS)
-# 	$(CC) $^ -o $@ -T$(LINK_SCRIPT) $(INCLUDE_FLAGS)
 
 # -MMD: build dependency list of header files as .d, 
 # -MP: Adds a dummy rule for each header file listed in the dependency file other wise it becomes stale
