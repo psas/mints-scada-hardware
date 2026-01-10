@@ -17,6 +17,7 @@ C_SOURCES := ./cfg/board_cfg.c\
 ./cfg/usbd_conf.c\
 ./src/usb.c\
 ./src/main.c\
+./cfg/stm32f0xx_it.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usb.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c\
@@ -36,7 +37,7 @@ C_SOURCES := ./cfg/board_cfg.c\
 ASM_SOURCES := ./stm32libs/STM32CubeF0/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc/startup_stm32f042x6.s
 
 BOARD_CFG := ./cfg/
-STM_LIBS := ./stm32libs/ 
+STM_LIBS := ./stm32libs/
 HAL_INC := ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Inc/
 HAL_SRC := ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/
 CMSIS_INC := ./stm32libs/STM32CubeF0/Drivers/CMSIS/Include/
@@ -77,7 +78,7 @@ TARGET := main
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
 	cp $(BUILD_DIR)/$(TARGET).bin $(TARGET).bin
 
-$(BUILD_DIR)/%.o: %.c Makefile | $(BUILD_DIR) 
+$(BUILD_DIR)/%.o: %.c Makefile | $(BUILD_DIR)
 	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
 
 $(BUILD_DIR)/%.o: %.c
@@ -95,7 +96,7 @@ $(BUILD_DIR)/%.hex: $(BUILD_DIR)/%.elf | $(BUILD_DIR)
 	$(CP) -O ihex $< $@
 
 $(BUILD_DIR)/%.bin: $(BUILD_DIR)/%.elf | $(BUILD_DIR)
-	$(CP) -O binary -S $< $@	
+	$(CP) -O binary -S $< $@
 
 clean:
 	rm -rf $(BUILD_DIR)
@@ -106,6 +107,6 @@ flash: all
 	dfu-util --device 0483:df11 --alt 0 --dfuse-address 0x08000000:leave --download $(BUILD_DIR)/main.bin
 
 # Notes:
-# -MMD: build dependency list of header files as .d, 
+# -MMD: build dependency list of header files as .d,
 # -MP: Adds a dummy rule for each header file listed in the dependency file other wise it becomes stale
 # -gc-sectionss linker flag garbage collects all the sections :)
