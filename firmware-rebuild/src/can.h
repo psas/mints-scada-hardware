@@ -1,31 +1,28 @@
+#include "stm32f0xx_hal_can.h"
 #include <stdint.h>
-typedef struct CanData_t {
-    // The sequence number of the packets
-    uint8_t seq;
-    uint8_t cmd;
-    // Arguments or data for the packet
-    uint8_t bytes[6];
-} CanData;
 
-typedef struct DataPacket_t {
-    uint8_t id;
-    uint8_t err;
-    uint8_t reply;
-    uint8_t reserved;
-    uint16_t datasize;
-    // Note: data must be aligned with the middle of a word, otherwise BigLittleData access will fail.
-    CanData data;
-} DataPacket;
+// typedef struct CanData_t {
+//   uint8_t seq;      // The sequence number of the frames
+//   uint8_t cmd;      //
+//   uint8_t bytes[7]; // Arguments or data for the frame
+// } CanData;
+
+typedef struct DataFrame_t {
+  uint32_t ide;        // type of identifier for the message
+  uint32_t id;
+  uint32_t frame_type; // remote or data or error frame specifier
+  uint32_t datasize;   // length of the data
+  uint8_t data[7];     // contents of the data
+} DataFrame;
 
 typedef enum {
-  DATAPACKET_READ_SUCCESS,
-  DATAPACKET_READ_NOTHING,
-  DATAPACKET_READ_ERROR,
-  DATAPACKET_READ_TOOSMALL
-} datapacket_read_status;
+  DATAFRAME_READ_SUCCESS,
+  DATAFRAME_READ_NOTHING,
+  DATAFRAME_READ_ERROR,
+  DATAFRAME_READ_TOOSMALL
+} dataframe_read_status;
 
 typedef enum {
-  DATAPACKET_SEND_SUCCESS,
-  DATAPACKET_SEND_ERROR,
-} datapacket_send_status;
-
+  DATAFRAME_SEND_SUCCESS,
+  DATAFRAME_SEND_ERROR,
+} dataframe_send_status;

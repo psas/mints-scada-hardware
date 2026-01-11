@@ -2,16 +2,17 @@
 #include "board_cfg.h"
 #include "stm32f0xx_hal.h"
 #include "stm32f0xx_hal_gpio.h"
-#include "usb.h"
-#include "usbd_cdc_if.h"
 
 static void initGPIO(void);
 
 int main(void) {
   HAL_Init();
-  SystemClock_Config();
-  initUSB();
   initGPIO();
+
+  while (1) {
+    HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+    HAL_Delay(300);
+  }
   return 0;
 }
 

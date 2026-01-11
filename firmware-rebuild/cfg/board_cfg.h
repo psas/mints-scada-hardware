@@ -4,10 +4,13 @@
 // // #define CONFIG_I2C
 //
 // // Check that exactly 1 output configuration has been selected
-// #if !(defined(CONFIG_OUTPUTS) || (defined(CONFIG_ADC) || defined(CONFIG_I2C))) \
-//     || (defined(CONFIG_OUTPUTS) && (defined(CONFIG_ADC) || defined(CONFIG_I2C))) \
+// #if !(defined(CONFIG_OUTPUTS) || (defined(CONFIG_ADC) ||
+// defined(CONFIG_I2C))) \
+//     || (defined(CONFIG_OUTPUTS) && (defined(CONFIG_ADC) ||
+//     defined(CONFIG_I2C))) \
 //     || (defined(CONFIG_ADC) && defined(CONFIG_I2C))
-//     #error("You must specify exactly 1 of CONFIG_OUTPUTS, CONFIG_ADC, or CONFIG_I2C")
+//     #error("You must specify exactly 1 of CONFIG_OUTPUTS, CONFIG_ADC, or
+//     CONFIG_I2C")
 // #endif
 //
 // #ifdef CONFIG_OUTPUTS
@@ -26,12 +29,19 @@ void SystemClock_Config(void);
 
 // Pin definitions //
 
-//PA is in GPIOA & PB is in GPIOB
-//See PCB layout as to why they are ordered in this manner
+// PA is in GPIOA & PB is in GPIOB
+// See PCB layout as to why they are ordered in this manner
 
 #define ADDR4_Pin GPIO_PIN_4
 #define ADDR1_Pin GPIO_PIN_5
 #define ADDR8_Pin GPIO_PIN_6
 #define ADDR2_Pin GPIO_PIN_7
+
 #define LED_Pin GPIO_PIN_15
 #define LED_GPIO_Port GPIOA
+
+#define SPI_PORT GPIOB
+#define SPI_CS GPIO_PIN_12
+#define SPI_SCK GPIO_PIN_13
+#define SPI_MISO GPIO_PIN_14
+#define SPI_MOSI GPIO_PIN_15
