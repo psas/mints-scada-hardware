@@ -16,7 +16,7 @@ self.rsvd  in the reserved bits from the ID
 self.id    is the address of the message
 self.num   is the sequence number
 self.cmd   is the command
-self.data  is the array of 6 bytes of data 
+self.data  is the array of 6 bytes of data
 */
 
 #define BIGLITTLEDATA(pk) ((BigLittleData*) pk->data.bytes)

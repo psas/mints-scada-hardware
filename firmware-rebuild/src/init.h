@@ -5,5 +5,6 @@ typedef enum {
   Error_conf,
 } Build;
 
-int initGen();
-int initADDR_GPIO();
+void initGen(void);
+void initADDR_GPIO(void);
+void initCAN(void);

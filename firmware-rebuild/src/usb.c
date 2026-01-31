@@ -1,14 +1,14 @@
+#include "usb.h"
 #include "init.h"
+#include "stm32f0xx_hal.h"
+#include "usbd_cdc.h"
+#include "usbd_cdc_if.h"
+#include "usbd_conf.h"
+#include "usbd_def.h"
+#include "usbd_desc.h"
 #include <stdarg.h>
 #include <stdint.h>
 #include <stdio.h>
-#include "stm32f0xx_hal.h"
-#include "usb.h"
-#include "usbd_cdc_if.h"
-#include "usbd_cdc.h"
-#include "usbd_def.h"
-#include "usbd_desc.h"
-#include "usbd_conf.h"
 
 void Error_Handler(void) {
   uprintf("An error has occurred! The program will halt now.\n");
@@ -26,8 +26,7 @@ void initUSB(void) {
   if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_CDC) != USBD_OK) {
     Error_Handler();
   }
-  if (USBD_CDC_RegisterInterface(&hUsbDeviceFS, &USBD_Interface_fops_FS) !=
-      USBD_OK) {
+  if (USBD_CDC_RegisterInterface(&hUsbDeviceFS, &USBD_CDC_fops_FS) != USBD_OK) {
     Error_Handler();
   }
   if (USBD_Start(&hUsbDeviceFS) != USBD_OK) {

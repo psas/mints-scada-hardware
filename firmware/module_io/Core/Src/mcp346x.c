@@ -251,7 +251,7 @@ void bits(uint8_t num, int offset, int count, char* buff) {
 void MCP346x_printInfo(const MCP346x* adc) {
     uint8_t reply[29];
     MCP346x_readRegs(adc, 0, reply, 34);
-    char* buff[4];
+    char buff[4];
     uprintf("ADC Result: 0x%04x\n", reply[0] << 8 | reply[1]);
     bits(reply[2], 6, 2, buff);
     uprintf("Shutdown: %s\n", buff);
