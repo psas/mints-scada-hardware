@@ -1,5 +1,6 @@
 #include "stm32f0xx_hal_spi_ex.h"
 #include "stm32f0xx_hal_spi_ex.h"
+#include "stm32f0xx_hal_def.h"
 
 extern SPI_HandleTypeDef hspi2;
 extern CAN_HandleTypeDef hcan;

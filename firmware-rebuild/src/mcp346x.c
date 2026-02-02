@@ -2,17 +2,18 @@
 #include "stm32f0xx_hal_gpio.h"
 #include "stm32f0xx_hal_spi.h"
 #include "usb.h"
+#include <string.h>
 
 MCP346x MCP346x_Init(SPI_HandleTypeDef *spi, GPIO_TypeDef *cs_port,
                      uint16_t cs_pin, GPIO_TypeDef *en_port, uint16_t en_pin) {
   __HAL_SPI_ENABLE(spi);
   struct MCP346x_t adc = {
-          .cs_port = cs_port,
-          .hspi = spi,
-          .cs_pin = cs_pin,
-          .en_port = en_port,
-          .en_pin = en_pin,
-          .ref = 7.354736328125e-05, // 3.4 / (15900 * 3)
+      .cs_port = cs_port,
+      .hspi = spi,
+      .cs_pin = cs_pin,
+      .en_port = en_port,
+      .en_pin = en_pin,
+      .ref = 7.354736328125e-05, // 3.4 / (15900 * 3)
   };
 
   // uint8_t firststatus = MCP346x_sendCmd(&adc, CMD_FAST_RESET);
@@ -77,8 +78,7 @@ uint8_t MCP346x_sendCmd(const MCP346x *adc, const uint8_t fastcmd) {
   return status;
 }
 
-uint8_t MCP346x_readRegs(const MCP346x *adc, const uint8_t reg, uint8_t *result,
-                         const int count) {
+uint8_t MCP346x_readRegs(const MCP346x *adc, const uint8_t reg, uint8_t *result, const int count) {
   // 2 bit device address, 4 bit register address, 2 bit command
 
   // Select the chip to begin the transaction
@@ -89,17 +89,15 @@ uint8_t MCP346x_readRegs(const MCP346x *adc, const uint8_t reg, uint8_t *result,
   tosend[0] = PACK_COMMAND(reg, CMD_TYPE_READY_MANY);
   uint8_t reply[count + 1];
   HAL_SPI_TransmitReceive(&hspi2, tosend, reply, count + 1, 100);
-  for (int i = 0; i < count; i++) {
-    result[i] = reply[i + 1];
-  }
+  memcpy(result, reply+1, count);
 
-  // Unselect the chip to end the transaction
   disablePins(adc);
 
   // return status;
   return reply[0];
 }
 
+// Return reply[1]
 uint8_t MCP346x_readReg(const MCP346x *adc, const uint8_t reg) {
   uint8_t reply;
   MCP346x_readRegs(adc, reg, &reply, 1);

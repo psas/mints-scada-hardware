@@ -4,7 +4,10 @@
 #include "configuration.h"
 #include "mcp346x.h"
 #include "stm32f0xx_hal_gpio.h"
+#include "stm32f0xx_hal_def.h"
 #include "usb.h"
+#include <stdint.h>
+#include <string.h>
 
 extern CAN_HandleTypeDef hcan;
 
@@ -93,12 +96,7 @@ void copyUID(uint8_t *dest, uint8_t bytes, uint8_t offset) {
   if (bytes < 1) {
     bytes = 1;
   }
-
-  // UID_BASE
-  uint8_t *rdp = (uint8_t *)(UID_BASE + offset);
-  for (int i = 0; i < bytes; i++) {
-    *dest++ = *rdp++;
-  }
+  memcpy(dest, (uint8_t *)(UID_BASE + offset), bytes);
 }
 
 /**
@@ -125,11 +123,7 @@ int processPacket(DataPacket *pk) {
     if (pk->data.cmd == BUSCMD_CLAIM_ID) {
       uint8_t tempid[6];
       compressUID(tempid);
-      int f = 0;
-      for (int i = 0; i < 6; i++) {
-        f &= tempid[i] != pk->data.bytes[i];
-      }
-      if (f) {
+      if (memcmp(tempid, pk->data.bytes, 6)) {
         onFatalError();
         uprintf("\n[FATAL] Someone else already had my ID %02x\n", baseAddress);
       }
@@ -194,7 +188,7 @@ int processPacket(DataPacket *pk) {
     BIGLITTLEDATA(pk)->big = val;
     // bld->big = val;
     pk->reply = 1;
-    uprintf("\nSending reply ");
+    uprintf("\nSending reply");
     printDataPacket(pk);
     writeDatapacketToCan(pk);
   } break;
@@ -208,8 +202,7 @@ int processPacket(DataPacket *pk) {
   case BUSCMD_READ_VALUE: {
     uprintf("Read value command. %d %d", subid << 1, (subid << 1) + 1);
     // uint32_t val = MCP346x_analogRead(&extadc, MUX_AVDD, MUX_AGND, GAIN_1);
-    uint32_t val =
-        MCP346x_analogRead(&hadc, subid << 1, (subid << 1) + 1, GAIN_1);
+    uint32_t val = MCP346x_analogRead(&hadc, subid << 1, (subid << 1) + 1, GAIN_1);
     pk->datasize = 8;
     // BigLittleData* bld = BIGLITTLEDATA(pk);
     BIGLITTLEDATA(pk)->big = val;
