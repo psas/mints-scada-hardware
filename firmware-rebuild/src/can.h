@@ -1,33 +1,77 @@
-#include "stm32f0xx_hal_can.h"
+#ifndef DATAPACKET_H
+#define DATAPACKET_H
+
 #include <stdint.h>
-#include <sys/_intsup.h>
 
-// typedef struct CanData_t {
-//   uint8_t seq;      // The sequence number of the frames
-//   uint8_t cmd;      //
-//   uint8_t bytes[7]; // Arguments or data for the frame
-// } CanData;
+/*
+ID bits
+[10]  reply 0=to id, 1=from id
+[9]   error
+[8]   reserved
+[7:0] Device ID
 
-// actual frame
+self.reply is the reply bit
+self.err   is the error bit
+self.rsvd  in the reserved bits from the ID
+self.id    is the address of the message
+self.num   is the sequence number
+self.cmd   is the command
+self.data  is the array of 6 bytes of data
+*/
 
-typedef struct DataFrame_t {
-  uint32_t id; // type of identifier for the message
-  bool ide;
-  bool frametype;     // remote frame (recessive) or data frame (dominant)
-  uint32_t timestamp; // timestamp in relation to start of can bus hopefully
-  uint32_t datasize;  // length of the data
-  uint8_t data[7];    // contents of the data
-} DataFrame;
+#define BIGLITTLEDATA(pk) ((BigLittleData*) pk->data.bytes)
+typedef struct BigLittleData_t {
+    uint32_t big;
+    uint16_t little;
+} BigLittleData;
 
-typedef enum {
-  DATAFRAME_READ_SUCCESS,
-  DATAFRAME_READ_NOTHING,
-  DATAFRAME_READ_ERROR,
-  DATAFRAME_READ_WRONG_ID,
-  DATAFRAME_READ_TOOSMALL
-} dataframe_read_status;
+typedef struct CanData_t {
+    // The sequence number of the packets
+    uint8_t seq;
+    // The command the packet is about
+    uint8_t cmd;
+    // Arguments or data for the packet
+    uint8_t bytes[6];
+} CanData;
 
-typedef enum {
-  DATAFRAME_SEND_SUCCESS,
-  DATAFRAME_SEND_ERROR,
-} dataframe_send_status;
+typedef struct DataPacket_t {
+    // The ID of the device the packet is related to
+    uint8_t id;
+    // If the packet is an error or not
+    uint8_t err;
+    // If the packet is a reply or not
+    uint8_t reply;
+    // Reserved data bit. Doesn't matter what it is.
+    uint8_t reserved;
+    // The data of the packet.
+    CanData data;
+    // The size of the packet. This includes the SEQ and CMD bytes.
+    uint16_t datasize;
+
+} DataPacket;
+
+#define DATAPACKET_RESVD_BIT 8
+#define DATAPACKET_ERROR_BIT 9
+#define DATAPACKET_REPLY_BIT 10
+
+/* Prints a datapacket to USB serial */
+void printDataPacket(DataPacket* pkt);
+
+#define DATAPACKET_READ_SUCCESS 0
+#define DATAPACKET_READ_NOTHING 1
+#define DATAPACKET_READ_ERROR 2
+#define DATAPACKET_READ_TOOSMALL 3
+/* Get a DataPacket from CAN if one is ready */
+int readDataPacketFromCan(DataPacket* dest);
+
+#define DATAPACKET_WRITE_SUCCESS 0
+#define DATAPACKET_WRITE_ERROR 2
+/* Send a DataPacket over CAN */
+int writeDatapacketToCan(DataPacket* pkt);
+
+void copyUID(uint8_t *dest, uint8_t bytes, uint8_t offset);
+void compressUID(uint8_t *dest);
+int processPacket(DataPacket *pk);
+void getCanMessages(void);
+
+#endif
