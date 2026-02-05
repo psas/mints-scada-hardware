@@ -4,7 +4,6 @@
  * https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP3461-2-4-Two-Four-Eight-Channel-153.6-ksps-Low-Noise-16-Bit-Delta-Sigma-ADC-Data-Sheet-20006180D.pdf
  */
 
-extern struct MCP346x_t adc;
 
 #include "init.h"
 typedef struct MCP346x_t {
@@ -13,14 +12,13 @@ typedef struct MCP346x_t {
   GPIO_TypeDef *cs_port;
   uint16_t cs_pin;
   // EN is active high
-  GPIO_TypeDef *en_port;
-  uint16_t en_pin;
   uint8_t reg[18];
   double ref;
 } MCP346x;
 
-MCP346x MCP346x_Init(SPI_HandleTypeDef *spi, GPIO_TypeDef *cs_port,
-                     uint16_t cs_pin, GPIO_TypeDef *en_port, uint16_t en_pin);
+extern struct MCP346x_t adc;
+
+MCP346x MCP346x_Init(void);
 
 uint8_t MCP346x_sendCmd(const MCP346x *adc, const uint8_t fastcmd);
 uint8_t MCP346x_readReg(const MCP346x *adc, const uint8_t reg);

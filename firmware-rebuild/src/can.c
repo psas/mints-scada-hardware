@@ -1,11 +1,11 @@
 #include "can.h"
-#include "main.h"
 #include "board_cfg.h"
 #include "configuration.h"
-#include "mcp346x.h"
-#include "stm32f0xx_hal_gpio.h"
-#include "stm32f0xx_hal_def.h"
 #include "init.h"
+#include "main.h"
+#include "mcp346x.h"
+#include "stm32f0xx_hal_def.h"
+#include "stm32f0xx_hal_gpio.h"
 #include "usb.h"
 #include <stdint.h>
 #include <string.h>
@@ -74,7 +74,7 @@ int writeDatapacketToCan(DataPacket *pkt) {
  * Copies 0 < bytes <= 12 bytes to dest
  * Starts at 0 <= offset < 12 bytes into the UID
  * If bytes of offset would give illegal locations, they are modified to not.
-*/
+ */
 
 void copyUID(uint8_t *dest, uint8_t bytes, uint8_t offset) {
   if (offset > 11) {
@@ -192,7 +192,8 @@ int processPacket(DataPacket *pk) {
   case BUSCMD_READ_VALUE: {
     uprintf("Read value command. %d %d", subid << 1, (subid << 1) + 1);
     // uint32_t val = MCP346x_analogRead(&extadc, MUX_AVDD, MUX_AGND, GAIN_1);
-    uint32_t val = MCP346x_analogRead(&adc, subid << 1, (subid << 1) + 1, GAIN_1);
+    uint32_t val =
+        MCP346x_analogRead(&adc, subid << 1, (subid << 1) + 1, GAIN_1);
     pk->datasize = 8;
     // BigLittleData* bld = BIGLITTLEDATA(pk);
     BIGLITTLEDATA(pk)->big = val;
@@ -211,32 +212,32 @@ int processPacket(DataPacket *pk) {
 }
 
 void getCanMessages(void) {
-    int baseAddress = calc_baseAddress();
-    while(!fatal && HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0)) {
-        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-        uprintf("got message! ");
-        struct DataPacket_t pk = { 0 };
-        for(int i = 0; i < 6; i++) {
-            pk.data.bytes[i] = 0;
-        }
-        pk.datasize = 0;
-        int rs = readDataPacketFromCan(&pk);
-        if(rs != DATAPACKET_READ_SUCCESS) {
-            uprintf("packet read fail! %d\n", rs);
-            return;
-        }
-        printDataPacket(&pk);
-
-        uint8_t bid = pk.id & 0xf0;
-        uprintf(" bid:%2x", bid);
-
-        if((pk.id & (0xf0 | SUB_ADDR_MASK)) == baseAddress) {
-            uprintf(" 4me!");
-
-            processPacket(&pk);
-        }
-
-        uprintf("\n");
-        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+  int baseAddress = calc_baseAddress();
+  while (!fatal && HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0)) {
+    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+    uprintf("got message! ");
+    struct DataPacket_t pk = {0};
+    for (int i = 0; i < 6; i++) {
+      pk.data.bytes[i] = 0;
     }
+    pk.datasize = 0;
+    int rs = readDataPacketFromCan(&pk);
+    if (rs != DATAPACKET_READ_SUCCESS) {
+      uprintf("packet read fail! %d\n", rs);
+      return;
+    }
+    printDataPacket(&pk);
+
+    uint8_t bid = pk.id & 0xf0;
+    uprintf(" bid:%2x", bid);
+
+    if ((pk.id & (0xf0 | SUB_ADDR_MASK)) == baseAddress) {
+      uprintf(" 4me!");
+
+      processPacket(&pk);
+    }
+
+    uprintf("\n");
+    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+  }
 }
