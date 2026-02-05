@@ -9,4 +9,5 @@
 #define PACKET_ID_ERROR 3
 
 int main(void);
-int calc_baseAddress(void);
+void onFatalError(void);
+extern int fatal;

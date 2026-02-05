@@ -5,20 +5,10 @@
 #include "mcp346x.h"
 #include "stm32f0xx_hal_gpio.h"
 #include "stm32f0xx_hal_def.h"
+#include "init.h"
 #include "usb.h"
 #include <stdint.h>
 #include <string.h>
-
-extern CAN_HandleTypeDef hcan;
-
-int fatal = 0;
-void onFatalError(void) {
-    fatal = 1;
-    // Do things here to set things to a safe state.
-    // For outputs, this means all off.
-    // For inputs, this means nothing.
-}
-
 
 void printDataPacket(DataPacket *pkt) {
   uprintf("%c%d %c%02X #%02x !%02x", (pkt->err) ? 'E' : '.', pkt->reserved & 1,
@@ -202,7 +192,7 @@ int processPacket(DataPacket *pk) {
   case BUSCMD_READ_VALUE: {
     uprintf("Read value command. %d %d", subid << 1, (subid << 1) + 1);
     // uint32_t val = MCP346x_analogRead(&extadc, MUX_AVDD, MUX_AGND, GAIN_1);
-    uint32_t val = MCP346x_analogRead(&hadc, subid << 1, (subid << 1) + 1, GAIN_1);
+    uint32_t val = MCP346x_analogRead(&adc, subid << 1, (subid << 1) + 1, GAIN_1);
     pk->datasize = 8;
     // BigLittleData* bld = BIGLITTLEDATA(pk);
     BIGLITTLEDATA(pk)->big = val;

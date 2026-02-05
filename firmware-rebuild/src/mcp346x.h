@@ -1,44 +1,49 @@
 /*
-* Library to communicate with the Microchip MCP3461/2/4 Two/Four/Eight-Channel,
-* 153.6 ksps, Low Noise, 16-Bit Delta-Sigma ADC
-* https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP3461-2-4-Two-Four-Eight-Channel-153.6-ksps-Low-Noise-16-Bit-Delta-Sigma-ADC-Data-Sheet-20006180D.pdf
-*/
+ * Library to communicate with the Microchip MCP3461/2/4 Two/Four/Eight-Channel,
+ * 153.6 ksps, Low Noise, 16-Bit Delta-Sigma ADC
+ * https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP3461-2-4-Two-Four-Eight-Channel-153.6-ksps-Low-Noise-16-Bit-Delta-Sigma-ADC-Data-Sheet-20006180D.pdf
+ */
 
-#ifndef MCP346X_H
-#define MCP346X_H
+extern struct MCP346x_t adc;
 
 #include "init.h"
-
 typedef struct MCP346x_t {
-    SPI_HandleTypeDef* hspi;
-    // CS is active low
-    GPIO_TypeDef* cs_port;
-    uint16_t cs_pin;
-    // EN is active high
-    GPIO_TypeDef* en_port;
-    uint16_t en_pin;
-    uint8_t reg[18];
-    double ref;
+  SPI_HandleTypeDef *hspi;
+  // CS is active low
+  GPIO_TypeDef *cs_port;
+  uint16_t cs_pin;
+  // EN is active high
+  GPIO_TypeDef *en_port;
+  uint16_t en_pin;
+  uint8_t reg[18];
+  double ref;
 } MCP346x;
 
-MCP346x MCP346x_Init(SPI_HandleTypeDef *spi, GPIO_TypeDef* cs_port, uint16_t cs_pin, GPIO_TypeDef* en_port, uint16_t en_pin);
+MCP346x MCP346x_Init(SPI_HandleTypeDef *spi, GPIO_TypeDef *cs_port,
+                     uint16_t cs_pin, GPIO_TypeDef *en_port, uint16_t en_pin);
 
-uint8_t MCP346x_sendCmd(const MCP346x* adc, const uint8_t fastcmd);
-uint8_t MCP346x_readReg(const MCP346x* adc, const uint8_t reg);
-uint8_t MCP346x_readRegs(const MCP346x* adc, const uint8_t reg, uint8_t* result, const int count);
-uint8_t MCP346x_writeReg(MCP346x* adc, const uint8_t reg, uint8_t value);
-uint8_t MCP346x_writeRegs(MCP346x* adc, const uint8_t reg, const uint8_t* values, const int count);
-void MCP346x_setValue(MCP346x* adc, const uint8_t reg, const uint8_t value, const uint8_t mask);
+uint8_t MCP346x_sendCmd(const MCP346x *adc, const uint8_t fastcmd);
+uint8_t MCP346x_readReg(const MCP346x *adc, const uint8_t reg);
+uint8_t MCP346x_readRegs(const MCP346x *adc, const uint8_t reg, uint8_t *result,
+                         const int count);
+uint8_t MCP346x_writeReg(MCP346x *adc, const uint8_t reg, uint8_t value);
+uint8_t MCP346x_writeRegs(MCP346x *adc, const uint8_t reg,
+                          const uint8_t *values, const int count);
+void MCP346x_setValue(MCP346x *adc, const uint8_t reg, const uint8_t value,
+                      const uint8_t mask);
 
-void MCP346x_startADC(MCP346x* adc, const uint8_t vp, const uint8_t vn, const uint8_t gain);
-int16_t MCP346x_readADC(const MCP346x* adc);
-int16_t MCP346x_analogRead(MCP346x* adc, const uint8_t vp, const uint8_t vs, const uint8_t gain);
-double MCP346x_convertVoltage(const MCP346x* adc, int16_t reading, uint8_t gain);
-void MCP346x_printRegs(const MCP346x* adc);
-void MCP346x_printInfo(const MCP346x* adc);
+void MCP346x_startADC(MCP346x *adc, const uint8_t vp, const uint8_t vn,
+                      const uint8_t gain);
+int16_t MCP346x_readADC(const MCP346x *adc);
+int16_t MCP346x_analogRead(MCP346x *adc, const uint8_t vp, const uint8_t vs,
+                           const uint8_t gain);
+double MCP346x_convertVoltage(const MCP346x *adc, int16_t reading,
+                              uint8_t gain);
+void MCP346x_printRegs(const MCP346x *adc);
+void MCP346x_printInfo(const MCP346x *adc);
 
-int SPI_TransmitReceive(SPI_HandleTypeDef* hspi, uint8_t* pTxData, uint8_t* pRxData, uint16_t Size,
-                        uint32_t Timeout);
+int SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData,
+                        uint8_t *pRxData, uint16_t Size, uint32_t Timeout);
 
 #define PACK_COMMAND(reg, cmd) 0b01 << 6 | reg << 2 | cmd
 
@@ -59,7 +64,8 @@ int SPI_TransmitReceive(SPI_HandleTypeDef* hspi, uint8_t* pTxData, uint8_t* pRxD
 #define CMD_FAST_SHUTDOWN 0b1100
 /** Full Shutdown Mode Fast Command (Overwrites CONFIG0[7:0] = 0x00) */
 #define CMD_FAST_FULL_SHUTDOWN 0b1101
-/** Device Full Reset Fast Command (Resets Whole Register Map to Default Value) */
+/** Device Full Reset Fast Command (Resets Whole Register Map to Default Value)
+ */
 #define CMD_FAST_RESET 0b1110
 
 /** Latest A/D conversion data output value  */
@@ -68,11 +74,13 @@ int SPI_TransmitReceive(SPI_HandleTypeDef* hspi, uint8_t* pTxData, uint8_t* pRxD
 #define REG_CONFIG0 0x1
 /** Prescale and OSR settings */
 #define REG_CONFIG1 0x2
-/** ADC boost and gain settings, auto-zeroing settings for analog multiplexer, voltage reference and ADC */
+/** ADC boost and gain settings, auto-zeroing settings for analog multiplexer,
+ * voltage reference and ADC */
 #define REG_CONFIG2 0x3
 /** Conversion mode, data and CRC format settings */
 #define REG_CONFIG3 0x4
-/** IRQ Status bits and IRQ mode settings, enable for Fast commands and for conversion start pulse */
+/** IRQ Status bits and IRQ mode settings, enable for Fast commands and for
+ * conversion start pulse */
 #define REG_IRQ 0x5
 /** Analog multiplexer input selection */
 #define REG_MUX 0x6
@@ -102,7 +110,7 @@ int SPI_TransmitReceive(SPI_HandleTypeDef* hspi, uint8_t* pTxData, uint8_t* pRxD
 /** CONFIG0 Using and outputting internal clock */
 #define CLK_SEL_INTERNAL_OUT 0b11 << 4
 /** CONFIG0 Using internal clock, not outputting */
-#define CLK_SEL_INTERNAL  0b10 << 4
+#define CLK_SEL_INTERNAL 0b10 << 4
 // 0x01 is also external
 /** CONFIG0 Using external clock (default) */
 #define CLK_SEL_EXTERNAL 0b00 << 4
@@ -214,7 +222,8 @@ int SPI_TransmitReceive(SPI_HandleTypeDef* hspi, uint8_t* pTxData, uint8_t* pRxD
 
 /** CONFIG2 ADC auto-zeroing algorithm is enabled */
 #define MUX_ZERO_ON 0b1 << 2
-/** CONFIG2 Analog input multiplexer auto-zeroing algorithm is disabled (default) */
+/** CONFIG2 Analog input multiplexer auto-zeroing algorithm is disabled
+ * (default) */
 #define MUX_ZERO_OFF 0b0 << 2
 /** CONFIG2 Analog mux auto-zero mask */
 #define MUX_MASK 0b11 << 2
@@ -224,24 +233,27 @@ int SPI_TransmitReceive(SPI_HandleTypeDef* hspi, uint8_t* pTxData, uint8_t* pRxD
  */
 /** CONFIG3 Continuous Conversion mode */
 #define CONV_MODE_CONTINUOUS 0b11 << 6
-/** CONFIG3 One-shot conversion, sets ADC_MODE[1:0] to ‘10’ (Standby) at the end of the conversion */
+/** CONFIG3 One-shot conversion, sets ADC_MODE[1:0] to ‘10’ (Standby) at the end
+ * of the conversion */
 #define CONV_MODE_ONESHOT_STANDBY 0b10 << 6
-/** CONFIG3 One-shot conversion, sets ADC_MODE[1:0] to ‘0x’ (ADC Shutdown) at the end of the conversion (default)*/
+/** CONFIG3 One-shot conversion, sets ADC_MODE[1:0] to ‘0x’ (ADC Shutdown) at
+ * the end of the conversion (default)*/
 #define CONV_MODE_ONESHOT_SHUTDOWN 0b00 << 6
 /** CONFIG3 Conversion mode mask */
-#define  CONV_MODE_MASK 0b11 << 6
+#define CONV_MODE_MASK 0b11 << 6
 
-/** CONFIG3 32-bit (17-bit right justified data plus Channel ID): CHID[3:0] plus SGN extension (12 bits) plus 16-bit
- *  ADC data; allows overrange with the SGN extension */
+/** CONFIG3 32-bit (17-bit right justified data plus Channel ID): CHID[3:0] plus
+ * SGN extension (12 bits) plus 16-bit ADC data; allows overrange with the SGN
+ * extension */
 #define DATA_FORMAT_32_CHID 0b11 << 5
-/** CONFIG3 32-bit (17-bit right justified data): SGN extension (16-bit) plus 16-bit ADC data; allows overrange with
- *  the SGN extension */
+/** CONFIG3 32-bit (17-bit right justified data): SGN extension (16-bit) plus
+ * 16-bit ADC data; allows overrange with the SGN extension */
 #define DATA_FORMAT_32 0b10 << 5
-/** CONFIG3 32-bit (16-bit left justified data): 16-bit ADC data plus 0x0000 (16-bit); does not allow overrange (ADC
- *  code locked to 0xFFFF or 0x8000 */
+/** CONFIG3 32-bit (16-bit left justified data): 16-bit ADC data plus 0x0000
+ * (16-bit); does not allow overrange (ADC code locked to 0xFFFF or 0x8000 */
 #define DATA_FORMAT_32_PACK 0b01 << 5
-/** CONFIG3 16-bit (default ADC coding): 16-bit ADC data; does not allow overrange (ADC code locked to 0xFFFF
- *  or 0x8000) (default) */
+/** CONFIG3 16-bit (default ADC coding): 16-bit ADC data; does not allow
+ * overrange (ADC code locked to 0xFFFF or 0x8000) (default) */
 #define DATA_FORMAT_16 0b00 << 5
 /** CONFIG3 Data format mask */
 #define DATA_FORMAT_MASK 0b11 << 5
@@ -284,17 +296,20 @@ int SPI_TransmitReceive(SPI_HandleTypeDef* hspi, uint8_t* pTxData, uint8_t* pRxD
 /** IRQ POR status flag; active low */
 #define IRQ_POR 0v1 << 4
 
-/** IRQ MDAT output is selected; only POR and CRC interrupts can be present on this pin and take priority
-over the MDAT output */
+/** IRQ MDAT output is selected; only POR and CRC interrupts can be present on
+this pin and take priority over the MDAT output */
 #define IRQ_PIN_MODE_MDAT 0b1 << 3
-/** IRQ IRQ output is selected; all interrupts can appear on the IRQ/MDAT pin; active low (default) */
+/** IRQ IRQ output is selected; all interrupts can appear on the IRQ/MDAT pin;
+ * active low (default) */
 #define IRQ_PIN_MODE_IRQ 0b0 << 3
 /** IRQ IRQ output selection mask */
 #define IRQ_PIN_MODE_MASK 0b1 << 3
 
-/** IRQ The Inactive state of the IRQ pin is logic high (does not require a pull-up resistor to DV DD) */
+/** IRQ The Inactive state of the IRQ pin is logic high (does not require a
+ * pull-up resistor to DV DD) */
 #define IRQ_PIN_INACTIVE_LOGIC 0b1 << 2
-/** IRQ The Inactive state of the IRQ pin is High-Z (requires a pull-up resistor to DV DD) (default) */
+/** IRQ The Inactive state of the IRQ pin is High-Z (requires a pull-up resistor
+ * to DV DD) (default) */
 #define IRQ_PIN_INACTIVE_HIGHZ 0b0 << 2
 /** IRQ Inactivate state mask */
 #define IRQ_PIN_INACTIVE_MASK 0b1 << 2
@@ -357,15 +372,15 @@ over the MDAT output */
 /** SCAN Scan conversion delay 128 * DMCLK */
 #define SCAN_DELAY_128 0b101 << 21
 /** SCAN Scan conversion delay 64 * DMCLK */
-#define SCAN_DELAY_64  0b100 << 21
+#define SCAN_DELAY_64 0b100 << 21
 /** SCAN Scan conversion delay 32 * DMCLK */
-#define SCAN_DELAY_32  0b011 << 21
+#define SCAN_DELAY_32 0b011 << 21
 /** SCAN Scan conversion delay 16 * DMCLK */
-#define SCAN_DELAY_16  0b010 << 21
+#define SCAN_DELAY_16 0b010 << 21
 /** SCAN Scan conversion delay 8 * DMCLK */
-#define SCAN_DELAY_8   0b001 << 21
+#define SCAN_DELAY_8 0b001 << 21
 /** SCAN Scan conversion delay 0: No Delay (default) */
-#define SCAN_DELAY_0   0b000 << 21
+#define SCAN_DELAY_0 0b000 << 21
 /** SCAN Scan delay mask */
 #define SCAN_DELAY_MASK 0b111 << 21
 
@@ -403,5 +418,3 @@ over the MDAT output */
 #define STATUS_DATA_READY 0b1 << 2
 #define STATUS_CFC_ERROR 0b1 << 1
 #define STATUS_POR 0b1 << 0
-
-#endif //MCP346X_H

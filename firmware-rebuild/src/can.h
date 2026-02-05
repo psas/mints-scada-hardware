@@ -1,6 +1,3 @@
-#ifndef DATAPACKET_H
-#define DATAPACKET_H
-
 #include <stdint.h>
 
 /*
@@ -73,5 +70,5 @@ void copyUID(uint8_t *dest, uint8_t bytes, uint8_t offset);
 void compressUID(uint8_t *dest);
 int processPacket(DataPacket *pk);
 void getCanMessages(void);
+int calc_baseAddress(void);
 
-#endif

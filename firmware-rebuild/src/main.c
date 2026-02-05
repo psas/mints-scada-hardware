@@ -4,6 +4,7 @@
 #include "init.h"
 #include "main.h"
 #include "stm32f0xx_hal.h"
+#include "stm32f0xx_hal_adc.h"
 #include "stm32f0xx_hal_gpio.h"
 #include "usb.h"
 
@@ -11,16 +12,15 @@ void initPeripherials(void) {
   HAL_Init();
   // Set up clocks
   SystemClock_Config();
-
   initUSB();
   initGPIO();
   initADC();
   initCAN();
 #ifdef CONFIG_I2C
-  MX_I2C1_Init();
+  initI2C1();
 #endif
 #ifdef CONFIG_ADC
-  MX_SPI2_Init();
+  initSPI();
 #endif
 }
 
@@ -28,7 +28,6 @@ extern CAN_FilterTypeDef sFilterConfig;
 uint8_t baseAddress = 0;
 
 // Represents if a fatal error has occurred
-int fatal = 0;
 
 #ifdef LOOPBACK
 static int count = 0;
@@ -46,6 +45,8 @@ uint16_t outputPins[] = {LED_Pin,  OUT1_Pin, OUT2_Pin, OUT3_Pin,
 #include "mcp346x.h"
 MCP346x extadc;
 #endif
+
+int fatal = 0;
 
 void onFatalError(void) {
   fatal = 1;
@@ -67,14 +68,14 @@ uint32_t random(int bits) {
   return rsp;
 }
 
-int calc_BaseAddress(void) {
+int calc_baseAddress(void) {
   // Read base ID
   baseAddress |= HAL_GPIO_ReadPin(ADDR_GPIO_PORT, ADDR1_Pin) << 4;
   baseAddress |= HAL_GPIO_ReadPin(ADDR_GPIO_PORT, ADDR2_Pin) << 5;
   baseAddress |= HAL_GPIO_ReadPin(ADDR_GPIO_PORT, ADDR4_Pin) << 6;
   baseAddress |= HAL_GPIO_ReadPin(ADDR_GPIO_PORT, ADDR8_Pin) << 7;
   baseAddress += BASE_ADDR_OFFSET;
-  return baseAddress
+  return baseAddress;
 }
 
 /* Does everything. Is wrapped by main so that the program will halt if this
@@ -110,8 +111,7 @@ void doEverything(void) {
       .FilterActivation = ENABLE,
   };
 
-  HAL_StatusTypeDef canSetupStatus =
-      HAL_CAN_ConfigFilter(&hcan, &sFilterConfig);
+  HAL_StatusTypeDef canSetupStatus = HAL_CAN_ConfigFilter(&hcan, &sFilterConfig);
   if (canSetupStatus != HAL_OK) {
     uprintf("CAN filter init Error %d\n", canSetupStatus);
     onFatalError();

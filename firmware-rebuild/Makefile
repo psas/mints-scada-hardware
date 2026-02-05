@@ -16,11 +16,16 @@ C_SOURCES := ./cfg/board_cfg.c\
 ./cfg/usbd_cdc_if.c\
 ./cfg/usbd_desc.c\
 ./cfg/usbd_conf.c\
-./src/usb.c\
+./src/init.c\
+./src/mcp346x.c\
 ./src/main.c\
+./src/usb.c\
+./src/can.c\
 ./cfg/stm32f0xx_it.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usb.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c\
+./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_can.c\
+./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd_ex.c\

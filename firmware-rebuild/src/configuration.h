@@ -1,5 +1,3 @@
-#ifndef CONFIGURATION_H
-#define CONFIGURATION_H
 // CAN loopback mode. Use ONLY for firmware development
 // #define LOOPBACK
 
@@ -30,4 +28,3 @@
 #define BASE_ADDR_OFFSET 12
 #define SUB_ADDR_MASK 0xC
 #endif
-#endif // CONFIGURATION_H
