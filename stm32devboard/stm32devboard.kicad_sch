@@ -5,11 +5,10 @@
 	(uuid "96be6751-0ff1-459c-b196-8024d4959d86")
 	(paper "USLedger")
 	(title_block
-		(title "minTS Microcontroller Devboad")
-		(date "2024-05-02")
-		(rev "V1.2")
-		(company "PSAS")
-		(comment 1 "Benjamin Crall")
+		(title "minTS STM32 Microcontroller Board")
+		(date "2026-01-27")
+		(rev "V1.3")
+		(company "Portland State Aerospace Society")
 	)
 	(lib_symbols
 		(symbol "+3V3_1"
