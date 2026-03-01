@@ -14,8 +14,6 @@ struct MCP346x_t adc = {
       .ref = 7.354736328125e-05, // 3.4 / (15900 * 3)
 };
 
-
-
 MCP346x MCP346x_Init(void) {
 
   __HAL_SPI_ENABLE(&hspi2);

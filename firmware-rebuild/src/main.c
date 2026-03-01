@@ -1,5 +1,6 @@
 #include "main.h"
 #include "board_cfg.h"
+#include "configuration.h"
 #include "can.h"
 #include "init.h"
 #include "main.h"
@@ -84,7 +85,7 @@ void doEverything(void) {
 
   // Initialize ADC
 #ifdef CONFIG_ADC
-  extadc = MCP346x_Init(&hspi2, CTRL_GPIO_Port, CTRL_Pin, 0, 0);
+  extadc = MCP346x_Init();
 #endif
 
   // Wait a random amount of time to ensure that if two devices try to start

@@ -30,7 +30,7 @@ SPI_HandleTypeDef hspi2 = {.Instance = SPI2,
                            .Init = {
                                .Mode = SPI_MODE_MASTER,
                                .Direction = SPI_DIRECTION_2LINES,
-                               .DataSize = SPI_DATASIZE_8BIT,
+                               .DataSize = SPI_DATASIZE_16BIT,
                                .CLKPolarity = SPI_POLARITY_LOW,
                                .CLKPhase = SPI_PHASE_1EDGE,
                                .NSS = SPI_NSS_SOFT,
@@ -153,12 +153,6 @@ void initCAN_RXTX(CAN_HandleTypeDef *canHandle) {
   }
 }
 
-void initSPI(void) {
-  if (HAL_SPI_Init(&hspi2) != HAL_OK) {
-    Error_Handler();
-  }
-}
-
 void initSPI_GPIO(SPI_HandleTypeDef *spiHandle) {
   if (spiHandle->Instance == SPI2) {
     __HAL_RCC_SPI2_CLK_ENABLE();
@@ -171,6 +165,13 @@ void initSPI_GPIO(SPI_HandleTypeDef *spiHandle) {
                                 .Alternate = GPIO_AF0_SPI2,
                             });
   }
+}
+
+void initSPI(void) {
+  if (HAL_SPI_Init(&hspi2) != HAL_OK) {
+    Error_Handler();
+  }
+  initSPI_GPIO(&hspi2);
 }
 
 void initI2C1(void) {
@@ -203,7 +204,7 @@ void initI2C1_HAL(I2C_HandleTypeDef *i2cHandle) {
   }
 }
 
-void uninitI2C1_HAL(I2C_HandleTypeDef *i2cHandle) {
+void DeInitI2C1_HAL(I2C_HandleTypeDef *i2cHandle) {
 
   if (i2cHandle->Instance == I2C1) {
     __HAL_RCC_I2C1_CLK_DISABLE();

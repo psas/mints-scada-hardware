@@ -192,12 +192,9 @@ int processPacket(DataPacket *pk) {
   case BUSCMD_READ_VALUE: {
     uprintf("Read value command. %d %d", subid << 1, (subid << 1) + 1);
     // uint32_t val = MCP346x_analogRead(&extadc, MUX_AVDD, MUX_AGND, GAIN_1);
-    uint32_t val =
-        MCP346x_analogRead(&adc, subid << 1, (subid << 1) + 1, GAIN_1);
+    uint32_t val = MCP346x_analogRead(&adc, subid << 1, (subid << 1) + 1, GAIN_1);
     pk->datasize = 8;
-    // BigLittleData* bld = BIGLITTLEDATA(pk);
     BIGLITTLEDATA(pk)->big = val;
-    // bld->big = val;
     pk->reply = 1;
     uprintf("\nSending reply ");
     printDataPacket(pk);
