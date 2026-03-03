@@ -4,6 +4,7 @@
 #include "board_cfg.h"
 #include "init.h"
 #include "usb.h"
+#include <stdint.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -25,7 +26,7 @@ MCP346x MCP346x_Init(void) {
       /* CFG0 */ CONFIG0_AWAKE | CLK_SEL_INTERNAL | BIAS_OFF | MODE_STANDBY,
       /* CFG1 */ PRESCALER_1 | OSR_32,
       /* CFG2 */ BOOST_1 | GAIN_1 << 3 | MUX_ZERO_OFF | 0b11,
-      /* CFG3 */ CONV_MODE_CONTINUOUS | DATA_FORMAT_16 | CRC_FORMAT_16 |
+      /* CFG3 */ CONV_MODE_CONTINUOUS | DATA_FORMAT_32 | CRC_FORMAT_16 | //TODO: change to 32 extended
           CRC_ON_READ_DISABLED | DIGITAL_OFFSET_CALIB_DISABLED |
           GAIN_CALIB_DISABLED,
       /* IRQ  */
@@ -166,13 +167,13 @@ void MCP346x_startADC(MCP346x *adc, const uint8_t vp, const uint8_t vn,
  * @param adc the ADC to read from
  * @return The raw read value
  */
-int16_t MCP346x_readADC(const MCP346x *adc) {
+int32_t MCP346x_readADC(const MCP346x *adc) {
   uint8_t buff[2];
   uint8_t status = 0xFF;
   while (status & STATUS_DATA_READY) {
     status = MCP346x_readRegs(adc, REG_ADCDATA, buff, 2);
   }
-  return (int16_t)((buff[0] << 8) | buff[1]);
+  return (uint32_t)((buff[0] << 8) | buff[1]);
 }
 
 /**
@@ -185,13 +186,13 @@ int16_t MCP346x_readADC(const MCP346x *adc) {
  * @param gain the 3bit ID of the gain
  * @return the raw ADC reading
  */
-int16_t MCP346x_analogRead(MCP346x *adc, const uint8_t vp, const uint8_t vn,
+int32_t MCP346x_analogRead(MCP346x *adc, const uint8_t vp, const uint8_t vn,
                            const uint8_t gain) {
   MCP346x_startADC(adc, vp, vn, gain << 3);
   return MCP346x_readADC(adc);
 }
 
-double MCP346x_convertVoltage(const MCP346x *adc, int16_t reading,
+double MCP346x_convertVoltage(const MCP346x *adc, int32_t reading,
                               uint8_t gain) {
   double gainf = 1.0 / 3.0;
   if (gain) {

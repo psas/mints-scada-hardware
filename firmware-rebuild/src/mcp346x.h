@@ -32,10 +32,10 @@ void MCP346x_setValue(MCP346x *adc, const uint8_t reg, const uint8_t value,
 
 void MCP346x_startADC(MCP346x *adc, const uint8_t vp, const uint8_t vn,
                       const uint8_t gain);
-int16_t MCP346x_readADC(const MCP346x *adc);
-int16_t MCP346x_analogRead(MCP346x *adc, const uint8_t vp, const uint8_t vs,
+int32_t MCP346x_readADC(const MCP346x *adc);
+int32_t MCP346x_analogRead(MCP346x *adc, const uint8_t vp, const uint8_t vs,
                            const uint8_t gain);
-double MCP346x_convertVoltage(const MCP346x *adc, int16_t reading,
+double MCP346x_convertVoltage(const MCP346x *adc, int32_t reading,
                               uint8_t gain);
 void MCP346x_printRegs(const MCP346x *adc);
 void MCP346x_printInfo(const MCP346x *adc);
