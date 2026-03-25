@@ -59,21 +59,21 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : PAPin PAPin */
+  /*Configure GPIO pins : CONFIG0_Pin CONFIG1_Pin */
   GPIO_InitStruct.Pin = CONFIG0_Pin|CONFIG1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PAPin PAPin PAPin PAPin */
+  /*Configure GPIO pins : ADDR4_Pin ADDR1_Pin ADDR8_Pin ADDR2_Pin */
   GPIO_InitStruct.Pin = ADDR4_Pin|ADDR1_Pin|ADDR8_Pin|ADDR2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PBPin PBPin PBPin PBPin
-                           PBPin PBPin PBPin PBPin
-                           PBPin */
+  /*Configure GPIO pins : OUT0_Pin OUT1_Pin OUT2_Pin CTRL_Pin
+                           OUT3_Pin OUT4_Pin OUT5_Pin OUT6_Pin
+                           OUT7_Pin */
   GPIO_InitStruct.Pin = OUT0_Pin|OUT1_Pin|OUT2_Pin|CTRL_Pin
                           |OUT3_Pin|OUT4_Pin|OUT5_Pin|OUT6_Pin
                           |OUT7_Pin;
@@ -82,7 +82,7 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PtPin */
+  /*Configure GPIO pin : LED_Pin */
   GPIO_InitStruct.Pin = LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;

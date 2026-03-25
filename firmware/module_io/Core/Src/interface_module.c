@@ -16,6 +16,7 @@
 #include "datapacket.h"
 
 // #include "loop.h"
+#include "breakpoint.h"
 
 /** TODO
  * Add checkbox to software in order to quickly remove sensors from the autopoller
@@ -296,6 +297,7 @@ void doEverything(void) {
     canSetupStatus = HAL_CAN_Start(&hcan);
     if(canSetupStatus != HAL_OK) {
         uprintf("CAN start error %d\n", canSetupStatus);
+        BKPT;
         onFatalError();
         return;
     } else {
@@ -327,6 +329,7 @@ void doEverything(void) {
     while(HAL_CAN_GetTxMailboxesFreeLevel(&hcan) < freeTX);
 
     while(1) {
+        BKPT;
         getCanMessages();
 #ifdef LOOPBACK
         DataPacket dp;
@@ -362,7 +365,15 @@ void doEverything(void) {
 
 }
 
+#include "breakpoint.h"
+
 int main(void) {
+    BKPT
+    int q = 4;
     doEverything();
-    while(1); // Halt if main ever exits
+    while(1) {
+        q += 1;
+        BKPT
+    }
+        // Halt if main ever exits
 }

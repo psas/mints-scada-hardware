@@ -22,14 +22,11 @@
 #include "can.h"
 #include "i2c.h"
 #include "spi.h"
-#include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "uprintf.h"
-#include "usb_device.h"
-#include "usbd_cdc_if.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -69,7 +66,6 @@ void initPeripherials(void) {
         // Set up clocks
         SystemClock_Config();
 
-        MX_USB_DEVICE_Init();
         MX_GPIO_Init();
         MX_ADC_Init();
         MX_CAN_Init();
@@ -126,10 +122,8 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USB|RCC_PERIPHCLK_I2C1;
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_I2C1;
   PeriphClkInit.I2c1ClockSelection = RCC_I2C1CLKSOURCE_HSI;
-  PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_HSI48;
-
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
