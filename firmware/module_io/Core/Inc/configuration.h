@@ -1,7 +1,7 @@
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 // CAN loopback mode. Use ONLY for firmware development
-// #define LOOPBACK
+#define LOOPBACK
 
 // Configuration: Select exactly one. Selecting multiple may lead to issues
 // #define CONFIG_OUTPUTS
