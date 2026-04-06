@@ -10,4 +10,5 @@
 
 int main(void);
 void onFatalError(void);
+void bkpt(void);
 extern int fatal;

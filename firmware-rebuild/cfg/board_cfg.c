@@ -1,8 +1,13 @@
 #include "board_cfg.h"
 #include "stm32f0xx_hal.h"
-#include "usb.h"
 
-// #TODO: include Error_Handler() in a simple spot
+ void Error_Handler(void) {
+  HAL_Delay(15);
+  __disable_irq();
+  while (1) {
+  }
+}
+
 void SystemClock_Config(void) {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
@@ -22,7 +27,7 @@ void SystemClock_Config(void) {
   }
 
   // Initializes the CPU, AHB and APB bus clocks
-  
+
   RCC_ClkInitStruct.ClockType =
       RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI48;
@@ -40,3 +45,5 @@ void SystemClock_Config(void) {
     Error_Handler();
   }
 }
+
+

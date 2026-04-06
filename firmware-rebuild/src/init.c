@@ -1,11 +1,11 @@
 #include "init.h"
 #include "board_cfg.h"
 #include "main.h"
+#include "stm32f0xx.h"
 #include "stm32f0xx_hal_adc.h"
 #include "stm32f0xx_hal_can.h"
 #include "stm32f0xx_hal_gpio.h"
 #include "stm32f0xx_hal_spi.h"
-#include "usb.h"
 
 GPIO_InitTypeDef GPIO_InitStruct = {0};
 
@@ -128,16 +128,8 @@ void initGPIO(void) {
                                });
 }
 
-void initCAN(void) {
-  if (HAL_CAN_Init(&hcan) != HAL_OK) {
-    Error_Handler();
-  }
-  if (HAL_CAN_Start(&hcan) != HAL_OK) {
-    Error_Handler();
-  }
-}
+void HAL_CAN_MspInit(CAN_HandleTypeDef *canHandle) {
 
-void initCAN_RXTX(CAN_HandleTypeDef *canHandle) {
   // PB8 & PB9 have alternate functions as CAN_RX and CAN_TX
   if (canHandle->Instance == CAN) {
     __HAL_RCC_CAN1_CLK_ENABLE();
@@ -150,7 +142,33 @@ void initCAN_RXTX(CAN_HandleTypeDef *canHandle) {
                              .Speed = GPIO_SPEED_FREQ_HIGH,
                              .Alternate = GPIO_AF4_CAN,
                          });
+
+    /* CAN interrupt Init */
+    HAL_NVIC_SetPriority(CEC_CAN_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(CEC_CAN_IRQn);
   }
+}
+
+void HAL_CAN_MspDeInit(CAN_HandleTypeDef *canHandle) {
+  if (canHandle->Instance == CAN) {
+    __HAL_RCC_CAN1_CLK_DISABLE();
+
+    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_8 | GPIO_PIN_9);
+
+    HAL_NVIC_DisableIRQ(CEC_CAN_IRQn);
+  }
+}
+
+void initCAN(void) {
+  if (HAL_CAN_Init(&hcan) != HAL_OK) {
+    __asm("bkpt");
+  }
+  if (HAL_CAN_Start(&hcan) != HAL_OK) {
+    __asm("bkpt");
+  }
+
+  __asm("bkpt");
+  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
 }
 
 void initSPI_GPIO(SPI_HandleTypeDef *spiHandle) {
@@ -169,22 +187,22 @@ void initSPI_GPIO(SPI_HandleTypeDef *spiHandle) {
 
 void initSPI(void) {
   if (HAL_SPI_Init(&hspi2) != HAL_OK) {
-    Error_Handler();
+    __asm("bkpt");
   }
   initSPI_GPIO(&hspi2);
 }
 
 void initI2C1(void) {
   if (HAL_I2C_Init(&hi2c1) != HAL_OK) {
-    Error_Handler();
+    __asm("bkpt");
   }
 
   if (HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE) != HAL_OK) {
-    Error_Handler();
+    __asm("bkpt");
   }
 
   if (HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0) != HAL_OK) {
-    Error_Handler();
+    __asm("bkpt");
   }
 }
 
@@ -217,15 +235,15 @@ void DeInitI2C1_HAL(I2C_HandleTypeDef *i2cHandle) {
 
 void initADC(void) {
   if (HAL_ADC_Init(&hadc) != HAL_OK) {
-    Error_Handler();
+    __asm("bkpt");
   }
 
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK) {
-    Error_Handler();
+    __asm("bkpt");
   }
 
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK) {
-    Error_Handler();
+    __asm("bkpt");
   }
 }
 

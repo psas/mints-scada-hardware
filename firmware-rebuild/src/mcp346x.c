@@ -3,7 +3,6 @@
 #include "stm32f0xx_hal_spi.c"
 #include "board_cfg.h"
 #include "init.h"
-#include "usb.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
@@ -20,7 +19,6 @@ MCP346x MCP346x_Init(void) {
   __HAL_SPI_ENABLE(&hspi2);
 
   // uint8_t firststatus = MCP346x_sendCmd(&adc, CMD_FAST_RESET);
-  // uprintf("%02x\n", firststatus);
 
   uint8_t cmds[] = {
       /* CFG0 */ CONFIG0_AWAKE | CLK_SEL_INTERNAL | BIAS_OFF | MODE_STANDBY,
@@ -56,7 +54,6 @@ void disableSPI(const MCP346x *adc) {
 uint8_t MCP346x_sendCmd(const MCP346x *adc, const uint8_t fastcmd) {
   // 2 bit device address, 4 bit register address, 2 bit command
   uint8_t cmd = 0b01 << 6 | fastcmd << 2 | CMD_TYPE_FAST;
-  // uprintf("Sending %02x\n", cmd);
   uint8_t status;
 
   // Select the chip to begin the transaction
@@ -117,13 +114,11 @@ uint8_t MCP346x_writeRegs(MCP346x *adc, const uint8_t reg,
   // Select the chip to begin the transaction
   enableSPI(adc);
 
-  uprintf("Let's go! %d\n", count);
   HAL_Delay(1);
 
   // Send the command and values
   SPI_TransmitReceive(&hspi2, tosend, reply, count + 1, 100);
 
-  uprintf("doot doot! %d\n", count);
   HAL_Delay(1);
 
   // Unselect the chip to end the transaction
@@ -223,15 +218,11 @@ void MCP346x_printRegs(const MCP346x *adc) {
       // buff[(16 * 3)] = '\n';
       // buff[(16 * 3)+1] = '\n';
       // buff[(16 * 3)+2] = '\0';
-      // uprint(buff, (16 * 3) + 3);
-      uprintf("%s\n", buff);
     }
   }
   // buff[(16 * 3)] = '\n';
   // buff[(16 * 3)+1] = '\n';
   // buff[(16 * 3)+2] = '\0';
-  // uprint(buff, (16 * 3) + 3);
-  uprintf("%s\n", buff);
 }
 
 void bits(uint8_t num, int offset, int count, char *buff) {
@@ -247,37 +238,21 @@ void MCP346x_printInfo(const MCP346x *adc) {
   uint8_t reply[29];
   MCP346x_readRegs(adc, 0, reply, 34);
   char buff[4];
-  uprintf("ADC Result: 0x%04x\n", reply[0] << 8 | reply[1]);
   bits(reply[2], 6, 2, buff);
-  uprintf("Shutdown: %s\n", buff);
   bits(reply[2], 4, 2, buff);
-  uprintf("CLK_SEL: %s\n", buff);
   bits(reply[2], 2, 2, buff);
-  uprintf("CS_SEL: %s\n", buff);
   bits(reply[2], 0, 2, buff);
-  uprintf("ADC_MODE: %s\n", buff);
   bits(reply[3], 6, 2, buff);
-  uprintf("Prescaler: %s\n", buff);
   bits(reply[3], 2, 4, buff);
-  uprintf("Oversampling: %s\n", buff);
   bits(reply[4], 6, 2, buff);
-  uprintf("BOOST: %s\n", buff);
   bits(reply[4], 3, 3, buff);
-  uprintf("GAIN: %s\n", buff);
   bits(reply[4], 2, 1, buff);
-  uprintf("AZ_MUX: %s\n", buff);
   bits(reply[5], 6, 2, buff);
-  uprintf("CONV_MODE: %s\n", buff);
   bits(reply[5], 4, 2, buff);
-  uprintf("DATA_FORMAT: %s\n", buff);
   bits(reply[5], 3, 1, buff);
-  uprintf("CRC_FORMAT: %s\n", buff);
   bits(reply[5], 2, 1, buff);
-  uprintf("EN_CRCCOM: %s\n", buff);
   bits(reply[5], 1, 1, buff);
-  uprintf("EN_OFFCAL: %s\n", buff);
   bits(reply[5], 0, 1, buff);
-  uprintf("EN_GAINCAL: %s\n", buff);
 }
 
 // 7.23us start
@@ -347,7 +322,6 @@ int SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData,
     }
   }
   while ((hspi->TxXferCount > 0U) || (hspi->RxXferCount > 0U)) {
-    // uprintf("im loopy\n");
     HAL_Delay(1); // TODO figure out why it dies without this here since it
                   // probably makes this *very* slow
     /* Check TXE flag */
@@ -385,7 +359,6 @@ int SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData,
       txallowed = 1U;
     }
   }
-  // uprintf("i not god but i try\n");
   // HAL_Delay(1);
 
   hspi->State = HAL_SPI_STATE_READY;

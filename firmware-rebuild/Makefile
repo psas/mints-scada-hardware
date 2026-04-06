@@ -13,16 +13,11 @@ SRC_DIR := ./src/
 OOCD_CFG := ./toolchain/oocd.cfg
 
 C_SOURCES := ./cfg/board_cfg.c\
-./cfg/usbd_cdc_if.c\
-./cfg/usbd_desc.c\
-./cfg/usbd_conf.c\
 ./src/init.c\
 ./src/mcp346x.c\
 ./src/main.c\
-./src/usb.c\
 ./src/can.c\
 ./cfg/stm32f0xx_it.c\
-./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usb.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_can.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c\
@@ -38,12 +33,8 @@ C_SOURCES := ./cfg/board_cfg.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c \
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c \
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.c \
-./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c\
-./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c\
 ./stm32libs/syscalls.c\
 ./stm32libs/sysmem.c\
-./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c\
-./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c\
 ./stm32libs/STM32CubeF0/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.c\
 
 ASM_SOURCES := ./stm32libs/STM32CubeF0/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc/startup_stm32f042x6.s
@@ -54,10 +45,6 @@ HAL_INC := ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Inc/
 HAL_SRC := ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/
 CMSIS_INC := ./stm32libs/STM32CubeF0/Drivers/CMSIS/Include/
 CMSIS_DEVICE_LIBS := ./stm32libs/STM32CubeF0/Drivers/CMSIS/Device/ST/STM32F0xx/Include/
-USB_INC := ./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/
-USB_DEVICE_LIBS := ./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/
-CDC_USB_INC := ./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/
-CDC_USB_DEVICE_LIBS := ./stm32libs/STM32CubeF0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/
 LINK_SCRIPT := ./stm32libs/STM32F042C6Tx_FLASH.ld
 
 INCLUDE_DIR := $(SRC_DIR)\
@@ -67,10 +54,6 @@ INCLUDE_DIR := $(SRC_DIR)\
 			 $(HAL_SRC)\
 			 $(CMSIS_INC)\
 			 $(CMSIS_DEVICE_LIBS)\
-			 $(USB_INC)\
-			 $(USB_DEVICE_LIBS)\
-			 $(CDC_USB_INC)\
-			 $(CDC_USB_DEVICE_LIBS)\
 
 CDEFS = -DUSE_HAL_DRIVER \
 -DSTM32F042x6
@@ -120,6 +103,9 @@ flash: all
 
 write:
 	openocd -f $(OOCD_CFG) -c "program $(BUILD_DIR)/main.elf verify reset exit"
+
+debug:
+	openocd -f $(OOCD_CFG) -c "program ./$(BUILD_DIR)/$(TARGET).elf verify reset"
 
 # Notes:
 # -MMD: build dependency list of header files as .d,
