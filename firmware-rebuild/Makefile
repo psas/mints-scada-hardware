@@ -100,6 +100,10 @@ clean:
 
 #flash: all
 #	dfu-util --device 0483:df11 --alt 0 --dfuse-address 0x08000000:leave --download $(BUILD_DIR)/main.bin
+debug-new:
+	rm -rf $(BUILD_DIR)
+	make all
+	openocd -f $(OOCD_CFG) -c "program ./$(BUILD_DIR)/$(TARGET).elf verify reset"
 
 write:
 	openocd -f $(OOCD_CFG) -c "program $(BUILD_DIR)/main.elf verify reset exit"

@@ -170,7 +170,7 @@ void initCAN(void) {
   HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
 }
 
-void initSPI_GPIO(SPI_HandleTypeDef *spiHandle) {
+void HAL_SPI_MspInit(SPI_HandleTypeDef *spiHandle) {
   if (spiHandle->Instance == SPI2) {
     __HAL_RCC_SPI2_CLK_ENABLE();
     __HAL_RCC_GPIOB_CLK_ENABLE();
@@ -188,7 +188,6 @@ void initSPI(void) {
   if (HAL_SPI_Init(&hspi2) != HAL_OK) {
     Error_Handler();
   }
-  initSPI_GPIO(&hspi2);
 }
 
 void initI2C1(void) {

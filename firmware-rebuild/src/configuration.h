@@ -5,7 +5,7 @@
 // #define CONFIG_OUTPUTS
 #define CONFIG_ADC
 // #define CONFIG_I2C
-#define LOOPBACK
+//#define LOOPBACK
 
 // Check that exactly 1 output configuration has been selected
 #if !(defined(CONFIG_OUTPUTS) || (defined(CONFIG_ADC) || defined(CONFIG_I2C))) \

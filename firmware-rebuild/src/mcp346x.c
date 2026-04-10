@@ -35,7 +35,7 @@ MCP346x MCP346x_Init(void) {
       /* TIMR */ 0, 0, 0,
       /* OFST */ 0x00, 0x00, 0x3E,
       /* GAIN */ 0x7D, 0xEE, 0x80};
-  HAL_Delay(1);
+  //HAL_Delay(1);
   MCP346x_writeRegs(&adc, REG_CONFIG0, cmds, 18);
 
   cmds[3] = 4;
@@ -223,6 +223,7 @@ void MCP346x_printRegs(const MCP346x *adc) {
   // buff[(16 * 3)] = '\n';
   // buff[(16 * 3)+1] = '\n';
   // buff[(16 * 3)+2] = '\0';
+  // uprint(buff, (16 * 3) + 3);
 }
 
 void bits(uint8_t num, int offset, int count, char *buff) {

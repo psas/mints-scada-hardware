@@ -1,23 +1,25 @@
 #include "main.h"
-#include <stdio.h>
 #include "board_cfg.h"
 #include "can.h"
 #include "configuration.h"
 #include "init.h"
 #include "main.h"
+#include "mcp346x.h"
 #include "stm32f0xx_hal.h"
 #include "stm32f0xx_hal_gpio.h"
+#include <stdio.h>
 
 void initPeripherials(void) {
   HAL_Init();
   SystemClock_Config();
   initGPIO();
   initCAN();
+  initSPI();
 }
 
 extern CAN_FilterTypeDef sFilterConfig;
 static uint8_t baseAddress = 0;
-static int count = 0;
+// static int count = 0;
 int fatal = 0;
 
 void onFatalError(void) {
@@ -40,11 +42,13 @@ int calc_baseAddress(void) {
 /* Does everything. Is wrapped by main so that the program will halt if this
  * ever returns. */
 void doEverything(void) {
-
+  MCP346x extadc = MCP346x_Init();
   // Set up a filter. Hopefully it just grabs everything
   CAN_FilterTypeDef sFilterConfig = {
       .FilterFIFOAssignment = CAN_FILTER_FIFO0, // set fifo assignment
-      .FilterIdHigh = baseAddress << 5,   // the ID that the filter looks for (switch this for the other microcontroller)
+      .FilterIdHigh = baseAddress
+                      << 5, // the ID that the filter looks for (switch this for
+                            // the other microcontroller)
       .FilterIdLow = 0,
       .FilterMaskIdHigh = 0xF0 << 5,
       .FilterMaskIdLow = 0,
@@ -54,8 +58,8 @@ void doEverything(void) {
   };
 
   if (HAL_CAN_ConfigFilter(&hcan, &sFilterConfig) != HAL_OK) {
-    
-Error_Handler();
+
+    Error_Handler();
     return;
   }
 
@@ -73,44 +77,57 @@ Error_Handler();
   // Send ID claim command
   uint32_t freeTX = HAL_CAN_GetTxMailboxesFreeLevel(&hcan);
   if (writeDatapacketToCan(&iddp) != HAL_OK) {
-    
-Error_Handler();
+
+    Error_Handler();
     return;
   }
   // Wait for ID claim command to be sent
-  while (HAL_CAN_GetTxMailboxesFreeLevel(&hcan) < freeTX){
+  while (HAL_CAN_GetTxMailboxesFreeLevel(&hcan) < freeTX) {
     while (1) {
-      getCanMessages();
-      DataPacket dp;
-      // dp.id = 0x75;
-      // dp.id = count & 0xFF;
-      dp.id = baseAddress | 0x5;
-      dp.err = 0;                        // Not an error packet
-      dp.reserved = 0;                   // Set to 0 for easier debugging
-      dp.reply = 0;                      // Not a reply
-      dp.data.seq = count & 0xFF;        // Increment sequence number each time
-      dp.data.cmd = BUSCMD_READ_ID_HIGH; // Sets the ID to claim
-      dp.data.bytes[0] = 0x00;
-      dp.data.bytes[1] = 0x01;
-      dp.data.bytes[2] = 0x02;
-      dp.data.bytes[3] = 0x03;
-      dp.datasize = 6; // Include the sequence number and command in this count
+        //__asm("bkpt");
+        // debugging ADC below
+        DataPacket pk;
+        uint8_t subid = (baseAddress & 0xF) - BASE_ADDR_OFFSET;
+        uint32_t val = MCP346x_analogRead(&extadc, subid << 1, (subid << 1) + 1, GAIN_1);
 
-      uint32_t endtime = HAL_GetTick() + 500;
-      HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-      writeDatapacketToCan(&dp);
-      HAL_Delay(50);
-      HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-      while (endtime > HAL_GetTick()) {
-        HAL_Delay(1);
+        pk.id = baseAddress | 0x5;
+        pk.err = 0;
+        pk.reserved = 0;
+        pk.reply = 0;
+        pk.datasize = 8;
+        pk.data.bytes[6] = val;
+        pk.data.cmd = BUSCMD_READ_ID_HIGH;
+        writeDatapacketToCan(&pk);
+        // can debug below
+        // DataPacket dp;
+        // dp.id = baseAddress | 0x5;
+        // dp.err = 0;                        // Not an error packet
+        // dp.reserved = 0;                   // Set to 0 for easier debugging
+        // dp.reply = 0;                      // Not a reply
+        // dp.data.seq = count & 0xFF;        // Increment sequence number each time
+        // dp.data.cmd = BUSCMD_READ_ID_HIGH; // Sets the ID to claim
+        // dp.data.bytes[0] = 0x00;
+        // dp.data.bytes[1] = 0x01;
+        // dp.data.bytes[2] = 0x02;
+        // dp.data.bytes[3] = 0x03;
+        // dp.datasize = 6; // Include the sequence number and command in this
+        // count
+        //
+        // uint32_t endtime = HAL_GetTick() + 500;
+        // HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+        // //writeDatapacketToCan(&dp);
+        // HAL_Delay(50);
+        // while (endtime > HAL_GetTick()) {
+        //   HAL_Delay(1);
+        // }
+        HAL_Delay(500);
       }
     }
   }
-}
 
-int main(void) {
-  // Initialize peripheral libraries
-  initPeripherials();
-  doEverything();
-  while (1); // Halt if main ever exits
-}
+  int main(void) {
+    // Initialize peripheral libraries
+    initPeripherials();
+    doEverything();
+    while (1); // Halt if main ever exits
+  }
