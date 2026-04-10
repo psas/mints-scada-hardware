@@ -161,13 +161,13 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef *canHandle) {
 
 void initCAN(void) {
   if (HAL_CAN_Init(&hcan) != HAL_OK) {
-    __asm("bkpt");
+    Error_Handler();
   }
   if (HAL_CAN_Start(&hcan) != HAL_OK) {
-    __asm("bkpt");
+    Error_Handler();
   }
 
-  __asm("bkpt");
+  Error_Handler();
   HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
 }
 
@@ -187,22 +187,22 @@ void initSPI_GPIO(SPI_HandleTypeDef *spiHandle) {
 
 void initSPI(void) {
   if (HAL_SPI_Init(&hspi2) != HAL_OK) {
-    __asm("bkpt");
+    Error_Handler();
   }
   initSPI_GPIO(&hspi2);
 }
 
 void initI2C1(void) {
   if (HAL_I2C_Init(&hi2c1) != HAL_OK) {
-    __asm("bkpt");
+    Error_Handler();
   }
 
   if (HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE) != HAL_OK) {
-    __asm("bkpt");
+    Error_Handler();
   }
 
   if (HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0) != HAL_OK) {
-    __asm("bkpt");
+    Error_Handler();
   }
 }
 
@@ -235,15 +235,15 @@ void DeInitI2C1_HAL(I2C_HandleTypeDef *i2cHandle) {
 
 void initADC(void) {
   if (HAL_ADC_Init(&hadc) != HAL_OK) {
-    __asm("bkpt");
+    Error_Handler();
   }
 
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK) {
-    __asm("bkpt");
+    Error_Handler();
   }
 
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK) {
-    __asm("bkpt");
+    Error_Handler();
   }
 }
 

@@ -14,6 +14,7 @@ void initPeripherials(void) {
   initGPIO();
   initCAN();
 }
+
 extern CAN_FilterTypeDef sFilterConfig;
 static uint8_t baseAddress = 0;
 static int count = 0;
@@ -53,7 +54,7 @@ void doEverything(void) {
   };
 
   if (HAL_CAN_ConfigFilter(&hcan, &sFilterConfig) != HAL_OK) {
-    __asm("bkpt");
+    Error_Handler();
     return;
   }
 
@@ -71,13 +72,12 @@ void doEverything(void) {
   // Send ID claim command
   uint32_t freeTX = HAL_CAN_GetTxMailboxesFreeLevel(&hcan);
   if (writeDatapacketToCan(&iddp) != HAL_OK) {
-    __asm("bkpt");
+    Error_Handler();
     return;
   }
   // Wait for ID claim command to be sent
   while (HAL_CAN_GetTxMailboxesFreeLevel(&hcan) < freeTX){
     while (1) {
-      __asm("bkpt");
       getCanMessages();
       DataPacket dp;
       // dp.id = 0x75;
