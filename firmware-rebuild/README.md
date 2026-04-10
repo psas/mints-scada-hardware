@@ -16,6 +16,8 @@ While in the `./firmware-rebuild/` directory:
 
 * Run `make debug` to flash the elf onto the microcontroller using openocd to keep the server open
 
+* Run `make clean` to delete the contents of the build folder
+
 # Externally Sourced Files
 
 Board Config Template for `./cfg/stm32f0xx_hal_conf.h`  comes from

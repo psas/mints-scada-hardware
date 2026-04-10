@@ -54,7 +54,8 @@ void doEverything(void) {
   };
 
   if (HAL_CAN_ConfigFilter(&hcan, &sFilterConfig) != HAL_OK) {
-    Error_Handler();
+    
+Error_Handler();
     return;
   }
 
@@ -72,7 +73,8 @@ void doEverything(void) {
   // Send ID claim command
   uint32_t freeTX = HAL_CAN_GetTxMailboxesFreeLevel(&hcan);
   if (writeDatapacketToCan(&iddp) != HAL_OK) {
-    Error_Handler();
+    
+Error_Handler();
     return;
   }
   // Wait for ID claim command to be sent

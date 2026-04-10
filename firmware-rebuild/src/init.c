@@ -167,7 +167,6 @@ void initCAN(void) {
     Error_Handler();
   }
 
-  Error_Handler();
   HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
 }
 
