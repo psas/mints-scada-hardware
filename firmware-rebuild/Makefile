@@ -98,8 +98,8 @@ clean:
 
 -include $(wildcard $(BUILD_DIR)/*.d)
 
-flash: all
-	dfu-util --device 0483:df11 --alt 0 --dfuse-address 0x08000000:leave --download $(BUILD_DIR)/main.bin
+#flash: all
+#	dfu-util --device 0483:df11 --alt 0 --dfuse-address 0x08000000:leave --download $(BUILD_DIR)/main.bin
 
 write:
 	openocd -f $(OOCD_CFG) -c "program $(BUILD_DIR)/main.elf verify reset exit"
