@@ -6,6 +6,9 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+#include "usart.h"
+#include "main.h"
+
 uint8_t txbuff[MAX_USB_PRINT_LENGTH] = {0};
 /*
  * Like printf, but to print on the USB Serial port.
@@ -47,9 +50,10 @@ void uprintf(const char *format, ...) {
         }
     }
     // Print the message
-    uprint(txbuff, txl+1);
+    uprint(txbuff, txl);
 }
 
 void uprint(uint8_t* str, const int length) {
     // do nothing :(
+    HAL_UART_Transmit(&huart1, str, length, 1100);
 }

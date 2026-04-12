@@ -21,10 +21,10 @@ MCP346x MCP346x_Init(SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_
     // uprintf("%02x\n", firststatus);
 
     uint8_t cmds[] = {
-        /* CFG0 */ CONFIG0_AWAKE | CLK_SEL_INTERNAL | BIAS_OFF | MODE_STANDBY,
+        /* CFG0 */ CONFIG0_VREF_INT | CONFIG0_AWAKE | CLK_SEL_INTERNAL | BIAS_OFF | MODE_STANDBY,
         /* CFG1 */ PRESCALER_1 | OSR_32,
         /* CFG2 */ BOOST_1 | GAIN_1<<3 | MUX_ZERO_OFF | 0b11,
-        /* CFG3 */ CONV_MODE_CONTINUOUS | DATA_FORMAT_16 | CRC_FORMAT_16
+        /* CFG3 */ CONV_MODE_CONTINUOUS | DATA_FORMAT_32 | CRC_FORMAT_16
         | CRC_ON_READ_DISABLED | DIGITAL_OFFSET_CALIB_DISABLED | GAIN_CALIB_DISABLED,
         /* IRQ  */
         IRQ_PIN_MODE_IRQ | IRQ_PIN_INACTIVE_LOGIC | FAST_COMMANDS_ENABLED | CONVERSION_START_INTERRUPT_DISABLED,
@@ -175,13 +175,13 @@ void MCP346x_startADC(MCP346x* adc, const uint8_t vp, const uint8_t vn, const ui
  * @param adc the ADC to read from
  * @return The raw read value
  */
-int16_t MCP346x_readADC(const MCP346x* adc) {
-    uint8_t buff[2];
+int32_t MCP346x_readADC(const MCP346x* adc) {
+    uint8_t buff[4];
     uint8_t status = 0xFF;
     while (status & STATUS_DATA_READY) {
-        status = MCP346x_readRegs(adc, REG_ADCDATA, buff, 2);
+        status = MCP346x_readRegs(adc, REG_ADCDATA, buff, 4);
     }
-    return (int16_t)((buff[0] << 8) | buff[1]);
+    return (int32_t)((buff[0] << 24) | (buff[1] << 16) | (buff[2] << 8) | buff[3]);
 }
 
 /**
@@ -194,12 +194,12 @@ int16_t MCP346x_readADC(const MCP346x* adc) {
  * @param gain the 3bit ID of the gain
  * @return the raw ADC reading
  */
-int16_t MCP346x_analogRead(MCP346x* adc, const uint8_t vp, const uint8_t vn, const uint8_t gain) {
+int32_t MCP346x_analogRead(MCP346x* adc, const uint8_t vp, const uint8_t vn, const uint8_t gain) {
     MCP346x_startADC(adc, vp, vn, gain<<3);
     return MCP346x_readADC(adc);
 }
 
-double MCP346x_convertVoltage(const MCP346x* adc, int16_t reading, uint8_t gain) {
+double MCP346x_convertVoltage(const MCP346x* adc, int32_t reading, uint8_t gain) {
     double gainf = 1.0 / 3.0;
     if (gain) {
         gainf = (double)(1 << (gain - 1));
@@ -218,11 +218,11 @@ void MCP346x_setValue(MCP346x* adc, const uint8_t reg, const uint8_t value, cons
 }
 
 void MCP346x_printRegs(const MCP346x* adc) {
-    uint8_t reply[29];
-    MCP346x_readRegs(adc, 0, reply, 34);
+    uint8_t reply[31];
+    MCP346x_readRegs(adc, 0, reply, 31);
     // char buff[(16 * 3) + 3] = {0};
     char buff[(16 * 3) + 1] = {0};
-    for (int i = 0; i < 29; i++) {
+    for (int i = 0; i < 31; i++) {
         snprintf(&buff[3 * (i % 16)], 4, "%02X ", reply[i]);
         if (i % 16 == 15) {
             // buff[(16 * 3)] = '\n';
@@ -249,39 +249,41 @@ void bits(uint8_t num, int offset, int count, char* buff) {
 }
 
 void MCP346x_printInfo(const MCP346x* adc) {
-    uint8_t reply[29];
-    MCP346x_readRegs(adc, 0, reply, 34);
-    char buff[4];
-    uprintf("ADC Result: 0x%04x\n", reply[0] << 8 | reply[1]);
-    bits(reply[2], 6, 2, buff);
+    uint8_t reply[31];
+    MCP346x_readRegs(adc, 0, reply, 31);
+    char buff[8];
+    uprintf("ADC Result: 0x%08x\n", reply[0] << 24 | reply[1] << 16 | reply[2] << 8 | reply[3]);
+    bits(reply[4], 7, 1, buff);
+    uprintf("Vref Int: %s\n", buff);
+    bits(reply[4], 6, 1, buff);
     uprintf("Shutdown: %s\n", buff);
-    bits(reply[2], 4, 2, buff);
+    bits(reply[4], 4, 2, buff);
     uprintf("CLK_SEL: %s\n", buff);
-    bits(reply[2], 2, 2, buff);
+    bits(reply[4], 2, 2, buff);
     uprintf("CS_SEL: %s\n", buff);
-    bits(reply[2], 0, 2, buff);
+    bits(reply[4], 0, 2, buff);
     uprintf("ADC_MODE: %s\n", buff);
-    bits(reply[3], 6, 2, buff);
-    uprintf("Prescaler: %s\n", buff);
-    bits(reply[3], 2, 4, buff);
-    uprintf("Oversampling: %s\n", buff);
-    bits(reply[4], 6, 2, buff);
-    uprintf("BOOST: %s\n", buff);
-    bits(reply[4], 3, 3, buff);
-    uprintf("GAIN: %s\n", buff);
-    bits(reply[4], 2, 1, buff);
-    uprintf("AZ_MUX: %s\n", buff);
     bits(reply[5], 6, 2, buff);
+    uprintf("Prescaler: %s\n", buff);
+    bits(reply[5], 2, 4, buff);
+    uprintf("Oversampling: %s\n", buff);
+    bits(reply[6], 6, 2, buff);
+    uprintf("BOOST: %s\n", buff);
+    bits(reply[6], 3, 3, buff);
+    uprintf("GAIN: %s\n", buff);
+    bits(reply[6], 2, 1, buff);
+    uprintf("AZ_MUX: %s\n", buff);
+    bits(reply[7], 6, 2, buff);
     uprintf("CONV_MODE: %s\n", buff);
-    bits(reply[5], 4, 2, buff);
+    bits(reply[7], 4, 2, buff);
     uprintf("DATA_FORMAT: %s\n", buff);
-    bits(reply[5], 3, 1, buff);
+    bits(reply[7], 3, 1, buff);
     uprintf("CRC_FORMAT: %s\n", buff);
-    bits(reply[5], 2, 1, buff);
+    bits(reply[7], 2, 1, buff);
     uprintf("EN_CRCCOM: %s\n", buff);
-    bits(reply[5], 1, 1, buff);
+    bits(reply[7], 1, 1, buff);
     uprintf("EN_OFFCAL: %s\n", buff);
-    bits(reply[5], 0, 1, buff);
+    bits(reply[7], 0, 1, buff);
     uprintf("EN_GAINCAL: %s\n", buff);
 }
 

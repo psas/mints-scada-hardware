@@ -261,6 +261,19 @@ void doEverything(void) {
     extadc = MCP346x_Init(&hspi2, CTRL_GPIO_Port, CTRL_Pin, 0, 0);
 #endif
 
+    int32_t v = MCP346x_analogRead(&extadc, MUX_AVDD, MUX_AGND, GAIN_03);
+    uprintf("Rad: %08X\n", v);
+    v = MCP346x_analogRead(&extadc, MUX_AVDD, MUX_AGND, GAIN_03);
+    uprintf("Rad: %08X\n", v);
+    for (int i = 0; i < 9; i++) {
+        v = MCP346x_readADC(&extadc);
+        uprintf("Rad %d: %08X\n", i, v);
+    }
+    MCP346x_printInfo(&extadc);
+    MCP346x_printRegs(&extadc);
+
+    BKPT;
+
     // Wait a random amount of time to ensure that if two devices try to start with the same ID,
     // one will have a change to get started and reply to the other alerting them of the issue.
     HAL_Delay(random(6));
@@ -368,7 +381,6 @@ void doEverything(void) {
 #include "breakpoint.h"
 
 int main(void) {
-    BKPT
     int q = 4;
     doEverything();
     while(1) {
