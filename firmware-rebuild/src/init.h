@@ -7,11 +7,13 @@ extern SPI_HandleTypeDef hspi2;
 extern CAN_HandleTypeDef hcan;
 extern ADC_HandleTypeDef hadc;
 extern I2C_HandleTypeDef hi2c1;
+extern UART_HandleTypeDef huart1;
 
 void initCAN(void);
 void initGPIO(void);
 void initI2C1(void);
 void initI2C1_HAL(I2C_HandleTypeDef *i2cHandle);
 void initSPI(void);
-void initSPI_GPIO(SPI_HandleTypeDef *spiHandle);
+void initSPI_GPIO(void);
 void initADC(void);
+void initUART(void);

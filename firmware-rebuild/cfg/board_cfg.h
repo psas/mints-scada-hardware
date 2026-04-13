@@ -50,3 +50,9 @@ void Error_Handler(void);
 #define OUT7_Pin GPIO_PIN_7
 #define OUT7_GPIO_Port GPIOB
 
+#define USART2_CTS GPIO_PIN_0
+#define USART2_RTS GPIO_PIN_1
+#define USART2_TX GPIO_PIN_2
+#define USART2_RX GPIO_PIN_3
+#define USART2_CK GPIO_PIN_4
+#define USART2_GPIO_PORT GPIOA

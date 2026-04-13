@@ -5,9 +5,10 @@
 #include "stm32f0xx_hal_adc.h"
 #include "stm32f0xx_hal_can.h"
 #include "stm32f0xx_hal_gpio.h"
+#include "stm32f0xx_hal_rcc.h"
 #include "stm32f0xx_hal_spi.h"
-
-GPIO_InitTypeDef GPIO_InitStruct = {0};
+#include "stm32f0xx_hal_uart.h"
+#include "stm32f0xx_hal_uart_ex.h"
 
 CAN_HandleTypeDef hcan = {
     .Instance = CAN,
@@ -30,7 +31,7 @@ SPI_HandleTypeDef hspi2 = {.Instance = SPI2,
                            .Init = {
                                .Mode = SPI_MODE_MASTER,
                                .Direction = SPI_DIRECTION_2LINES,
-                               .DataSize = SPI_DATASIZE_16BIT,
+                               .DataSize = SPI_DATASIZE_8BIT,
                                .CLKPolarity = SPI_POLARITY_LOW,
                                .CLKPhase = SPI_PHASE_1EDGE,
                                .NSS = SPI_NSS_SOFT,
@@ -194,11 +195,9 @@ void initI2C1(void) {
   if (HAL_I2C_Init(&hi2c1) != HAL_OK) {
     Error_Handler();
   }
-
   if (HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE) != HAL_OK) {
     Error_Handler();
   }
-
   if (HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0) != HAL_OK) {
     Error_Handler();
   }
@@ -263,5 +262,41 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef *adcHandle) {
   if (adcHandle->Instance == ADC1) {
     __HAL_RCC_ADC1_CLK_DISABLE();
     HAL_GPIO_DeInit(ADC_RAND_GPIO_Port, ADC_RAND_Pin);
+  }
+}
+
+UART_HandleTypeDef huart1 = {
+  .Instance = USART2,
+  .Init = {
+    .BaudRate = 115200,
+    .WordLength = UART_WORDLENGTH_8B,
+    .StopBits = UART_STOPBITS_1,
+    .Parity = UART_PARITY_NONE,
+    .Mode = UART_MODE_TX_RX,
+    .HwFlowCtl = UART_HWCONTROL_NONE,
+    .OverSampling = UART_OVERSAMPLING_16,
+    .OneBitSampling = UART_ONE_BIT_SAMPLE_ENABLE,
+  },
+    .AdvancedInit.AdvFeatureInit  = UART_ADVFEATURE_NO_INIT
+};
+
+void initUART(void) {
+  if(HAL_UART_Init(&huart1) != HAL_OK){
+    Error_Handler();
+  }
+}
+
+void HAL_UART_MspInit(UART_HandleTypeDef *uart) {
+  if (uart->Instance == USART2){
+    __HAL_RCC_USART1_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+
+    HAL_GPIO_Init(GPIOA, &(GPIO_InitTypeDef){
+      .Pin = GPIO_PIN_9 | GPIO_PIN_10,
+      .Mode = GPIO_MODE_AF_PP,
+      .Pull =  GPIO_NOPULL,
+      .Speed = GPIO_SPEED_FREQ_HIGH,
+      .Alternate = GPIO_AF1_USART1
+    });
   }
 }

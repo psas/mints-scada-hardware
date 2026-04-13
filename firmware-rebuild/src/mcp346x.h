@@ -103,7 +103,13 @@ int SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData,
 /** CONFIG0 Full Shutdown */
 #define CONFIG0_FULL_SHUTDOWN 0b00 << 6
 /** CONFIG0 Awake */
-#define CONFIG0_AWAKE 0b11 << 6
+#define CONFIG0_AWAKE 0b1 << 6
+
+#define CONFIG0_VREF_INT 0b1 << 7
+
+#define CONFIG0_VREF_EXT 0b0 << 7
+
+#define CONFIG0_PARTIAL_SHUTDOWN 0b0 << 6
 
 /** CONFIG0 Using and outputting internal clock */
 #define CLK_SEL_INTERNAL_OUT 0b11 << 4
@@ -243,18 +249,18 @@ int SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData,
 /** CONFIG3 32-bit (17-bit right justified data plus Channel ID): CHID[3:0] plus
  * SGN extension (12 bits) plus 16-bit ADC data; allows overrange with the SGN
  * extension */
-#define DATA_FORMAT_32_CHID 0b11 << 5
+#define DATA_FORMAT_32_CHID 0b11 << 4
 /** CONFIG3 32-bit (17-bit right justified data): SGN extension (16-bit) plus
  * 16-bit ADC data; allows overrange with the SGN extension */
-#define DATA_FORMAT_32 0b10 << 5
+#define DATA_FORMAT_32 0b10 << 4
 /** CONFIG3 32-bit (16-bit left justified data): 16-bit ADC data plus 0x0000
  * (16-bit); does not allow overrange (ADC code locked to 0xFFFF or 0x8000 */
-#define DATA_FORMAT_32_PACK 0b01 << 5
+#define DATA_FORMAT_32_PACK 0b01 << 4
 /** CONFIG3 16-bit (default ADC coding): 16-bit ADC data; does not allow
  * overrange (ADC code locked to 0xFFFF or 0x8000) (default) */
-#define DATA_FORMAT_16 0b00 << 5
+#define DATA_FORMAT_16 0b00 << 4
 /** CONFIG3 Data format mask */
-#define DATA_FORMAT_MASK 0b11 << 5
+#define DATA_FORMAT_MASK 0b11 << 4
 
 /** CONFIG3 CRC-16 followed by 16 zeros (32-bit format) */
 #define CRC_FORMAT_32 0b1 << 3

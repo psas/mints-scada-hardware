@@ -21,7 +21,7 @@ MCP346x MCP346x_Init(void) {
   // uint8_t firststatus = MCP346x_sendCmd(&adc, CMD_FAST_RESET);
 
   uint8_t cmds[] = {
-      /* CFG0 */ CONFIG0_AWAKE | CLK_SEL_INTERNAL | BIAS_OFF | MODE_STANDBY,
+      /* CFG0 */ CONFIG0_VREF_INT | CLK_SEL_INTERNAL | BIAS_OFF | MODE_STANDBY,
       /* CFG1 */ PRESCALER_1 | OSR_32,
       /* CFG2 */ BOOST_1 | GAIN_1 << 3 | MUX_ZERO_OFF | 0b11,
       /* CFG3 */ CONV_MODE_CONTINUOUS | DATA_FORMAT_32 | CRC_FORMAT_16 | //TODO: change to 32 extended
@@ -79,11 +79,10 @@ uint8_t MCP346x_readRegs(const MCP346x *adc, const uint8_t reg, uint8_t *result,
   uint8_t tosend[count + 1];
   tosend[0] = PACK_COMMAND(reg, CMD_TYPE_READY_MANY);
   uint8_t reply[count + 1];
-  HAL_SPI_TransmitReceive(&hspi2, tosend, reply, count + 1, 100);
+  SPI_TransmitReceive(&hspi2, tosend, reply, count + 1, 100);
   memcpy(result, reply + 1, count);
 
   disableSPI(adc);
-
   // return status;
   return reply[0];
 }
@@ -163,12 +162,12 @@ void MCP346x_startADC(MCP346x *adc, const uint8_t vp, const uint8_t vn,
  * @return The raw read value
  */
 int32_t MCP346x_readADC(const MCP346x *adc) {
-  uint8_t buff[2];
+  uint8_t buff[4];
   uint8_t status = 0xFF;
   while (status & STATUS_DATA_READY) {
-    status = MCP346x_readRegs(adc, REG_ADCDATA, buff, 2);
+    status = MCP346x_readRegs(adc, REG_ADCDATA, buff, sizeof(buff));
   }
-  return (uint32_t)((buff[0] << 8) | buff[1]);
+  return (int32_t)((buff[0] << 24) | (buff[1] << 16) | (buff[2] << 8) | buff[3]);
 }
 
 /**
@@ -187,8 +186,7 @@ int32_t MCP346x_analogRead(MCP346x *adc, const uint8_t vp, const uint8_t vn,
   return MCP346x_readADC(adc);
 }
 
-double MCP346x_convertVoltage(const MCP346x *adc, int32_t reading,
-                              uint8_t gain) {
+double MCP346x_convertVoltage(const MCP346x *adc, int32_t reading, uint8_t gain) {
   double gainf = 1.0 / 3.0;
   if (gain) {
     gainf = (double)(1 << (gain - 1));
@@ -208,8 +206,8 @@ void MCP346x_setValue(MCP346x *adc, const uint8_t reg, const uint8_t value,
 }
 
 void MCP346x_printRegs(const MCP346x *adc) {
-  uint8_t reply[29];
-  MCP346x_readRegs(adc, 0, reply, 34);
+  uint8_t reply[31];
+  MCP346x_readRegs(adc, 0, reply, 31);
   // char buff[(16 * 3) + 3] = {0};
   char buff[(16 * 3) + 1] = {0};
   for (int i = 0; i < 29; i++) {
@@ -239,21 +237,21 @@ void MCP346x_printInfo(const MCP346x *adc) {
   uint8_t reply[29];
   MCP346x_readRegs(adc, 0, reply, 34);
   char buff[4];
-  bits(reply[2], 6, 2, buff);
-  bits(reply[2], 4, 2, buff);
-  bits(reply[2], 2, 2, buff);
-  bits(reply[2], 0, 2, buff);
-  bits(reply[3], 6, 2, buff);
-  bits(reply[3], 2, 4, buff);
   bits(reply[4], 6, 2, buff);
-  bits(reply[4], 3, 3, buff);
-  bits(reply[4], 2, 1, buff);
+  bits(reply[4], 4, 2, buff);
+  bits(reply[4], 2, 2, buff);
+  bits(reply[4], 0, 2, buff);
   bits(reply[5], 6, 2, buff);
-  bits(reply[5], 4, 2, buff);
-  bits(reply[5], 3, 1, buff);
-  bits(reply[5], 2, 1, buff);
-  bits(reply[5], 1, 1, buff);
-  bits(reply[5], 0, 1, buff);
+  bits(reply[5], 2, 4, buff);
+  bits(reply[6], 6, 2, buff);
+  bits(reply[6], 3, 3, buff);
+  bits(reply[6], 2, 1, buff);
+  bits(reply[7], 6, 2, buff);
+  bits(reply[7], 4, 2, buff);
+  bits(reply[7], 3, 1, buff);
+  bits(reply[7], 2, 1, buff);
+  bits(reply[7], 1, 1, buff);
+  bits(reply[7], 0, 1, buff);
 }
 
 // 7.23us start
