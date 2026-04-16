@@ -18,7 +18,7 @@ typedef struct MCP346x_t {
 
 extern struct MCP346x_t adc;
 
-MCP346x MCP346x_Init(void);
+MCP346x MCP346x_Init(SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin);
 
 uint8_t MCP346x_sendCmd(const MCP346x *adc, const uint8_t fastcmd);
 uint8_t MCP346x_readReg(const MCP346x *adc, const uint8_t reg);
