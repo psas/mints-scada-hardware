@@ -17,6 +17,7 @@ void initPeripherials(void) {
   initGPIO();
   //initCAN();
   initSPI();
+  initUART();
 }
 
 extern CAN_FilterTypeDef sFilterConfig;
@@ -44,7 +45,7 @@ int calc_baseAddress(void) {
 /* Does everything. Is wrapped by main so that the program will halt if this
  * ever returns. */
 void doEverything(void) {
-  MCP346x extadc = MCP346x_Init();
+  MCP346x extadc = MCP346x_Init(&hspi2, CTRL_GPIO_Port, CTRL_Pin);
   int32_t val = MCP346x_analogRead(&extadc, MUX_AVDD, MUX_AGND, GAIN_03);
   uprintf("%d\r\n", val);
   // Set up a filter. Hopefully it just grabs everythin.g
@@ -134,10 +135,15 @@ void doEverything(void) {
 int main(void) {
   initPeripherials();
 
-  MCP346x extadc = MCP346x_Init();
+  MCP346x extadc = MCP346x_Init(&hspi2, CTRL_GPIO_Port, CTRL_Pin);
   while (1) {
     int32_t val = MCP346x_analogRead(&extadc, MUX_AVDD, MUX_AGND, GAIN_03);
-    uprintf("%d", val);
+    uprintf("%08x\r\n", val);
+    MCP346x_printInfo(&extadc);
+    uprintf("------------------------- fs \n", val);
+    MCP346x_printRegs(&extadc);
+    HAL_Delay(500);
+    uprintf("ahdhadhhhhhhhhhhhhhhhhhhhh fs \n", val);
   }
   // doEverything();
   while (1); // Halt if main ever exits
