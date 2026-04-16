@@ -8,7 +8,6 @@
 #define PACKET_SIZE_ERROR 2
 #define PACKET_ID_ERROR 3
 
-int main(void);
 void onFatalError(void);
 void bkpt(void);
 extern int fatal;
