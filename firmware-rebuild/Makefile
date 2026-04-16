@@ -14,6 +14,7 @@ OOCD_CFG := ./toolchain/oocd.cfg
 
 C_SOURCES := ./cfg/board_cfg.c\
 ./src/init.c\
+./src/uprintf.c\
 ./src/mcp346x.c\
 ./src/main.c\
 ./src/can.c\
@@ -26,6 +27,8 @@ C_SOURCES := ./cfg/board_cfg.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd_ex.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c\
+./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c\
+./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c \
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.c \
@@ -106,6 +109,11 @@ debug-new:
 	openocd -f $(OOCD_CFG) -c "program ./$(BUILD_DIR)/$(TARGET).elf verify reset"
 
 write:
+	openocd -f $(OOCD_CFG) -c "program $(BUILD_DIR)/main.elf verify reset exit"
+
+write-new:
+	rm -rf $(BUILD_DIR)
+	make all
 	openocd -f $(OOCD_CFG) -c "program $(BUILD_DIR)/main.elf verify reset exit"
 
 debug:
