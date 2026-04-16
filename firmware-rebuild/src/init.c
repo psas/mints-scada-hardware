@@ -266,7 +266,7 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef *adcHandle) {
 }
 
 UART_HandleTypeDef huart1 = {
-  .Instance = USART2,
+  .Instance = USART1,
   .Init = {
     .BaudRate = 115200,
     .WordLength = UART_WORDLENGTH_8B,
@@ -275,7 +275,7 @@ UART_HandleTypeDef huart1 = {
     .Mode = UART_MODE_TX_RX,
     .HwFlowCtl = UART_HWCONTROL_NONE,
     .OverSampling = UART_OVERSAMPLING_16,
-    .OneBitSampling = UART_ONE_BIT_SAMPLE_ENABLE,
+    .OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE,
   },
     .AdvancedInit.AdvFeatureInit  = UART_ADVFEATURE_NO_INIT
 };
@@ -287,7 +287,7 @@ void initUART(void) {
 }
 
 void HAL_UART_MspInit(UART_HandleTypeDef *uart) {
-  if (uart->Instance == USART2){
+  if (uart->Instance == USART1){
     __HAL_RCC_USART1_CLK_ENABLE();
     __HAL_RCC_GPIOA_CLK_ENABLE();
 

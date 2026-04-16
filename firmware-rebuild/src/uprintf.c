@@ -1,10 +1,7 @@
 #include "uprintf.h"
-
-// uint types
 #include <stdint.h>
 #include <stdarg.h>
 #include <stdio.h>
-
 #include "init.h"
 #include "main.h"
 
