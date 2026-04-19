@@ -6,6 +6,7 @@
 #include "mcp346x.h"
 #include "stm32f0xx_hal_def.h"
 #include "stm32f0xx_hal_gpio.h"
+#include "uprintf.h"
 #include <stdint.h>
 #include <string.h>
 
@@ -45,7 +46,6 @@ int writeDatapacketToCan(DataPacket *pkt) {
                    (pkt->reserved << DATAPACKET_RESVD_BIT) | pkt->id;
   TxHeader.RTR = CAN_RTR_DATA;
   TxHeader.DLC = pkt->datasize;
-
   HAL_StatusTypeDef s = HAL_CAN_AddTxMessage(
       &hcan, &TxHeader, (const uint8_t *)&(pkt->data), &TxMailbox);
   if (s != HAL_OK) {
@@ -160,13 +160,20 @@ int processPacket(DataPacket *pk) {
 #endif
 #ifdef CONFIG_ADC
   case BUSCMD_READ_VALUE: {
-    // uint32_t val = MCP346x_analogRead(&extadc, MUX_AVDD, MUX_AGND, GAIN_1);
     uint32_t val = MCP346x_analogRead(&adc, subid << 1, (subid << 1) + 1, GAIN_1);
+    pk->id = 0x55;
     pk->datasize = 8;
-    // BigLittleData* bld = BIGLITTLEDATA(pk);
-    BIGLITTLEDATA(pk)->big = val;
-    // bld->big = val;
     pk->reply = 1;
+    uprintf("%d\r\n", val);
+    uprintf("%08x\r\n", val);
+    pk->err = 0;
+    pk->reserved = 0;
+    pk->data.bytes[0] = (uint8_t)val;
+    pk->data.bytes[1] = (uint8_t)(val >> 8);
+    pk->data.bytes[2] = (uint8_t)(val >> 16);
+    pk->data.bytes[3] = (uint8_t)(val >> 24);
+    pk->data.bytes[4] = 0x00;
+    pk->data.bytes[5] = 0x00;
     writeDatapacketToCan(pk);
   } break;
 #endif
@@ -187,14 +194,14 @@ void getCanMessages(void) {
     pk.datasize = 0;
     int rs = readDataPacketFromCan(&pk);
     if (rs != DATAPACKET_READ_SUCCESS) {
+      uprintf("failed read");
       return;
     }
-
-    uint8_t bid = pk.id & 0xf0;
-
-    if ((pk.id & (0xf0 | SUB_ADDR_MASK)) == baseAddress) {
-
+    uprintf("%08x\r\n", baseAddress);
+    if (pk.id == 0x08) {
       processPacket(&pk);
+    }else {
+      uprintf("not4me");
     }
 
     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);

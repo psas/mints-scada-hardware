@@ -9,12 +9,16 @@
 #include <stdio.h>
 #include <string.h>
 
-MCP346x MCP346x_Init(SPI_HandleTypeDef *spi, GPIO_TypeDef *cs_port,
-                     uint16_t cs_pin) {
-  MCP346x adc;
-  adc.hspi = spi, adc.cs_port = cs_port, adc.cs_pin = cs_pin,
-  adc.ref = 7.354736328125e-05, // 3.4 / (15900 * 3)
-      __HAL_SPI_ENABLE(&hspi2);
+MCP346x adc = {
+   .ref = 7.354736328125e-05, // 3.4 / (15900 * 3)
+   .cs_port = CTRL_GPIO_Port,
+   .cs_pin = CTRL_Pin,
+};
+
+MCP346x MCP346x_Init(SPI_HandleTypeDef *spi) {
+   adc.hspi = spi;
+
+  __HAL_SPI_ENABLE(&hspi2);
 
   uint8_t cmds[] = {
       /* CFG0 */ CONFIG0_VREF_INT | CLK_SEL_INTERNAL | BIAS_OFF | MODE_STANDBY,
