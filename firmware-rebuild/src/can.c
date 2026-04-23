@@ -87,7 +87,6 @@ void compressUID(uint8_t *dest) {
 }
 
 int processPacket(DataPacket *pk) {
-  int baseAddress = calc_baseAddress();
   uint8_t subid = (pk->id & 0xF) - BASE_ADDR_OFFSET;
 
   // If the packet was an error, check if it's one we care about
@@ -160,20 +159,12 @@ int processPacket(DataPacket *pk) {
 #endif
 #ifdef CONFIG_ADC
   case BUSCMD_READ_VALUE: {
-    uint32_t val = MCP346x_analogRead(&adc, subid << 1, (subid << 1) + 1, GAIN_1);
+    MCP346x_analogRead(&adc, subid << 1, (subid << 1) + 1, GAIN_1, pk->data.bytes);
     pk->id = 0x55;
     pk->datasize = 8;
     pk->reply = 1;
-    uprintf("%d\r\n", val);
-    uprintf("%08x\r\n", val);
     pk->err = 0;
     pk->reserved = 0;
-    pk->data.bytes[0] = (uint8_t)val;
-    pk->data.bytes[1] = (uint8_t)(val >> 8);
-    pk->data.bytes[2] = (uint8_t)(val >> 16);
-    pk->data.bytes[3] = (uint8_t)(val >> 24);
-    pk->data.bytes[4] = 0x00;
-    pk->data.bytes[5] = 0x00;
     writeDatapacketToCan(pk);
   } break;
 #endif
@@ -198,7 +189,7 @@ void getCanMessages(void) {
       return;
     }
     uprintf("%08x\r\n", baseAddress);
-    if (pk.id == 0x08) {
+    if (pk.id == 0x008) {
       processPacket(&pk);
     }else {
       uprintf("not4me");

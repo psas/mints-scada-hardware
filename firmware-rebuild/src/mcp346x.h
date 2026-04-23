@@ -6,6 +6,8 @@
 
 
 #include "init.h"
+#include <stdint.h>
+#include <sys/types.h>
 typedef struct MCP346x_t {
   SPI_HandleTypeDef *hspi;
   // CS is active low
@@ -22,8 +24,7 @@ MCP346x MCP346x_Init(SPI_HandleTypeDef* spi);
 
 uint8_t MCP346x_sendCmd(const MCP346x *adc, const uint8_t fastcmd);
 uint8_t MCP346x_readReg(const MCP346x *adc, const uint8_t reg);
-uint8_t MCP346x_readRegs(const MCP346x *adc, const uint8_t reg, uint8_t *result,
-                         const int count);
+uint8_t MCP346x_readADCVals(const MCP346x *adc, const uint8_t reg, uint8_t *result);
 uint8_t MCP346x_writeReg(MCP346x *adc, const uint8_t reg, uint8_t value);
 uint8_t MCP346x_writeRegs(MCP346x *adc, const uint8_t reg,
                           const uint8_t *values, const int count);
@@ -32,9 +33,9 @@ void MCP346x_setValue(MCP346x *adc, const uint8_t reg, const uint8_t value,
 
 void MCP346x_startADC(MCP346x *adc, const uint8_t vp, const uint8_t vn,
                       const uint8_t gain);
-int32_t MCP346x_readADC(const MCP346x *adc);
-int32_t MCP346x_analogRead(MCP346x *adc, const uint8_t vp, const uint8_t vs,
-                           const uint8_t gain);
+void MCP346x_readADC(const MCP346x *adc, uint8_t* buff);
+void MCP346x_analogRead(MCP346x *adc, const uint8_t vp, const uint8_t vs,
+                           const uint8_t gain, uint8_t *databuff);
 double MCP346x_convertVoltage(const MCP346x *adc, int32_t reading,
                               uint8_t gain);
 void MCP346x_printRegs(const MCP346x *adc);

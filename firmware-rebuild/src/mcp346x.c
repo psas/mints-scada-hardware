@@ -1,6 +1,7 @@
 #include "mcp346x.h"
 #include "board_cfg.h"
 #include "init.h"
+#include "stm32f0xx_hal.h"
 #include "stm32f0xx_hal_gpio.h"
 #include "stm32f0xx_hal_spi.c"
 #include "stm32f0xx_hal_spi.h"
@@ -10,13 +11,13 @@
 #include <string.h>
 
 MCP346x adc = {
-   .ref = 7.354736328125e-05, // 3.4 / (15900 * 3)
-   .cs_port = CTRL_GPIO_Port,
-   .cs_pin = CTRL_Pin,
+    .ref = 7.354736328125e-05, // 3.4 / (15900 * 3)
+    .cs_port = CTRL_GPIO_Port,
+    .cs_pin = CTRL_Pin,
 };
 
 MCP346x MCP346x_Init(SPI_HandleTypeDef *spi) {
-   adc.hspi = spi;
+  adc.hspi = spi;
 
   __HAL_SPI_ENABLE(&hspi2);
 
@@ -63,27 +64,33 @@ uint8_t MCP346x_sendCmd(const MCP346x *adc, const uint8_t fastcmd) {
   return status;
 }
 
-uint8_t MCP346x_readRegs(const MCP346x *adc, const uint8_t reg, uint8_t *result,
-                         const int count) {
+uint8_t MCP346x_readAllRegs(const MCP346x *adc, const uint8_t reg,
+                            uint8_t *result) {
+
   // 2 bit device address, 4 bit register address, 2 bit command
   enableSPI(adc);
 
   // Read the desired number of result bytes
-  uint8_t tosend[count + 1];
+  uint8_t tosend[31 + 1];
   tosend[0] = PACK_COMMAND(reg, CMD_TYPE_READY_MANY);
-  uint8_t reply[count + 1];
-  HAL_SPI_TransmitReceive(&hspi2, tosend, reply, count + 1, 100);
-  memcpy(result, reply + 1, count);
+  uint8_t reply[31 + 1];
+  HAL_SPI_TransmitReceive(&hspi2, tosend, reply, 4 + 1, 100);
+  memcpy(result, reply + 1, 31);
 
   disableSPI(adc);
-  // return status;
   return reply[0];
 }
 
-// Return reply[1]
 uint8_t MCP346x_readReg(const MCP346x *adc, const uint8_t reg) {
   uint8_t reply;
-  MCP346x_readRegs(adc, reg, &reply, 1);
+  // 2 bit device address, 4 bit register address, 2 bit command
+  enableSPI(adc);
+
+  // Read the desired number of result bytes
+  uint8_t tosend = PACK_COMMAND(reg, CMD_TYPE_READ);
+  HAL_SPI_TransmitReceive(&hspi2, &tosend, &reply, 1, 100);
+
+  disableSPI(adc);
   return reply;
 }
 
@@ -112,7 +119,6 @@ uint8_t MCP346x_writeRegs(MCP346x *adc, const uint8_t reg,
 }
 
 uint8_t MCP346x_writeReg(MCP346x *adc, const uint8_t reg, uint8_t value) {
-  // uint8_t vals[] = {value};
   uint8_t vals[] = {PACK_COMMAND(reg, CMD_TYPE_WRITE_MANY), value};
   uint8_t reply[2];
   enableSPI(adc);
@@ -139,24 +145,6 @@ void MCP346x_startADC(MCP346x *adc, const uint8_t vp, const uint8_t vn,
 }
 
 /**
- * Gets the last reading started by MCP346x_startADC.
- * May crash your program if you haven't started a reading since there is no
- * timeout Also may not work if you've already read the value
- *
- * @param adc the ADC to read from
- * @return The raw read value
- */
-int32_t MCP346x_readADC(const MCP346x *adc) {
-  uint8_t buff[4];
-  uint8_t status = 0xFF;
-  while (status & STATUS_DATA_READY) {
-    status = MCP346x_readRegs(adc, REG_ADCDATA, buff, sizeof(buff));
-  }
-  return (int32_t)((buff[0] << 24) | (buff[1] << 16) | (buff[2] << 8) |
-                   buff[3]);
-}
-
-/**
  * Sets up the ADC, starts a reading, and gets the result.
  * You can find the channel IDs in mcp346x.h
  *
@@ -166,10 +154,24 @@ int32_t MCP346x_readADC(const MCP346x *adc) {
  * @param gain the 3bit ID of the gain
  * @return the raw ADC reading
  */
-int32_t MCP346x_analogRead(MCP346x *adc, const uint8_t vp, const uint8_t vn,
-                           const uint8_t gain) {
+void MCP346x_analogRead(MCP346x *adc, const uint8_t vp, const uint8_t vn,
+                        const uint8_t gain, uint8_t *databuff) {
   MCP346x_startADC(adc, vp, vn, gain << 3);
-  return MCP346x_readADC(adc);
+  int i = 0;
+  uint8_t tosend[4 + 1];
+  uint8_t reply[4 + 1];
+  reply[0] = 0xFF;
+  while (reply[0] & STATUS_DATA_READY) {
+    enableSPI(adc);
+
+    tosend[i] = PACK_COMMAND(REG_ADCDATA, CMD_TYPE_READY_MANY);
+    HAL_SPI_TransmitReceive(&hspi2, tosend, reply, 4 + 1, 100);
+    disableSPI(adc);
+    i++;
+  }
+  memcpy(databuff, reply + 1, 4);
+  databuff[4] = 0x00; // these are redundant, I think?
+  databuff[5] = 0x00; // but I need to be sure the rest of the bytes are 0x00
 }
 
 double MCP346x_convertVoltage(const MCP346x *adc, int32_t reading,
@@ -184,8 +186,7 @@ double MCP346x_convertVoltage(const MCP346x *adc, int32_t reading,
 void MCP346x_setValue(MCP346x *adc, const uint8_t reg, const uint8_t value,
                       const uint8_t mask) {
   uint8_t val = adc->reg[reg];
-  if (val & mask != value) {
-    uint8_t old = val;
+  if ((val & mask) != value) {
     val &= ~mask;
     val |= value;
     MCP346x_writeReg(adc, reg, val);
@@ -194,7 +195,7 @@ void MCP346x_setValue(MCP346x *adc, const uint8_t reg, const uint8_t value,
 
 void MCP346x_printRegs(const MCP346x *adc) {
   uint8_t reply[31];
-  MCP346x_readRegs(adc, 0, reply, 31);
+  MCP346x_readAllRegs(adc, 0, reply);
   // char buff[(16 * 3) + 3] = {0};
   char buff[(16 * 3) + 1] = {0};
   for (int i = 0; i < 29; i++) {
@@ -217,7 +218,7 @@ void bits(uint8_t num, int offset, int count, char *buff) {
 
 void MCP346x_printInfo(const MCP346x *adc) {
   uint8_t reply[31];
-  MCP346x_readRegs(adc, 0, reply, 31);
+  MCP346x_readAllRegs(adc, 0, reply);
   char buff[8];
   uprintf("ADC Result: 0x%08x\n",
           reply[0] << 24 | reply[1] << 16 | reply[2] << 8 | reply[3]);

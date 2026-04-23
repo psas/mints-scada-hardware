@@ -85,7 +85,16 @@ void doEverything(void) {
   // Wait for ID claim command to be sent
   while (HAL_CAN_GetTxMailboxesFreeLevel(&hcan) < freeTX) {
     while (1) {
-      getCanMessages();
+      ///getCanMessages();
+      DataPacket pk;
+      MCP346x_analogRead(&adc, subid << 1, (subid << 1) + 1, GAIN_1, pk.data.bytes);
+      pk.id = 0x55;
+      pk.datasize = 8;
+      pk.reply = 1;
+      pk.err = 0;
+      pk.reserved = 0;
+      writeDatapacketToCan(&pk);
+      HAL_Delay(500);
     }
   }
 }

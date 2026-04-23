@@ -17,12 +17,12 @@ self.data  is the array of 6 bytes of data
 */
 
 #define BIGLITTLEDATA(pk) ((BigLittleData*) pk->data.bytes)
-typedef struct BigLittleData_t {
+typedef struct __attribute__((packed)) BigLittleData_t {
     uint32_t big;
     uint16_t little;
 } BigLittleData;
 
-typedef struct CanData_t {
+typedef struct __attribute__((packed)) CanData_t {
     // The sequence number of the packets
     uint8_t seq;
     // The command the packet is about
