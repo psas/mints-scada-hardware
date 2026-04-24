@@ -1,4 +1,3 @@
-#include "main.h"
 #include "board_cfg.h"
 #include "can.h"
 #include "configuration.h"
@@ -46,6 +45,7 @@ int calc_baseAddress(void) {
  * ever returns. */
 void doEverything(void) {
   // Set up a filter. Hopefully it just grabs everything
+  MCP346x_Init(&hspi2);
   CAN_FilterTypeDef sFilterConfig = {
       .FilterFIFOAssignment = CAN_FILTER_FIFO0, // set fifo assignment
       .FilterIdHigh = baseAddress << 5,
@@ -83,18 +83,11 @@ void doEverything(void) {
 
   uint8_t subid = (baseAddress & 0xF) - BASE_ADDR_OFFSET;
   // Wait for ID claim command to be sent
+
+  DataPacket pk;
   while (HAL_CAN_GetTxMailboxesFreeLevel(&hcan) < freeTX) {
     while (1) {
-      ///getCanMessages();
-      DataPacket pk;
-      MCP346x_analogRead(&adc, subid << 1, (subid << 1) + 1, GAIN_1, pk.data.bytes);
-      pk.id = 0x55;
-      pk.datasize = 8;
-      pk.reply = 1;
-      pk.err = 0;
-      pk.reserved = 0;
-      writeDatapacketToCan(&pk);
-      HAL_Delay(500);
+      getCanMessages();
     }
   }
 }

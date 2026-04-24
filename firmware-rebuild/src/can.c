@@ -157,6 +157,21 @@ int processPacket(DataPacket *pk) {
                       BIGLITTLEDATA(pk)->big);
   } break;
 #endif
+#ifdef CONFIG_I2C
+  case BUSCMD_READ_VALUE: {
+    uint32_t val = HAL_GPIO_ReadPin(outputPorts[subid], outputPins[subid]);
+    pk->datasize = 8;
+    // BigLittleData* bld = BIGLITTLEDATA(pk);
+    BIGLITTLEDATA(pk)->big = val;
+    // bld->big = val;
+    pk->reply = 1;
+    writeDatapacketToCan(pk);
+  } break;
+  case BUSCMD_WRITE_VALUE: {
+    HAL_GPIO_WritePin(outputPorts[subid], outputPins[subid],
+                      BIGLITTLEDATA(pk)->big);
+  } break;
+#endif
 #ifdef CONFIG_ADC
   case BUSCMD_READ_VALUE: {
     MCP346x_analogRead(&adc, subid << 1, (subid << 1) + 1, GAIN_1, pk->data.bytes);
@@ -188,8 +203,7 @@ void getCanMessages(void) {
       uprintf("failed read");
       return;
     }
-    uprintf("%08x\r\n", baseAddress);
-    if (pk.id == 0x008) {
+    if (pk.id == 0x08) {
       processPacket(&pk);
     }else {
       uprintf("not4me");

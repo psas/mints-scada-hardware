@@ -203,10 +203,8 @@ void initI2C1(void) {
   }
 }
 
-void initI2C1_HAL(I2C_HandleTypeDef *i2cHandle) {
-
+void HAL_I2C_MspInit(I2C_HandleTypeDef *i2cHandle) {
   if (i2cHandle->Instance == I2C1) {
-
     __HAL_RCC_GPIOB_CLK_ENABLE();
     HAL_GPIO_Init(GPIOB, &(GPIO_InitTypeDef){
                              .Pin = GPIO_PIN_10 | GPIO_PIN_11,
@@ -220,7 +218,6 @@ void initI2C1_HAL(I2C_HandleTypeDef *i2cHandle) {
 }
 
 void DeInitI2C1_HAL(I2C_HandleTypeDef *i2cHandle) {
-
   if (i2cHandle->Instance == I2C1) {
     __HAL_RCC_I2C1_CLK_DISABLE();
 

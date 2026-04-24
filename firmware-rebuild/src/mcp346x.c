@@ -163,7 +163,6 @@ void MCP346x_analogRead(MCP346x *adc, const uint8_t vp, const uint8_t vn,
   reply[0] = 0xFF;
   while (reply[0] & STATUS_DATA_READY) {
     enableSPI(adc);
-
     tosend[i] = PACK_COMMAND(REG_ADCDATA, CMD_TYPE_READY_MANY);
     HAL_SPI_TransmitReceive(&hspi2, tosend, reply, 4 + 1, 100);
     disableSPI(adc);
