@@ -23,7 +23,7 @@ extern struct MCP346x_t adc;
 MCP346x MCP346x_Init(SPI_HandleTypeDef* spi);
 
 uint8_t MCP346x_sendCmd(const MCP346x *adc, const uint8_t fastcmd);
-uint8_t MCP346x_readReg(const MCP346x *adc, const uint8_t reg);
+void MCP346x_readReg(const MCP346x *adc, const uint8_t reg, uint8_t regval[2]);
 uint8_t MCP346x_readADCVals(const MCP346x *adc, const uint8_t reg, uint8_t *result);
 uint8_t MCP346x_writeReg(MCP346x *adc, const uint8_t reg, uint8_t value);
 uint8_t MCP346x_writeRegs(MCP346x *adc, const uint8_t reg,
@@ -44,7 +44,7 @@ void MCP346x_printInfo(const MCP346x *adc);
 int SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData,
                         uint8_t *pRxData, uint16_t Size, uint32_t Timeout);
 
-#define PACK_COMMAND(reg, cmd) 0b01 << 6 | reg << 2 | cmd
+#define PACK_COMMAND(reg, cmd) 0b01 << 6 | (uint8_t)reg << 2 | (uint8_t)cmd
 
 /** Fast commands, take no args */
 #define CMD_TYPE_FAST 0b00
@@ -131,7 +131,7 @@ int SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData,
 /** CONFIG0 Bias current off (default) */
 #define BIAS_OFF 0b00 << 2
 /** CONFIG0 Bias mask */
-#define BIAS_MASK 0b11 << 2;
+#define BIAS_MASK 0b11 << 2
 
 /** CONFIG0 ADC Conversion mode */
 #define MODE_CONVERSION 0b11
@@ -141,7 +141,7 @@ int SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData,
 /** CONFIG0 ADC Shutdown mode (default) */
 #define MODE_SHUTDOWN 0b00
 /** CONFIG0 mode mask */
-#define MODE_MASK 0b11;
+#define MODE_MASK 0b11
 
 /*
  * CONFIG1
@@ -155,7 +155,7 @@ int SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData,
 /** CONFIG1 AMCLK = MCLK (default) */
 #define PRESCALER_1 0b00 << 6
 /** CONFIG1 prescaler mask */
-#define PRESCALER_MASK 0b11 << 6;
+#define PRESCALER_MASK 0b11 << 6
 
 /** CONFIG1 98304 oversampling ratio */
 #define OSR_98304 0b1111 << 2
@@ -207,21 +207,21 @@ int SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData,
 #define BOOST_MASK 0b11 << 6
 
 /** CONFIG2 Gain is x64 (x16 analog, x4 digital) */
-#define GAIN_64 0b111
+#define GAIN_64 0b111 << 3
 /** CONFIG2 Gain is x32 (x16 analog, x2 digital) */
-#define GAIN_32 0b110
+#define GAIN_32 0b110 << 3
 /** CONFIG2 Gain is x16 */
-#define GAIN_16 0b101
+#define GAIN_16 0b101 << 3
 /** CONFIG2 Gain is x8 */
-#define GAIN_8 0b100
+#define GAIN_8 0b100 << 3
 /** CONFIG2 Gain is x4 */
-#define GAIN_4 0b011
+#define GAIN_4 0b011 << 3
 /** CONFIG2 Gain is x2 */
-#define GAIN_2 0b010
+#define GAIN_2 0b010 << 3
 /** CONFIG2 Gain is x1 (default) */
-#define GAIN_1 0b001
+#define GAIN_1 0b001  << 3
 /** CONFIG2 Gain is x1/3 */
-#define GAIN_03 0b000
+#define GAIN_03 0b000 << 3
 /** CONFIG2 Gain mask */
 #define GAIN_MASK 0b111 << 3
 

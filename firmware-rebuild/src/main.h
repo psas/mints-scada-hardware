@@ -9,5 +9,4 @@
 #define PACKET_ID_ERROR 3
 
 void onFatalError(void);
-void bkpt(void);
 extern int fatal;

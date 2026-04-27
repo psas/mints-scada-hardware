@@ -1,8 +1,8 @@
+#include "main.h"
 #include "board_cfg.h"
 #include "can.h"
 #include "configuration.h"
 #include "init.h"
-#include "main.h"
 #include "mcp346x.h"
 #include "stm32f0xx_hal.h"
 #include "stm32f0xx_hal_gpio.h"
@@ -44,11 +44,10 @@ int calc_baseAddress(void) {
 /* Does everything. Is wrapped by main so that the program will halt if this
  * ever returns. */
 void doEverything(void) {
-  // Set up a filter. Hopefully it just grabs everything
   MCP346x_Init(&hspi2);
   CAN_FilterTypeDef sFilterConfig = {
       .FilterFIFOAssignment = CAN_FILTER_FIFO0, // set fifo assignment
-      .FilterIdHigh = baseAddress << 5,
+      .FilterIdHigh = baseAddress << 4,
       .FilterIdLow = 0,
       .FilterMaskIdHigh = 0xF0 << 5,
       .FilterMaskIdLow = 0,
@@ -58,7 +57,6 @@ void doEverything(void) {
   };
 
   if (HAL_CAN_ConfigFilter(&hcan, &sFilterConfig) != HAL_OK) {
-
     Error_Handler();
     return;
   }
@@ -81,13 +79,40 @@ void doEverything(void) {
     return;
   }
 
-  uint8_t subid = (baseAddress & 0xF) - BASE_ADDR_OFFSET;
   // Wait for ID claim command to be sent
 
-  DataPacket pk;
+  DataPacket pk = {0};
+  int count = 0;
+  uint8_t subid = (baseAddress & 0xF) - BASE_ADDR_OFFSET;
   while (HAL_CAN_GetTxMailboxesFreeLevel(&hcan) < freeTX) {
     while (1) {
-      getCanMessages();
+      for (int i = 0; i < 4; i++) {
+        MCP346x_analogRead(&adc, (uint8_t)i, (uint8_t)i, GAIN_1, pk.data.bytes);
+        pk.id = 0x66;
+        pk.datasize = 8;
+        pk.reply = 0;
+        pk.err = 0;
+        pk.reserved = 0;
+        pk.data.bytes[4] = (uint8_t)i;
+        pk.data.bytes[5] = (uint8_t)i;
+        uprintf("Channel %d, 0x%02x%02x%02x%02x%02x%02x\r\n", i,
+                pk.data.bytes[0], pk.data.bytes[1], pk.data.bytes[2],
+                pk.data.bytes[3], pk.data.bytes[4], pk.data.bytes[5]);
+        writeDatapacketToCan(&pk);
+      }
+      uprintf("Count=%d\r\n", count);
+      count++;
+
+      // MCP346x_analogRead(&adc, MUX_CH0, MUX_CH0, GAIN_1, pk.data.bytes);
+      // pk.id = 0x66;
+      // pk.datasize = 8;
+      // pk.reply = 0;
+      // pk.err = 0;
+      // pk.reserved = 0;
+      // pk.data.bytes[4] = 0x66;
+      // pk.data.bytes[5] = 0x66;
+      // writeDatapacketToCan(&pk);
+      // MCP346x_printInfo(&adc);
     }
   }
 }
@@ -95,5 +120,6 @@ void doEverything(void) {
 int main(void) {
   initPeripherials();
   doEverything();
-  while (1); // Halt if main ever exits
+  // Halt if main ever exits
+  while (1);
 }

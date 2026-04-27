@@ -36,7 +36,6 @@ MCP346x MCP346x_Init(SPI_HandleTypeDef *spi) {
       /* TIMR */ 0, 0, 0,
       /* OFST */ 0x00, 0x00, 0x3E,
       /* GAIN */ 0x7D, 0xEE, 0x80};
-  HAL_Delay(1);
   MCP346x_writeRegs(&adc, REG_CONFIG0, cmds, 18);
 
   cmds[3] = 4;
@@ -58,8 +57,9 @@ uint8_t MCP346x_sendCmd(const MCP346x *adc, const uint8_t fastcmd) {
   uint8_t status;
   enableSPI(adc);
 
-  HAL_SPI_TransmitReceive(&hspi2, &cmd, &status, 1, 100);
-
+  if (HAL_SPI_TransmitReceive(&hspi2, &cmd, &status, 1, 100) == HAL_ERROR) {
+    uprintf("HAL SPI Error");
+  }
   disableSPI(adc);
   return status;
 }
@@ -74,30 +74,36 @@ uint8_t MCP346x_readAllRegs(const MCP346x *adc, const uint8_t reg,
   uint8_t tosend[31 + 1];
   tosend[0] = PACK_COMMAND(reg, CMD_TYPE_READY_MANY);
   uint8_t reply[31 + 1];
-  HAL_SPI_TransmitReceive(&hspi2, tosend, reply, 4 + 1, 100);
+  if (HAL_SPI_TransmitReceive(&hspi2, tosend, reply, sizeof(tosend), 100) ==
+      HAL_ERROR) {
+    uprintf("HAL SPI Error");
+  }
   memcpy(result, reply + 1, 31);
 
   disableSPI(adc);
   return reply[0];
 }
 
-uint8_t MCP346x_readReg(const MCP346x *adc, const uint8_t reg) {
-  uint8_t reply;
-  // 2 bit device address, 4 bit register address, 2 bit command
+void MCP346x_readReg(const MCP346x *adc, const uint8_t reg, uint8_t regval[2]) {
+  uint8_t tosend[2];
   enableSPI(adc);
-
-  // Read the desired number of result bytes
-  uint8_t tosend = PACK_COMMAND(reg, CMD_TYPE_READ);
-  HAL_SPI_TransmitReceive(&hspi2, &tosend, &reply, 1, 100);
-
+  regval[0] = 0xFF;
+  while (regval[0] & STATUS_DATA_READY) {
+    tosend[0] = PACK_COMMAND(reg, CMD_TYPE_READ);
+    if (HAL_SPI_TransmitReceive(&hspi2, tosend, regval, sizeof(tosend), 100) ==
+        HAL_ERROR) {
+      uprintf("HAL SPI Error");
+    }
+  }
   disableSPI(adc);
-  return reply;
 }
 
 uint8_t MCP346x_writeRegs(MCP346x *adc, const uint8_t reg,
                           const uint8_t *values, const int count) {
   // Pack the values into a single SPI task
   uint8_t tosend[count + 1];
+
+  // Initial cmd byte
   // 2 bit device address, 4 bit register address, 2 bit command
   tosend[0] = PACK_COMMAND(reg, CMD_TYPE_WRITE_MANY);
 
@@ -106,71 +112,56 @@ uint8_t MCP346x_writeRegs(MCP346x *adc, const uint8_t reg,
     adc->reg[reg + i] = values[i];
   }
   uint8_t reply[count + 1];
-
   enableSPI(adc);
-  HAL_Delay(1);
-
-  HAL_SPI_TransmitReceive(&hspi2, tosend, reply, count + 1, 100);
-
-  HAL_Delay(1);
+  if (HAL_SPI_TransmitReceive(&hspi2, tosend, reply, sizeof(reply), 100) ==
+      HAL_ERROR) {
+    uprintf("HAL SPI Error");
+  }
   disableSPI(adc);
-
   return reply[0];
 }
 
 uint8_t MCP346x_writeReg(MCP346x *adc, const uint8_t reg, uint8_t value) {
-  uint8_t vals[] = {PACK_COMMAND(reg, CMD_TYPE_WRITE_MANY), value};
+  uint8_t vals[2] = {PACK_COMMAND(reg, CMD_TYPE_WRITE_MANY), value};
   uint8_t reply[2];
   enableSPI(adc);
 
-  HAL_SPI_TransmitReceive(&hspi2, vals, reply, 2, 100);
+  if (HAL_SPI_TransmitReceive(&hspi2, vals, reply, sizeof(reply), 100) ==
+      HAL_ERROR) {
+    uprintf("HAL SPI Error");
+  }
   disableSPI(adc);
   return reply[0];
 }
 
-/**
- * Sets up the ADC and starts a reading.
- * You can find the channel IDs in mcp346x.h
- *
- * @param adc  the ADC to read from
- * @param vp   the 4bit ID of the positive channel
- * @param vn   the 4bit ID of the negative channel
- * @param gain the 3bit ID of the gain
- */
-void MCP346x_startADC(MCP346x *adc, const uint8_t vp, const uint8_t vn,
+void MCP346x_startADC(MCP346x *adc, const uint8_t p_chan, const uint8_t n_chan,
                       const uint8_t gain) {
-  MCP346x_setValue(adc, REG_CONFIG2, gain << 3, GAIN_MASK);
-  MCP346x_writeReg(adc, REG_MUX, vp << 4 | vn);
+  MCP346x_setValue(adc, REG_CONFIG2, gain, GAIN_MASK);
+  MCP346x_writeReg(adc, REG_MUX, p_chan << 4 | n_chan);
   MCP346x_sendCmd(adc, CMD_FAST_GO);
 }
 
-/**
- * Sets up the ADC, starts a reading, and gets the result.
- * You can find the channel IDs in mcp346x.h
- *
- * @param adc  the ADC to read from
- * @param vp   the 4bit ID of the positive channel
- * @param vn   the 4bit ID of the negative channel
- * @param gain the 3bit ID of the gain
- * @return the raw ADC reading
- */
-void MCP346x_analogRead(MCP346x *adc, const uint8_t vp, const uint8_t vn,
-                        const uint8_t gain, uint8_t *databuff) {
-  MCP346x_startADC(adc, vp, vn, gain << 3);
-  int i = 0;
+
+void MCP346x_analogRead(MCP346x *adc, const uint8_t p_chan,
+                        const uint8_t n_chan, const uint8_t gain,
+                        uint8_t *databuff) {
+  MCP346x_startADC(adc, p_chan, n_chan, gain);
   uint8_t tosend[4 + 1];
   uint8_t reply[4 + 1];
   reply[0] = 0xFF;
   while (reply[0] & STATUS_DATA_READY) {
+    tosend[0] = PACK_COMMAND(REG_ADCDATA, CMD_TYPE_READ);
     enableSPI(adc);
-    tosend[i] = PACK_COMMAND(REG_ADCDATA, CMD_TYPE_READY_MANY);
-    HAL_SPI_TransmitReceive(&hspi2, tosend, reply, 4 + 1, 100);
+    if (HAL_SPI_TransmitReceive(&hspi2, tosend, reply, sizeof(reply), 100) == HAL_ERROR) {
+      uprintf("HAL SPI Error");
+    }
     disableSPI(adc);
-    i++;
   }
-  memcpy(databuff, reply + 1, 4);
-  databuff[4] = 0x00; // these are redundant, I think?
-  databuff[5] = 0x00; // but I need to be sure the rest of the bytes are 0x00
+
+  //uprintf("MSB First: 0x%02x%02x%02x%02x\r\n", reply[1], reply[2], reply[3], reply[4]);
+  for (int i = 0; i < 4; i++) {
+    databuff[3 - i] = reply[i + 1];
+  }
 }
 
 double MCP346x_convertVoltage(const MCP346x *adc, int32_t reading,

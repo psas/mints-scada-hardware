@@ -87,9 +87,8 @@ void compressUID(uint8_t *dest) {
 }
 
 int processPacket(DataPacket *pk) {
-  uint8_t subid = (pk->id & 0xF) - BASE_ADDR_OFFSET;
+  //uint8_t subid = (pk->id & 0xF) - BASE_ADDR_OFFSET;
 
-  // If the packet was an error, check if it's one we care about
   if (pk->err) {
     // If soneone else said they have my ID, that's bad and we need to stop.
     if (pk->data.cmd == BUSCMD_CLAIM_ID) {
@@ -174,13 +173,18 @@ int processPacket(DataPacket *pk) {
 #endif
 #ifdef CONFIG_ADC
   case BUSCMD_READ_VALUE: {
-    MCP346x_analogRead(&adc, subid << 1, (subid << 1) + 1, GAIN_1, pk->data.bytes);
-    pk->id = 0x55;
-    pk->datasize = 8;
-    pk->reply = 1;
-    pk->err = 0;
-    pk->reserved = 0;
-    writeDatapacketToCan(pk);
+    int i = 0;
+    for(i>=0; i <4;i++) {
+      MCP346x_analogRead(&adc, (uint8_t)i, (uint8_t)i, GAIN_1, pk->data.bytes);
+      pk->id = 0x55;
+      pk->datasize = 8;
+      pk->reply = 1;
+      pk->err = 0;
+      pk->reserved = 0;
+      pk->data.bytes[4] = (uint8_t)i; // these are redundant, I think?
+      pk->data.bytes[5] = (uint8_t)i; // but I need to be sure the rest of the bytes are 0x00
+      writeDatapacketToCan(pk);
+    }
   } break;
 #endif
   default: {
