@@ -10,6 +10,40 @@
 #include <stdint.h>
 #include <stdio.h>
 
+void testSPI(void) {
+  int count = 0;
+  DataFrame frame;
+  for (int i = 0; i < 4; i++) {
+    MCP346x_analogRead(&adc, (uint8_t)i, (uint8_t)i, GAIN_1, frame.data.bytes);
+    frame.id = 0x66;
+    frame.datasize = 8;
+    frame.reply = 0;
+    frame.err = 0;
+    frame.reserved = 0;
+    frame.data.bytes[4] = (uint8_t)i;
+    frame.data.bytes[5] = (uint8_t)i;
+    uprintf("Channel %d, 0x%02x%02x%02x%02x%02x%02x\r\n", i, frame.data.bytes[0],
+            frame.data.bytes[1], frame.data.bytes[2], frame.data.bytes[3],
+            frame.data.bytes[4], frame.data.bytes[5]);
+    writeDataframeToCan(&frame);
+  }
+  uprintf("Count=%d\r\n", count);
+  count++;
+  MCP346x_analogRead(&adc, MUX_REFP, MUX_REFN, GAIN_1, frame.data.bytes);
+  frame.id = 0x88;
+  frame.datasize = 8;
+  frame.reply = 0;
+  frame.err = 0;
+  frame.reserved = 0;
+  frame.data.bytes[4] = 0x88;
+  frame.data.bytes[5] = 0x88;
+  uprintf("Channel REF, 0x%02x%02x%02x%02x%02x%02x\r\n", frame.data.bytes[0],
+          frame.data.bytes[1], frame.data.bytes[2], frame.data.bytes[3],
+          frame.data.bytes[4], frame.data.bytes[5]);
+  writeDataframeToCan(&frame);
+  HAL_Delay(255);
+}
+
 void initPeripherials(void) {
   HAL_Init();
   SystemClock_Config();
@@ -17,6 +51,9 @@ void initPeripherials(void) {
   initCAN();
   initSPI();
   initUART();
+#ifdef CONFIG_ADC
+  MCP346x_Init(&hspi2);
+#endif
 }
 
 extern CAN_FilterTypeDef sFilterConfig;
@@ -44,7 +81,7 @@ int calc_baseAddress(void) {
 /* Does everything. Is wrapped by main so that the program will halt if this
  * ever returns. */
 void doEverything(void) {
-  MCP346x_Init(&hspi2);
+  uint8_t baseAddress = calc_baseAddress();
   CAN_FilterTypeDef sFilterConfig = {
       .FilterFIFOAssignment = CAN_FILTER_FIFO0, // set fifo assignment
       .FilterIdHigh = baseAddress << 4,
@@ -58,68 +95,47 @@ void doEverything(void) {
 
   if (HAL_CAN_ConfigFilter(&hcan, &sFilterConfig) != HAL_OK) {
     Error_Handler();
-    return;
+    uprintf("Error on HAL init");
   }
 
-  // Setup ID claim command
-  struct DataPacket_t iddp = {
+  struct DataFrame_t iddp = {
       .id = baseAddress,
-      .err = 0, // Not an error packet
+      .err = 0,
       .reserved = 0,
       .reply = 0,
-      .data.seq = 0, // Don't care what it is
+      .data.seq = 0,
       .data.cmd = BUSCMD_CLAIM_ID,
-      .datasize = 8, // Include the sequence number and command in this count
+      .datasize = 8,
   };
-  compressUID(iddp.data.bytes);
-  // Send ID claim command
-  uint32_t freeTX = HAL_CAN_GetTxMailboxesFreeLevel(&hcan);
-  if (writeDatapacketToCan(&iddp) != HAL_OK) {
+  get_compressUID(iddp.data.bytes);
+  uint32_t init_freeTX = HAL_CAN_GetTxMailboxesFreeLevel(&hcan);
+
+  if (writeDataframeToCan(&iddp) != HAL_OK) {
     Error_Handler();
-    return;
   }
-
-  // Wait for ID claim command to be sent
-
-  DataPacket pk = {0};
-  int count = 0;
+  DataFrame frame = {0};
   uint8_t subid = (baseAddress & 0xF) - BASE_ADDR_OFFSET;
-  while (HAL_CAN_GetTxMailboxesFreeLevel(&hcan) < freeTX) {
+  while (HAL_CAN_GetTxMailboxesFreeLevel(&hcan) < init_freeTX) {
     while (1) {
-      for (int i = 0; i < 4; i++) {
-        MCP346x_analogRead(&adc, (uint8_t)i, (uint8_t)i, GAIN_1, pk.data.bytes);
-        pk.id = 0x66;
-        pk.datasize = 8;
-        pk.reply = 0;
-        pk.err = 0;
-        pk.reserved = 0;
-        pk.data.bytes[4] = (uint8_t)i;
-        pk.data.bytes[5] = (uint8_t)i;
-        uprintf("Channel %d, 0x%02x%02x%02x%02x%02x%02x\r\n", i,
-                pk.data.bytes[0], pk.data.bytes[1], pk.data.bytes[2],
-                pk.data.bytes[3], pk.data.bytes[4], pk.data.bytes[5]);
-        writeDatapacketToCan(&pk);
-      }
-      uprintf("Count=%d\r\n", count);
-      count++;
-
-      // MCP346x_analogRead(&adc, MUX_CH0, MUX_CH0, GAIN_1, pk.data.bytes);
-      // pk.id = 0x66;
-      // pk.datasize = 8;
-      // pk.reply = 0;
-      // pk.err = 0;
-      // pk.reserved = 0;
-      // pk.data.bytes[4] = 0x66;
-      // pk.data.bytes[5] = 0x66;
-      // writeDatapacketToCan(&pk);
-      // MCP346x_printInfo(&adc);
+      // getCanMessages();
+      // testSPI();
+      MCP346x_analogRead(&adc, MUX_REFP, MUX_REFN, GAIN_1, frame.data.bytes);
+      frame.id = 0x66;
+      frame.datasize = 8;
+      frame.reply = 0;
+      frame.err = 0;
+      frame.reserved = 0;
+      frame.data.bytes[4] = 0x66;
+      frame.data.bytes[5] = 0x66;
+      writeDataframeToCan(&frame);
+      HAL_Delay(255);
     }
   }
+  uprintf("Error main program exited");
 }
 
 int main(void) {
   initPeripherials();
   doEverything();
-  // Halt if main ever exits
-  while (1);
+  while (1); // Halt if main ever exits
 }

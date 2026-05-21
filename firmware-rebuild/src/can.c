@@ -10,56 +10,10 @@
 #include <stdint.h>
 #include <string.h>
 
-int readDataPacketFromCan(DataPacket *dest) {
-  int num = HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0);
-  if (num > 0) {
-    // Place to temporarily store data
-    CAN_RxHeaderTypeDef RxHeader;
-    HAL_StatusTypeDef s = HAL_CAN_GetRxMessage(&hcan, CAN_RX_FIFO0, &RxHeader,
-                                               (uint8_t *)&(dest->data));
-    dest->err = (RxHeader.StdId >> DATAPACKET_ERROR_BIT) & 1;
-    dest->reserved = (RxHeader.StdId >> DATAPACKET_RESVD_BIT) & 1;
-    dest->reply = (RxHeader.StdId >> DATAPACKET_REPLY_BIT) & 1;
-    dest->id = RxHeader.StdId & 0xFF;
-    dest->datasize = RxHeader.DLC;
-
-    if (s != HAL_OK) {
-      return DATAPACKET_READ_ERROR;
-    } else {
-      if (dest->datasize < 2) {
-        return DATAPACKET_READ_TOOSMALL;
-      }
-      return DATAPACKET_READ_SUCCESS;
-    }
-  } else {
-    return DATAPACKET_READ_NOTHING;
-  }
-}
-
-int writeDatapacketToCan(DataPacket *pkt) {
-  CAN_TxHeaderTypeDef TxHeader;
-  uint32_t TxMailbox = 0xDEADBEEF;
-
-  TxHeader.IDE = CAN_ID_STD;
-  TxHeader.StdId = (pkt->reply << DATAPACKET_REPLY_BIT) |
-                   (pkt->err << DATAPACKET_ERROR_BIT) |
-                   (pkt->reserved << DATAPACKET_RESVD_BIT) | pkt->id;
-  TxHeader.RTR = CAN_RTR_DATA;
-  TxHeader.DLC = pkt->datasize;
-  HAL_StatusTypeDef s = HAL_CAN_AddTxMessage(
-      &hcan, &TxHeader, (const uint8_t *)&(pkt->data), &TxMailbox);
-  if (s != HAL_OK) {
-    return DATAPACKET_WRITE_ERROR;
-  }
-  return DATAPACKET_WRITE_SUCCESS;
-}
-
-/**
- * Copies several bytes of UID to somewhere
- * Copies 0 < bytes <= 12 bytes to dest
- * Starts at 0 <= offset < 12 bytes into the UID
- * If bytes of offset would give illegal locations, they are modified to not.
- */
+// Copies several bytes of UID to somewhere
+// Copies 0 < bytes <= 12 bytes to dest
+// Starts at 0 <= offset < 12 bytes into the UID
+// If bytes of offset would give illegal locations, they are modified to not.
 
 void copyUID(uint8_t *dest, uint8_t bytes, uint8_t offset) {
   if (offset > 11) {
@@ -74,11 +28,11 @@ void copyUID(uint8_t *dest, uint8_t bytes, uint8_t offset) {
   memcpy(dest, (uint8_t *)(UID_BASE + offset), bytes);
 }
 
-/**
- * Writes a compressed version of the UID to a given memory location.
- * Always writes 6 bytes
- */
-void compressUID(uint8_t *dest) {
+// Reads the UID from the memory base address then,
+// Writes a compressed 6 byte version of the UID of the MCU to a given memory
+// location Used to distinguish each unique MCU on the bus
+
+void get_compressUID(uint8_t *dest) {
   uint8_t *uid = (uint8_t *)UID_BASE;
 
   for (int i = 0; i < 6; i++) {
@@ -86,133 +40,146 @@ void compressUID(uint8_t *dest) {
   }
 }
 
-int processPacket(DataPacket *pk) {
-  //uint8_t subid = (pk->id & 0xF) - BASE_ADDR_OFFSET;
+int readDataFrameFromCan(DataFrame *dest) {
+  int num = HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0);
+  if (num > 0) {
+    CAN_RxHeaderTypeDef RxHeader;
+    HAL_StatusTypeDef s = HAL_CAN_GetRxMessage(&hcan, CAN_RX_FIFO0, &RxHeader,
+                                               (uint8_t *)&(dest->data));
+    dest->err = (RxHeader.StdId >> DATAFRAME_ERROR_BIT) & 1;
+    dest->reserved = (RxHeader.StdId >> DATAFRAME_RESVD_BIT) & 1;
+    dest->reply = (RxHeader.StdId >> DATAFRAME_REPLY_BIT) & 1;
+    dest->id = RxHeader.StdId & 0xFF;
+    dest->datasize = RxHeader.DLC;
 
-  if (pk->err) {
-    // If soneone else said they have my ID, that's bad and we need to stop.
-    if (pk->data.cmd == BUSCMD_CLAIM_ID) {
+    if (s != HAL_OK) {
+      return DATAFRAME_READ_ERROR;
+    } else {
+      if (dest->datasize < 2) {
+        return DATAFRAME_READ_TOOSMALL;
+      }
+      return DATAFRAME_READ_SUCCESS;
+    }
+  } else {
+    return DATAFRAME_READ_NOTHING;
+  }
+}
+
+int writeDataframeToCan(DataFrame *frame) {
+  CAN_TxHeaderTypeDef TxHeader;
+  uint32_t TxMailbox = 0xDEADBEEF;
+
+  TxHeader.IDE = CAN_ID_STD;
+  TxHeader.StdId = (frame->reply << DATAFRAME_REPLY_BIT) |
+                   (frame->err << DATAFRAME_ERROR_BIT) |
+                   (frame->reserved << DATAFRAME_RESVD_BIT) | frame->id;
+  TxHeader.RTR = CAN_RTR_DATA;
+  TxHeader.DLC = frame->datasize;
+  HAL_StatusTypeDef s = HAL_CAN_AddTxMessage(
+      &hcan, &TxHeader, (const uint8_t *)&(frame->data), &TxMailbox);
+  if (s != HAL_OK) {
+    return DATAFRAME_WRITE_ERROR;
+  }
+  return DATAFRAME_WRITE_SUCCESS;
+}
+
+int processFrame(DataFrame *frame, uint8_t baseAddress) {
+  uint8_t subid = (frame->id & 0xF) - BASE_ADDR_OFFSET;
+
+  if (frame->err) {
+    if (frame->data.cmd == BUSCMD_CLAIM_ID) {
       uint8_t tempid[6];
-      compressUID(tempid);
-      if (memcmp(tempid, pk->data.bytes, 6)) {
+      get_compressUID(tempid);
+      if (memcmp(tempid, frame->data.bytes, 6)) {
         onFatalError();
+        uprintf("Another device has the same ID\r\n");
       }
     }
     return 1;
   }
-  // If the packet was a reply, then someone else is using my ID.
-  // This is not allowed, so send an error reply
-
-  // If the packet is a reply, it was probably just sent by us, so ignore it.
-  if (pk->reply) {
-    // onFatalError();
-    // pk->err = 0; // Don't set the error bit
-    // pk->reply = 1;
-    // writeDatapacketToCan(pk);
-    // return 2;
+  if (frame->reply) {
+    onFatalError();
+    frame->err = 0;
+    frame->reply = 1;
+    writeDataframeToCan(frame);
     return 0;
   }
-  if (pk->datasize < 2) {
-    return 3;
-  }
-  switch (pk->data.cmd) {
-  case BUSCMD_CLAIM_ID: {
+  switch (frame->data.cmd) {
+
+  case BUSCMD_CLAIM_ID:
     uint8_t tempid[6];
-    compressUID(tempid);
-    int f = 0;
-    for (int i = 0; i < 6; i++) {
-      f &= tempid[i] != pk->data.bytes[i];
-    }
-    if (f) {
-      pk->err = 1;
-      pk->reply = 1;
-      writeDatapacketToCan(pk);
-    } else {
-    }
-  } break;
+    get_compressUID(tempid);
+    memcpy(tempid, frame->data.bytes, 6);
+    frame->err = 1;
+    frame->reply = 1;
+    writeDataframeToCan(frame);
+    break;
   case BUSCMD_READ_ID_LOW: {
-    pk->reply = 1;
-    pk->datasize = 8;
-    copyUID(pk->data.bytes, 6, 0);
+    frame->reply = 1;
+    frame->datasize = 8;
+    copyUID(frame->data.bytes, 6, 0);
   } break;
   case BUSCMD_READ_ID_HIGH: {
-    pk->reply = 1;
-    pk->datasize = 8;
-    copyUID(pk->data.bytes, 6, 6);
-    writeDatapacketToCan(pk);
+    frame->reply = 1;
+    frame->datasize = 8;
+    copyUID(frame->data.bytes, 6, 6);
+    writeDataframeToCan(frame);
   } break;
 #ifdef CONFIG_OUTPUTS
   case BUSCMD_READ_VALUE: {
-    uint32_t val = HAL_GPIO_ReadPin(outputPorts[subid], outputPins[subid]);
-    pk->datasize = 8;
-    // BigLittleData* bld = BIGLITTLEDATA(pk);
-    BIGLITTLEDATA(pk)->big = val;
-    // bld->big = val;
-    pk->reply = 1;
-    writeDatapacketToCan(pk);
+    frame->datasize = 8;
+    frame->reply = 1;
+    memset(HAL_GPIO_ReadPin(outputPorts[subid], outputPins[subid]) == GPIO_PIN_SET), frame->data.bytes, frame->datasize)
+    writeDataframeToCan(frame);
   } break;
   case BUSCMD_WRITE_VALUE: {
-    HAL_GPIO_WritePin(outputPorts[subid], outputPins[subid],
-                      BIGLITTLEDATA(pk)->big);
-  } break;
-#endif
-#ifdef CONFIG_I2C
-  case BUSCMD_READ_VALUE: {
-    uint32_t val = HAL_GPIO_ReadPin(outputPorts[subid], outputPins[subid]);
-    pk->datasize = 8;
-    // BigLittleData* bld = BIGLITTLEDATA(pk);
-    BIGLITTLEDATA(pk)->big = val;
-    // bld->big = val;
-    pk->reply = 1;
-    writeDatapacketToCan(pk);
-  } break;
-  case BUSCMD_WRITE_VALUE: {
-    HAL_GPIO_WritePin(outputPorts[subid], outputPins[subid],
-                      BIGLITTLEDATA(pk)->big);
+    uint8_t data[4];
+    //Toggle state of GPIO pins based on received data from CAN
+    HAL_GPIO_WritePin(outputPorts[subid], outputPins[subid], (CanDataSquish_t)*frame->squish.value ? GPIO_PIN_SET : GPIO_PIN_RESET)
   } break;
 #endif
 #ifdef CONFIG_ADC
   case BUSCMD_READ_VALUE: {
-    int i = 0;
-    for(i>=0; i <4;i++) {
-      MCP346x_analogRead(&adc, (uint8_t)i, (uint8_t)i, GAIN_1, pk->data.bytes);
-      pk->id = 0x55;
-      pk->datasize = 8;
-      pk->reply = 1;
-      pk->err = 0;
-      pk->reserved = 0;
-      pk->data.bytes[4] = (uint8_t)i; // these are redundant, I think?
-      pk->data.bytes[5] = (uint8_t)i; // but I need to be sure the rest of the bytes are 0x00
-      writeDatapacketToCan(pk);
+    for (int i = 0; i < 4; i++) {
+      MCP346x_analogRead(&adc, (uint8_t)i, (uint8_t)i, GAIN_1, frame->data.bytes);
+      frame->id = 0x55;
+      frame->datasize = 8;
+      frame->reply = 1;
+      frame->err = 0;
+      frame->reserved = 0;
+      frame->data.bytes[4] = (uint8_t)i;
+      frame->data.bytes[5] = (uint8_t)i;
+      writeDataframeToCan(frame);
     }
   } break;
 #endif
-  default: {
-  }
   }
   return 0;
 }
 
 void getCanMessages(void) {
-  int baseAddress = calc_baseAddress();
+  uint8_t baseAddress = calc_baseAddress();
+
   while (!fatal && HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0)) {
     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-    struct DataPacket_t pk = {0};
-    for (int i = 0; i < 6; i++) {
-      pk.data.bytes[i] = 0;
-    }
-    pk.datasize = 0;
-    int rs = readDataPacketFromCan(&pk);
-    if (rs != DATAPACKET_READ_SUCCESS) {
-      uprintf("failed read");
-      return;
-    }
-    if (pk.id == 0x08) {
-      processPacket(&pk);
-    }else {
-      uprintf("not4me");
+    struct DataFrame_t frame = {0};
+    int rs = readDataFrameFromCan(&frame);
+    switch (rs) {
+    case DATAFRAME_READ_ERROR:
+      uprintf("failed read\r\n");
+    case DATAFRAME_READ_SUCCESS:
+      break;
+    case DATAFRAME_READ_NOTHING:
+      uprintf("no value read from packet\r\n");
+    case DATAFRAME_READ_TOOSMALL:
+      uprintf("error: data payload < 2 bytes\r\n");
     }
 
+    if (frame.id == baseAddress) {
+      processFrame(&frame, baseAddress);
+    } else {
+      uprintf("Message was not for me\r\n");
+    }
     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
   }
 }

@@ -45,11 +45,5 @@ void uprintf(const char *format, ...) {
             break;
         }
     }
-    // Print the message
-    uprint(txbuff, txl);
-}
-
-void uprint(uint8_t* str, const int length) {
-    // do nothing :(
-    HAL_UART_Transmit(&huart1, str, length, 1100);
+    HAL_UART_Transmit(&huart1, txbuff, txl, 1100);
 }

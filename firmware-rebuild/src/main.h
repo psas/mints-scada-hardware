@@ -4,9 +4,9 @@
 #define BUSCMD_WRITE_VALUE  0xC0
 #define BUSCMD_CLAIM_ID     0x0F
 
-#define PACKET_ERROR_ERROR 1
-#define PACKET_SIZE_ERROR 2
-#define PACKET_ID_ERROR 3
+#define FRAME_ERROR_ERROR 1
+#define FRAME_SIZE_ERROR 2
+#define FRAME_ID_ERROR 3
 
 void onFatalError(void);
 extern int fatal;
