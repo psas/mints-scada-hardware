@@ -2785,7 +2785,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 204.47 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -3053,7 +3053,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 224.79 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -3598,7 +3598,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 229.87 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -3741,7 +3741,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 214.63 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -3873,7 +3873,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tca9548a-q1.pdf"
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tca9548a.pdf"
 			(at 191.77 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -4078,7 +4078,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 209.55 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -4671,7 +4671,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 234.95 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -5015,7 +5015,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 240.03 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -5158,7 +5158,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 219.71 105.41 0)
 			(hide yes)
 			(show_name no)

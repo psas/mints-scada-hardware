@@ -4931,7 +4931,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 125.73 161.29 0)
 			(hide yes)
 			(show_name no)
@@ -5141,7 +5141,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/140357145200.pdf"
+		(property "Datasheet" "http://optoelectronics.liteon.com/upload/download/DS70-2001-010/S_110_LTV-356T%2020140520.pdf"
 			(at 151.13 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -5153,7 +5153,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Optoisolator Transistor Output 3750Vrms 1 Channel 4-SOP"
+		(property "Description" "DC Optocoupler, Vce 80V, CTR 50%, SO-4"
 			(at 151.13 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -5417,7 +5417,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 125.73 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -5840,7 +5840,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 223.52 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -5982,7 +5982,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 223.52 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -6124,7 +6124,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 180.34 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -6266,7 +6266,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 223.52 190.5 0)
 			(hide yes)
 			(show_name no)
@@ -6413,7 +6413,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "P-Channel 30 V 4.5A (Ta) 1.8W (Ta) Surface Mount TSOT-26"
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
 			(at 228.6 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -6632,7 +6632,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "P-Channel 30 V 4.5A (Ta) 1.8W (Ta) Surface Mount TSOT-26"
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
 			(at 228.6 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -6769,7 +6769,7 @@
 				)
 			)
 		)
-		(property "Description" "Zener Diode 25 V 5 W ±5% Surface Mount DO-214AA (SMB)"
+		(property "Description" "Zener diode, filled shape"
 			(at 187.96 189.23 0)
 			(hide yes)
 			(show_name no)
@@ -7027,7 +7027,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 180.34 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -7427,7 +7427,7 @@
 				)
 			)
 		)
-		(property "Description" "Fuse Block 20 A 250V 1 Circuit Cartridge Through Hole"
+		(property "Description" "Fuse"
 			(at 316.23 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -7556,7 +7556,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "P-Channel 30 V 4.5A (Ta) 1.8W (Ta) Surface Mount TSOT-26"
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
 			(at 185.42 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -7807,7 +7807,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/140357145200.pdf"
+		(property "Datasheet" "http://optoelectronics.liteon.com/upload/download/DS70-2001-010/S_110_LTV-356T%2020140520.pdf"
 			(at 151.13 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -7819,7 +7819,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Optoisolator Transistor Output 3750Vrms 1 Channel 4-SOP"
+		(property "Description" "DC Optocoupler, Vce 80V, CTR 50%, SO-4"
 			(at 151.13 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -8342,7 +8342,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 181.61 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -8614,7 +8614,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "P-Channel 30 V 4.5A (Ta) 1.8W (Ta) Surface Mount TSOT-26"
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
 			(at 185.42 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -8986,7 +8986,7 @@
 				)
 			)
 		)
-		(property "Description" "Zener Diode 25 V 5 W ±5% Surface Mount DO-214AA (SMB)"
+		(property "Description" "Zener diode, filled shape"
 			(at 187.96 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -9112,7 +9112,7 @@
 				)
 			)
 		)
-		(property "Description" "Zener Diode 25 V 5 W ±5% Surface Mount DO-214AA (SMB)"
+		(property "Description" "Zener diode, filled shape"
 			(at 187.96 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -9226,7 +9226,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/140357145200.pdf"
+		(property "Datasheet" "http://optoelectronics.liteon.com/upload/download/DS70-2001-010/S_110_LTV-356T%2020140520.pdf"
 			(at 151.13 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -9238,7 +9238,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Optoisolator Transistor Output 3750Vrms 1 Channel 4-SOP"
+		(property "Description" "DC Optocoupler, Vce 80V, CTR 50%, SO-4"
 			(at 151.13 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -9451,7 +9451,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "P-Channel 30 V 4.5A (Ta) 1.8W (Ta) Surface Mount TSOT-26"
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
 			(at 228.6 198.12 0)
 			(hide yes)
 			(show_name no)
@@ -9587,7 +9587,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 125.73 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -9885,7 +9885,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 125.73 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -10095,7 +10095,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/140357145200.pdf"
+		(property "Datasheet" "http://optoelectronics.liteon.com/upload/download/DS70-2001-010/S_110_LTV-356T%2020140520.pdf"
 			(at 151.13 205.74 0)
 			(hide yes)
 			(show_name no)
@@ -10107,7 +10107,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Optoisolator Transistor Output 3750Vrms 1 Channel 4-SOP"
+		(property "Description" "DC Optocoupler, Vce 80V, CTR 50%, SO-4"
 			(at 151.13 205.74 0)
 			(hide yes)
 			(show_name no)
@@ -10237,7 +10237,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 180.34 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -10587,7 +10587,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "P-Channel 30 V 4.5A (Ta) 1.8W (Ta) Surface Mount TSOT-26"
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
 			(at 228.6 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -11169,7 +11169,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 125.73 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -11575,7 +11575,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "P-Channel 30 V 4.5A (Ta) 1.8W (Ta) Surface Mount TSOT-26"
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
 			(at 185.42 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -11711,7 +11711,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 223.52 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -11933,7 +11933,7 @@
 				)
 			)
 		)
-		(property "Description" "Zener Diode 25 V 5 W ±5% Surface Mount DO-214AA (SMB)"
+		(property "Description" "Zener diode, filled shape"
 			(at 231.14 209.55 0)
 			(hide yes)
 			(show_name no)
@@ -12137,7 +12137,7 @@
 				)
 			)
 		)
-		(property "Description" "Zener Diode 25 V 5 W ±5% Surface Mount DO-214AA (SMB)"
+		(property "Description" "Zener diode, filled shape"
 			(at 231.14 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -12251,7 +12251,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/140357145200.pdf"
+		(property "Datasheet" "http://optoelectronics.liteon.com/upload/download/DS70-2001-010/S_110_LTV-356T%2020140520.pdf"
 			(at 151.13 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -12263,7 +12263,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Optoisolator Transistor Output 3750Vrms 1 Channel 4-SOP"
+		(property "Description" "DC Optocoupler, Vce 80V, CTR 50%, SO-4"
 			(at 151.13 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -12398,7 +12398,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "P-Channel 30 V 4.5A (Ta) 1.8W (Ta) Surface Mount TSOT-26"
+		(property "Description" "P-Channel Power MOSFET, TSOT-23-6"
 			(at 186.69 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -12533,7 +12533,7 @@
 				)
 			)
 		)
-		(property "Description" "15 A 250 V Fuse Cartridge, Glass Requires Holder 5mm x 20mm"
+		(property "Description" "Fuse"
 			(at 316.23 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -12860,7 +12860,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 125.73 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -12992,7 +12992,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/140357145200.pdf"
+		(property "Datasheet" "http://optoelectronics.liteon.com/upload/download/DS70-2001-010/S_110_LTV-356T%2020140520.pdf"
 			(at 151.13 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -13004,7 +13004,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Optoisolator Transistor Output 3750Vrms 1 Channel 4-SOP"
+		(property "Description" "DC Optocoupler, Vce 80V, CTR 50%, SO-4"
 			(at 151.13 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -13136,7 +13136,7 @@
 				)
 			)
 		)
-		(property "Description" "Zener Diode 25 V 5 W ±5% Surface Mount DO-214AA (SMB)"
+		(property "Description" "Zener diode, filled shape"
 			(at 231.14 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -13260,7 +13260,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 125.73 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -13404,7 +13404,7 @@
 				)
 			)
 		)
-		(property "Description" "Zener Diode 25 V 5 W ±5% Surface Mount DO-214AA (SMB)"
+		(property "Description" "Zener diode, filled shape"
 			(at 189.23 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -13596,7 +13596,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/140357145200.pdf"
+		(property "Datasheet" "http://optoelectronics.liteon.com/upload/download/DS70-2001-010/S_110_LTV-356T%2020140520.pdf"
 			(at 151.13 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -13608,7 +13608,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Optoisolator Transistor Output 3750Vrms 1 Channel 4-SOP"
+		(property "Description" "DC Optocoupler, Vce 80V, CTR 50%, SO-4"
 			(at 151.13 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -13738,7 +13738,7 @@
 				)
 			)
 		)
-		(property "Description" "4 resistor network, parallel topology, SIP package, split"
+		(property "Description" "4 resistor network, parallel topology, split"
 			(at 125.73 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -14016,7 +14016,7 @@
 				)
 			)
 		)
-		(property "Description" "Zener Diode 25 V 5 W ±5% Surface Mount DO-214AA (SMB)"
+		(property "Description" "Zener diode, filled shape"
 			(at 231.14 167.64 0)
 			(hide yes)
 			(show_name no)
@@ -14130,7 +14130,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/140357145200.pdf"
+		(property "Datasheet" "http://optoelectronics.liteon.com/upload/download/DS70-2001-010/S_110_LTV-356T%2020140520.pdf"
 			(at 151.13 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -14142,7 +14142,7 @@
 				(justify left)
 			)
 		)
-		(property "Description" "Optoisolator Transistor Output 3750Vrms 1 Channel 4-SOP"
+		(property "Description" "DC Optocoupler, Vce 80V, CTR 50%, SO-4"
 			(at 151.13 121.92 0)
 			(hide yes)
 			(show_name no)
