@@ -18,14 +18,14 @@
 // SUB_ADDR_MASK masks the sub address bits that must match the address in order to be counted as a match
 
 #ifdef CONFIG_OUTPUTS
-#define BASE_ADDR_OFFSET 0
+#define BASE_ADDR_OFFSET 8U
 #define SUB_ADDR_MASK 0x8
 #endif
 #ifdef CONFIG_ADC
-#define BASE_ADDR_OFFSET 8
+#define BASE_ADDR_OFFSET 12U
 #define SUB_ADDR_MASK 0xC
 #endif
 #ifdef CONFIG_I2C
-#define BASE_ADDR_OFFSET 12
+#define BASE_ADDR_OFFSET 12U
 #define SUB_ADDR_MASK 0xC
 #endif

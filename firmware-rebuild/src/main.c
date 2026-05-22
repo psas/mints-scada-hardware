@@ -4,6 +4,7 @@
 #include "configuration.h"
 #include "init.h"
 #include "mcp346x.h"
+#include "stm32f0xx.h"
 #include "stm32f0xx_hal.h"
 #include "stm32f0xx_hal_gpio.h"
 #include "uprintf.h"
@@ -11,10 +12,9 @@
 #include <stdio.h>
 
 void testSPI(void) {
-  int count = 0;
   DataFrame frame;
-  for (int i = 0; i < 4; i++) {
-    MCP346x_analogRead(&adc, (uint8_t)i, (uint8_t)i, GAIN_1, frame.data.bytes);
+  for (int i = 0; i < 7; i+=2) {
+    MCP346x_analogRead(&adc, (uint8_t)i, (uint8_t)(i+1), GAIN_1, frame.data.bytes);
     frame.id = 0x66;
     frame.datasize = 8;
     frame.reply = 0;
@@ -27,20 +27,6 @@ void testSPI(void) {
             frame.data.bytes[4], frame.data.bytes[5]);
     writeDataframeToCan(&frame);
   }
-  uprintf("Count=%d\r\n", count);
-  count++;
-  MCP346x_analogRead(&adc, MUX_REFP, MUX_REFN, GAIN_1, frame.data.bytes);
-  frame.id = 0x88;
-  frame.datasize = 8;
-  frame.reply = 0;
-  frame.err = 0;
-  frame.reserved = 0;
-  frame.data.bytes[4] = 0x88;
-  frame.data.bytes[5] = 0x88;
-  uprintf("Channel REF, 0x%02x%02x%02x%02x%02x%02x\r\n", frame.data.bytes[0],
-          frame.data.bytes[1], frame.data.bytes[2], frame.data.bytes[3],
-          frame.data.bytes[4], frame.data.bytes[5]);
-  writeDataframeToCan(&frame);
   HAL_Delay(255);
 }
 
@@ -57,19 +43,20 @@ void initPeripherials(void) {
 }
 
 extern CAN_FilterTypeDef sFilterConfig;
-static uint8_t baseAddress = 0;
-// static int count = 0;
-int fatal = 0;
-
+static int fatal = 0;
 void onFatalError(void) {
   fatal = 1;
   // Do things here to set things to a safe state.
   // For outputs, this means all off.
   // For inputs, this means nothing.
 }
+void checkFatal(void) {
+  fatal = 1;
 
-int calc_baseAddress(void) {
+}
+uint8_t calc_baseAddress(void) {
   // Read base ID
+  uint8_t baseAddress = 0;
   baseAddress |= HAL_GPIO_ReadPin(ADDR_GPIO_PORT, ADDR1_Pin) << 4;
   baseAddress |= HAL_GPIO_ReadPin(ADDR_GPIO_PORT, ADDR2_Pin) << 5;
   baseAddress |= HAL_GPIO_ReadPin(ADDR_GPIO_PORT, ADDR4_Pin) << 6;
@@ -82,20 +69,21 @@ int calc_baseAddress(void) {
  * ever returns. */
 void doEverything(void) {
   uint8_t baseAddress = calc_baseAddress();
+  uprintf("baseAddress = 0x%02x\r\n", baseAddress);
   CAN_FilterTypeDef sFilterConfig = {
-      .FilterFIFOAssignment = CAN_FILTER_FIFO0, // set fifo assignment
-      .FilterIdHigh = baseAddress << 4,
-      .FilterIdLow = 0,
-      .FilterMaskIdHigh = 0xF0 << 5,
-      .FilterMaskIdLow = 0,
-      .FilterScale = CAN_FILTERSCALE_32BIT, // set filter scale
+      .FilterFIFOAssignment = CAN_FILTER_FIFO0,
+      .FilterIdHigh = baseAddress << 5,
+      .FilterIdLow = 0x0,
+      .FilterMaskIdHigh = (0xF & ~(BASE_ADDR_OFFSET)) << 5, // see Figure 319 in stm32f0x ref manual for bit alignment
+      .FilterMaskIdLow = 0x0,
+      .FilterScale = CAN_FILTERSCALE_32BIT,
       .FilterMode = CAN_FILTERMODE_IDMASK,
       .FilterActivation = ENABLE,
   };
 
   if (HAL_CAN_ConfigFilter(&hcan, &sFilterConfig) != HAL_OK) {
     Error_Handler();
-    uprintf("Error on HAL init");
+    uprintf("Error on CAN filter init");
   }
 
   struct DataFrame_t iddp = {
@@ -114,21 +102,10 @@ void doEverything(void) {
     Error_Handler();
   }
   DataFrame frame = {0};
-  uint8_t subid = (baseAddress & 0xF) - BASE_ADDR_OFFSET;
+  uint8_t subid = (frame.id & 0xF) & ~(BASE_ADDR_OFFSET);
   while (HAL_CAN_GetTxMailboxesFreeLevel(&hcan) < init_freeTX) {
     while (1) {
-      // getCanMessages();
-      // testSPI();
-      MCP346x_analogRead(&adc, MUX_REFP, MUX_REFN, GAIN_1, frame.data.bytes);
-      frame.id = 0x66;
-      frame.datasize = 8;
-      frame.reply = 0;
-      frame.err = 0;
-      frame.reserved = 0;
-      frame.data.bytes[4] = 0x66;
-      frame.data.bytes[5] = 0x66;
-      writeDataframeToCan(&frame);
-      HAL_Delay(255);
+      getCanMessages(baseAddress);
     }
   }
   uprintf("Error main program exited");
@@ -137,5 +114,9 @@ void doEverything(void) {
 int main(void) {
   initPeripherials();
   doEverything();
-  while (1); // Halt if main ever exits
+
+  // TODO: set safe state
+  // watchdog later
+
+  // drop to assembly startup file halt
 }

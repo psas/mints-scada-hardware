@@ -47,6 +47,12 @@ typedef struct DataFrame_t {
 
 } DataFrame;
 
+#define BUSCMD_READ_ID_LOW  0x10
+#define BUSCMD_READ_ID_HIGH 0x11
+#define BUSCMD_READ_VALUE   0x80
+#define BUSCMD_WRITE_VALUE  0xC0
+#define BUSCMD_CLAIM_ID     0x0F
+
 #define DATAFRAME_RESVD_BIT 8
 #define DATAFRAME_ERROR_BIT 9
 #define DATAFRAME_REPLY_BIT 10
@@ -63,7 +69,6 @@ int writeDataframeToCan(DataFrame *frame);
 
 void copyUID(uint8_t *dest, uint8_t bytes, uint8_t offset);
 void get_compressUID(uint8_t *dest);
-int processFrame(DataFrame *frame, uint8_t baseAddress);
-void getCanMessages(void);
-int calc_baseAddress(void);
+int processFrame(DataFrame *frame, int baseAddress);
+void getCanMessages(uint8_t baseAddress);
 uint32_t start_CANBus(void);

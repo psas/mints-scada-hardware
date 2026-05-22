@@ -4,6 +4,7 @@
 #include "init.h"
 #include "main.h"
 #include "mcp346x.h"
+#include "stm32f0xx_hal.h"
 #include "stm32f0xx_hal_def.h"
 #include "stm32f0xx_hal_gpio.h"
 #include "uprintf.h"
@@ -83,9 +84,9 @@ int writeDataframeToCan(DataFrame *frame) {
   return DATAFRAME_WRITE_SUCCESS;
 }
 
-int processFrame(DataFrame *frame, uint8_t baseAddress) {
-  uint8_t subid = (frame->id & 0xF) - BASE_ADDR_OFFSET;
-
+int processFrame(DataFrame *frame, int baseAddress) {
+  uint8_t subid = (frame->id & 0xF) & ~(BASE_ADDR_OFFSET);
+  uprintf("Base address: %08x\r\n", baseAddress);
   if (frame->err) {
     if (frame->data.cmd == BUSCMD_CLAIM_ID) {
       uint8_t tempid[6];
@@ -105,7 +106,6 @@ int processFrame(DataFrame *frame, uint8_t baseAddress) {
     return 0;
   }
   switch (frame->data.cmd) {
-
   case BUSCMD_CLAIM_ID:
     uint8_t tempid[6];
     get_compressUID(tempid);
@@ -134,14 +134,16 @@ int processFrame(DataFrame *frame, uint8_t baseAddress) {
   } break;
   case BUSCMD_WRITE_VALUE: {
     uint8_t data[4];
-    //Toggle state of GPIO pins based on received data from CAN
-    HAL_GPIO_WritePin(outputPorts[subid], outputPins[subid], (CanDataSquish_t)*frame->squish.value ? GPIO_PIN_SET : GPIO_PIN_RESET)
+    // Toggle state of GPIO pins based on received data from CAN
+    HAL_GPIO_WritePin(outputPorts[subid], outputPins[subid],
+                      frame->squish.value ? GPIO_PIN_SET : GPIO_PIN_RESET)
   } break;
 #endif
 #ifdef CONFIG_ADC
   case BUSCMD_READ_VALUE: {
-    for (int i = 0; i < 4; i++) {
-      MCP346x_analogRead(&adc, (uint8_t)i, (uint8_t)i, GAIN_1, frame->data.bytes);
+    for (int i = 0; i < 7; i += 2) {
+      MCP346x_analogRead(&adc, (uint8_t)i, (uint8_t)(i + 1), GAIN_1,
+                         frame->data.bytes);
       frame->id = 0x55;
       frame->datasize = 8;
       frame->reply = 1;
@@ -150,6 +152,9 @@ int processFrame(DataFrame *frame, uint8_t baseAddress) {
       frame->data.bytes[4] = (uint8_t)i;
       frame->data.bytes[5] = (uint8_t)i;
       writeDataframeToCan(frame);
+      uprintf("Channel REF, 0x%02x%02x%02x%02x%02x%02x\r\n",
+              frame->data.bytes[0], frame->data.bytes[1], frame->data.bytes[2],
+              frame->data.bytes[3], frame->data.bytes[4], frame->data.bytes[5]);
     }
   } break;
 #endif
@@ -157,25 +162,27 @@ int processFrame(DataFrame *frame, uint8_t baseAddress) {
   return 0;
 }
 
-void getCanMessages(void) {
-  uint8_t baseAddress = calc_baseAddress();
-
-  while (!fatal && HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0)) {
+void getCanMessages(uint8_t baseAddress) {
+  while (HAL_CAN_GetRxFifoFillLevel(&hcan, CAN_RX_FIFO0)) {
+    uprintf("hi");
     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
     struct DataFrame_t frame = {0};
-    int rs = readDataFrameFromCan(&frame);
-    switch (rs) {
+    switch (readDataFrameFromCan(&frame)) {
     case DATAFRAME_READ_ERROR:
       uprintf("failed read\r\n");
+      break;
     case DATAFRAME_READ_SUCCESS:
+      uprintf("successful read\r\n");
       break;
     case DATAFRAME_READ_NOTHING:
       uprintf("no value read from packet\r\n");
+      break;
     case DATAFRAME_READ_TOOSMALL:
       uprintf("error: data payload < 2 bytes\r\n");
+      break;
     }
 
-    if (frame.id == baseAddress) {
+    if ((frame.id & 0xF0) == (baseAddress & 0xF0)) {
       processFrame(&frame, baseAddress);
     } else {
       uprintf("Message was not for me\r\n");
