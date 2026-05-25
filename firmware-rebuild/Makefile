@@ -1,6 +1,8 @@
 #project name
 PROJECT = firmware-rebuild
 
+TARGET ?= main
+
 #cpu arch/type
 CPU = -mcpu=cortex-m0 -mthumb
 PREFIX = arm-none-eabi-
@@ -8,11 +10,25 @@ CC = $(PREFIX)gcc
 AS = $(PREFIX)gcc -x assembler-with-cpp
 SZ = $(PREFIX)size
 CP = $(PREFIX)objcopy
-BUILD_DIR := ./build
 SRC_DIR := ./src/
 OOCD_CFG := ./toolchain/oocd.cfg
 
-C_SOURCES := ./cfg/board_cfg.c\
+ifeq ($(TARGET), blinky)
+BUILD_DIR := ./blinky
+SOURCES := ./cfg/board_cfg.c\
+./src/blinky.c\
+./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c\
+./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c\
+./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c\
+./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c\
+./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c\
+./cfg/stm32f0xx_it.c\
+./stm32libs/syscalls.c\
+./stm32libs/sysmem.c\
+./stm32libs/STM32CubeF0/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.c
+else
+BUILD_DIR := ./build
+SOURCES := ./cfg/board_cfg.c\
 ./src/init.c\
 ./src/uprintf.c\
 ./src/mcp346x.c\
@@ -40,7 +56,8 @@ C_SOURCES := ./cfg/board_cfg.c\
 ./stm32libs/STM32CubeF0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.c \
 ./stm32libs/syscalls.c\
 ./stm32libs/sysmem.c\
-./stm32libs/STM32CubeF0/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.c\
+./stm32libs/STM32CubeF0/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.c
+endif
 
 ASM_SOURCES := ./stm32libs/STM32CubeF0/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc/startup_stm32f042x6.s
 
@@ -67,13 +84,11 @@ INCLUDE_FLAGS += $(addprefix -I,$(INCLUDE_DIR))
 WERROR_FLAGS = -Wimplicit-function-declaration -Wall -Wextra -Wundef -Wstrict-prototypes
 LDFLAGS = $(CPU) -lc -lm -lnosys -specs=nano.specs -T$(LINK_SCRIPT) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
 CFLAGS = $(CPU) $(CDEFS) $(INCLUDE_FLAGS) $(WERROR_FLAGS) -g -gdwarf-2 -fdata-sections -ffunction-sections -MMD -MP -MF"$(@:%.o=%.d)"
-OBJECTS += $(patsubst %.c,$(BUILD_DIR)/%.o,$(notdir $(C_SOURCES)))
-vpath %.c $(sort $(dir $(C_SOURCES)))
+OBJECTS += $(patsubst %.c,$(BUILD_DIR)/%.o,$(notdir $(SOURCES)))
+vpath %.c $(sort $(dir $(SOURCES)))
 OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(ASM_SOURCES:.s=.o)))
 vpath %.s $(sort $(dir $(ASM_SOURCES)))
-DEBUG += $(patsubst %.c,$(BUILD_DIR)/%.d,$(notdir $(C_SOURCES)))
-
-TARGET := main
+DEBUG += $(patsubst %.c,$(BUILD_DIR)/%.d,$(notdir $(SOURCES)))
 
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
 	cp $(BUILD_DIR)/$(TARGET).bin $(TARGET).bin
@@ -111,12 +126,12 @@ debug-new:
 	openocd -f $(OOCD_CFG) -c "program ./$(BUILD_DIR)/$(TARGET).elf verify reset"
 
 write:
-	openocd -f $(OOCD_CFG) -c "program $(BUILD_DIR)/main.elf verify reset exit"
+	openocd -f $(OOCD_CFG) -c "program $(BUILD_DIR)/$(TARGET).elf verify reset exit"
 
 write-new:
 	rm -rf $(BUILD_DIR)
 	make all
-	openocd -f $(OOCD_CFG) -c "program $(BUILD_DIR)/main.elf verify reset exit"
+	openocd -f $(OOCD_CFG) -c "program $(BUILD_DIR)/$(TARGET).elf verify reset exit"
 
 debug:
 	openocd -f $(OOCD_CFG) -c "program ./$(BUILD_DIR)/$(TARGET).elf verify reset"
