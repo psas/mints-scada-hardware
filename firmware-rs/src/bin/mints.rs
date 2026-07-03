@@ -49,6 +49,7 @@ async fn main(_spawner: Spawner) {
         can::filter::ExtendedFilter::accept_all_into_fifo1(),
     );
 
+    // FIXME: No FDCAN - unsupported by vulCAN
     can.set_bitrate(1_000_000);
     can.set_fd_data_bitrate(1_000_000, false);
     info!("Configured CAN");
