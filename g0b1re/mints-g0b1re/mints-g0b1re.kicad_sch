@@ -2926,6 +2926,354 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Switch:SW_Coded_SH-7050"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW"
+				(at -7.62 8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SW_Coded_SH-7050"
+				(at -7.62 -8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at -7.62 -11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "https://www.nidec-copal-electronics.com/e/catalog/switch/sh-7000.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Rotary switch, 4-bit encoding, 16 positions, Real code"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "rotary hex Real"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Nidec*Copal*SH*7010*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SW_Coded_SH-7050_0_0"
+				(text "8"
+					(at -5.715 0 900)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "9"
+					(at -5.2832 2.1844 675)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "7"
+					(at -5.2832 -2.1844 1125)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "A"
+					(at -4.0386 4.0386 450)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "6"
+					(at -4.0386 -4.0386 1350)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "B"
+					(at -2.1844 5.2832 225)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "5"
+					(at -2.1844 -5.2832 1575)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "C"
+					(at 0 5.715 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "4"
+					(at 0 -5.715 1800)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "D"
+					(at 2.1844 5.2832 3375)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "3"
+					(at 2.1844 -5.2832 2025)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "E"
+					(at 4.0386 4.0386 3150)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "2"
+					(at 4.0386 -4.0386 2250)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "F"
+					(at 5.2832 2.1844 2925)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "1"
+					(at 5.2832 -2.1844 2475)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "0"
+					(at 5.715 0 2700)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(symbol "SW_Coded_SH-7050_0_1"
+				(polyline
+					(pts
+						(xy -0.254 -2.54) (xy -0.254 2.032) (xy -0.762 1.524) (xy -1.27 1.524) (xy 0 2.794) (xy 1.27 1.524)
+						(xy 0.762 1.524) (xy 0.254 2.032) (xy 0.254 -2.54) (xy -0.254 -2.54) (xy -0.254 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 7.62 7.62)
+					(end -7.62 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "SW_Coded_SH-7050_1_1"
+				(pin passive line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -5.08 180)
+					(length 2.54)
+					(name "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 5.08 180)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3V3"
 			(power global)
 			(pin_numbers
@@ -3356,6 +3704,16 @@
 		)
 		(uuid "d3268ca5-2195-4c63-beb8-0d10cf79e742")
 	)
+	(text "ADDR_2\n\n"
+		(exclude_from_sim no)
+		(at 270.51 120.904 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2cbabaa5-7a65-43e4-9a45-85c2d8823cc8")
+	)
 	(text "Microcontroller\n"
 		(exclude_from_sim no)
 		(at 162.814 53.086 0)
@@ -3376,25 +3734,45 @@
 		)
 		(uuid "8d0d131d-19fb-41f8-a595-916baf6066ce")
 	)
-	(text "what is the purpose of the 10k resistor?\n"
+	(text "ADDR_1\n"
 		(exclude_from_sim no)
-		(at 54.61 254 0)
-		(effects
-			(font
-				(size 2 2)
-			)
-		)
-		(uuid "9093a6cc-342d-498f-8690-ea065e64d6d0")
-	)
-	(text "Random cap 3v3 to gnd in older sheet?\n"
-		(exclude_from_sim no)
-		(at 362.712 79.248 0)
+		(at 270.51 114.808 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
-		(uuid "aba78f1b-7d7a-4cc9-85c8-79fda567585c")
+		(uuid "a1762d93-00fc-4cbd-a394-477756a461bc")
+	)
+	(text "ADDR_8\n"
+		(exclude_from_sim no)
+		(at 270.51 117.348 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ba0bbdf3-f688-48d6-857e-e3e209926c7c")
+	)
+	(text "Address Selector"
+		(exclude_from_sim no)
+		(at 304.546 150.876 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c6fa14ea-8a07-4b8f-b040-75ee194b2552")
+	)
+	(text "ADDR_4\n"
+		(exclude_from_sim no)
+		(at 270.51 112.268 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "cb7a5337-4fa3-4cb4-a125-a7065a08f544")
 	)
 	(text "3v3 Regulator\n"
 		(exclude_from_sim no)
@@ -3405,16 +3783,6 @@
 			)
 		)
 		(uuid "df696f4d-43ac-46a8-b87f-d88c7dbaf501")
-	)
-	(text "VDDA missing?\n"
-		(exclude_from_sim no)
-		(at 166.37 113.03 0)
-		(effects
-			(font
-				(size 3 3)
-			)
-		)
-		(uuid "e97d2a1a-715f-4b43-8bd4-ff8504df296d")
 	)
 	(junction
 		(at 27.94 240.03)
@@ -3569,6 +3937,16 @@
 			(type default)
 		)
 		(uuid "17e50ccd-9d04-4fbd-bddc-881a9e47cdd4")
+	)
+	(wire
+		(pts
+			(xy 251.46 113.03) (xy 307.34 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18411da4-4a1c-4d79-b79c-10e8b97b93d8")
 	)
 	(wire
 		(pts
@@ -3742,6 +4120,16 @@
 	)
 	(wire
 		(pts
+			(xy 307.34 113.03) (xy 307.34 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "619f7853-9e9e-4f44-9def-95937dc0c673")
+	)
+	(wire
+		(pts
 			(xy 387.35 48.26) (xy 403.86 48.26)
 		)
 		(stroke
@@ -3769,6 +4157,36 @@
 			(type default)
 		)
 		(uuid "700ae3eb-7bda-43b9-97c3-c3d0c9cdfb86")
+	)
+	(wire
+		(pts
+			(xy 251.46 120.65) (xy 304.8 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70ad20b6-8eb1-431e-aee2-c485e58f4d70")
+	)
+	(wire
+		(pts
+			(xy 304.8 130.81) (xy 304.8 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "720ca3e1-a60a-4cc1-89d8-55753f44382d")
+	)
+	(wire
+		(pts
+			(xy 251.46 115.57) (xy 302.26 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78715827-a5f9-4878-89d8-c9b01d809ca9")
 	)
 	(wire
 		(pts
@@ -3819,6 +4237,16 @@
 			(type default)
 		)
 		(uuid "8d4ae127-d135-4b67-be40-ffa1e1aab782")
+	)
+	(wire
+		(pts
+			(xy 309.88 130.81) (xy 309.88 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99ab2698-6389-4b0d-8dd1-d42788055803")
 	)
 	(wire
 		(pts
@@ -3912,6 +4340,16 @@
 	)
 	(wire
 		(pts
+			(xy 299.72 128.27) (xy 299.72 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd7708b3-e89a-4956-9d45-2056fcab1073")
+	)
+	(wire
+		(pts
 			(xy 397.51 53.34) (xy 397.51 58.42)
 		)
 		(stroke
@@ -3982,6 +4420,16 @@
 	)
 	(wire
 		(pts
+			(xy 251.46 118.11) (xy 309.88 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd9e2049-3c75-49d1-8037-56794c31b347")
+	)
+	(wire
+		(pts
 			(xy 44.45 243.84) (xy 44.45 240.03)
 		)
 		(stroke
@@ -3999,6 +4447,16 @@
 			(type default)
 		)
 		(uuid "ea505d82-820a-43f7-b289-78f0cf190db8")
+	)
+	(wire
+		(pts
+			(xy 302.26 130.81) (xy 302.26 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef357a93-0ccd-440a-aa7d-6e0630214140")
 	)
 	(wire
 		(pts
@@ -4095,6 +4553,54 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "PC4"
+		(shape input)
+		(at 195.58 153.67 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "46f1f84f-1054-48a4-a1f1-a64fd92a28ea")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 188.8453 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "PC5"
+		(shape input)
+		(at 195.58 156.21 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9b074c2f-72b7-4152-9599-ecc0e610e2db")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 188.8453 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -4489,6 +4995,88 @@
 			(project "mints-g0b1re"
 				(path "/363c6546-315b-48da-9312-6a55f2557799"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 349.25 64.77 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "31c4a466-4c9b-45c2-ac89-64c696843616")
+		(property "Reference" "C9"
+			(at 353.06 63.4999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 353.06 66.0399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 350.2152 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 349.25 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 349.25 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b7d45abd-e437-43d5-95a1-52c4b2ee1328")
+		)
+		(pin "2"
+			(uuid "7dfabec8-6cdc-471b-9457-39bf20f2466b")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799"
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -5130,6 +5718,162 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 349.25 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "54ca5211-8fac-40fe-8362-b6ada2d2bfe1")
+		(property "Reference" "#PWR011"
+			(at 349.25 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 349.25 73.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 349.25 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 349.25 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 349.25 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b73db640-1437-490b-bd6d-41175ca68eda")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 223.52 191.77 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "54e8230a-b485-40ac-9e22-b544d5cfb494")
+		(property "Reference" "#PWR012"
+			(at 223.52 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 223.52 196.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 223.52 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 223.52 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 223.52 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "339c4410-75a0-4109-bcb4-e0851cf2bee0")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:L")
 		(at 93.98 233.68 90)
 		(unit 1)
@@ -5719,6 +6463,97 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_Coded_SH-7050")
+		(at 304.8 140.97 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a5f70706-e64a-43fd-9e82-72f14e0a8445")
+		(property "Reference" "SW1"
+			(at 295.91 139.6999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SW_Coded_SH-7050"
+			(at 295.91 142.2399 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 316.23 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.nidec-copal-electronics.com/e/catalog/switch/sh-7000.pdf"
+			(at 304.8 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Rotary switch, 4-bit encoding, 16 positions, Real code"
+			(at 304.8 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "7b561130-4ed2-4b9a-b84b-907fe29103ea")
+		)
+		(pin "1"
+			(uuid "83d1d31c-0233-4fb4-acd0-530af7c482ec")
+		)
+		(pin "2"
+			(uuid "dcd9e3d8-4136-4289-9948-c3d8b84539c4")
+		)
+		(pin "8"
+			(uuid "0a798ac4-f2f0-4d95-9353-1fd5faa87946")
+		)
+		(pin "C"
+			(uuid "79aade65-db29-4fcf-b545-89a558075082")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 39.37 240.03 90)
 		(mirror x)
@@ -5871,6 +6706,84 @@
 			(project "mints-g0b1re"
 				(path "/363c6546-315b-48da-9312-6a55f2557799"
 					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 299.72 128.27 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c8a1e6b0-d9b0-481d-a1d2-d81a209a7e4f")
+		(property "Reference" "#PWR013"
+			(at 299.72 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 299.72 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 299.72 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 299.72 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 299.72 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "93ce3360-74cf-4960-9531-ef615996c230")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799"
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -6056,6 +6969,84 @@
 			(project "mints-g0b1re"
 				(path "/363c6546-315b-48da-9312-6a55f2557799"
 					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 349.25 60.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e3716494-0ab0-40d0-b3ca-e8a9eba1ac82")
+		(property "Reference" "#PWR010"
+			(at 349.25 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 349.25 55.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 349.25 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 349.25 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 349.25 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "14a0e0f4-5138-4565-9db3-a89b5d689414")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799"
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
