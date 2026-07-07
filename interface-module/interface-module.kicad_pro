@@ -348,7 +348,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "1.1"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -1278,7 +1278,7 @@
       {
         "filename": "interface-module.kicad_sch",
         "name": "interface-module",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "6dae10d9-cb48-4947-bafd-823fd9a3bf3a"
       }
     ],
     "used_designators": "",
@@ -1287,7 +1287,7 @@
   "sheets": [
     [
       "6dae10d9-cb48-4947-bafd-823fd9a3bf3a",
-      "Root"
+      "interface-module"
     ],
     [
       "a6bf226d-205a-46a5-bb3b-288643662dd6",
