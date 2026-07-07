@@ -10,6 +10,7 @@
 *-backups⏎
 *-cache*⏎
 *-bak⏎
+*.history/
 *-bak*⏎
 *~⏎
 ~*⏎
@@ -37,7 +38,7 @@ fp-info-cache⏎
 **/*-backups/*.zip⏎
 ⏎
 # Local git-based history (KiCad 9.0+)⏎
-.history⏎
+*.history/
 ⏎
 # Local project settings⏎
 *.kicad_prl⏎
