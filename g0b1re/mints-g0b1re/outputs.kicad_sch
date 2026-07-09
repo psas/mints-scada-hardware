@@ -1874,6 +1874,17 @@
 		)
 		(uuid "176e0fed-2346-4e6f-88fe-166cd90b8044")
 	)
+	(text "Add aux power LED"
+		(exclude_from_sim no)
+		(at 270.256 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 29 20 1)
+			)
+		)
+		(uuid "4bb17adc-9582-4160-ac4a-28076d3b8c40")
+	)
 	(text "3-24V"
 		(exclude_from_sim no)
 		(at 322.58 73.66 0)
@@ -1893,6 +1904,17 @@
 			)
 		)
 		(uuid "b8e03339-bb94-4de4-b5f1-806dc8387623")
+	)
+	(text "pick better fet\nP channel MOSFET\n60v 15A\nlowest on resistance you can"
+		(exclude_from_sim no)
+		(at 195.58 46.99 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 25 18 1)
+			)
+		)
+		(uuid "ca017b7a-b4a8-4bdc-ad66-5924ab019518")
 	)
 	(junction
 		(at 173.99 187.96)
@@ -4608,7 +4630,7 @@
 			(justify left bottom)
 		)
 		(uuid "01b47387-dbe9-42a8-8f59-bcb06365bff5")
-		(property "Netclass" "iso_power"
+		(property "Net Class" "iso_power"
 			(at 309.8165 76.47 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4633,7 +4655,7 @@
 			(justify left bottom)
 		)
 		(uuid "1429e670-29af-44e5-860f-8e71b9401970")
-		(property "Netclass" "data"
+		(property "Net Class" "data"
 			(at 119.3165 61.23 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4658,7 +4680,7 @@
 			(justify left bottom)
 		)
 		(uuid "3a8bcfd1-e447-4e04-805e-5d7681c7dcf4")
-		(property "Netclass" "data"
+		(property "Net Class" "data"
 			(at 119.3165 145.05 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4683,7 +4705,7 @@
 			(justify left bottom)
 		)
 		(uuid "3dd958ef-732c-4b7b-bec6-5899fe4f0522")
-		(property "Netclass" "data"
+		(property "Net Class" "data"
 			(at 119.3165 103.14 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4708,7 +4730,7 @@
 			(justify left bottom)
 		)
 		(uuid "8660720c-3f5a-45fb-a6e2-9fbf43541fd3")
-		(property "Netclass" "iso_power"
+		(property "Net Class" "iso_power"
 			(at 288.2265 79.01 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4733,7 +4755,7 @@
 			(justify left bottom)
 		)
 		(uuid "9a7045c2-d632-4cda-8a7b-37e25f4ff725")
-		(property "Netclass" "data"
+		(property "Net Class" "data"
 			(at 119.3165 81.55 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4758,7 +4780,7 @@
 			(justify left bottom)
 		)
 		(uuid "cbcf13f5-f92e-4906-ba0d-77a1b0c465f6")
-		(property "Netclass" "data"
+		(property "Net Class" "data"
 			(at 119.3165 165.37 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4783,7 +4805,7 @@
 			(justify left bottom)
 		)
 		(uuid "cd4e43e9-cf63-402c-93c3-9d37eb6342ba")
-		(property "Netclass" "iso_power"
+		(property "Net Class" "iso_power"
 			(at 288.2265 76.47 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4808,7 +4830,7 @@
 			(justify left bottom)
 		)
 		(uuid "cde1d20f-97c5-4b17-b897-bf87de0961a7")
-		(property "Netclass" "data"
+		(property "Net Class" "data"
 			(at 119.3165 186.96 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4833,7 +4855,7 @@
 			(justify left bottom)
 		)
 		(uuid "eae64513-f160-40bc-b2e6-043c65c5d7e8")
-		(property "Netclass" "data"
+		(property "Net Class" "data"
 			(at 119.3165 123.46 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4858,7 +4880,7 @@
 			(justify left bottom)
 		)
 		(uuid "ed6b5e34-6f70-49d1-9e01-d0c79efe34e7")
-		(property "Netclass" "data"
+		(property "Net Class" "data"
 			(at 119.3165 207.28 0)
 			(show_name no)
 			(do_not_autoplace no)
