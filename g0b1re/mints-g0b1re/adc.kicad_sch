@@ -4272,7 +4272,7 @@
 			(justify left bottom)
 		)
 		(uuid "1084e841-3469-4b7a-9bba-099afb98e82d")
-		(property "Net Class" "gnd"
+		(property "Netclass" "gnd"
 			(at 255.2065 129.81 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4297,7 +4297,7 @@
 			(justify left bottom)
 		)
 		(uuid "41d36c36-71c8-4708-a670-f2f6cbfbebf3")
-		(property "Net Class" "analog"
+		(property "Netclass" "analog"
 			(at 192.9765 199.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4322,7 +4322,7 @@
 			(justify left bottom)
 		)
 		(uuid "4ee4813a-da5b-4930-b56d-56bac3e70528")
-		(property "Net Class" "analog"
+		(property "Netclass" "analog"
 			(at 194.2465 160.29 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4347,7 +4347,7 @@
 			(justify left bottom)
 		)
 		(uuid "510e10e7-262b-4fc1-bc4a-40b5c5ca4f16")
-		(property "Net Class" "analog"
+		(property "Netclass" "analog"
 			(at 274.2565 183.15 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4372,7 +4372,7 @@
 			(justify left bottom)
 		)
 		(uuid "53d63c20-6d2a-4b4e-a9b1-77fc83d4058a")
-		(property "Net Class" "power"
+		(property "Netclass" "power"
 			(at 255.2065 114.57 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4397,7 +4397,7 @@
 			(justify left bottom)
 		)
 		(uuid "55194a8a-754f-4a06-a58d-ce34ad355b69")
-		(property "Net Class" "analog"
+		(property "Netclass" "analog"
 			(at 192.9765 186.96 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4422,7 +4422,7 @@
 			(justify left bottom)
 		)
 		(uuid "57b28a1d-25ab-4a0f-b577-1fcaf4a358b2")
-		(property "Net Class" "analog"
+		(property "Netclass" "analog"
 			(at 194.2465 147.59 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4447,7 +4447,7 @@
 			(justify left bottom)
 		)
 		(uuid "6e5ed005-5867-4163-9108-a7748bdf4a1d")
-		(property "Net Class" "analog"
+		(property "Netclass" "analog"
 			(at 194.2465 81.55 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4472,7 +4472,7 @@
 			(justify left bottom)
 		)
 		(uuid "a34d2b88-9d5a-4b7a-a8d5-db5b2819e95f")
-		(property "Net Class" "analog"
+		(property "Netclass" "analog"
 			(at 194.2465 68.85 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4497,7 +4497,7 @@
 			(justify left bottom)
 		)
 		(uuid "bbd83f66-5f0a-42fe-9c88-162f8d3e942b")
-		(property "Net Class" "analog"
+		(property "Netclass" "analog"
 			(at 284.4165 185.69 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4522,7 +4522,7 @@
 			(justify left bottom)
 		)
 		(uuid "c55fc758-6ddb-4a71-8726-b6dcb3b9750c")
-		(property "Net Class" "analog"
+		(property "Netclass" "analog"
 			(at 194.2465 108.22 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4547,7 +4547,7 @@
 			(justify left bottom)
 		)
 		(uuid "f5646962-7561-49bd-a3dc-6253918f3190")
-		(property "Net Class" "analog"
+		(property "Netclass" "analog"
 			(at 194.2465 120.92 0)
 			(show_name no)
 			(do_not_autoplace no)

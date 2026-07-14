@@ -1112,18 +1112,18 @@
 		(effects
 			(font
 				(size 1.27 1.27)
-				(color 255 41 62 1)
+				(color 7 255 72 1)
 			)
 		)
 		(uuid "12182c43-00d6-4285-adfb-4e8bf0eb29b4")
 	)
 	(text "Rename CTRL to ~{I2C_RESET}"
 		(exclude_from_sim no)
-		(at 92.71 97.028 0)
+		(at 88.392 96.52 0)
 		(effects
 			(font
 				(size 1.27 1.27)
-				(color 255 20 25 1)
+				(color 7 255 72 1)
 			)
 		)
 		(uuid "3a4c54d1-84e6-4333-9745-427cffb7b218")
@@ -1199,6 +1199,12 @@
 		(uuid "644567ec-373d-4b32-bce9-c633ed732d34")
 	)
 	(junction
+		(at 124.46 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9863fd53-7c9a-4b36-a8dc-3a9f05f928f6")
+	)
+	(junction
 		(at 120.65 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1245,12 +1251,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e0325886-21b2-4d8a-840b-50e3d7797e09")
-	)
-	(junction
-		(at 124.46 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "eb661123-f161-474b-bc97-bfbf69c31376")
 	)
 	(junction
 		(at 162.56 64.77)
@@ -1344,6 +1344,16 @@
 	)
 	(wire
 		(pts
+			(xy 124.46 76.2) (xy 124.46 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b502112-8b06-4653-8fd6-8ea357d6de8d")
+	)
+	(wire
+		(pts
 			(xy 172.72 78.74) (xy 172.72 99.06)
 		)
 		(stroke
@@ -1354,7 +1364,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 83.82) (xy 127 83.82)
+			(xy 116.84 83.82) (xy 127 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1371,16 +1381,6 @@
 			(type default)
 		)
 		(uuid "1c8e59c1-7dff-446a-8fa8-139a6da47770")
-	)
-	(wire
-		(pts
-			(xy 116.84 83.82) (xy 124.46 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1cb62391-91c5-4250-a307-891a85d51e23")
 	)
 	(wire
 		(pts
@@ -1424,13 +1424,13 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 76.2) (xy 124.46 83.82)
+			(xy 124.46 86.36) (xy 127 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "39fc6b22-b941-4b92-bb36-629da19f75ff")
+		(uuid "3665fb7c-c1b4-4e52-87d8-a9700ed8a478")
 	)
 	(wire
 		(pts
@@ -1594,7 +1594,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 86.36) (xy 127 86.36)
+			(xy 114.3 86.36) (xy 124.46 86.36)
 		)
 		(stroke
 			(width 0)
@@ -2014,7 +2014,7 @@
 			)
 		)
 	)
-	(global_label "CTRL"
+	(global_label "I2C_RESET"
 		(shape input)
 		(at 114.3 96.52 180)
 		(fields_autoplaced yes)
@@ -2026,7 +2026,7 @@
 		)
 		(uuid "1f0104bf-aa12-43bc-89ca-2676b8e550ea")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 106.7791 96.52 0)
+			(at 101.5178 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2218,7 +2218,7 @@
 			(justify left bottom)
 		)
 		(uuid "05508228-226c-48d0-aaac-24e74a9d340d")
-		(property "Net Class" "config"
+		(property "Netclass" "config"
 			(at 119.3165 108.22 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2253,7 +2253,7 @@
 			(justify left bottom)
 		)
 		(uuid "44c8ad3b-0e38-4b29-a873-73685d4c8e51")
-		(property "Net Class" "config"
+		(property "Netclass" "config"
 			(at 119.3165 113.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2288,7 +2288,7 @@
 			(justify left bottom)
 		)
 		(uuid "55db3192-aff4-4667-ac67-7facec9f2a32")
-		(property "Net Class" "config"
+		(property "Netclass" "config"
 			(at 119.3165 110.76 0)
 			(show_name no)
 			(do_not_autoplace no)
