@@ -7,5 +7,5 @@ runner = 'probe-rs run --chip STM32G0B1RE'
 target = "thumbv6m-none-eabi"
 
 [env]
-DEFMT_LOG = "debug"
+DEFMT_LOG = "info"
 
