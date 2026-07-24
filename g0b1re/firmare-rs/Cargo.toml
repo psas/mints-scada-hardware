@@ -2,7 +2,7 @@
 
 [package]
 edition = "2024"
-name = "MinTS"
+name = "mints"
 version = "0.1.0"
 
 [dependencies]
@@ -15,6 +15,7 @@ embassy-futures = "0.1.2"
 embassy-stm32 = { version = "0.6.0", features = ["defmt", "memory-x", "stm32g0b1re", "time-driver-tim1", "exti", "unstable-pac"] }
 embassy-sync = "0.8.0"
 embassy-time = { version = "0.5.1", features = ["defmt", "defmt-timestamp-uptime", "tick-hz-32_768"] }
+embedded-can = "0.4.1"
 panic-halt = "1.0.0"
 panic-probe = { version = "1.0.0", features = ["print-defmt"] }
 
