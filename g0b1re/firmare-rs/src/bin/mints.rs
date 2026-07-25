@@ -1,15 +1,26 @@
+/*
+* Main entrypoint
+* Sets up the clock, spawns tasks, and handles general business logic
+*/
+
 #![no_std]
 #![no_main]
+
+use core::future;
 
 use defmt::*;
 use embassy_executor::Spawner;
 use mints::can::handle_can;
 use {defmt_rtt as _, panic_probe as _};
 
+// TODO: Error handling. Grep for 'panic', 'unwrap' and fix
 #[embassy_executor::main]
 async fn main(spawner: Spawner) {
-    info!("PSAS Minimal Test Stand Firmware");
-    info!("Configuring");
+    info!(
+        "PSAS Minimal Test Stand Firmware v{}",
+        env!("CARGO_PKG_VERSION")
+    );
+    info!("Configuring clock...");
     let mut config = embassy_stm32::Config::default();
     {
         use embassy_stm32::rcc::*;
@@ -28,6 +39,10 @@ async fn main(spawner: Spawner) {
 
     let p = embassy_stm32::init(config);
 
-    info!("Spawning tasks");
-    spawner.spawn(handle_can(p.FDCAN1, p.PA11, p.PA12).unwrap());
+    // TODO: Set node_id by reading gpios
+    info!("Spawning tasks...");
+    spawner.spawn(handle_can(p.FDCAN1, p.PA11, p.PA12, 0x01).unwrap());
+
+    info!("Entering main loop");
+    future::pending::<()>().await;
 }
