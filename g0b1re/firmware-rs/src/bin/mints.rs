@@ -10,7 +10,13 @@ use core::future;
 
 use defmt::*;
 use embassy_executor::Spawner;
-use mints::can::handle_can;
+use embassy_stm32::{
+    Peri,
+    gpio::{Level, Output, Speed},
+    peripherals::PA5,
+};
+use embassy_time::{Duration, Ticker};
+use mints::can::{CAN_CMD_DISPATCH_CHANNEL, handle_can};
 use {defmt_rtt as _, panic_probe as _};
 
 // TODO: Error handling. Grep for 'panic', 'unwrap' and fix
@@ -41,8 +47,24 @@ async fn main(spawner: Spawner) {
 
     // TODO: Set node_id by reading gpios
     info!("Spawning tasks...");
-    spawner.spawn(handle_can(p.FDCAN1, p.PA11, p.PA12, 0x01).unwrap());
+    spawner.spawn(unwrap!(blink_led(p.PA5)));
+    spawner.spawn(unwrap!(handle_can(p.FDCAN1, p.PA11, p.PA12, 0x01)));
 
+    let can_cmd_receiver = CAN_CMD_DISPATCH_CHANNEL.receiver();
     info!("Entering main loop");
-    future::pending::<()>().await;
+    loop {
+        let incoming_cmd = can_cmd_receiver.receive().await;
+        info!("Received cmd: {}", incoming_cmd);
+    }
+}
+
+#[embassy_executor::task]
+async fn blink_led(led: Peri<'static, PA5>) {
+    let mut led = Output::new(led, Level::High, Speed::Low);
+    let mut ticker = Ticker::every(Duration::from_millis(300));
+
+    loop {
+        led.toggle();
+        ticker.next().await;
+    }
 }
