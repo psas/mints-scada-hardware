@@ -1665,6 +1665,447 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "FTSH-107-01-X-DV-K:FTSH-107-01-X-DV-K"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at -7.62 11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "FTSH-107-01-X-DV-K"
+				(at -7.62 -11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "FTSH-107-01-X-DV-K:SAMTEC_FTSH-107-01-X-DV-K"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Connector Header Surface Mount 14 position 0.050 (1.27mm)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "DigiKey_Part_Number" "612-FTSH-107-01-F-DV-K-ND"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "SnapEDA_Link" "https://www.snapeda.com/parts/FTSH-107-01-F-DV-K/Samtec+Inc./view-part/?ref=snap"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Package" "None"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Check_prices" "https://www.snapeda.com/parts/FTSH-107-01-F-DV-K/Samtec+Inc./view-part/?ref=eda"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "PARTREV" "H"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MF" "Samtec"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MP" "FTSH-107-01-F-DV-K"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MANUFACTURER" "Samtec"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(symbol "FTSH-107-01-X-DV-K_0_0"
+				(rectangle
+					(start -7.62 -10.16)
+					(end 7.62 10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -12.7 7.62 0)
+					(length 5.08)
+					(name "01"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "01"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 7.62 180)
+					(length 5.08)
+					(name "02"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "02"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 5.08 0)
+					(length 5.08)
+					(name "03"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "03"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 5.08 180)
+					(length 5.08)
+					(name "04"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "04"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 2.54 0)
+					(length 5.08)
+					(name "05"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "05"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 2.54 180)
+					(length 5.08)
+					(name "06"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "06"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 0 0)
+					(length 5.08)
+					(name "07"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "07"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 0 180)
+					(length 5.08)
+					(name "08"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "08"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 -2.54 0)
+					(length 5.08)
+					(name "09"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "09"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 -2.54 180)
+					(length 5.08)
+					(name "10"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 -5.08 0)
+					(length 5.08)
+					(name "11"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 -5.08 180)
+					(length 5.08)
+					(name "12"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 -7.62 0)
+					(length 5.08)
+					(name "13"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 -7.62 180)
+					(length 5.08)
+					(name "14"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "MCU_ST_STM32G0:STM32G0B1RETx"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -4843,7 +5284,7 @@
 	)
 	(text "Add header for STLINK V3 Mini"
 		(exclude_from_sim no)
-		(at 49.784 103.378 0)
+		(at 38.1 127 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4884,7 +5325,7 @@
 	)
 	(text "One TP to usb+, one to usb-, and one to gnd"
 		(exclude_from_sim no)
-		(at 53.34 128.27 0)
+		(at 37.084 139.954 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4936,7 +5377,7 @@
 	)
 	(text "Route USB D+,D-,Gnd to test point"
 		(exclude_from_sim no)
-		(at 50.546 125.476 0)
+		(at 34.29 137.16 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4968,7 +5409,7 @@
 	)
 	(text "Rename cas CANRX and CANTX"
 		(exclude_from_sim no)
-		(at 53.086 135.89 0)
+		(at 35.56 144.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5032,7 +5473,7 @@
 	)
 	(text "Select correct pin names on STM footprint\n(right click on pin -> choose pin function)"
 		(exclude_from_sim no)
-		(at 51.054 145.542 0)
+		(at 35.56 151.13 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5133,7 +5574,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
-				(color 255 0 24 1)
+				(color 7 255 72 1)
 			)
 		)
 		(uuid "ae6b056f-99b8-4542-ac3f-e49635e0ba27")
@@ -5151,7 +5592,7 @@
 	)
 	(text "add SWDCLK, SWDIO, GND, 3.3v to test header"
 		(exclude_from_sim no)
-		(at 50.8 110.49 0)
+		(at 36.83 132.08 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5270,7 +5711,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
-				(color 255 26 24 1)
+				(color 7 255 72 1)
 			)
 		)
 		(uuid "da341440-dea8-429f-9fe1-fdb254d41cf6")
@@ -5569,6 +6010,10 @@
 		(uuid "92a48412-31b8-4d3a-8ae2-6ac850b846b9")
 	)
 	(no_connect
+		(at 330.2 184.15)
+		(uuid "977ee0fa-8654-443c-afd2-e24452b5589a")
+	)
+	(no_connect
 		(at 135.89 167.64)
 		(uuid "997b1aab-4c31-4cbe-8a65-f57e8181d90d")
 	)
@@ -5853,6 +6298,16 @@
 			(type default)
 		)
 		(uuid "2eea77d1-5e2e-4c3a-a4cd-cc3e1fdd6137")
+	)
+	(wire
+		(pts
+			(xy 330.2 179.07) (xy 326.39 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f837138-692b-43e9-b192-582b8cbc874d")
 	)
 	(wire
 		(pts
@@ -6476,6 +6931,16 @@
 	)
 	(wire
 		(pts
+			(xy 326.39 179.07) (xy 326.39 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c082a28d-a4f8-4160-a5f6-1281055a9049")
+	)
+	(wire
+		(pts
 			(xy 110.49 77.47) (xy 110.49 78.74)
 		)
 		(stroke
@@ -6526,7 +6991,7 @@
 	)
 	(wire
 		(pts
-			(xy 360.68 196.85) (xy 360.68 200.66)
+			(xy 360.68 196.85) (xy 360.68 201.93)
 		)
 		(stroke
 			(width 0)
@@ -12845,7 +13310,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 24.13 113.03 0)
+		(at 25.4 160.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12856,7 +13321,7 @@
 		(fields_autoplaced yes)
 		(uuid "c874d83c-77bd-4f14-b719-73a2690c4e8f")
 		(property "Reference" "J2"
-			(at 26.67 113.0299 0)
+			(at 27.94 160.0199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12867,7 +13332,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04"
-			(at 26.67 115.5699 0)
+			(at 27.94 162.5599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12878,7 +13343,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 24.13 113.03 0)
+			(at 25.4 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12889,7 +13354,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 24.13 113.03 0)
+			(at 25.4 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12900,7 +13365,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 24.13 113.03 0)
+			(at 25.4 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13004,6 +13469,84 @@
 			(project "mints-g0b1re"
 				(path "/363c6546-315b-48da-9312-6a55f2557799"
 					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 326.39 181.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cdb0ca15-0c6a-4b75-81e6-727627167a95")
+		(property "Reference" "#PWR052"
+			(at 326.39 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 326.39 186.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 326.39 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 326.39 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bfd4f583-cbe4-49fd-a408-36e90bc4266f")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799"
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -13259,7 +13802,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 360.68 200.66 0)
+		(at 360.68 201.93 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13270,7 +13813,7 @@
 		(fields_autoplaced yes)
 		(uuid "d7627454-441e-419a-a972-dbbb70a4d4f8")
 		(property "Reference" "#PWR050"
-			(at 360.68 207.01 0)
+			(at 360.68 208.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13281,7 +13824,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 360.68 205.74 0)
+			(at 360.68 207.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13291,7 +13834,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 360.68 200.66 0)
+			(at 360.68 201.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13302,7 +13845,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 360.68 200.66 0)
+			(at 360.68 201.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13313,7 +13856,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 360.68 200.66 0)
+			(at 360.68 201.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13421,6 +13964,232 @@
 			(project "mints-g0b1re"
 				(path "/363c6546-315b-48da-9312-6a55f2557799"
 					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FTSH-107-01-X-DV-K:FTSH-107-01-X-DV-K")
+		(at 36.83 110.49 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dca77bcf-ead7-438c-9d49-3a514cdd2429")
+		(property "Reference" "J6"
+			(at 36.83 95.25 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FTSH-107-01-X-DV-K"
+			(at 36.83 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "FTSH-107-01-X-DV-K:SAMTEC_FTSH-107-01-X-DV-K"
+			(at 36.83 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Datasheet" ""
+			(at 36.83 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Connector Header Surface Mount 14 position 0.050 (1.27mm)"
+			(at 36.83 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "DigiKey_Part_Number" "612-FTSH-107-01-F-DV-K-ND"
+			(at 36.83 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/FTSH-107-01-F-DV-K/Samtec+Inc./view-part/?ref=snap"
+			(at 36.83 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Package" "None"
+			(at 36.83 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/FTSH-107-01-F-DV-K/Samtec+Inc./view-part/?ref=eda"
+			(at 36.83 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 36.83 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "PARTREV" "H"
+			(at 36.83 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MF" "Samtec"
+			(at 36.83 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MP" "FTSH-107-01-F-DV-K"
+			(at 36.83 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MANUFACTURER" "Samtec"
+			(at 36.83 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(pin "12"
+			(uuid "378c70ff-7db2-438d-a0d1-82c7976b158e")
+		)
+		(pin "10"
+			(uuid "f02c37ef-26ba-41d6-a95d-cb6fd497d73f")
+		)
+		(pin "07"
+			(uuid "359b81b4-7221-4045-988e-343f0edbdf02")
+		)
+		(pin "06"
+			(uuid "277c6650-efaa-4949-8c47-43adc89decec")
+		)
+		(pin "05"
+			(uuid "a11fd900-dbbf-4bac-a5ae-35176d0d2f51")
+		)
+		(pin "04"
+			(uuid "2027ad54-d9b3-4eac-9750-20d9a5419ff9")
+		)
+		(pin "03"
+			(uuid "7f85a81c-4f00-4bf3-961b-c734943c4ba3")
+		)
+		(pin "02"
+			(uuid "89377265-3160-4f00-b504-b792bcdd2603")
+		)
+		(pin "09"
+			(uuid "76333274-c5fc-4744-a705-71fd2a7a0c54")
+		)
+		(pin "14"
+			(uuid "1339449d-664f-4bd1-8cc7-62ca29786e40")
+		)
+		(pin "11"
+			(uuid "819eac65-d17f-4dc0-80de-b4640ea45dd5")
+		)
+		(pin "01"
+			(uuid "81fb8cec-3cc9-43f2-b6f7-b9bbded7b3ce")
+		)
+		(pin "13"
+			(uuid "ee6be6cf-0c01-4191-8acd-9cff2e8c6b22")
+		)
+		(pin "08"
+			(uuid "912b59a5-0b7f-4b41-b0ee-1c1876291b91")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799"
+					(reference "J6")
 					(unit 1)
 				)
 			)
