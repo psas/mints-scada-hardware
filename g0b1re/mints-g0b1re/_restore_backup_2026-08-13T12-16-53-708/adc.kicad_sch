@@ -4787,7 +4787,7 @@
 				)
 			)
 		)
-		(property "Footprint" "oresat-misc:TestPoint-0.75mm-th"
+		(property "Footprint" ""
 			(at 287.02 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -11485,7 +11485,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LM4040CIM3:DBZ3"
+		(property "Footprint" ""
 			(at 336.296 193.548 0)
 			(hide yes)
 			(show_name no)

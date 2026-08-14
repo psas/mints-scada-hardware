@@ -5948,7 +5948,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SQM120P06-07L_GE3:TO-263_SQM120P06-07L_GE3_VIS"
+		(property "Footprint" ""
 			(at 209.55 161.29 0)
 			(hide yes)
 			(show_name no)
@@ -6169,7 +6169,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SQM120P06-07L_GE3:TO-263_SQM120P06-07L_GE3_VIS"
+		(property "Footprint" ""
 			(at 209.55 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -6476,7 +6476,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SQM120P06-07L_GE3:TO-263_SQM120P06-07L_GE3_VIS"
+		(property "Footprint" ""
 			(at 209.55 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -7804,7 +7804,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SQM120P06-07L_GE3:TO-263_SQM120P06-07L_GE3_VIS"
+		(property "Footprint" ""
 			(at 167.64 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -8664,7 +8664,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SQM120P06-07L_GE3:TO-263_SQM120P06-07L_GE3_VIS"
+		(property "Footprint" ""
 			(at 166.37 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -8751,7 +8751,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SQM120P06-07L_GE3:TO-263_SQM120P06-07L_GE3_VIS"
+		(property "Footprint" ""
 			(at 166.37 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -10288,7 +10288,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SQM120P06-07L_GE3:TO-263_SQM120P06-07L_GE3_VIS"
+		(property "Footprint" ""
 			(at 166.37 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -10450,7 +10450,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" ""
 			(at 312.42 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -14429,7 +14429,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SQM120P06-07L_GE3:TO-263_SQM120P06-07L_GE3_VIS"
+		(property "Footprint" ""
 			(at 209.55 203.2 0)
 			(hide yes)
 			(show_name no)
