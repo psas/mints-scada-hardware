@@ -16,7 +16,10 @@ use embassy_stm32::{
     peripherals::PA5,
 };
 use embassy_time::{Duration, Ticker};
-use mints::can::{CAN_CMD_DISPATCH_CHANNEL, handle_can};
+use mints::{
+    can::{get_can_reader_and_writer, handle_can_rx, handle_can_tx},
+    cmd::handle_cmds,
+};
 use {defmt_rtt as _, panic_probe as _};
 
 // TODO: Error handling. Grep for 'panic', 'unwrap' and fix
@@ -45,17 +48,20 @@ async fn main(spawner: Spawner) {
 
     let p = embassy_stm32::init(config);
 
-    // TODO: Set node_id by reading gpios
-    info!("Spawning tasks...");
-    spawner.spawn(unwrap!(blink_led(p.PA5)));
-    spawner.spawn(unwrap!(handle_can(p.FDCAN1, p.PA11, p.PA12, 0x01)));
+    let (can_reader, can_writer) = get_can_reader_and_writer(p.FDCAN1, p.PA11, p.PA12);
 
-    let can_cmd_receiver = CAN_CMD_DISPATCH_CHANNEL.receiver();
-    info!("Entering main loop");
-    loop {
-        let incoming_cmd = can_cmd_receiver.receive().await;
-        info!("Received cmd: {}", incoming_cmd);
-    }
+    // TODO: Set node_id by reading gpios
+    let node_id: u8 = 0x01;
+    info!("Spawning tasks");
+    spawner.spawn(unwrap!(blink_led(p.PA5)));
+    spawner.spawn(unwrap!(handle_can_rx(can_reader, node_id)));
+    spawner.spawn(unwrap!(handle_can_tx(can_writer, node_id)));
+    spawner.spawn(unwrap!(handle_cmds()));
+
+    // TODO: Emergency shutdown routine, main loop Watch? Signal?
+
+    // Keep main alive indefinitely
+    future::pending::<()>().await;
 }
 
 #[embassy_executor::task]

@@ -20,6 +20,7 @@ panic-halt = "1.0.0"
 panic-probe = { version = "1.0.0", features = ["print-defmt"] }
 static_cell = "2.1.1"
 portable-atomic = { version = "1.13", features = ["unsafe-assume-single-core"] }
+heapless = { version = "0.9.3", features = ["defmt", "portable-atomic-unsafe-assume-single-core"] }
 
 [profile.release]
 debug = 2
