@@ -4,6 +4,12 @@
 	(generator_version "10.0")
 	(uuid "97590f93-9804-4238-af9f-25eb8835d408")
 	(paper "USLedger")
+	(title_block
+		(title "minTS SCADA Board")
+		(date "2026-08-31")
+		(rev "2.0")
+		(company "Portland State Aerospace Society")
+	)
 	(lib_symbols
 		(symbol "2026-07-27_21-07-26:SQM120P06-07L_GE3"
 			(pin_names
@@ -2092,6 +2098,16 @@
 		)
 		(uuid "582b4e9b-c78e-4229-b856-20d4a1254b44")
 	)
+	(text "Outputs are electrically isolated"
+		(exclude_from_sim no)
+		(at 286.004 172.974 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ac06e41f-3edf-4934-82b6-15c806d9da83")
+	)
 	(text "5x20 mm 15A glass slowblow fuse"
 		(exclude_from_sim no)
 		(at 287.02 60.96 0)
@@ -2102,34 +2118,33 @@
 		)
 		(uuid "b8e03339-bb94-4de4-b5f1-806dc8387623")
 	)
-	(text "pick better fet\nP channel MOSFET\n60v 15A\nlowest on resistance you can"
+	(text "Would be nice to use KiCad MOSFET Symbol\nBE CAREFUL OF GDS CONNECTIONS "
 		(exclude_from_sim no)
-		(at 199.39 45.72 0)
+		(at 173.482 36.83 0)
 		(effects
 			(font
 				(size 1.27 1.27)
-				(color 7 255 72 1)
+				(color 255 0 0 1)
 			)
 		)
-		(uuid "ca017b7a-b4a8-4bdc-ad66-5924ab019518")
+		(uuid "cf15d91c-dbf3-4159-8fe5-8c364a2d5119")
 	)
-	(junction
-		(at 173.99 104.14)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0893e694-05b2-4f46-81dd-54f7dcb4cc43")
+	(text "Output Current Limit\nEach:\n	Max 2.8A continous @ 15C board above ambient\n	Max 6A peak inrush\nCombined\n	Max 13A continous @ 15C board above ambient"
+		(exclude_from_sim no)
+		(at 270.764 184.404 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e0f78004-6dcf-41c0-92a8-449393bba097")
 	)
 	(junction
 		(at 217.17 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0b3210d5-ca86-4191-9db2-468dffec069c")
-	)
-	(junction
-		(at 217.17 166.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "13a251c6-635b-4ed6-9490-ad89a8396798")
 	)
 	(junction
 		(at 125.73 109.22)
@@ -2210,12 +2225,6 @@
 		(uuid "5574bba3-356f-49f6-8da0-e9878d3e8dc8")
 	)
 	(junction
-		(at 217.17 124.46)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5a154ae4-14c2-4da0-890e-7aa3812d76de")
-	)
-	(junction
 		(at 204.47 161.29)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2258,12 +2267,6 @@
 		(uuid "71d65651-9298-4c8a-9c61-86ac5fa8f45a")
 	)
 	(junction
-		(at 217.17 208.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "72ab0db2-bb2c-442d-b8a3-a16a1167bcc0")
-	)
-	(junction
 		(at 173.99 91.44)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2304,12 +2307,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a7333a8d-6850-4774-a2fe-931702f200b3")
-	)
-	(junction
-		(at 217.17 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a83dcb0e-9f2b-4576-8d65-d081e7b0c842")
 	)
 	(junction
 		(at 161.29 55.88)
@@ -2384,22 +2381,10 @@
 		(uuid "e6f2dd7d-6c2d-4caf-8b5b-4ee9e33eb76f")
 	)
 	(junction
-		(at 173.99 187.96)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f38830bc-b651-4bcb-bcd9-e24bb7f67afa")
-	)
-	(junction
 		(at 290.83 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f8ad9295-0f7c-403e-882d-dbe681c92f8a")
-	)
-	(junction
-		(at 173.99 146.05)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ffa2b949-f4b3-4f0e-9e0d-5da1bda9c415")
 	)
 	(no_connect
 		(at 290.83 58.42)
@@ -5072,6 +5057,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "F202")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5204,6 +5197,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "U205")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5338,6 +5339,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D207")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5416,6 +5425,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR029")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5558,6 +5575,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN203")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5700,6 +5725,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN202")
 					(unit 3)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5832,6 +5865,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "U204")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5910,6 +5951,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR025")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5997,6 +6046,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "Q5")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6131,6 +6188,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D208")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6218,6 +6283,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "Q8")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6360,6 +6433,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN203")
 					(unit 2)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6438,6 +6519,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR037")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6525,6 +6614,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "Q2")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6603,6 +6700,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR034")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6728,6 +6833,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "R210")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6870,6 +6983,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN204")
 					(unit 3)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6948,6 +7069,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR023")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -7073,6 +7202,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "R207")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -7215,6 +7352,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN203")
 					(unit 4)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -7340,6 +7485,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "R202")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -7482,6 +7635,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN204")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -7624,6 +7785,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN203")
 					(unit 3)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -7766,6 +7935,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN201")
 					(unit 3)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -7853,6 +8030,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "Q1")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -7978,6 +8163,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "R209")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -8103,6 +8296,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "R205")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -8235,6 +8436,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "U207")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -8360,6 +8569,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "R203")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -8492,6 +8709,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "U206")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -8626,6 +8851,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D212")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -8713,6 +8946,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "Q6")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -8800,6 +9041,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "Q3")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -8932,6 +9181,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "U201")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -9074,6 +9331,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN202")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -9206,6 +9471,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "U208")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -9348,6 +9621,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN202")
 					(unit 2)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -9427,6 +9708,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR048")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -9505,6 +9794,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR0227")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -9630,6 +9927,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "R204")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -9708,6 +10013,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR033")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -9786,6 +10099,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR035")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -9920,6 +10241,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D211")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -10046,6 +10375,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D215")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -10124,6 +10461,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR039")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -10250,6 +10595,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D202")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -10337,6 +10690,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "Q4")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -10415,6 +10776,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR036")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -10494,6 +10863,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D1")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -10628,6 +11005,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D205")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -10760,6 +11145,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "U202")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -10838,6 +11231,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR038")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -10963,6 +11364,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D204")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -11041,6 +11450,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR028")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -11164,6 +11581,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "F201")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -11242,6 +11667,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR024")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -11368,6 +11801,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D214")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -11494,6 +11935,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D201")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -11636,6 +12085,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN201")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -11714,6 +12171,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR027")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -11856,6 +12321,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN202")
 					(unit 4)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -11934,6 +12407,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR032")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -12012,6 +12493,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR0101")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -12137,6 +12626,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "R208")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -12271,6 +12768,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D217")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -12349,6 +12854,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR031")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -12483,6 +12996,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D209")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -12625,6 +13146,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN201")
 					(unit 2)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -12751,6 +13280,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D203")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -12883,6 +13420,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "U203")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -13009,6 +13554,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D213")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -13134,6 +13687,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "R201")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -13276,6 +13837,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN204")
 					(unit 4)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -13354,6 +13923,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR040")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -13479,6 +14056,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "R206")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -13621,6 +14206,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN201")
 					(unit 4)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -13755,6 +14348,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D210")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -13889,6 +14490,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D206")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -14031,6 +14640,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "RN204")
 					(unit 2)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -14109,6 +14726,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR030")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -14235,6 +14860,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D216")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -14313,6 +14946,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR041")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -14391,6 +15032,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR026")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -14478,6 +15127,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "Q7")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "I2C")
+						(dnp yes)
+					)
 				)
 			)
 		)

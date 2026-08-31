@@ -240,7 +240,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "1.4"
+      "sch_revision": "2.0"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -526,6 +526,7 @@
       "netlist": "",
       "plot": "",
       "specctra_dsn": "",
+      "step": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -774,8 +775,21 @@
         "uuid": "363c6546-315b-48da-9312-6a55f2557799"
       }
     ],
-    "used_designators": "H1-4,C1-4,C15-20,D1,D217,#PWR8,#PWR48-55,#PWR228,R1-2,R20-28,R30-31,R209-210,TP1-2,U2-3,U6,Q1-8,J2,J4-7,#GND1",
-    "variants": []
+    "used_designators": "H1-4,C1-4,C15-20,D1,D217,#PWR8,#PWR48-56,#PWR228,R1-2,R20-28,R30-31,R209-210,TP1-2,U2-3,U6,Q1-8,J2,J4-7,#GND1",
+    "variants": [
+      {
+        "description": "minTS SCADA board with ADC populated",
+        "name": "ADC"
+      },
+      {
+        "description": "miNTS SCADA with I2C interface",
+        "name": "I2C"
+      },
+      {
+        "description": "minTS SCADA with Outputs",
+        "name": "Outputs"
+      }
+    ]
   },
   "sheets": [
     [

@@ -87,6 +87,20 @@
 			(outputdirectory "")
 		)
 	)
+	(variants
+		(variant
+			(name "ADC")
+			(description "minTS SCADA board with ADC populated")
+		)
+		(variant
+			(name "I2C")
+			(description "miNTS SCADA with I2C interface")
+		)
+		(variant
+			(name "Outputs")
+			(description "minTS SCADA with Outputs")
+		)
+	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "00126b2b-b4c6-4163-8c44-c8921c3afb80")
@@ -563,6 +577,14 @@
 			(pinfunction "A_2")
 			(pintype "passive")
 			(uuid "8c7403bd-b37f-48bb-b8b1-11946261ee1a")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMB.step"
@@ -1367,6 +1389,14 @@
 			(pintype "passive")
 			(uuid "7e0c3388-214b-4da4-a420-bb83fc73c429")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step"
 			(offset
@@ -1800,6 +1830,14 @@
 			(pintype "passive")
 			(uuid "1737d243-6593-4dda-b151-29e4503ad8b4")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step"
 			(offset
@@ -2105,6 +2143,14 @@
 			(pintype "passive")
 			(uuid "2dee4ca8-3afd-46e2-ab0f-5dfbfd9864e6")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
@@ -2251,6 +2297,14 @@
 			(net "Net-(U3-Agnd)")
 			(pintype "passive")
 			(uuid "f7366daf-6c66-42e8-928f-47b71201b898")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
@@ -2410,6 +2464,14 @@
 			(pintype "passive")
 			(uuid "e2bd7121-903d-456f-8a41-00fc30418aac")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -2567,6 +2629,14 @@
 			(net "OUT1{slash}IN0-")
 			(pintype "passive")
 			(uuid "cf9548c4-92cb-4539-97db-288144f0e460")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -2841,6 +2911,14 @@
 			(pinfunction "A_2")
 			(pintype "passive")
 			(uuid "eff36c5e-8477-44b1-8912-4c864f71770b")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step"
@@ -3570,6 +3648,14 @@
 			(pintype "passive")
 			(uuid "7da5fe30-b8e0-49c7-9600-c03b89ea6ce6")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -3727,6 +3813,14 @@
 			(net "I2C_SCL")
 			(pintype "passive")
 			(uuid "52e8b2bf-4c5b-425e-8a22-c5c01af5f920")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -3937,6 +4031,14 @@
 			(net "OUT3{slash}IN1-")
 			(pintype "passive")
 			(uuid "a23d52fe-2900-4f87-91d8-3174bff01424")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -4212,6 +4314,14 @@
 			(pintype "passive")
 			(uuid "9f2317cf-cd9b-4aec-a649-9eb33a71a3d0")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step"
 			(offset
@@ -4421,6 +4531,14 @@
 			(net "OUT4{slash}IN2+")
 			(pintype "passive")
 			(uuid "f479a807-97eb-4f3a-bf51-4ab525977767")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -4754,6 +4872,14 @@
 			(pintype "passive")
 			(uuid "43e245ca-4774-475f-b792-0065c42eee74")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMB.step"
 			(offset
@@ -4938,6 +5064,14 @@
 			(pintype "passive")
 			(uuid "a4dc1aaa-3518-4ded-aec8-311f9fc96708")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -5095,6 +5229,14 @@
 			(net "OUT6{slash}IN3+")
 			(pintype "passive")
 			(uuid "8d0b3de8-748e-4603-9f73-db597740947f")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -5433,6 +5575,14 @@
 			(pintype "passive")
 			(uuid "3d1e5cee-9af7-459a-a9d9-f2059de0c3f7")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SO-4_4.4x3.6mm_P2.54mm.step"
 			(offset
@@ -5590,6 +5740,14 @@
 			(net "Net-(U4-A1)")
 			(pintype "passive")
 			(uuid "1617dc11-4fe0-4fce-a133-35a6b736b406")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -5801,6 +5959,14 @@
 			(pintype "passive")
 			(uuid "b4946fa3-ea75-43a0-b64c-dfdefb8a2676")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -6009,6 +6175,14 @@
 			(pinfunction "A_2")
 			(pintype "passive")
 			(uuid "ba4f495c-27a5-4c36-bf23-b4f6f1474ec8")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step"
@@ -6326,6 +6500,14 @@
 			(pintype "passive")
 			(uuid "73a89824-d804-4277-80cf-e5e4e97c16e3")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
 			(offset
@@ -6484,6 +6666,10 @@
 			(pintype "passive")
 			(uuid "70a18f0c-7280-4cb5-ab14-951ba547d01e")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -6641,6 +6827,14 @@
 			(net "Net-(U4-SC2)")
 			(pintype "passive")
 			(uuid "70161ace-f27c-407f-9379-030163dc6d30")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -6851,6 +7045,14 @@
 			(net "GND")
 			(pintype "passive")
 			(uuid "b2cdb23f-95d5-4c49-8e98-f88f72ae7e3a")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
@@ -7189,6 +7391,14 @@
 			(pintype "passive")
 			(uuid "4c3dc6aa-9e95-407c-b7c9-987ef313e821")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SO-4_4.4x3.6mm_P2.54mm.step"
 			(offset
@@ -7346,6 +7556,14 @@
 			(net "OUT4{slash}IN2+")
 			(pintype "passive")
 			(uuid "302a34d4-6d9c-4e7d-b628-bf6eaa6ad174")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -7530,6 +7748,14 @@
 			(net "IN3-")
 			(pintype "passive")
 			(uuid "e1dff969-4035-45e0-8585-1b8e7f1f89a3")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -7958,7 +8184,7 @@
 			(at -2.54 -2.032 180)
 			(size 0.7366 2.794)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "SWDIO")
+			(net "/SWDIO")
 			(pinfunction "04_04")
 			(pintype "passive")
 			(solder_mask_margin 0.102)
@@ -7978,7 +8204,7 @@
 			(at -1.27 -2.032 180)
 			(size 0.7366 2.794)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "SWCLK")
+			(net "/SWCLK")
 			(pinfunction "06_06")
 			(pintype "passive")
 			(solder_mask_margin 0.102)
@@ -8038,7 +8264,7 @@
 			(at 2.54 -2.032 180)
 			(size 0.7366 2.794)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "NRST")
+			(net "/NRST")
 			(pinfunction "12_12")
 			(pintype "passive")
 			(solder_mask_margin 0.102)
@@ -8048,7 +8274,7 @@
 			(at 3.81 2.032 180)
 			(size 0.7366 2.794)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "VCP_RX")
+			(net "/VCP_RX")
 			(pinfunction "13_13")
 			(pintype "passive")
 			(solder_mask_margin 0.102)
@@ -8058,7 +8284,7 @@
 			(at 3.81 -2.032 180)
 			(size 0.7366 2.794)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "VCP_TX")
+			(net "/VCP_TX")
 			(pinfunction "14_14")
 			(pintype "passive")
 			(solder_mask_margin 0.102)
@@ -8210,6 +8436,14 @@
 			(net "Net-(U3-REFIN+)")
 			(pintype "passive")
 			(uuid "00767d61-a804-41bc-af88-16196132c2f4")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -8394,6 +8628,14 @@
 			(net "IN3-")
 			(pintype "passive")
 			(uuid "0bcbf439-486b-46e4-88cc-46e9da45e6e0")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -8946,6 +9188,14 @@
 			(pintype "unspecified")
 			(uuid "1f863bcc-4abd-429a-ae7e-d9df8614ea74")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 	)
 	(footprint "Package_SO:SO-4_4.4x3.6mm_P2.54mm"
@@ -9271,6 +9521,14 @@
 			(net "/outputs/~{ISO_OUT_6}")
 			(pintype "passive")
 			(uuid "e8e20885-b722-4d0d-b625-334ad1c9ae0c")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SO-4_4.4x3.6mm_P2.54mm.step"
@@ -9817,6 +10075,10 @@
 			(net "Net-(C8-Pad1)")
 			(pintype "passive")
 			(uuid "70460556-ab85-4dec-847a-8d4709a13337")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -10369,6 +10631,14 @@
 			(pintype "unspecified")
 			(uuid "ecae25b1-d18a-47b0-a369-537920b21ac9")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 	)
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
@@ -10583,7 +10853,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "GND")
+			(net "Net-(J4-Pin_1)")
 			(pinfunction "Pin_1_1")
 			(pintype "passive")
 			(uuid "d37e7d51-8065-4c26-86ec-629dd98e9f8b")
@@ -10594,7 +10864,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "GND")
+			(net "CAN+")
 			(pinfunction "Pin_2_2")
 			(pintype "passive")
 			(uuid "bd4d3c3b-29f7-4b47-98aa-5bec00ecece4")
@@ -10605,7 +10875,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(J4-Pin_3)")
+			(net "CAN-")
 			(pinfunction "Pin_3_3")
 			(pintype "passive")
 			(uuid "6dfcfd29-0868-4759-9a0a-97eddef5f559")
@@ -10616,7 +10886,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(J4-Pin_3)")
+			(net "GND")
 			(pinfunction "Pin_4_4")
 			(pintype "passive")
 			(uuid "3dc7154a-a35e-4056-b471-a00969bad68a")
@@ -10857,7 +11127,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP* SOIC* R*Array*Concave* R*Array*Convex* MSOP*")
-		(path "/7b4754de-beb0-417a-824f-a2d391f032ba/ef39e64a-fc5d-4637-84e2-636e0553b602")
+		(path "/7b4754de-beb0-417a-824f-a2d391f032ba/cdd1b17a-0dd9-438a-aef3-1240f70b0fcb")
 		(sheetname "/outputs/")
 		(sheetfile "outputs.kicad_sch")
 		(units
@@ -11063,6 +11333,14 @@
 			(pintype "passive")
 			(uuid "c9a2af74-9b1e-4a5e-95f7-8340286f14bd")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_Array_Convex_4x0603.step"
 			(offset
@@ -11220,6 +11498,14 @@
 			(net "I2C_SDA")
 			(pintype "passive")
 			(uuid "911923e5-427f-42ba-9a23-a4357581756f")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -11553,6 +11839,14 @@
 			(pintype "passive")
 			(uuid "81aaa8aa-f10b-4f45-9ae1-c5a4c6f0dc5f")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMB.step"
 			(offset
@@ -11710,6 +12004,14 @@
 			(net "GND")
 			(pintype "passive")
 			(uuid "cc7b9742-757c-4ee8-a0ee-d1182a6b35ec")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
@@ -12070,6 +12372,14 @@
 			(size 0.5588 1.5875)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(uuid "4e15cef8-25ae-4559-b5b3-cbbe1b94abbf")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 	)
@@ -12491,6 +12801,14 @@
 			(net "OUT6{slash}IN3+")
 			(pintype "passive")
 			(uuid "16fb0a04-bbef-4122-80b2-60b37cbcad47")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -13083,6 +13401,14 @@
 			(pintype "passive")
 			(uuid "97dbd997-8d17-41a6-955a-f951c92192d8")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step"
 			(offset
@@ -13266,6 +13592,14 @@
 			(net "IN0-")
 			(pintype "passive")
 			(uuid "766e04da-afa2-48f4-9ae1-d41d1342caaf")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -13686,6 +14020,14 @@
 			(pintype "passive")
 			(uuid "8e474b96-4dbc-45af-a175-1bb7a77d7497")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -13869,6 +14211,14 @@
 			(net "IN2+")
 			(pintype "passive")
 			(uuid "72c16fc0-9753-4247-a677-0e8e1ed019f0")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -14080,6 +14430,14 @@
 			(pintype "passive")
 			(uuid "517f17fb-b2f1-4bbe-8511-1b4f8a415aa9")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -14264,6 +14622,14 @@
 			(pintype "passive")
 			(uuid "75a454d8-c260-4d47-90e0-1d77aaa1debc")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -14447,6 +14813,14 @@
 			(net "OUT7{slash}IN3-")
 			(pintype "passive")
 			(uuid "3a9ec84b-3c7c-4e34-b031-702a19221683")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -14842,6 +15216,14 @@
 			(pintype "passive")
 			(uuid "1f1e429c-585b-4cb5-8646-1b3f8a685088")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -15115,6 +15497,14 @@
 			(pinfunction "A_2")
 			(pintype "passive")
 			(uuid "30214b36-0a34-41f7-87ed-bb834ebc824d")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step"
@@ -15667,6 +16057,14 @@
 			(pintype "unspecified")
 			(uuid "c19e8713-5c43-4f3e-9a1f-446d71eca4f4")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 	)
 	(footprint "Fuse:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open"
@@ -15965,6 +16363,14 @@
 			(pintype "passive")
 			(uuid "b94009c5-9a8a-4f8c-b850-fd6d085cffce")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Fuse.3dshapes/Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open.step"
 			(offset
@@ -16148,6 +16554,14 @@
 			(net "IN0-")
 			(pintype "passive")
 			(uuid "f5b9962b-cd07-4e60-adc1-b3598f636c91")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -16711,7 +17125,7 @@
 			(size 0.725 0.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "CTRL")
+			(net "SPI_nCS")
 			(pinfunction "~{CS}_11")
 			(pintype "input")
 			(uuid "9a4a0ce7-93cc-4236-acf0-e8b584a6c7fb")
@@ -16751,7 +17165,7 @@
 			(size 0.725 0.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "EXTI")
+			(net "ADC_nIRQ")
 			(pinfunction "~{IRQ}/MDAT_15")
 			(pintype "input")
 			(uuid "fa4fb026-5aa3-452d-a446-ec4f3e33b3f9")
@@ -16816,6 +17230,14 @@
 			(pintype "input")
 			(zone_connect 2)
 			(uuid "ca93fb4d-843c-43d2-835c-d52ccf21ca75")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/UQFN-20-1EP_3x3mm_P0.4mm_EP1.85x1.85mm.step"
@@ -17000,6 +17422,14 @@
 			(net "Net-(R104-Pad2)")
 			(pintype "passive")
 			(uuid "1160126b-47b0-4e7f-80c4-87da48fef4be")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -17552,6 +17982,14 @@
 			(pintype "unspecified")
 			(uuid "487923cd-e968-46b5-9ba4-a18cb7fbd18f")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
@@ -17698,6 +18136,14 @@
 			(net "Net-(U4-SC3)")
 			(pintype "passive")
 			(uuid "459ee108-4045-4c84-adc5-959d26caef7d")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -18323,7 +18769,7 @@
 			(size 1.37 0.48)
 			(layers "F.Cu" "F.Paste")
 			(roundrect_rratio 0.125)
-			(net "CANTX")
+			(net "/CAN_TXD")
 			(pinfunction "TXD_1")
 			(pintype "input")
 			(uuid "46874df4-1c53-4a7c-954e-16708e1d5010")
@@ -18353,7 +18799,7 @@
 			(size 1.37 0.48)
 			(layers "F.Cu" "F.Paste")
 			(roundrect_rratio 0.125)
-			(net "CANRX")
+			(net "/CAN_RXD")
 			(pinfunction "RXD_4")
 			(pintype "output")
 			(uuid "1ba51f3f-994c-410e-9d15-7c2d58af3c69")
@@ -18545,6 +18991,14 @@
 			(pintype "passive")
 			(uuid "3e4ce162-17ef-469a-a7b6-b1c4c2fb2be6")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
 			(offset
@@ -18728,6 +19182,14 @@
 			(net "OUT1{slash}IN0-")
 			(pintype "passive")
 			(uuid "13f3e415-c88b-4eab-a32c-dec227f83197")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -19162,6 +19624,14 @@
 			(pintype "passive")
 			(uuid "d0d0a7fe-08b2-4f60-b463-2a2840684a7a")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step"
 			(offset
@@ -19319,6 +19789,14 @@
 			(net "GND")
 			(pintype "passive")
 			(uuid "03b1c259-efd7-43bd-b4d5-5b3e774d3b3a")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
@@ -19635,6 +20113,14 @@
 			(net "GND")
 			(pintype "passive")
 			(uuid "5f13a139-8394-4f6a-a6a8-cc978bbf2e85")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
@@ -19973,6 +20459,14 @@
 			(pintype "passive")
 			(uuid "44b02cbc-9e54-423e-bdd8-7f832753cb49")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SO-4_4.4x3.6mm_P2.54mm.step"
 			(offset
@@ -20130,6 +20624,14 @@
 			(net "OUT5{slash}IN2-")
 			(pintype "passive")
 			(uuid "66c3c71a-84fc-417b-a462-240b74d0e42e")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -20315,6 +20817,14 @@
 			(pintype "passive")
 			(uuid "d26d148d-60b5-4d97-9193-d0758fdd21d2")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -20498,6 +21008,14 @@
 			(net "IN1-")
 			(pintype "passive")
 			(uuid "ee9d06ea-b8b2-4f03-99a8-31a93b38aa38")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -20683,6 +21201,14 @@
 			(pintype "passive")
 			(uuid "868fb460-a262-4cb5-8504-e53c71ac91b4")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -20840,6 +21366,14 @@
 			(net "GND")
 			(pintype "passive")
 			(uuid "ee7bf975-62aa-4831-8827-5f1988430cfe")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
@@ -21524,6 +22058,14 @@
 			(zone_connect 2)
 			(uuid "8c83f74a-5269-4fdd-8542-63431d32b639")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/Texas_RGE0024C_VQFN-24-1EP_4x4mm_P0.5mm_EP2.1x2.1mm.step"
 			(offset
@@ -21849,6 +22391,14 @@
 			(pinfunction "R1.2_8")
 			(pintype "passive")
 			(uuid "4d0aff58-3805-414d-b079-817592f9db8c")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_Array_Convex_4x0603.step"
@@ -22176,6 +22726,14 @@
 			(pintype "passive")
 			(uuid "8bf70b9f-ef38-4d2b-8c42-b529e059e8ea")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
 			(offset
@@ -22330,7 +22888,7 @@
 			(size 1.25 1.75)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.2)
-			(net "Net-(J4-Pin_3)")
+			(net "Net-(J4-Pin_1)")
 			(pintype "passive")
 			(uuid "e8e95dbf-528b-4da3-98ac-415a319f3ff7")
 		)
@@ -22517,6 +23075,14 @@
 			(net "OUT5{slash}IN2-")
 			(pintype "passive")
 			(uuid "ce47ee85-691a-4e6b-a973-61483ce527e7")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -22833,6 +23399,14 @@
 			(net "GND")
 			(pintype "passive")
 			(uuid "942dc59f-7b10-4f17-8f9c-818516f59745")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
@@ -23385,6 +23959,14 @@
 			(pintype "unspecified")
 			(uuid "81708e20-8f6b-4e9c-b5ef-d5344a8ede64")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 	)
 	(footprint "Package_TO_SOT_SMD:SOT-23"
@@ -23807,6 +24389,14 @@
 			(pintype "passive")
 			(uuid "a3cfec2d-fb46-474b-a050-3b5775d9a11c")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step"
 			(offset
@@ -24081,6 +24671,14 @@
 			(pintype "passive")
 			(uuid "902a3fd9-86e9-4d18-85f7-c42d27915855")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step"
 			(offset
@@ -24201,7 +24799,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP* SOIC* R*Array*Concave* R*Array*Convex* MSOP*")
-		(path "/7b4754de-beb0-417a-824f-a2d391f032ba/3478dea9-3f21-4a9f-9362-04b1f52f4615")
+		(path "/7b4754de-beb0-417a-824f-a2d391f032ba/43bcaff1-eee1-409f-84fc-cfbedf4121ef")
 		(sheetname "/outputs/")
 		(sheetfile "outputs.kicad_sch")
 		(units
@@ -24407,6 +25005,14 @@
 			(pintype "passive")
 			(uuid "8d869f10-7ba9-41ee-84a4-da4f89b05053")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_Array_Convex_4x0603.step"
 			(offset
@@ -24565,6 +25171,14 @@
 			(pintype "passive")
 			(uuid "e29ea393-aa03-4c38-bdd6-556227bb51b1")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -24722,6 +25336,14 @@
 			(net "Net-(U4-SD3)")
 			(pintype "passive")
 			(uuid "184ddf3d-cf4e-4e90-b2b3-2b877bcccf62")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -24997,6 +25619,14 @@
 			(pintype "passive")
 			(uuid "f31438e1-d88b-4e82-9ce4-e91900bcc792")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step"
 			(offset
@@ -25180,6 +25810,14 @@
 			(net "IN2-")
 			(pintype "passive")
 			(uuid "896d3e48-0bef-42a3-aaaf-993d5f1fc9ce")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -25820,6 +26458,14 @@
 			(pintype "passive")
 			(uuid "281216ef-7374-4fc8-a71b-56b9a6d5e9d4")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMB.step"
 			(offset
@@ -25929,6 +26575,14 @@
 			(pinfunction "1_1")
 			(pintype "passive")
 			(uuid "fa9107c8-2b3d-4989-a115-e2fd4aae4e99")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 	)
@@ -26256,6 +26910,14 @@
 			(pintype "passive")
 			(uuid "61a1ad19-f32f-4fc7-92bd-85df40a9376e")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SO-4_4.4x3.6mm_P2.54mm.step"
 			(offset
@@ -26466,6 +27128,14 @@
 			(pintype "passive")
 			(uuid "16e6f066-0409-4a61-bed0-56dbda3ffe11")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
 			(offset
@@ -26623,6 +27293,14 @@
 			(net "OUT3{slash}IN1-")
 			(pintype "passive")
 			(uuid "dc56e6de-9ac7-4605-bf32-f885967a8702")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -26898,6 +27576,14 @@
 			(pintype "passive")
 			(uuid "dfdd8b80-1879-4329-8520-6b242384d230")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step"
 			(offset
@@ -27055,6 +27741,14 @@
 			(net "Net-(U4-SD2)")
 			(pintype "passive")
 			(uuid "71203fe4-8e55-4e09-aa2c-7b66d612390e")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -27266,6 +27960,14 @@
 			(pintype "passive")
 			(uuid "9373bfd6-9911-4803-9ede-0d8658933ad8")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -27476,6 +28178,14 @@
 			(pintype "passive")
 			(uuid "019f4676-5ab7-4404-bcf8-2b67df334eba")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -27633,6 +28343,14 @@
 			(net "Net-(U4-SC1)")
 			(pintype "passive")
 			(uuid "a373d90e-374f-4bb5-a89e-0c9cc9dc5ffd")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -27907,6 +28625,14 @@
 			(pinfunction "A_2")
 			(pintype "passive")
 			(uuid "4ba31976-03f1-4347-a24b-0338006a7681")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step"
@@ -28499,6 +29225,14 @@
 			(pintype "passive")
 			(uuid "ccfa16b0-c3cc-422e-b54f-9ef9051afb05")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step"
 			(offset
@@ -28831,6 +29565,14 @@
 			(pintype "passive")
 			(uuid "c0dbe6a2-73cb-48cd-b31d-f631590621bb")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMB.step"
 			(offset
@@ -28989,6 +29731,14 @@
 			(pintype "passive")
 			(uuid "6379fbe6-0a38-4b90-a3ea-9fda570ecc41")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
 			(offset
@@ -29146,6 +29896,14 @@
 			(net "Net-(U3-Agnd)")
 			(pintype "passive")
 			(uuid "a11b75bc-e7c8-423a-aa0e-ebf0565a422d")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -29456,6 +30214,14 @@
 			(pintype "passive")
 			(uuid "194875cd-4af6-48fd-99c4-1901903afcee")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -29692,7 +30458,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP* SOIC* R*Array*Concave* R*Array*Convex* MSOP*")
-		(path "/7b4754de-beb0-417a-824f-a2d391f032ba/f3c2439c-5586-4e8d-83c0-ee73bac220f0")
+		(path "/7b4754de-beb0-417a-824f-a2d391f032ba/3e2c3310-89ba-4f2a-bcfc-4c3791f7a0ba")
 		(sheetname "/outputs/")
 		(sheetfile "outputs.kicad_sch")
 		(units
@@ -29898,6 +30664,14 @@
 			(pintype "passive")
 			(uuid "58817492-86c0-4971-bc89-22dc42e9fe0b")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_Array_Convex_4x0603.step"
 			(offset
@@ -30081,6 +30855,14 @@
 			(net "IN2-")
 			(pintype "passive")
 			(uuid "ecc0e77d-d9bf-4ac2-a3dc-63585ce499d6")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -30449,6 +31231,14 @@
 			(net "Net-(R112-Pad2)")
 			(pintype "passive")
 			(uuid "6d6265b7-c76f-4b75-865c-e4324ee5dfe7")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -30883,6 +31673,14 @@
 			(pintype "passive")
 			(uuid "33e231f2-fb6e-4c5d-895c-37236bb2ef76")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step"
 			(offset
@@ -31040,6 +31838,14 @@
 			(net "Net-(U4-SD0)")
 			(pintype "passive")
 			(uuid "1fba7009-d3ce-4254-b094-4bc4cce472a7")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -31373,6 +32179,14 @@
 			(pintype "passive")
 			(uuid "58690b0f-fa79-4bcd-b132-ee721272c6e2")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMB.step"
 			(offset
@@ -31530,6 +32344,14 @@
 			(net "OUT0{slash}IN0+")
 			(pintype "passive")
 			(uuid "75f9f00a-81ad-4422-9c00-d9dede7dead9")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -31868,6 +32690,14 @@
 			(pintype "passive")
 			(uuid "4f9bb8d0-d2f5-49e0-8677-500a4834f1a4")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SO-4_4.4x3.6mm_P2.54mm.step"
 			(offset
@@ -32093,7 +32923,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "CAN+")
+			(net "Net-(J4-Pin_1)")
 			(pinfunction "Pin_1_1")
 			(pintype "passive")
 			(uuid "bbbaee2c-52a7-4565-a529-e7b84bd4ed85")
@@ -32126,7 +32956,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "CAN-")
+			(net "GND")
 			(pinfunction "Pin_4_4")
 			(pintype "passive")
 			(uuid "600b939a-bf1c-4e2b-acfb-e4c46b7b915c")
@@ -32748,6 +33578,14 @@
 			(pintype "passive")
 			(uuid "22581ec1-acee-4081-b692-0f175b099a60")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step"
 			(offset
@@ -33084,6 +33922,14 @@
 			(net "/outputs/~{ISO_OUT_2}")
 			(pintype "passive")
 			(uuid "9da296fe-8a6c-43c8-a79e-6813b6f5e5cd")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SO-4_4.4x3.6mm_P2.54mm.step"
@@ -33759,6 +34605,14 @@
 			(pintype "passive")
 			(uuid "1d8f3a98-50b2-4bf5-8385-28b144905fca")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMB.step"
 			(offset
@@ -34032,6 +34886,14 @@
 			(pinfunction "A_2")
 			(pintype "passive")
 			(uuid "e03043b7-3073-4dbb-b07c-00469dccc95b")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step"
@@ -34370,6 +35232,14 @@
 			(pintype "passive")
 			(uuid "6322621c-66ae-40e0-909b-a3618dc8d2b3")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SO-4_4.4x3.6mm_P2.54mm.step"
 			(offset
@@ -34528,6 +35398,14 @@
 			(pintype "passive")
 			(uuid "d4965ddb-94ad-4ab9-b8ed-e5d2ed38b993")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -34685,6 +35563,10 @@
 			(net "GND")
 			(pintype "passive")
 			(uuid "73e9f91e-2e7b-4a63-8a43-c428e64e1c24")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
@@ -35237,6 +36119,14 @@
 			(pintype "unspecified")
 			(uuid "b8cb97f9-baaa-4fc9-9930-4c9dbe868b27")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
@@ -35383,6 +36273,14 @@
 			(net "Net-(U4-SD1)")
 			(pintype "passive")
 			(uuid "16a3a9cc-8bf6-451b-a42a-8a7274e358c3")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -35568,6 +36466,14 @@
 			(pintype "passive")
 			(uuid "b47a2c8b-16e0-4424-8d3b-40e01b4f89c7")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -35751,6 +36657,14 @@
 			(net "OUT3{slash}IN1-")
 			(pintype "passive")
 			(uuid "72d251cf-17e1-48ff-8717-860dc93ee149")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -35962,271 +36876,16 @@
 			(pintype "passive")
 			(uuid "9b37d370-ff72-46de-8b02-6d0c78c83bb9")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
-		(layer "F.Cu")
-		(uuid "e00eafbe-b55e-4594-a230-cabe1d6d0b0b")
-		(at 141.35 109.31)
-		(descr "Through hole straight pin header, 1x04, 2.54mm pitch, single row")
-		(tags "Through hole pin header THT 1x04 2.54mm single row")
-		(property "Reference" "J7"
-			(at 0 -2.38 0)
-			(layer "F.SilkS")
-			(uuid "682d0a12-8a3d-404d-8076-79485dfa7f54")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "Conn_01x04"
-			(at 0 10 0)
-			(layer "F.Fab")
-			(uuid "5c696e78-e69b-4054-aae6-365c31aba184")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "179604ac-7986-4ed4-a81d-89b7bb4069a3")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "947ae098-3490-4e5d-ad7f-bb826f0c2054")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "connector/pin_header_socket"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "2d68db73-1d49-4741-af31-be131b59999e")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property ki_fp_filters "Connector*:*_1x??_*")
-		(path "/2997bf7c-adf7-45fd-adb3-f68f4699e9e0")
-		(sheetname "/")
-		(sheetfile "mints-g0b1re.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "3" "4")
-			)
-		)
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -1.38 -1.38)
-			(end 0 -1.38)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "63b8ed5c-1830-4ab6-a8cf-9d38fe0b2d7c")
-		)
-		(fp_line
-			(start -1.38 0)
-			(end -1.38 -1.38)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "5ceb1b76-7833-4929-ad83-119eb1470eff")
-		)
-		(fp_line
-			(start -1.38 1.27)
-			(end -1.38 9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "43ab03ae-5b0d-4cbc-98e4-e4273ae1d7c0")
-		)
-		(fp_line
-			(start -1.38 1.27)
-			(end 1.38 1.27)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "544bba9f-a7af-40c4-ab8d-52081c53d5cf")
-		)
-		(fp_line
-			(start -1.38 9)
-			(end 1.38 9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "ad52f2a4-b3da-4c0a-bbca-4d8488e68ef5")
-		)
-		(fp_line
-			(start 1.38 1.27)
-			(end 1.38 9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "58298fb7-24b6-4efa-afbf-365fa7cc4232")
-		)
-		(fp_rect
-			(start -1.77 -1.77)
-			(end 1.77 9.39)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "af85e1e7-eaea-4ec3-9ae3-e9db3e9b5511")
-		)
-		(fp_line
-			(start -1.27 -0.635)
-			(end -0.635 -1.27)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "4027309b-4f12-4a3b-9bf8-811867af5fa8")
-		)
-		(fp_line
-			(start -1.27 8.89)
-			(end -1.27 -0.635)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "aa7f9ee8-a0ea-476e-b398-7079c66de833")
-		)
-		(fp_line
-			(start -0.635 -1.27)
-			(end 1.27 -1.27)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "446b520b-6603-4967-af12-988a9088a6cf")
-		)
-		(fp_line
-			(start 1.27 -1.27)
-			(end 1.27 8.89)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "c6ba2e4c-def1-49af-b844-387949a4f7a3")
-		)
-		(fp_line
-			(start 1.27 8.89)
-			(end -1.27 8.89)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "2a87077d-9f9d-4847-9541-08b68b85d436")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 0 3.81 90)
-			(layer "F.Fab")
-			(uuid "8b3c8e42-e8bb-453a-a4a3-f0886eeb9647")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0)
-			(size 1.7 1.7)
-			(drill 1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "+3V3")
-			(pinfunction "Pin_1_1")
-			(pintype "passive")
-			(uuid "11fa10a1-44f8-43b0-8c66-b962ded6a475")
-		)
-		(pad "2" thru_hole circle
-			(at 0 2.54)
-			(size 1.7 1.7)
-			(drill 1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "SWCLK")
-			(pinfunction "Pin_2_2")
-			(pintype "passive")
-			(uuid "c9be360b-da0d-4dbb-8ba1-094f6870be1c")
-		)
-		(pad "3" thru_hole circle
-			(at 0 5.08)
-			(size 1.7 1.7)
-			(drill 1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "SWDIO")
-			(pinfunction "Pin_3_3")
-			(pintype "passive")
-			(uuid "7ca164a6-02c2-47f3-935f-318c6866971a")
-		)
-		(pad "4" thru_hole circle
-			(at 0 7.62)
-			(size 1.7 1.7)
-			(drill 1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "GND")
-			(pinfunction "Pin_4_4")
-			(pintype "passive")
-			(uuid "149a3ac3-bf79-4d3d-a027-954ccd4256ee")
-		)
-		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x04_P2.54mm_Vertical.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -36382,6 +37041,14 @@
 			(net "Net-(U4-A0)")
 			(pintype "passive")
 			(uuid "f06fef26-8f70-4c3b-8226-58cd8689028a")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -37234,6 +37901,14 @@
 			(pintype "unspecified")
 			(uuid "4024a2a2-5d4f-4b8f-bd9b-58d590eb23f1")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
@@ -37406,6 +38081,14 @@
 			(net "OUT1{slash}IN0-")
 			(pintype "passive")
 			(uuid "bebf6f4f-6c08-4de7-91b1-f57b89853ba5")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -37929,7 +38612,7 @@
 			(size 1.55 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "NRST")
+			(net "/NRST")
 			(pinfunction "PF2_12")
 			(pintype "bidirectional")
 			(uuid "0d9b6a60-eb44-4774-9322-2502b1e58254")
@@ -37989,9 +38672,9 @@
 			(size 0.3 1.55)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "CTRL")
+			(net "unconnected-(U1-PA1-Pad18)")
 			(pinfunction "PA1_18")
-			(pintype "bidirectional")
+			(pintype "bidirectional+no_connect")
 			(uuid "25d272a7-e1a7-49c6-8874-5003033db4b1")
 		)
 		(pad "19" smd roundrect
@@ -38059,7 +38742,7 @@
 			(size 0.3 1.55)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "CANTX")
+			(net "/CAN_RXD")
 			(pinfunction "FDCAN1_RX_25")
 			(pintype "bidirectional")
 			(uuid "79e5773c-a4ea-42be-bf4a-63e282b24e11")
@@ -38069,7 +38752,7 @@
 			(size 0.3 1.55)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "CANRX")
+			(net "/CAN_TXD")
 			(pinfunction "FDCAN1_TX_26")
 			(pintype "bidirectional")
 			(uuid "f526fa28-fef0-4b10-bc4b-eef8f9ec1da6")
@@ -38169,9 +38852,9 @@
 			(size 1.55 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "unconnected-(U1-PA8-Pad36)")
+			(net "SPI_nCS")
 			(pinfunction "SPI2_NSS_36")
-			(pintype "bidirectional+no_connect")
+			(pintype "bidirectional")
 			(uuid "7ff140a4-c665-4f84-a404-028d105f0e02")
 		)
 		(pad "37" smd roundrect
@@ -38259,7 +38942,7 @@
 			(size 1.55 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "SWDIO")
+			(net "/SWDIO")
 			(pinfunction "SYS_SWDIO_45")
 			(pintype "bidirectional")
 			(uuid "3a9c8586-850d-4146-a458-94f0e95dc432")
@@ -38269,7 +38952,7 @@
 			(size 1.55 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "SWCLK")
+			(net "/SWCLK")
 			(pinfunction "SYS_SWCLK_46")
 			(pintype "bidirectional")
 			(uuid "c3213838-61ef-4fff-9f2f-d1632755e5e5")
@@ -38281,7 +38964,7 @@
 			(roundrect_rratio 0.25)
 			(net "unconnected-(U1-PA15-Pad47)")
 			(pinfunction "PA15_47")
-			(pintype "bidirectional")
+			(pintype "bidirectional+no_connect")
 			(uuid "4c6993b6-c554-41fa-9300-46cd7039a83a")
 		)
 		(pad "48" smd roundrect
@@ -38329,7 +39012,7 @@
 			(size 0.3 1.55)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "VCP_RX")
+			(net "/VCP_RX")
 			(pinfunction "USART5_RX_52")
 			(pintype "bidirectional")
 			(uuid "bbbf00fa-97c3-44d8-88cc-8b22cb1bd77b")
@@ -38339,7 +39022,7 @@
 			(size 0.3 1.55)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "VCP_TX")
+			(net "/VCP_TX")
 			(pinfunction "USART5_TX_53")
 			(pintype "bidirectional")
 			(uuid "2376b29a-fdd3-41cb-8486-f76488340def")
@@ -38349,7 +39032,7 @@
 			(size 0.3 1.55)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "EXTI")
+			(net "ADC_nIRQ")
 			(pinfunction "PD4_54")
 			(pintype "bidirectional")
 			(uuid "e69edf4b-d1e1-48a2-8396-dd0009c02123")
@@ -38638,6 +39321,14 @@
 			(pintype "passive")
 			(uuid "a80f848c-5ebc-466f-89d8-9645fb5daf3b")
 		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -38912,6 +39603,14 @@
 			(pintype "passive")
 			(uuid "de5181e9-65e2-4d3a-8ee0-64008db3035c")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step"
 			(offset
@@ -39095,6 +39794,14 @@
 			(net "Net-(R108-Pad2)")
 			(pintype "passive")
 			(uuid "d2b98b79-baf1-41ea-91fd-42f40c80c3db")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -39306,6 +40013,14 @@
 			(pintype "passive")
 			(uuid "dd87f7d0-b2b8-4205-aa84-d2b39e613619")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -39515,6 +40230,14 @@
 			(net "+3V3")
 			(pintype "passive")
 			(uuid "10f5c89f-6707-48e0-89e6-742552a2c546")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
@@ -40067,6 +40790,14 @@
 			(pintype "unspecified")
 			(uuid "5ca8c61e-18db-4cee-ae70-7017fa0ae6e9")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
@@ -40265,6 +40996,14 @@
 			(net "GND")
 			(pintype "passive")
 			(uuid "ebf16cf2-f4d6-4929-b401-b1db025e9ee4")
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
@@ -40790,6 +41529,14 @@
 			(pintype "passive")
 			(uuid "0844da60-59de-4ffa-8d4f-039db4b3af3e")
 		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
+		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
@@ -40947,6 +41694,14 @@
 			(net "GND")
 			(pintype "passive")
 			(uuid "d53d3e70-4eba-4f0f-b1d1-cab3ade61c82")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "Outputs")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step"
@@ -41279,6 +42034,14 @@
 			(pinfunction "A_2")
 			(pintype "passive")
 			(uuid "9701319c-8705-4780-8241-6a5223b7b42e")
+		)
+		(variant
+			(name "ADC")
+			(dnp yes)
+		)
+		(variant
+			(name "I2C")
+			(dnp yes)
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMB.step"

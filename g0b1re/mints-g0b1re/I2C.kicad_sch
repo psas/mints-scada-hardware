@@ -3,7 +3,13 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "f462d735-ceeb-45e8-93c9-cb73f9e724e5")
-	(paper "A4")
+	(paper "USLedger")
+	(title_block
+		(title "minTS SCADA Board")
+		(date "2026-08-31")
+		(rev "2.0")
+		(company "Portland State Aerospace Society")
+	)
 	(lib_symbols
 		(symbol "Device:C"
 			(pin_numbers
@@ -1167,6 +1173,16 @@
 			)
 		)
 		(uuid "a28fdc4d-bd75-485a-8bf7-ea0f1a293aec")
+	)
+	(text "I2C is NOT isolated"
+		(exclude_from_sim no)
+		(at 146.558 41.91 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a34a01c9-d439-4e30-9f94-2570ee45f162")
 	)
 	(text "10v"
 		(exclude_from_sim no)
@@ -3090,6 +3106,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R2")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -3171,6 +3195,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R9")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -3249,6 +3281,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "#PWR014")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -3330,6 +3370,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "C2")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -3412,6 +3460,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "C10")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -3493,6 +3549,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "C1")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -3571,6 +3635,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "#PWR020")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -3650,6 +3722,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R16")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -3728,6 +3808,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "#PWR051")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -3809,6 +3897,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R6")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -3890,6 +3986,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "C18")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -3971,6 +4075,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R10")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -4052,6 +4164,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "C3")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -4133,6 +4253,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "C16")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -4212,6 +4340,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R25")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -4293,6 +4429,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R5")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -4374,6 +4518,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R14")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -4455,6 +4607,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R13")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -4533,6 +4693,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "#PWR017")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -4612,6 +4780,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R17")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -4691,6 +4867,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R24")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -4772,6 +4956,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R11")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -4853,6 +5045,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "C4")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -4932,6 +5132,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R22")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5013,6 +5221,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "C17")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5092,6 +5308,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R1")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5242,6 +5466,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "U4")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5320,6 +5552,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "#PWR019")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5398,6 +5638,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "#PWR016")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5479,6 +5727,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R12")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5560,6 +5816,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R7")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5641,6 +5905,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R8")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5719,6 +5991,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "#PWR049")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5800,6 +6080,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "C19")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -5958,6 +6246,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R21")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6037,6 +6333,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R15")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6115,6 +6419,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "#PWR015")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6194,6 +6506,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R20")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
@@ -6273,6 +6593,14 @@
 				(path "/363c6546-315b-48da-9312-6a55f2557799/95827b01-1c40-42f4-acdc-eb28fa5e313d"
 					(reference "R23")
 					(unit 1)
+					(variant
+						(name "ADC")
+						(dnp yes)
+					)
+					(variant
+						(name "Outputs")
+						(dnp yes)
+					)
 				)
 			)
 		)
