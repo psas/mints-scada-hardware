@@ -801,7 +801,7 @@
         "uuid": "363c6546-315b-48da-9312-6a55f2557799"
       }
     ],
-    "used_designators": "RN205,H1-4,C1-4,C15-20,D1,D217,#PWR8,#PWR48-56,#PWR228,R1-2,R20-28,R30-31,R209-210,TP1-2,U2-3,U6,Q1-8,J2,J4-7,#GND1",
+    "used_designators": "RN205-206,TP1-2,H1-4,C1-4,C15-20,D1,D217,#PWR8,#PWR48-56,#PWR228,#GND1,R1-2,R20-28,R30-31,R209-210,U2-3,U6,Q1-8,J2,J4-7",
     "variants": [
       {
         "description": "minTS SCADA board with ADC populated",
