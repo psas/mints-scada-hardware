@@ -11,408 +11,6 @@
 		(company "Portland State Aerospace Society")
 	)
 	(lib_symbols
-		(symbol "2026-07-27_21-07-26:SQM120P06-07L_GE3"
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "Q"
-				(at 11.43 1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "SQM120P06-07L_GE3"
-				(at 11.43 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "TO-263_SQM120P06-07L_GE3_VIS"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Datasheet" "https://www.vishay.com/doc?67026"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "SQM120P06-07L_GE3"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "TO-263_SQM120P06-07L_GE3_VIS TO-263_SQM120P06-07L_GE3_VIS-M TO-263_SQM120P06-07L_GE3_VIS-L"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "SQM120P06-07L_GE3_0_1"
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 4.445 0)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.445 -2.54) (xy 4.445 2.54)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 1.905) (xy 6.985 1.905)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 1.27) (xy 5.08 2.54)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -0.635) (xy 5.08 0.635)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -1.905) (xy 6.985 -1.905)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -2.54) (xy 5.08 -1.27)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.35 0.635) (xy 5.08 0) (xy 6.35 -0.635)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.35 0) (xy 6.985 0)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 6.35 0)
-					(radius 3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.985 2.54) (xy 8.255 2.54)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.985 1.905) (xy 6.985 2.54)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 6.985 -1.905)
-					(radius 0.127)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.985 -2.54) (xy 6.985 0)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.985 -2.54) (xy 8.255 -2.54)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 7.62 2.54)
-					(radius 0.127)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 7.62 -2.54)
-					(radius 0.127)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.255 0.635) (xy 8.255 2.54)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.255 -2.54) (xy 8.255 -0.635)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.89 0.635) (xy 7.62 0.635)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.89 -0.635) (xy 7.62 -0.635) (xy 8.255 0.635)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(pin unspecified line
-					(at 0 0 0)
-					(length 2.54)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 7.62 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 7.62 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:D_Zener"
 			(pin_numbers
 				(hide yes)
@@ -1812,6 +1410,358 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Transistor_FET:DMP3013SFV"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "DMP3013SFV"
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_SON:Diodes_PowerDI3333-8"
+				(at 5.08 -1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3013SFV.pdf"
+				(at 5.08 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "-12A Id, -30V Vds, P-Channel Power MOSFET, 9.5mOhm Ron, 33.7nC Qg (typ), PowerDI3333-8"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "P-Channel MOSFET"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Diodes*PowerDI3333*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "DMP3013SFV_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 -0.508) (xy 2.921 -0.381) (xy 3.683 -0.381) (xy 3.81 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "DMP3013SFV_1_1"
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(hide yes)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(hide yes)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -2141,6 +2091,18 @@
 		(uuid "e0f78004-6dcf-41c0-92a8-449393bba097")
 	)
 	(junction
+		(at 173.99 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "036857d8-dc63-4b02-91f8-d75172a19a08")
+	)
+	(junction
+		(at 217.17 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0af4a55b-2d74-42f1-a99f-e678c732095e")
+	)
+	(junction
 		(at 217.17 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2171,6 +2133,18 @@
 		(uuid "37d5c551-7a40-4746-b6f0-ff87b2d27471")
 	)
 	(junction
+		(at 173.99 146.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "37d7dc8a-05eb-42e0-a0fd-a1d72f087f4a")
+	)
+	(junction
+		(at 217.17 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3ec4166f-efe4-405a-be70-da0dc895c70e")
+	)
+	(junction
 		(at 147.32 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2199,6 +2173,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "49cbeba7-8cc1-44df-9b9c-9dba5f7932a8")
+	)
+	(junction
+		(at 217.17 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "50f22e9a-2b39-4595-afdc-fd04f182b37c")
 	)
 	(junction
 		(at 147.32 87.63)
@@ -2267,6 +2247,12 @@
 		(uuid "76ccbb75-c7c8-444c-9ef1-e8bf6a29fb9a")
 	)
 	(junction
+		(at 165.1 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8c0cb803-a857-42c3-9fe7-146d6c0467ba")
+	)
+	(junction
 		(at 125.73 151.13)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2319,6 +2305,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b7b39e7a-4b25-4215-a36f-7cc0d95ffd0b")
+	)
+	(junction
+		(at 173.99 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c94da93f-4f29-43c6-8b4b-b872324498bd")
 	)
 	(junction
 		(at 312.42 128.27)
@@ -2379,6 +2371,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e6f2dd7d-6c2d-4caf-8b5b-4ee9e33eb76f")
+	)
+	(junction
+		(at 217.17 208.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8495bb3-9d8f-4378-9219-8911291d40e5")
 	)
 	(junction
 		(at 290.83 76.2)
@@ -2516,7 +2514,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 91.44) (xy 165.1 104.14)
+			(xy 165.1 91.44) (xy 165.1 99.06)
 		)
 		(stroke
 			(width 0)
@@ -3563,6 +3561,26 @@
 			(type default)
 		)
 		(uuid "92012185-fc9b-4976-9921-c00bde4e57fb")
+	)
+	(wire
+		(pts
+			(xy 165.1 99.06) (xy 165.1 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "921f1fd9-eb2d-4a8b-b485-c238ccedb3b8")
+	)
+	(wire
+		(pts
+			(xy 165.1 99.06) (xy 166.37 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93a00c5f-6178-4db1-ad70-4df32215a925")
 	)
 	(wire
 		(pts
@@ -5120,6 +5138,100 @@
 		)
 	)
 	(symbol
+		(lib_id "Transistor_FET:DMP3013SFV")
+		(at 171.45 182.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "026c62d6-6fb6-4915-8c6c-4a39f9e6db0b")
+		(property "Reference" "Q15"
+			(at 177.8 181.6099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3013SFV"
+			(at 177.8 184.1499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:Diodes_PowerDI3333-8"
+			(at 176.53 184.785 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3013SFV.pdf"
+			(at 176.53 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "-12A Id, -30V Vds, P-Channel Power MOSFET, 9.5mOhm Ron, 33.7nC Qg (typ), PowerDI3333-8"
+			(at 171.45 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "696f2f44-f720-4b57-a3fd-9b27911a6144")
+		)
+		(pin "1"
+			(uuid "ed07fe5b-4837-4558-85a2-e4f679243be1")
+		)
+		(pin "5"
+			(uuid "cc2040c4-7d01-4565-94d0-e650b0499d81")
+		)
+		(pin "2"
+			(uuid "931a77e5-0b66-4007-9c73-4224e5052a74")
+		)
+		(pin "3"
+			(uuid "ac30ba99-71fa-404b-8dd4-60ee22f6ed36")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
+					(reference "Q15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Isolator:LTV-356T")
 		(at 137.16 148.59 0)
 		(unit 1)
@@ -5397,6 +5509,288 @@
 						(name "I2C")
 						(dnp yes)
 					)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:DMP3013SFV")
+		(at 214.63 203.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0b8bbe65-9dec-40e8-98ca-eb87a04b8332")
+		(property "Reference" "Q16"
+			(at 220.98 201.9299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3013SFV"
+			(at 220.98 204.4699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:Diodes_PowerDI3333-8"
+			(at 219.71 205.105 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3013SFV.pdf"
+			(at 219.71 207.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "-12A Id, -30V Vds, P-Channel Power MOSFET, 9.5mOhm Ron, 33.7nC Qg (typ), PowerDI3333-8"
+			(at 214.63 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "4d654b71-e0cd-4a5c-a074-79ade61aff63")
+		)
+		(pin "1"
+			(uuid "b3e23ef2-bbc0-436c-a6fa-aee378125b9b")
+		)
+		(pin "5"
+			(uuid "63cb53d7-ec07-48a1-93ff-73fcbb62c862")
+		)
+		(pin "2"
+			(uuid "12bca652-110b-47b9-b1ae-05a201dbe592")
+		)
+		(pin "3"
+			(uuid "5033b668-eb07-4530-aa6a-3e474a050f6b")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
+					(reference "Q16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:DMP3013SFV")
+		(at 214.63 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0cd1ebc6-3890-40f9-be31-65ee052d0775")
+		(property "Reference" "Q13"
+			(at 220.98 118.1099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3013SFV"
+			(at 220.98 120.6499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:Diodes_PowerDI3333-8"
+			(at 219.71 121.285 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3013SFV.pdf"
+			(at 219.71 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "-12A Id, -30V Vds, P-Channel Power MOSFET, 9.5mOhm Ron, 33.7nC Qg (typ), PowerDI3333-8"
+			(at 214.63 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "026c1ff2-964b-4b5d-b70b-d1c2a0c9d013")
+		)
+		(pin "1"
+			(uuid "9d16f6ba-9b92-4c7e-b615-8b7813fe1728")
+		)
+		(pin "5"
+			(uuid "58bae317-5bcb-42f1-bd84-3c57c05b7584")
+		)
+		(pin "2"
+			(uuid "7d2877c5-56db-4a57-a192-9a43e2246360")
+		)
+		(pin "3"
+			(uuid "72400d2a-eb45-4e31-8336-2fb5500754d8")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
+					(reference "Q13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:DMP3013SFV")
+		(at 171.45 140.97 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0d4cda51-2f76-43da-83b5-1202d04b380d")
+		(property "Reference" "Q11"
+			(at 177.8 139.6999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3013SFV"
+			(at 177.8 142.2399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:Diodes_PowerDI3333-8"
+			(at 176.53 142.875 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3013SFV.pdf"
+			(at 176.53 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "-12A Id, -30V Vds, P-Channel Power MOSFET, 9.5mOhm Ron, 33.7nC Qg (typ), PowerDI3333-8"
+			(at 171.45 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "f037048e-c6f0-42c2-97ac-45714a6433c8")
+		)
+		(pin "1"
+			(uuid "47902520-8f8d-43d9-bfbd-76b282a24fd7")
+		)
+		(pin "5"
+			(uuid "b2b0d4cf-9f53-4cb4-b6d4-372708585555")
+		)
+		(pin "2"
+			(uuid "af13e0c2-bca8-4412-b431-ae943845a732")
+		)
+		(pin "3"
+			(uuid "dff2acda-9d6a-4b71-8556-7c05196bf33e")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
+					(reference "Q11")
+					(unit 1)
 				)
 			)
 		)
@@ -6014,101 +6408,6 @@
 		)
 	)
 	(symbol
-		(lib_id "2026-07-27_21-07-26:SQM120P06-07L_GE3")
-		(at 209.55 161.29 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1c5e4a72-6e21-431e-a712-09fa6e9dfc29")
-		(property "Reference" "Q5"
-			(at 220.98 160.0199 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SQM120P06-07L_GE3"
-			(at 220.98 162.5599 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "LIB_DMP6023LFGQ-7:DMTH8008LFGQ7"
-			(at 209.55 161.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/doc?67026"
-			(at 209.55 161.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 209.55 161.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "5fc5aab0-1b87-484e-abba-3e89773a0d83")
-		)
-		(pin "2"
-			(uuid "3f0d6c3d-cdb7-4d40-a61a-8463925c481d")
-		)
-		(pin "1"
-			(uuid "75fb1e22-c290-4f5f-abc3-f01b0213d880")
-		)
-		(instances
-			(project "mints-g0b1re"
-				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
-					(reference "Q5")
-					(unit 1)
-					(variant
-						(name "ADC")
-						(dnp yes)
-					)
-					(variant
-						(name "I2C")
-						(dnp yes)
-					)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:LED")
 		(at 304.8 123.19 180)
 		(unit 1)
@@ -6401,101 +6700,6 @@
 		)
 	)
 	(symbol
-		(lib_id "2026-07-27_21-07-26:SQM120P06-07L_GE3")
-		(at 209.55 119.38 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "28adba65-b869-4f21-b46f-16f79e6aa0be")
-		(property "Reference" "Q8"
-			(at 220.98 118.1099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SQM120P06-07L_GE3"
-			(at 220.98 120.6499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "LIB_DMP6023LFGQ-7:DMTH8008LFGQ7"
-			(at 209.55 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/doc?67026"
-			(at 209.55 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 209.55 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "05ab3410-6c8e-4240-ac50-e8ead94ebeee")
-		)
-		(pin "2"
-			(uuid "7ea805b5-f1e5-4e5d-99c1-694993a0e938")
-		)
-		(pin "1"
-			(uuid "cab5ff90-fea5-49f8-ab75-675fd69adb07")
-		)
-		(instances
-			(project "mints-g0b1re"
-				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
-					(reference "Q8")
-					(unit 1)
-					(variant
-						(name "ADC")
-						(dnp yes)
-					)
-					(variant
-						(name "I2C")
-						(dnp yes)
-					)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Pack04_Split")
 		(at 168.91 91.44 90)
 		(unit 2)
@@ -6717,101 +6921,6 @@
 			(project "mints-g0b1re"
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR037")
-					(unit 1)
-					(variant
-						(name "ADC")
-						(dnp yes)
-					)
-					(variant
-						(name "I2C")
-						(dnp yes)
-					)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "2026-07-27_21-07-26:SQM120P06-07L_GE3")
-		(at 209.55 77.47 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2c778289-e1de-4863-ae59-74cf07e868a6")
-		(property "Reference" "Q2"
-			(at 220.98 76.1999 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SQM120P06-07L_GE3"
-			(at 220.98 78.7399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "LIB_DMP6023LFGQ-7:DMTH8008LFGQ7"
-			(at 209.55 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/doc?67026"
-			(at 209.55 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 209.55 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "db4d018b-a0f2-420c-8830-c5b3ba90041f")
-		)
-		(pin "2"
-			(uuid "07fb1a25-d5c6-4cde-ad93-bf9134b75247")
-		)
-		(pin "1"
-			(uuid "47c10b34-d12e-448e-8156-104ce7c10f5f")
-		)
-		(instances
-			(project "mints-g0b1re"
-				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
-					(reference "Q2")
 					(unit 1)
 					(variant
 						(name "ADC")
@@ -8296,101 +8405,6 @@
 		)
 	)
 	(symbol
-		(lib_id "2026-07-27_21-07-26:SQM120P06-07L_GE3")
-		(at 167.64 55.88 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4dce985a-aed9-4334-baf5-fd4e76f8f606")
-		(property "Reference" "Q1"
-			(at 179.07 54.6099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SQM120P06-07L_GE3"
-			(at 179.07 57.1499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "LIB_DMP6023LFGQ-7:DMTH8008LFGQ7"
-			(at 167.64 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/doc?67026"
-			(at 167.64 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 167.64 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "4dd4ac7d-0a18-4109-8d88-460d51375c33")
-		)
-		(pin "2"
-			(uuid "73fbbd2a-d7b7-4d37-817f-a6a4c6a3b8f9")
-		)
-		(pin "1"
-			(uuid "fbac2ef0-775d-4f8d-8b23-9f7d6c91b6f2")
-		)
-		(instances
-			(project "mints-g0b1re"
-				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
-					(reference "Q1")
-					(unit 1)
-					(variant
-						(name "ADC")
-						(dnp yes)
-					)
-					(variant
-						(name "I2C")
-						(dnp yes)
-					)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 312.42 86.36 90)
 		(unit 1)
@@ -9498,196 +9512,6 @@
 			(project "mints-g0b1re"
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D212")
-					(unit 1)
-					(variant
-						(name "ADC")
-						(dnp yes)
-					)
-					(variant
-						(name "I2C")
-						(dnp yes)
-					)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "2026-07-27_21-07-26:SQM120P06-07L_GE3")
-		(at 166.37 182.88 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6f41af7a-faf9-463b-99bd-e65343efd0b6")
-		(property "Reference" "Q6"
-			(at 177.8 181.6099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SQM120P06-07L_GE3"
-			(at 177.8 184.1499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "LIB_DMP6023LFGQ-7:DMTH8008LFGQ7"
-			(at 166.37 182.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/doc?67026"
-			(at 166.37 182.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 166.37 182.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "788e2eb4-803e-4262-84fc-d4887788c65e")
-		)
-		(pin "2"
-			(uuid "2e35c123-abb8-4dfb-81c9-db71da2f2a1e")
-		)
-		(pin "1"
-			(uuid "0a1b63eb-fd4c-4f69-b4bb-67ad2aef1738")
-		)
-		(instances
-			(project "mints-g0b1re"
-				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
-					(reference "Q6")
-					(unit 1)
-					(variant
-						(name "ADC")
-						(dnp yes)
-					)
-					(variant
-						(name "I2C")
-						(dnp yes)
-					)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "2026-07-27_21-07-26:SQM120P06-07L_GE3")
-		(at 166.37 99.06 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7c4f67d8-dc14-4753-91d6-a6d32ac558a5")
-		(property "Reference" "Q3"
-			(at 177.8 97.7899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SQM120P06-07L_GE3"
-			(at 177.8 100.3299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "LIB_DMP6023LFGQ-7:DMTH8008LFGQ7"
-			(at 166.37 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/doc?67026"
-			(at 166.37 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 166.37 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "adde73ff-eac6-41c7-ba31-e9102bad7465")
-		)
-		(pin "2"
-			(uuid "17941c96-ff03-4da5-82c9-c3df5c749a9c")
-		)
-		(pin "1"
-			(uuid "b2cf3c85-8e00-4533-97e3-325f8906f6e9")
-		)
-		(instances
-			(project "mints-g0b1re"
-				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
-					(reference "Q3")
 					(unit 1)
 					(variant
 						(name "ADC")
@@ -11052,6 +10876,100 @@
 		)
 	)
 	(symbol
+		(lib_id "Transistor_FET:DMP3013SFV")
+		(at 214.63 161.29 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9a4eb13e-9b10-4306-8353-9e6544749d58")
+		(property "Reference" "Q14"
+			(at 220.98 160.0199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3013SFV"
+			(at 220.98 162.5599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:Diodes_PowerDI3333-8"
+			(at 219.71 163.195 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3013SFV.pdf"
+			(at 219.71 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "-12A Id, -30V Vds, P-Channel Power MOSFET, 9.5mOhm Ron, 33.7nC Qg (typ), PowerDI3333-8"
+			(at 214.63 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "8c1e7763-5844-41ff-937d-7922bd6e11b9")
+		)
+		(pin "1"
+			(uuid "35ac1762-b869-42d3-b4f7-3bf27901393a")
+		)
+		(pin "5"
+			(uuid "c78d22ed-5e74-4b55-8ee2-031a29261583")
+		)
+		(pin "2"
+			(uuid "f6bb1213-e664-47bc-bb17-e026bfb291f3")
+		)
+		(pin "3"
+			(uuid "4555c7ff-86e8-4dfc-a0a9-a645ecdc08a8")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
+					(reference "Q14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D_Zener_Filled")
 		(at 217.17 172.72 270)
 		(unit 1)
@@ -11085,7 +11003,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SMB"
+		(property "Footprint" "SZMMSZ5258BT3G:SOD-123_ONS"
 			(at 217.17 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -11181,6 +11099,100 @@
 						(name "I2C")
 						(dnp yes)
 					)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:DMP3013SFV")
+		(at 214.63 77.47 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a1af236c-7e5e-4d94-bd54-6b8cb627c9cf")
+		(property "Reference" "Q12"
+			(at 220.98 76.1999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3013SFV"
+			(at 220.98 78.7399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:Diodes_PowerDI3333-8"
+			(at 219.71 79.375 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3013SFV.pdf"
+			(at 219.71 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "-12A Id, -30V Vds, P-Channel Power MOSFET, 9.5mOhm Ron, 33.7nC Qg (typ), PowerDI3333-8"
+			(at 214.63 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "8d4d3a0c-11ca-4532-813e-660bd58063fb")
+		)
+		(pin "1"
+			(uuid "a41a04f1-dc44-4922-91af-64cd541a9c4b")
+		)
+		(pin "5"
+			(uuid "2b8c1300-39cd-4fe5-a2e7-6d57a65a067c")
+		)
+		(pin "2"
+			(uuid "f9ba4328-8ea1-4880-8f3f-c7c3578f207b")
+		)
+		(pin "3"
+			(uuid "c80ce31b-d26c-4a1f-a182-2dc213ca13e0")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
+					(reference "Q12")
+					(unit 1)
 				)
 			)
 		)
@@ -11305,7 +11317,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SMB"
+		(property "Footprint" "SZMMSZ5258BT3G:SOD-123_ONS"
 			(at 173.99 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -11392,101 +11404,6 @@
 			(project "mints-g0b1re"
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "D202")
-					(unit 1)
-					(variant
-						(name "ADC")
-						(dnp yes)
-					)
-					(variant
-						(name "I2C")
-						(dnp yes)
-					)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "2026-07-27_21-07-26:SQM120P06-07L_GE3")
-		(at 166.37 140.97 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a7f6611a-11f7-4761-bc46-36c6fb2b3793")
-		(property "Reference" "Q4"
-			(at 177.8 139.6999 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SQM120P06-07L_GE3"
-			(at 177.8 142.2399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "LIB_DMP6023LFGQ-7:DMTH8008LFGQ7"
-			(at 166.37 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/doc?67026"
-			(at 166.37 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 166.37 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "fd855f06-1933-442f-ac2c-b850c63572c0")
-		)
-		(pin "2"
-			(uuid "5a2290b6-3579-43a5-950e-304e083f0a86")
-		)
-		(pin "1"
-			(uuid "e3163961-2954-4b75-a34f-697c72ce51b7")
-		)
-		(instances
-			(project "mints-g0b1re"
-				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
-					(reference "Q4")
 					(unit 1)
 					(variant
 						(name "ADC")
@@ -12074,7 +11991,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SMB"
+		(property "Footprint" "SZMMSZ5258BT3G:SOD-123_ONS"
 			(at 173.99 194.31 0)
 			(hide yes)
 			(show_name no)
@@ -12170,6 +12087,100 @@
 						(name "I2C")
 						(dnp yes)
 					)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:DMP3013SFV")
+		(at 171.45 99.06 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bd98a19f-4808-4464-aeb4-d079c66f3d7f")
+		(property "Reference" "Q10"
+			(at 177.8 97.7899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3013SFV"
+			(at 177.8 100.3299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:Diodes_PowerDI3333-8"
+			(at 176.53 100.965 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3013SFV.pdf"
+			(at 176.53 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "-12A Id, -30V Vds, P-Channel Power MOSFET, 9.5mOhm Ron, 33.7nC Qg (typ), PowerDI3333-8"
+			(at 171.45 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "d608c88a-0869-4297-ac93-80d3bc9d0d4e")
+		)
+		(pin "1"
+			(uuid "014bfb69-e447-40b0-b0b6-9358d9f8985d")
+		)
+		(pin "5"
+			(uuid "e07293a9-7259-42ea-b3ae-5b49ab2d5db3")
+		)
+		(pin "2"
+			(uuid "25275db8-f1a0-461f-9ab0-f156937b49be")
+		)
+		(pin "3"
+			(uuid "cfc9cf9d-0470-4662-9127-815d0b927950")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
+					(reference "Q10")
+					(unit 1)
 				)
 			)
 		)
@@ -12661,7 +12672,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SMB"
+		(property "Footprint" "SZMMSZ5258BT3G:SOD-123_ONS"
 			(at 217.17 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -12795,7 +12806,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SMB"
+		(property "Footprint" "SZMMSZ5258BT3G:SOD-123_ONS"
 			(at 175.26 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -13277,6 +13288,100 @@
 						(name "I2C")
 						(dnp yes)
 					)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:DMP3013SFV")
+		(at 172.72 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d1ff7b81-29cd-4c1e-97e0-b4089fbb7dd6")
+		(property "Reference" "Q9"
+			(at 179.07 54.6099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3013SFV"
+			(at 179.07 57.1499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:Diodes_PowerDI3333-8"
+			(at 177.8 57.785 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3013SFV.pdf"
+			(at 177.8 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "-12A Id, -30V Vds, P-Channel Power MOSFET, 9.5mOhm Ron, 33.7nC Qg (typ), PowerDI3333-8"
+			(at 172.72 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "c4426e0d-a19b-4e1c-b2c6-e5b50c9c3a65")
+		)
+		(pin "1"
+			(uuid "b0edcc61-f4f9-4e53-85fb-12ceb452f71c")
+		)
+		(pin "5"
+			(uuid "5adb9b45-66a6-4982-830e-faff8e65fbef")
+		)
+		(pin "2"
+			(uuid "f188812d-8043-4a52-9df1-5e29b640ee4f")
+		)
+		(pin "3"
+			(uuid "221e3a3a-ee6c-411e-a71a-40102ae386f5")
+		)
+		(instances
+			(project "mints-g0b1re"
+				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
+					(reference "Q9")
+					(unit 1)
 				)
 			)
 		)
@@ -14440,7 +14545,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SMB"
+		(property "Footprint" "SZMMSZ5258BT3G:SOD-123_ONS"
 			(at 173.99 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -14714,7 +14819,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SMB"
+		(property "Footprint" "SZMMSZ5258BT3G:SOD-123_ONS"
 			(at 217.17 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -16018,7 +16123,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SMB"
+		(property "Footprint" "SZMMSZ5258BT3G:SOD-123_ONS"
 			(at 217.17 214.63 0)
 			(hide yes)
 			(show_name no)
@@ -16277,101 +16382,6 @@
 			(project "mints-g0b1re"
 				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
 					(reference "#PWR026")
-					(unit 1)
-					(variant
-						(name "ADC")
-						(dnp yes)
-					)
-					(variant
-						(name "I2C")
-						(dnp yes)
-					)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "2026-07-27_21-07-26:SQM120P06-07L_GE3")
-		(at 209.55 203.2 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ff4d4554-4e8d-4a86-b71e-29b9357999cd")
-		(property "Reference" "Q7"
-			(at 220.98 201.9299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SQM120P06-07L_GE3"
-			(at 220.98 204.4699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "LIB_DMP6023LFGQ-7:DMTH8008LFGQ7"
-			(at 209.55 203.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/doc?67026"
-			(at 209.55 203.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 209.55 203.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "b743ee92-2e63-4d66-8dd7-0299bbaeb9f0")
-		)
-		(pin "2"
-			(uuid "f6869925-85e7-456d-8dfe-a8fe2b311c55")
-		)
-		(pin "1"
-			(uuid "4059e9c9-ccb6-461c-855c-1744ef083d80")
-		)
-		(instances
-			(project "mints-g0b1re"
-				(path "/363c6546-315b-48da-9312-6a55f2557799/7b4754de-beb0-417a-824f-a2d391f032ba"
-					(reference "Q7")
 					(unit 1)
 					(variant
 						(name "ADC")
